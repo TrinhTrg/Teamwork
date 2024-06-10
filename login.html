@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <
+  <link href="css/login.css" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div class="text-center mb-8">
+      <img src="images/logo.png" alt="Logo" class="mx-auto h-20 w-20">
+    </div>
+    <div class="mb-6 space-y-3">
+      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Logo" class="h-6 w-6 mr-2">
+        Continue with Google
+      </button>
+      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/612px-Apple_logo_black.svg.png" alt="Apple Logo" class="h-6 w-6 mr-2">
+        Continue with Apple
+      </button>
+      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="h-6 w-6 mr-2">
+        Continue with Facebook
+      </button>
+    </div>
+    <div class="flex items-center justify-between mb-4">
+      <hr class="w-full border-gray-300">
+      <span class="px-4 text-gray-500">OR</span>
+      <hr class="w-full border-gray-300">
+    </div>
+    <form>
+      <div class="mb-4">
+        <input type="text" placeholder="Username or email" class="input-field">
+      </div>
+      <div class="mb-4">
+        <div class="flex justify-between items-center">
+          <input type="password" placeholder="Password" class="input-field">
+          <!-- <a href="#" class="text-sm text-green-500 ml-2">Forgot</a> -->
+        </div>
+      </div>
+      <div class="flex items-center justify-between mb-4">
+        <label class="inline-flex items-center">
+          <input type="checkbox" class="form-checkbox text-green-500">
+          <span class="ml-2 text-gray-700">Remind me</span>
+        </label>
+      </div>
+      <button type="submit" class="w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Sign In</button>
+    </form>
+    <div class="text-center mt-4">
+      <p class="text-gray-700">no account? <a href="register.html" class="text-green-500">Create an Account here</a></p>
+    </div>
+  </div>
+</body>
+</html>
