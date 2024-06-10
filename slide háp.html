@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Optional custom styles for Swiper */
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ddd;
+            height: 16rem; /* h-64 equivalent in Tailwind */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<!-- Header -->
+<header class="bg-white shadow">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="text-2xl font-bold text-gray-800">LOGO</div>
+        <nav class="flex space-x-4">
+            <a href="#" class="text-gray-700 hover:text-gray-900">Home</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900">Shop</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+        </nav>
+        <div class="flex space-x-4 items-center">
+            <a href="#" class="text-gray-700 hover:text-gray-900">Login</a>
+            <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M9 3v3M15 3v3M4 12h16M9 16v4M15 16v4M21 21H3"></path></svg>
+        </div>
+    </div>
+</header>
+
+<!-- Search and Banner -->
+<div class="container mx-auto mt-6">
+    <div class="relative">
+        <input type="text" placeholder="Tìm kiếm" class="w-full border border-gray-300 rounded-md p-2">
+        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-2 rounded-md">Tìm kiếm</button>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper-container mt-6">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <!-- Add more slides as needed -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="container mx-auto mt-6">
+    <!-- Bestsellers -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sách bán chạy - Sách được yêu thích</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Image</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Image</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Image</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sách</h2>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- New and Trending -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sách mới và xu hướng</h2>
+        <div class="border-dotted bg-green-200 grid grid-cols-5 gap-4">
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <span class="text-gray-500">Title<br>Content</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor's Picks -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Editor's Picks</h2>
+        <div class="bg-gray-200 h-64 flex items-center justify-center">
+            <span class="text-gray-500">Editor's Pick Image</span>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Đối tác</h2>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="bg-gray-200 h-24 flex items-center justify-center">
+                <span class="text-gray-500">Logo</span>
+            </div>
+            <div class="bg-gray-200 h-24 flex items-center justify-center">
+                <span class="text-gray-500">Logo</span>
+            </div>
+            <div class="bg-gray-200 h-24 flex items-center justify-center">
+                <span class="text-gray-500">Logo</span>
+            </div>
+            <div class="bg-gray-200 h-24 flex items-center justify-center">
+                <span class="text-gray-500">Logo</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white shadow py-6 mt-6">
+    <div class="container mx-auto flex justify-between items-center px-6">
+        <div class="text-gray-700">
+            <a href="#" class="mr-4">About</a>
+            <a href="#" class="mr-4">Feedback</a>
+            <a href="#" class="mr-4">Help</a>
+            <a href="#" class="mr-4">Terms</a>
+            <a href="#" class="mr-4">Privacy</a>
+            <a href="#" class="mr-4">Advertise</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-gray-700"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-700"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-700"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-700"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+

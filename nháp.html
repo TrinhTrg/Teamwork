@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<header class="bg-white shadow">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="text-xl font-bold text-gray-900">
+            <a href="#" class="text-green-500">LOGO</a>
+        </div>
+        <div>
+            <ul class="inline-flex space-x-6">
+                <li><a href="#" class="text-gray-700 hover:text-green-500">Trang chủ</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-green-500">Sách</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-green-500">Tác giả</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-green-500">Thể loại</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-green-500">Về chúng tôi</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#" class="text-gray-700 hover:text-green-500">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+
+<!-- Search -->
+<div class="bg-gray-200">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <input type="text" placeholder="Nhập ..." class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+        <button class="ml-3 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Tìm kiếm</button>
+    </div>
+</div>
+
+<!-- Main content -->
+<div class="container mx-auto px-6 py-6 flex">
+    <!-- Sidebar -->
+    <div class="w-1/4">
+        <h2 class="text-xl font-bold mb-4">Gíá</h2>
+        <div class="mb-6">
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> 0 - 150.000VND</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> 150.000 - 300.000VND</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> 300.000 - 500.000VND</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> 500.000 - 700.000VND</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> 700.000VND + Trở lên</label>
+        </div>
+        
+        <h2 class="text-xl font-bold mb-4">Quốc gia</h2>
+        <div>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> Việt Nam</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> Trung Quốc</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> Nhật Bản</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> Hàn Quốc</label>
+            <label class="block mb-2"><input type="checkbox" class="mr-2"> Mỹ</label>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div class="w-3/4">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Sách</h2>
+            <div class="flex space-x-4">
+                <select class="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <option>Mới nhất</option>
+                    <option>Giá: Thấp đến Cao</option>
+                    <option>Giá: Cao đến Thấp</option>
+                </select>
+                <select class="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <option>24 Sản Phẩm</option>
+                    <option>48 Sản Phẩm</option>
+                    <option>96 Sản Phẩm</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Product Item -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="relative">
+                    <img class="w-full h-48 object-cover" src="https://via.placeholder.com/150" alt="Product Image">
+                    <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 opacity-0 hover:opacity-100">
+                        <button class="px-4 py-2 bg-green-500 text-white rounded-md">Mua ngay</button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">Title</h3>
+                    <p class="text-gray-600">Price</p>
+                </div>
+            </div>
+            <!-- Repeat Product Item for each book -->
+            <!-- ... -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-6 flex justify-center">
+            <nav class="flex space-x-1">
+                <a href="#" class="px-3 py-1 border rounded-md bg-white hover:bg-gray-100">1</a>
+                <a href="#" class="px-3 py-1 border rounded-md bg-white hover:bg-gray-100">2</a>
+                <a href="#" class="px-3 py-1 border rounded-md bg-white hover:bg-gray-100">3</a>
+                <a href="#" class="px-3 py-1 border rounded-md bg-white hover:bg-gray-100">4</a>
+                <a href="#" class="px-3 py-1 border rounded-md bg-white hover:bg-gray-100">5</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white mt-12">
+    <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex space-x-6">
+            <a href="#" class="text-gray-700 hover:text-green-500">About</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Feedback</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Help</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Terms</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Privacy</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Advertise</a>
+            <a href="#" class="text-gray-700 hover:text-green-500">Contact</a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-gray-700 hover:text-green-500"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-700 hover:text-green-500"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-gray-700 hover:text-green-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-700 hover:text-green-500"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
