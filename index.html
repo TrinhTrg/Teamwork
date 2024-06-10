@@ -1,82 +1,71 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Bookstore</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <header class="bg-white py-4">
+    <header class="bg-while py-4">   
         <div class="h-45">
             <nav class="flex justify-between w-5/6 mx-auto items-center">
-                <div>
-                    <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-20 w-15" /></a>
+                <div> 
+                    <a href=""><img src="./logo2.jpg" alt="Logo" class="h-20 w-15"/></a>
                 </div>
-
+                    
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Trang chủ</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Sách</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Tác giả</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Thể loại</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Về chúng tôi</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Trang chủ</a></li>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Sách</a></li>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Tác giả</a></li>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Thể loại</a></li>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Về chúng tôi</a></li>
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Đăng nhập</button>
             </nav>
             <div class="user-actions">
+                
                 <div class="cart"></div>
             </div>
         </div>
     </header>
+
     <main class="container mx-auto py-6">
         <div class="search-bar flex items-center justify-center space-x-4">
             <input type="text" placeholder="Nhập ..." class="border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-500">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tìm kiếm</button>
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Search</button>
         </div>
-        <section class="checkout mt-6">
+        <section class="best-sellers mt-6">
             <div class="container mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Thanh Toán</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="order-summary bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Tóm tắt đơn hàng</h3>
-                        <ul class="space-y-2">
-                            <li class="flex justify-between">
-                                <span>Tên Sách 1</span>
-                                <span>100.000đ</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Tên Sách 2</span>
-                                <span>150.000đ</span>
-                            </li>
-                            <li class="flex justify-between font-bold">
-                                <span>Tổng cộng</span>
-                                <span>250.000đ</span>
-                            </li>
-                        </ul>
+                <h2 class="text-2xl font-semibold mb-4">Sách bán chạy - Sách được yêu thích</h2>
+                <p>Nội dung</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="thumbnail bg-gray-200 h-64"></div>
+                    <div class="thumbnail bg-gray-200 h-64"></div>
+                    <div class="thumbnail bg-gray-200 h-64"></div>
+                </div>
+            </div>
+        </section>
+        <section class="books mt-6">
+            <div class="container mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Sách</h2>
+                <a href="#" class="text-blue-500">Xem tất cả</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                    <div class="book-item bg-white p-4 shadow-md rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Title</h3>
+                        <p>Content</p>
                     </div>
-                    <div class="payment-details bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Thông tin thanh toán</h3>
-                        <form action="#" method="POST">
-                            <div class="mb-4">
-                                <label for="name" class="block text-sm font-medium text-gray-700">Tên</label>
-                                <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="address" class="block text-sm font-medium text-gray-700">Địa chỉ</label>
-                                <input type="text" id="address" name="address" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Số điện thoại</label>
-                                <input type="text" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500">
-                            </div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Đặt hàng</button>
-                        </form>
+                    <div class="book-item bg-white p-4 shadow-md rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Title</h3>
+                        <p>Content</p>
+                    </div>
+                    <div class="book-item bg-white p-4 shadow-md rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Title</h3>
+                        <p>Content</p>
+                    </div>
+                    <div class="book-item bg-white p-4 shadow-md rounded-md">
+                        <h3 class="text-lg font-semibold mb-2">Title</h3>
+                        <p>Content</p>
                     </div>
                 </div>
             </div>
@@ -87,6 +76,7 @@
             <!-- Footer content -->
         </div>
     </footer>
+    <script type="module" src="/src/scripts/application.js"></script>
     <script type="module" src="/src/scripts/application.js"></script>
 </body>
 
