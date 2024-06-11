@@ -88,6 +88,8 @@ Tạo github cho team làm việc, tự làm task riêng của bản thân cho c
 (c) Thêm tương tác vào trang web của bạn bằng JavaScript (1 điểm)
 
 - nhiệm vụ 3: c
+  
+(b) Tích hợp một cơ sở dữ liệu MySQL để lưu trữ và lấy dữ liệu (0.5 điểm)
 
 (c) Tạo ít nhất hai trang động hiển thị dữ liệu từ cơ sở dữ liệu (1 điểm)
 
