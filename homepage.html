@@ -5,79 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Custom styles for the menu */
-        .menu {
-            display: none;
-            z-index: 1000; /* Ensure the menu is above other elements */
-        }
-
-        .menu.active {
-            display: block;
-        }
-
-        .hidden-on-scroll {
-            transition: transform 0.3s ease;
-            z-index: 999; /* Ensure the header is above other elements, but below the menu */
-        }
-
-        .hidden-on-scroll.hidden {
-            transform: translateY(-100%);
-        }
-
-        .menu ul li {
-            z-index: 1001; /* Ensure list items are above everything */
-        }
-
-        /* Hide menu items on small screens */
-        @media (max-width: 768px) {
-            .nav-items {
-                display: none;
-            }
-        }
-    </style>
 </head>
-<body class="text-white">
-    <!-- header -->
-    <header class="bg-white py-4 hidden-on-scroll fixed w-full top-0 left-0">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <!-- logo -->
-            <div class="w-24 z-20">
-                <img src="./logo2.jpg" alt="Logo" class="h-20 w-20">
-            </div>
+<body>
 
-            <!-- menu items -->
-            <nav class="nav-items hidden md:flex space-x-4">
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a>
-            </nav>
-
-            <!-- icons vs login -->
-            <div class="hidden md:flex items-center space-x-4">
+    <!-- Header -->
+    <header class="bg-white py-4">
+        <div class="h-45">
+            <nav class="flex justify-between w-5/6 mx-auto items-center">
+                <div>
+                    <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-20 w-15" /></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Homepage</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Books</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Authurs</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">About Us</a>
+                </div>
+                <!-- Cart Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <!-- Login Button -->
                 <button class="bg-gray-500 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full">
                     <a href="#">Login</a>
                 </button>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
-                </a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                </a>
-            </div>
-
-            <!-- menu button  -->
-            <div class="flex items-center md:hidden">
-                <button id="menuButton" class="text-black focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+                <!-- Account Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
             </div>
         </div>
 
@@ -133,8 +89,8 @@
                 <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
                 <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
             </div>
-        </div>
-    
+            </div>
+
         <!-- Bestseller Section -->
         <section class="flex items-center justify-center mt-6">
             <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-black">
@@ -242,11 +198,13 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2023 Your Website. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-200 py-4">
+        <div class="container mx-auto">
+            <!-- Footer content -->
         </div>
     </footer>
-    <script src="./src/scripts/application.js"></script>
+
+    <script type="module" src="/src/scripts/application.js"></script>
 </body>
 </html>
