@@ -7,77 +7,88 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-while py-4">   
+
+    <!-- Header -->
+    <header class="bg-white py-4">
         <div class="h-45">
             <nav class="flex justify-between w-5/6 mx-auto items-center">
-                <div> 
-                    <a href=""><img src="./logo2.jpg" alt="Logo" class="h-20 w-15"/></a>
+                <div>
+                    <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-20 w-15" /></a>
                 </div>
-                    
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Trang chủ</a></li>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Sách</a></li>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Tác giả</a></li>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Thể loại</a></li>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Về chúng tôi</a></li>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Homepage</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Books</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Authurs</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">About Us</a>
                 </div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Đăng nhập</button>
-            </nav>
-            <div class="user-actions">
-                
-                <div class="cart"></div>
+                <!-- Cart Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <!-- Login Button -->
+                <button class="bg-gray-500 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full">
+                    <a href="#">Login</a>
+                </button>
+                <!-- Account Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
             </div>
         </div>
     </header>
 
     <main class="container mx-auto py-6">
         <div class="search-bar flex items-center justify-center space-x-4">
-            <input type="text" placeholder="Nhập ..." class="border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-500">
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Search</button>
+            <input type="text" placeholder="Enter ..." class="border border-gray-300 px-4 py-1 rounded-full focus:outline-none focus:ring focus:border-green-500">
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full">Search</button>
         </div>
-        <section class="best-sellers mt-6">
-            <div class="container mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Sách bán chạy - Sách được yêu thích</h2>
-                <p>Nội dung</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="thumbnail bg-gray-200 h-64"></div>
-                    <div class="thumbnail bg-gray-200 h-64"></div>
-                    <div class="thumbnail bg-gray-200 h-64"></div>
+
+        <!-- Banner -->
+        <div class="relative mt-6 bg-gray-200 h-64 flex items-center justify-center">
+            <span class="text-gray-500 text-2xl">Banner</span>
+            <!--Arrow-->
+                <svg class="absolute left-0 ml-4 h-10 w-10 cursor-pointer text-white bg-black bg-opacity-50 rounded-r" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <svg class="absolute right-0 mr-4 h-10 w-10 cursor-pointer text-white bg-black bg-opacity-50 rounded-l" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M9 5l7 7-7 7"></path>
+                </svg>
+                        <!-- Navigation Dots -->
+            <div class="absolute bottom-4 flex space-x-2">
+                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
+                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
+                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
+                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
+                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
+            </div>
+            </div>
+
+        <!-- Bestseller Section -->
+        <section class="bg-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center lg:space-x-56">
+                    <!-- Text Section -->
+                    <div>
+                        <h2 class="text-2xl font-bold">Sách bán chạy - Sách được yêu thích</h2>
+                        <p class="mb-4">Nội dung</p>
+                    </div>
+                    <!-- Image Section -->
+                    <div class="lg:w-56 mt-10 lg:mt-0">
+                        <img src="./logo2.jpg" alt="People working on laptops" class="rounded-lg shadow-lg">
+                    </div>
                 </div>
             </div>
-        </section>
-        <section class="books mt-6">
-            <div class="container mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Sách</h2>
-                <a href="#" class="text-blue-500">Xem tất cả</a>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-                    <div class="book-item bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Title</h3>
-                        <p>Content</p>
-                    </div>
-                    <div class="book-item bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Title</h3>
-                        <p>Content</p>
-                    </div>
-                    <div class="book-item bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Title</h3>
-                        <p>Content</p>
-                    </div>
-                    <div class="book-item bg-white p-4 shadow-md rounded-md">
-                        <h3 class="text-lg font-semibold mb-2">Title</h3>
-                        <p>Content</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </section> 
     </main>
+
+    <!-- Footer -->
     <footer class="bg-gray-200 py-4">
         <div class="container mx-auto">
             <!-- Footer content -->
         </div>
     </footer>
-    <script type="module" src="/src/scripts/application.js"></script>
+
     <script type="module" src="/src/scripts/application.js"></script>
 </body>
-
 </html>
