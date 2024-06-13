@@ -1,54 +1,96 @@
 # Echobinary - trang mua bán sách đọc
-# 1. wireframe:
-- bao gồm 7 trang: trang chủ, sách, detail, card, about us, log in, thanks
-- các trang lẻ nhỏ popup: popup card, popup login
+
+y/c 5 nhiệm vụ
+
+# wireframe:
+ 
+ Bao gồm 8 trang: Homepage, Books, authors, detail, card, about us, log in, thanks
+
+ Các trang lẻ nhỏ popup: popup card, popup login
+
+ Time chốt thời gian làm wireframe : cuối 9/6
+ 
 ---------------------------------------------------------
-- (NHI)
-- ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/97be3c58-4181-40a6-866d-0bf54808cec2)
-- nút đăng nhập + giỏ hàng + thông tin người dùng, thanh menu chuyển đổi giữa các trang
-- thanh tìm kiếm
-- banner tự động di chuyển + chuyển đổi qua lại
-- sản phẩm gồm tên và giá, trỏ chuột vào sản phẩm thì sẽ hiện giỏ hàng + nút mua ngay
-- trang sách bán chạy + sách + sách mới và xu hướng
-- trang giới thiệu về website
-- đối tác + footer
-  ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/691eb276-9a9b-450e-94a4-66322ba533ee)
-  ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/484753df-5c46-497d-a6ca-8b9194a6753c)
-- có chức năng filter theo giá, quốc gia, sắp xếp theo mới nhất ..., sắp xếp theo số lượng sản phẩm
-- thanh số trang
-- 
- ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/c5a39804-8981-4a69-b824-9193664e2485)
-- trang chi tiết gồm: tên sản phẩm, tác giả, giá, số lượng đặt và số lượng tồn kho
-- nút giỏ hàng và mua ngay, thời gian giao hàng dự kiến, các thông tin chi tiết
-- sản phẩm liên quan
-- (CƯỜNG)
+# Trinh (leader)
 
-![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/070d1d22-63ff-4c98-9fbd-e7de18e4d862)
-- các sản phẩm được chọn gồm: tên, số lượng, thành giá, nút xóa
-- mã giảm giá
-- nút dùng mã, xóa hết sản phẩm, nút thanh toán
+Tiến hành chia công việc cho các thành viên gồm: Trinh, Nhi, Huy, Cường
+
+Tạo wireframe , tham gia thiết kế wirefram
+
+Trang giao diện cần code : Checkout, User, Thank you
+
+Tạo github cho team làm việc, tự làm task riêng của bản thân cho công việc đã được chia
+
+- nhiệm vụ 2 : a, b, d
+
+(a) Tạo một trang web đa trang với ít nhất ba trang theo wireframe (1 điểm)
+
+(b) Sử dụng Tailwind CSS để Áp dụng CSS để thiết kế trang web (0.5 điểm)
+
+(d) Đảm bảo trang web của bạn hoàn toàn đáp ứng và hoạt động tốt trên các kích thước màn hình khác nhau (0.5 điểm)
+
+- nhiệm vụ 3 : a, b
+  (a) Thiết kế một cấu trúc cơ sở dữ liệu phù hợp cho ứng dụng (0.5 điểm)
   
-![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/47ff6ebb-78f2-4f3b-b2f9-2d05167d013f)
-- banner
-- 1 số trang giới thiệu
+  (b) Tích hợp một cơ sở dữ liệu MySQL để lưu trữ và lấy dữ liệu (0.5 điểm)
 
-![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/f358e9e2-ec4a-46fa-906c-9b8838808b7d)
-- đăng nhập và đăng kí
-- trang popup card xem nhanh các sản phẩm đã thêm vào giỏ hàng
-- trang thể loại các loại sách
-(TRINH)
+# Nhi 
 
-  ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/9c2fb60d-b1ae-4ab3-8694-58de6bceb83f)
-  thông tin cá anhaan người mua hàng và thông tin đơn hàng, nút thanh toán ngay, mục thêm yêu cầu
+Tạo wireframe , tham gia thiết kế wirefram
 
-![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/488fba6c-39a0-4e68-9192-c1524d9c9fd5)
--phần cảm ơn: banner 
-- nút quay lại trang chủ và theo dõi đơn hàng
-- sản phẩm đã mua trước đó
+Trang giao diện cần code : Homepage, Books, Detail, Authors
+
+Tạo github cho team làm việc, tự làm task riêng của bản thân cho công việc đã được chia
+
+- nhiệm vụ 2 : a, b, d
+
+(a) Tạo một trang web đa trang với ít nhất ba trang theo wireframe (1 điểm)
+
+(b) Sử dụng Tailwind CSS để Áp dụng CSS để thiết kế trang web (0.5 điểm)
+
+(d) Đảm bảo trang web của bạn hoàn toàn đáp ứng và hoạt động tốt trên các kích thước màn hình khác nhau (0.5 điểm)
+
+- nhiệm vụ 3 : a, b
+  (a) Thiết kế một cấu trúc cơ sở dữ liệu phù hợp cho ứng dụng (0.5 điểm)
   
-![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/cb257936-276d-4418-90c7-575c747cb664)
-- trang thông tin tài khoản người dùng
-- mục đơn hàng người dùng
-- nút đăng xuất
-- (HUY)
-CODE ĐỘNG 2 TRANG DETAIL VÀ HOMEPAGE, CHUYỂN TRANG + LINK
+  (b) Tích hợp một cơ sở dữ liệu MySQL để lưu trữ và lấy dữ liệu (0.5 điểm)
+# Cường
+
+Tạo wireframe , tham gia thiết kế wirefram
+
+Trang giao diện cần code : About Us, Card, popup card, popup log in sign in, categories
+
+Tạo github cho team làm việc, tự làm task riêng của bản thân cho công việc đã được chia
+
+- nhiệm vụ 2 : a, b, d
+
+(a) Tạo một trang web đa trang với ít nhất ba trang theo wireframe (1 điểm)
+
+(b) Sử dụng Tailwind CSS để Áp dụng CSS để thiết kế trang web (0.5 điểm)
+
+(d) Đảm bảo trang web của bạn hoàn toàn đáp ứng và hoạt động tốt trên các kích thước màn hình khác nhau (0.5 điểm)
+
+- nhiệm vụ 3 : a, b
+  (a) Thiết kế một cấu trúc cơ sở dữ liệu phù hợp cho ứng dụng (0.5 điểm)
+  
+  (b) Tích hợp một cơ sở dữ liệu MySQL để lưu trữ và lấy dữ liệu (0.5 điểm)
+
+# Huy
+
+Tạo wireframe , tham gia thiết kế wirefram
+
+Trang giao diện cần code : Homepage, javascripts, chỉnh màu cho page
+
+Tạo github cho team làm việc, tự làm task riêng của bản thân cho công việc đã được chia, hỗ trợ task homepage + detail
+
+- nhiệm vụ 2 : c
+  
+(c) Thêm tương tác vào trang web của bạn bằng JavaScript (1 điểm)
+
+- nhiệm vụ 3: c
+  
+(b) Tích hợp một cơ sở dữ liệu MySQL để lưu trữ và lấy dữ liệu (0.5 điểm)
+
+(c) Tạo ít nhất hai trang động hiển thị dữ liệu từ cơ sở dữ liệu (1 điểm)
+
+(backend)
