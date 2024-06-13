@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Books</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         /* Custom styles for the menu */
@@ -117,50 +117,82 @@
             <input type="text" placeholder="Enter ..." class="border border-gray-300 px-4 py-2 rounded-full focus:outline-none focus:ring focus:border-green-500">
             <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded">Search</button>
         </div>
+
         <hr class="mt-3">
-        <div class="flex gap-4 absolute right-0 left-0 text-center items-center lg:flex lg:flex-row lg:static mt-3">
-            <h3 class="ml-5">Home</h3>
-            <h3>></h3>
-            <h3 class="text-green-500 font-bold">Books</h3>
+        <div class="container mx-auto">
+            <div class="flex gap-4 mt-3">
+                <h3>Home</h3>
+                <h3>></h3>
+                <h3 class="text-green-500 font-bold">Books</h3>
+            </div>
         </div>
+
     </main>
 
     <!-- filter -->
     <div class="flex">
-        <aside class="w-1/4 pr-4">
+        <aside class="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0 pr-4">
             <div class="bg-white p-4 rounded shadow">
-                <h2 class="font-bold mb-2">All Categories</h2>
+                <h2 class="font-bold mb-2 text-xl">All Categories</h2>
                 <ul>
                     <li>
-                        <a href="#" class="block py-1 text-green-600">Hư cấu</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Văn học hiện đại</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Văn học kinh điển</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Văn học thiếu nhi</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Lãng mạn</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Kỳ ảo</a>
-                        <a href="#" class="block py-1 text-gray-500 pl-4">Trinh thám - Kinh dị</a>
+                        <a href="#" class="block py-1 text-green-600 text-base">Fictional</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Modern literature</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Classic literature</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Children's literature</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Romantic</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Dreamy</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Detective - Horror</a>
                     </li>
-                    <li><a href="#" class="block py-1 text-black">Phi hư cấu</a></li>
-                    <li><a href="#" class="block py-1 text-black">Thiếu nhi</a></li>
-                    <li><a href="#" class="block py-1 text-black">Phân loại khác</a></li>
                 </ul>
-            </div>
-
-            <div class="bg-white p-4 mt-4 rounded shadow">
-                <h2 class="font-bold mb-2">Giá</h2>
+                <hr class="my-2">
                 <ul>
-                    <li><a href="#" class="block py-1 text-gray-500">0đ - 150,000đ</a></li>
-                    <li><a href="#" class="block py-1 text-gray-500">150,000đ - 300,000đ</a></li>
-                    <li><a href="#" class="block py-1 text-gray-500">300,000đ - 500,000đ</a></li>
-                    <li><a href="#" class="block py-1 text-gray-500">500,000đ - 700,000đ</a></li>
-                    <li><a href="#" class="block py-1 text-gray-500">700,000đ - Trở Lên</a></li>
+                    <li>
+                        <a href="#" class="block py-1 text-gray-500 text-base">Non-fiction</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Philosophy</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">History</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Science</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Business</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Political Economy</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Skill</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Art</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Raise up child</a>
+                    </li>
+                </ul>
+                <hr class="my-2">
+                <ul>
+                    <li>
+                        <a href="#" class="block py-1 text-gray-500 text-base">Children</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">0-5 years old</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">6-8 years old</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">9-12 years old</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">13-15 years old</a>
+                    </li>
+                </ul>
+                <hr class="my-2">
+                <ul>
+                    <li>
+                        <a href="#" class="block py-1 text-gray-500 text-base">Other classification</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Best-selling books</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Newly published book</a>
+                        <a href="#" class="block py-1 text-gray-500 pl-4 text-base">Book about to be published</a>
+                    </li>
                 </ul>
             </div>
-        </aside>
-
-    <!-- sách -->
-     <div class="w-3/4">
         
+            <div class="bg-white p-4 mt-4 rounded shadow">
+                <h2 class="font-bold mb-2 text-xl">Giá</h2>
+                <ul>
+                    <li><a href="#" class="block py-1 text-gray-500 text-base md:py-1">0đ - 150,000đ</a></li>
+                    <li><a href="#" class="block py-1 text-gray-500 text-base">150,000đ - 300,000đ</a></li>
+                    <li><a href="#" class="block py-1 text-gray-500 text-base">300,000đ - 500,000đ</a></li>
+                    <li><a href="#" class="block py-1 text-gray-500 text-base">500,000đ - 700,000đ</a></li>
+                    <li><a href="#" class="block py-1 text-gray-500 text-base">700,000đ - Trở Lên</a></li>
+                </ul>
+            </div>
+        </aside>        
+    <!-- sách -->
+    <div class="w-3/4"> 
         <div class="flex justify-between items-center mb-4">
             <div class="flex space-x-4">
                 <div class="flex items-center">
@@ -183,222 +215,18 @@
             </div>
         </div>
         
-
-        <!-- sp  -->
-        <div class="grid grid-cols-4 gap-2">
-            <!-- sp1 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp2 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp3 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp4 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp5 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp6 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp7 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now </button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-
-            <!-- sp8 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-            <!-- sp8 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-            <!-- sp8 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-            <!-- sp8 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-            <!-- sp8 -->
-            <div class="bg-white shadow-md mb-auto rounded-xl">
-                <div class="relative" >
-                    <img class="w-72 h-40 object-cover" src="https://bizweb.dktcdn.net/100/363/455/products/totto-chan-ben-cua-so-01.jpg?v=1716798844373" alt="sách">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
-                        <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
-                        <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </div>
-                </div>
-                <div class="py-5">
-                    <h3 class="font-semibold text-center">TOTTO-CHAN BÊN CỬA SỔ</h3>
-                    <p class="font-medium text-center">150.000đ</p>
-                </div>
-            </div>
-        </div>
+        <!-- sp -->
 
         <!-- soos trang -->
         <div class="flex justify-center mt-20">
             <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-l transition duration-300 ease-in-out hover:text-white">Previous</a>
-            <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">1</a>
-            <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">2</a>
-            <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">3</a>
+            <a href="#" class="py-2 px-4 bg-green-200 hover:bg-green-300 bg-opacity-15 text-white hover:text-white rounded-md">1</a>
+            <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white rounded-md">2</a>
+            <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white rounded-md">3</a>
             <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-r hover:text-white transition duration-300 ease-in-out">Next</a>
         </div>
     </div>
 
-
-    <script type="module" src="./src/scripts/application.js"></script>
-    <script type="module" src="/src/scripts/application.js"></script>
+    <script src="./src/scripts/application.js"></script>
 </body>
 </html>
