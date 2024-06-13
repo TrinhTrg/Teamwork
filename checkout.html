@@ -18,6 +18,16 @@
         body {
             padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
         }
+        .remove-btn {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 0.25rem; /* Border radius */
+            
+        }
+        .remove-btn:hover {
+            background-color: #e85959; /* Hover background color */
+            
+        }
         /* Custom styles for the menu */
         .menu {
             display: none;
@@ -131,6 +141,7 @@
                             <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product1')">+</button>
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
+                        <button class=" remove-btn ml-4" onclick="removeProduct(this)">X</button>
                     </div>
                     <!-- Product 2 -->
                     <div class="flex items-center border-b py-4">
@@ -145,6 +156,7 @@
                             <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product2')">+</button>
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
+                        <button class="remove-btn ml-4" onclick="removeProduct(this)">X</button>
                     </div>
                 </div>
             </div>
@@ -269,7 +281,6 @@
             <!-- About Section -->
             <div class="flex-1">
                 <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
-                
                 <ul>
                     <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
                     <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
@@ -280,12 +291,9 @@
                     <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
                 </ul>
             </div>
-            
             <!-- Email Signup Section -->
             <div class="flex-1">
-
                 <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
-
                 <ul>
                     <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
                     <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
@@ -297,7 +305,6 @@
         </div>
     </div>
 </footer>
-
 
 </body>
 </html>
