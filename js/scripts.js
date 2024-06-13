@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
  
 const slider = document.querySelector(".photo-slider");
@@ -192,3 +193,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+=======
+// Menu
+const menu = document.querySelector("#menu");
+const menuButton = document.querySelector("#menu-button");
+
+menuButton.addEventListener("click", () => {
+  menu.classList.toggle("invisible");
+});
+>>>>>>> 56e4a381e9183b4b8c2dccfee61ccc6b315cb53e

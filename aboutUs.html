@@ -4,359 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>Echobinary Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for the cards */
-        .custom-shape {
-            background-color: #FDE68A;
-            border-radius: 50% 50% 50% 50%;
-            padding: 20px;
-            position: relative;
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container-limited {
+            max-width: 1200px;
+            min-width: 300px;
+            margin: auto;
         }
 
-        .custom-shape img {
-            border-radius: 50% 50% 50% 50%;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        .custom-decor {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-        }
-
-        .text-blk {
-            padding: 0;
-            line-height: 20px;
-            color: white;
-            font-size: 14px;
-            margin: 0 0 40px 0;
-        }
-
-        .responsive-container-block {
-            min-height: 75px;
-            height: fit-content;
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            justify-content: flex-start;
-        }
-
-        .responsive-container-block.bigContainer {
-            background-color: white;
-            padding: 10px 20px;
-            margin: 0;
-        }
-
-        .responsive-container-block.Container {
-            max-width: 1320px;
-            align-items: center;
-            justify-content: center;
-            margin: 80px auto;
-            padding: 10px 0;
-        }
-
-        .responsive-container-block.leftSide {
-            width: auto;
-            align-items: flex-start;
-            padding: 10px 0;
-            flex-direction: column;
-            margin: 0 auto;
-            max-width: 300px;
-        }
-
-        .text-blk.heading {
-            font-size: 40px;
-            line-height: 64px;
-            font-weight: 900;
-            color: #00B2EB;
-            margin: 0 0 40px 0;
-        }
-
-        .text-blk.btn {
-            color: rgb(0, 178, 235);
-            background-color: rgb(255, 255, 255);
-            box-shadow: rgba(160, 121, 0, 0.2) 0px 12px 35px;
-            border-radius: 100px;
-            padding: 20px 50px;
-            cursor: pointer;
-        }
-
-        .responsive-container-block.rightSide {
-            width: 675px;
-            position: relative;
-            padding: 0;
-            display: flex;
-            height: 700px;
-            min-height: auto;
-        }
-
-        .number1img {
-            margin: 39% 80% 29% 0;
-            height: 32%;
-            width: 20%;
-            position: absolute;
-        }
-
-        .number2img {
-            margin: 19% 42% 42% 23%;
-            width: 35%;
-            height: 39%;
-            position: absolute;
-        }
-
-        .number3img {
-            width: 13%;
-            height: 21%;
-            position: absolute;
-            margin: 62% 64% 30% 23%;
-        }
-
-        .number4vid {
-            width: 34%;
-            height: 33%;
-            position: absolute;
-            margin: 62% 27% 0 39%;
-        }
-
-        .number5img {
-            position: absolute;
-            width: 13%;
-            height: 21%;
-            margin: 38% 27% 41% 60%;
-        }
-
-        .number6img {
-            position: absolute;
-            margin: 0 3% 67% 62%;
-            width: 35%;
-            height: 33%;
-        }
-
-        .number7img {
-            position: absolute;
-            width: 25%;
-            margin: 40% 0 18% 75%;
-            height: 42%;
-        }
-
-        .text-blk.subHeading {
-            font-size: 14px;
-            line-height: 25px;
-        }
-
-        @media (max-width: 1024px) {
-            .responsive-container-block.Container {
-                flex-direction: column-reverse;
-            }
-
-            .text-blk.heading {
-                text-align: center;
-                max-width: 370px;
-            }
-
-            .text-blk.subHeading {
-                text-align: center;
-            }
-
-            .responsive-container-block.leftSide {
-                align-items: center;
-                max-width: 480px;
-            }
-
-            .responsive-container-block.rightSide {
-                margin: 0 auto 100px auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .responsive-container-block.rightSide {
-                width: 450px;
-                height: 450px;
-            }
-
-            .responsive-container-block.leftSide {
-                max-width: 450px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .number1img,
-            .number2img,
-            .number3img,
-            .number5img,
-            .number6img,
-            .number7img {
-                display: none;
-            }
-
-            .responsive-container-block.rightSide {
-                width: 100%;
-                height: 250px;
-                margin: 0 0 100px 0;
-            }
-
-            .number4vid {
-                position: static;
-                margin: 0 auto;
-                width: 100%;
-                height: 100%;
-            }
-
-            .text-blk.heading {
-                font-size: 25px;
-                line-height: 40px;
-                max-width: 370px;
-                width: auto;
-            }
-
-            .text-blk.subHeading {
-                font-size: 14px;
-                line-height: 25px;
-            }
-
-            .responsive-container-block.leftSide {
-                width: 100%;
-            }
+        .image-rectangle {
+            width: 100%; /* Ensures the image takes up the full width of its container */
+            max-width: 500px; /* Sets a maximum width to prevent the image from becoming too large */
+            height: 300px; /* Sets a specific height to create a rectangular shape */
+            object-fit: cover; /* Ensures the image covers the entire area without distortion */
+            border-radius: 0.5rem; /* Adds rounded corners to the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visual separation */
         }
     </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="font-sans">
 
-    <!-- Header -->
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="logo.png" alt="Logo" class="h-8">
-                <nav class="flex space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-green-600">Trang chủ</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Sách</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Tác giả</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Thể loại</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Về chúng tôi</a>
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
+            <div class="flex items-center">
+                <img src="logo2.jpg" alt="Logo" class="h-12">
+                <nav class="ml-10 space-x-6">
+                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
                 </nav>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-700 hover:text-green-600"><i class="fas fa-shopping-cart"></i></a>
-                <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Đăng nhập</button>
+                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
+                <a href="#" class="text-gray-600 hover:text-green-600">
+                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-96" style="background-image: url('https://images.unsplash.com/photo-1544717305-996b815c338c');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative container mx-auto px-4 py-32 text-white text-center">
-            <h1 class="text-4xl font-bold">Về Echobinary</h1>
-            <p class="mt-4">Echolibrary là một trang web bán sách trực tuyến uy tín, cung cấp đa dạng các thể loại sách từ văn học, khoa học, đến sách thiếu nhi và kỹ năng sống. Với giao diện thân thiện, dễ dàng sử dụng, Echolibrary giúp người dùng dễ dàng tìm kiếm và mua sắm những cuốn sách yêu thích. Đặc biệt, Echolibrary còn có những bài viết đánh giá sách chuyên sâu, giúp người đọc có cái nhìn tổng quan trước khi quyết định mua. Dịch vụ giao hàng nhanh chóng và chính sách đổi trả linh hoạt của Echolibrary đảm bảo mang đến trải nghiệm mua sắm tốt nhất cho khách hàng. Hãy khám phá và trải nghiệm thế giới tri thức phong phú tại Echolibrary ngay hôm nay!</p>
+    <!-- Main Content Section -->
+    <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
+        <div class="container mx-auto h-full flex items-center justify-center container-limited">
+            <div class="text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">About Echobinary</h1>
+                <p class="text-lg">A groundbreaking learning platform designed specifically for creative children aged 11, rich in imagination and curiosity.</p>
+            </div>
         </div>
     </section>
 
     <!-- Breadcrumb -->
-    <div class="container mx-auto px-4 py-4">
-        <nav class="text-gray-700">
-            <a href="/homepage.html" class="hover:underline">Home Page</a>
-            <span class="mx-2">/</span>
-            <span class="text-green-600">About Us</span>
+    <div class="container mx-auto px-4 py-4 container-limited">
+        <nav class="text-gray-600 text-sm">
+            <a href="#" class="hover:underline">Home</a>
+            <span class="mx-2">></span>
+            <a href="#" class="hover:underline">About Us</a>
         </nav>
     </div>
 
-    <!-- Feature Section -->
-    <section class="responsive-container-block bigContainer">
-        <div class="responsive-container-block Container">
-            <div class="responsive-container-block leftSide">
-                <p class="text-blk heading">
-                    We make it easy to find the best books for you!
-                </p>
-                <p class="text-blk subHeading">
-                    Discover a wide variety of genres and expertly curated collections that cater to every reader's taste. From thrilling fiction to enlightening non-fiction, our library is your gateway to endless adventures and knowledge.
-                </p>
-                <p class="text-blk subHeading">
-                    At Echolibrary, we're committed to enhancing your reading experience with fast delivery, flexible return policies, and insightful book reviews.
-                </p>
+    <!-- Introduction Section -->
+    <section class="container mx-auto px-4 py-12 container-limited">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800">About Echolibrary</h2>
+            <p class="text-gray-600">Our mission is to help Vietnamese readers reach the world.</p>
+        </div>
+        <div class="space-y-8">
+            <div class="flex flex-col items-center">
+                <img src="/resource/AboutUs1.jpg" alt="Image 1" class="w-100 h-80 object-cover mb-4">
+                <p class="text-gray-600 text-center">Echolibrary offers thousands of books across diverse genres, helping Vietnamese readers access the vast treasure of global knowledge. Whether you are interested in fiction, non-fiction, or educational resources, Echolibrary has something for everyone. Our extensive collection ensures that readers can find the latest bestsellers as well as timeless classics.</p>
             </div>
-            <div class="responsive-container-block rightSide">
-                <img class="number1img" src="/mnt/data/book-1.jpg" alt="">
-                <img class="number2img" src="/mnt/data/book-2.jpg" alt="">
-                <img class="number3img" src="/mnt/data/book-3.jpg" alt="">
-                <img class="number4vid" src="/mnt/data/book-4.jpg" alt="">
-                <img class="number5img" src="/mnt/data/book-5.jpg" alt="">
-                <img class="number6img" src="/mnt/data/book-6.jpg" alt="">
-                <img class="number7img" src="/mnt/data/book-7.jpg" alt="">
+            <div class="flex flex-col items-center">
+                <img src="/resource/AboutUs2.webp" alt="Image 2" class="w-100 h-80 object-cover mb-4">
+                <p class="text-gray-600 text-center">We constantly update the latest titles from renowned authors worldwide, bringing the latest literary trends to our readers. Our platform not only focuses on international bestsellers but also promotes Vietnamese authors, giving them a global stage to showcase their work. This way, Echolibrary bridges the gap between local and global literary scenes.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="/resource/AboutUs3.png" alt="Image 3" class="w-100 h-80 object-cover mb-4">
+                <p class="text-gray-600 text-center">Our platform is designed to offer a seamless and enjoyable reading experience, with features that cater to all book lovers. Whether you prefer reading on your tablet, smartphone, or computer, Echolibrary provides a user-friendly interface that makes reading convenient and enjoyable. Additionally, our personalized recommendations ensure you always find books that match your interests and preferences.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4" style="min-width: 800px;">
-            <div class="flex justify-between items-start">
-                <!-- Logo Section -->
-                <div class="flex items-center">
-                    <img src="/mnt/data/image.png" alt="Logo" class="h-16 mr-4">
-                </div>
-                <!-- Help Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">HELP</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">FAQs</a></li>
-                        <li><a href="#" class="hover:underline">Product Care</a></li>
-                        <li><a href="#" class="hover:underline">Stores</a></li>
-                    </ul>
-                </div>
-                <!-- Services Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">SERVICES</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">Repairs</a></li>
-                        <li><a href="#" class="hover:underline">Personalization</a></li>
-                        <li><a href="#" class="hover:underline">Art of Gifting</a></li>
-                        <li><a href="#" class="hover:underline">Download our Apps</a></li>
-                    </ul>
-                </div>
-                <!-- About Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">Fashion Shows</a></li>
-                        <li><a href="#" class="hover:underline">Arts & Culture</a></li>
-                        <li><a href="#" class="hover:underline">La Maison</a></li>
-                        <li><a href="#" class="hover:underline">Sustainability</a></li>
-                        <li><a href="#" class="hover:underline">Latest News</a></li>
-                        <li><a href="#" class="hover:underline">Careers</a></li>
-                        <li><a href="#" class="hover:underline">Foundation Louis Vuitton</a></li>
-                    </ul>
-                </div>
-                <!-- Email Signup Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">Sign up for Louis Vuitton emails</a></li>
-                        <li><a href="#" class="hover:underline">Follow Us</a></li>
-                    </ul>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0">
+                <img src="logo2.jpg" alt="Logo" class="h-16">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:underline">Home</a>
+                    <a href="#" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
                 </div>
             </div>
-            <div class="text-center mt-8">
-                <p>&copy; 2024 Echobinary. All rights reserved.</p>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-gray-400">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="#" class="hover:text-gray-400">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="#" class="hover:text-gray-400">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="#" class="hover:text-gray-400">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
             </div>
+        </div>
+
+        <div class="container mx-auto mt-8 border-t border-gray-800 pt-4 text-center container-limited">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
