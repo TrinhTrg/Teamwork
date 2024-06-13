@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Categories</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="flex">
+    <aside class="w-1/4 pr-4">
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="font-bold mb-2">All Categories</h2>
+            <ul id="category-list">
+                <li data-category="fiction">
+                    <a href="#" class="block py-1 text-green-600">Hư cấu</a>
+                    <ul class="subcategories hidden">
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Văn học hiện đại</a></li>
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Văn học kinh điển</a></li>
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Văn học thiếu nhi</a></li>
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Lãng mạn</a></li>
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Kỳ ảo</a></li>
+                        <li><a href="#" class="block py-1 text-gray-500 pl-4">Trinh thám - Kinh dị</a></li>
+                    </ul>
+                </li>
+                <li data-category="non-fiction"><a href="#" class="block py-1 text-black">Phi hư cấu</a></li>
+                <li data-category="children"><a href="#" class="block py-1 text-black">Thiếu Nhi</a></li>
+                <li data-category="other"><a href="#" class="block py-1 text-black">Phân loại khác</a></li>
+            </ul>
+        </div>
+
+        <div class="bg-white p-4 mt-4 rounded shadow">
+            <h2 class="font-bold mb-2">Giá</h2>
+            <ul>
+                <li><a href="#" class="block py-1 text-gray-500">0đ - 150,000đ</a></li>
+                <li><a href="#" class="block py-1 text-gray-500">150,000đ - 300,000đ</a></li>
+                <li><a href="#" class="block py-1 text-gray-500">300,000đ - 500,000đ</a></li>
+                <li><a href="#" class="block py-1 text-gray-500">500,000đ - 700,000đ</a></li>
+                <li><a href="#" class="block py-1 text-gray-500">700,000đ - Trở Lên</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="w-3/4">
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+                <div class="flex items-center">
+                    <span class="mr-2">Sắp xếp theo:</span>
+                    <select class="border rounded-md px-4 py-2 focus:ring-2  focus:border-transparent">
+                        <option value="">Mới nhất</option>
+                        <option value="">Bán chạy tuần</option>
+                        <option value="">Bán chạy tháng</option>
+                        <option value="">Bán chạy năm</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <span class="mr-2">Số lượng:</span>
+                    <select class="border rounded-md px-4 py-2 focus:ring-1  focus:border-transparent">
+                        <option value="">12 sản phẩm</option>
+                        <option value="">24 sản phẩm</option>
+                        <option value="">48 sản phẩm</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- Your content goes here -->
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('#category-list li').forEach(function(category) {
+            category.addEventListener('click', function() {
+                document.querySelectorAll('#category-list li').forEach(function(item) {
+                    if (item !== category) {
+                        item.classList.add('hidden');
+                        const subcategories = item.querySelector('.subcategories');
+                        if (subcategories) subcategories.classList.add('hidden');
+                    }
+                });
+                category.classList.remove('hidden');
+                const subcategories = category.querySelector('.subcategories');
+                if (subcategories) subcategories.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
