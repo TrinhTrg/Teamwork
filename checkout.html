@@ -14,8 +14,37 @@
         }
         .container {
             padding: 0 1.5rem;
+        }
         body {
-                padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
+            padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
+        }
+        /* Custom styles for the menu */
+        .menu {
+            display: none;
+            z-index: 1000; /* Ensure the menu is above other elements */
+        }
+        
+        .menu.active {
+            display: block;
+        }
+
+        .hidden-on-scroll {
+            transition: transform 0.3s ease;
+            z-index: 999; /* Ensure the header is above other elements, but below the menu */
+            }
+        
+        .hidden-on-scroll.hidden {
+            transform: translateY(-100%);
+            }
+        
+        .menu ul li {
+            z-index: 1001; /* Ensure list items are above everything */
+            }
+        
+        /* Hide menu items on small screens */
+        @media (max-width: 768px) {
+        .nav-items {
+            display: none;
             }
         }
     </style>
@@ -23,21 +52,72 @@
 
 <body class="bg-gray-100 font-mono ">
     
-    <body class="bg-gray-100 font-mono ">
-    
-        
+    <header class="bg-white py-2 mx-auto header fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <nav class="flex items-center w-full">
+                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+                <div class="nav-menu flex-grow" id="navMenu">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">HOMEPAGE</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">BOOKS</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">AUTHORS</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">CATEGORIES</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">ABOUT US</a></li>
+                        <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                    </ul>
+                </div>
+                <div class="search-bar flex items-center space-x-4 ml-4">
+                    <input type="text" placeholder="Enter ..." class="border border-gray-300 px-4 py-1 rounded-full focus:outline-none focus:ring focus:border-green-500">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full">Search</button>
+                </div>
+                <div class="flex items-center ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+                <div class="nav-menu-btn ml-4">
+                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar Menu -->
+        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50">
+            <div class="p-4">
+                <button id="closeButton" class="text-black focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main class="container mx-auto py-4 mt-16">
-
-
+    <main class="container mx-auto py-4 mt-6">
         <div class="grid lg:grid-cols-2 gap-8 py-8">
-
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <a href="/" class="text-blue-500 hover:text-blue-700">Keep Shopping</a>
+                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
                 <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
                 <div class="mt-4 space-y-4">
-
                     <!-- Product 1 -->
                     <div class="flex items-center border-b py-4">
                         <img src="images/1.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
@@ -52,7 +132,6 @@
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
                     </div>
-
                     <!-- Product 2 -->
                     <div class="flex items-center border-b py-4">
                         <img src="images/2.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
@@ -67,49 +146,39 @@
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
                     </div>
-
-                    <!-- More products can be added similarly -->
-
                 </div>
             </div>
-
             <!-- Right Side: Checkout Form -->
-            <div class="bg-purple-600 text-white p-8 rounded-lg shadow-md">
+            <div class="bg-white text-black p-8 rounded-lg shadow-md">
                 <h1 class="text-2xl font-bold">Checkout</h1>
-
-                <div class="grid grid-cols-2 gap-4 mt-6 border-b border-purple-400 pb-4">
+                <div class="grid grid-cols-2 gap-4 mt-6 border-b border-gray-700 pb-4">
                     <div class="col-span-2">
                         <label for="name" class="block text-sm font-medium">Full Name</label>
-                        <input type="text" name="name" id="name" class="w-full mt-2 p-2 rounded-lg bg-purple-700 border-none focus:ring-2 focus:ring-blue-500">
+                        <input type="text" name="name" id="name" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
                     </div>
-        
                     <div class="col-span-2">
                         <label for="phone" class="block text-sm font-medium">Phone Number</label>
-                        <input type="text" name="phone" id="phone" class="w-full mt-2 p-2 rounded-lg bg-purple-700 border-none focus:ring-2 focus:ring-blue-500">
+                        <input type="text" name="phone" id="phone" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
                     </div>
-        
                     <div class="col-span-2">
                         <label for="address" class="block text-sm font-medium">Address</label>
-                        <input type="text" name="address" id="address" class="w-full mt-2 p-2 rounded-lg bg-purple-700 border-none focus:ring-2 focus:ring-blue-500">
+                        <input type="text" name="address" id="address" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
                     </div>
-        
                     <div>
                         <label for="country" class="block text-sm font-medium">Country</label>
-                        <select name="country" id="country" class="w-full mt-2 p-2 rounded-lg bg-purple-700 border-none focus:ring-2 focus:ring-blue-500">
+                        <select name="country" id="country" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
                             <option value="">Choose..</option>
                             <option value="kingdom">Kingdom</option>
                         </select>
                     </div>
-        
                     <div>
                         <label for="city" class="block text-sm font-medium">City</label>
-                        <select name="city" id="city" class="w-full mt-2 p-2 rounded-lg bg-purple-700 border-none focus:ring-2 focus:ring-blue-500">
+                        <select name="city" id="city" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
                             <option value="">Choose..</option>
                             <option value="london">London</option>
                         </select>
                     </div>
                 </div>
-                
                 <div class="mt-6">
                     <div class="flex justify-between">
                         <div>Total Quantity</div>
@@ -120,13 +189,11 @@
                         <div class="font-semibold totalPrice">$215.00</div>
                     </div>
                 </div>
-                
-                <button class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">CHECKOUT</button>
+                <button class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">PAYMENT</button>
             </div>
         </div>
-    
+        
     </main>
-    
 
     <script>
         function decreaseQuantity(id) {
@@ -149,7 +216,6 @@
             var totalQuantity = 0;
             var totalPrice = 0;
             var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-
             products.forEach(product => {
                 var quantity = parseInt(product.querySelector('input').value);
                 var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
@@ -157,30 +223,81 @@
                 totalPrice += price * quantity;
                 product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
             });
-
             document.querySelector('.totalQuantity').textContent = totalQuantity;
             document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
         }
 
         window.onload = updateTotal;
 
-
-        
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
     </script>
     <script type="module" src="/src/scripts/application.js"></script>
+    <!-- footer.html -->
+<footer class="bg-white text-gray-800 py-8">
+    <div class="container mx-auto px-4" style="min-width: 800px;">
+        <div class="flex justify-between items-start">
+            <!-- Logo Section -->
+            <div class="flex items-center">
+                <img src="./logo2.jpg" alt="Logo" class="h-16 mr-4">
+            </div>
+            <!-- Help Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">HELP</h3>
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
+                </ul>
+            </div>
+            <!-- Services Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">SERVICES</h3>
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
+                </ul>
+            </div>
+            <!-- About Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
+                
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
+                </ul>
+            </div>
+            
+            <!-- Email Signup Section -->
+            <div class="flex-1">
 
-    <script>
-   
-        function myMenuFunction() {
-         var i = document.getElementById("navMenu");
-         if(i.className === "nav-menu") {
-             i.className += " responsive";
-         } else {
-             i.className = "nav-menu";
-         }
-        }
-      
-     </script>
+                <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
+
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2024 Echobinary. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 
 </body>
 </html>

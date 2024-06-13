@@ -3,20 +3,19 @@
   "type": "module",
   "version": "1.0.0",
   "description": "- bao gồm 7 trang: trang chủ, sách, detail, card, about us, log in, thanks\r - các trang lẻ nhỏ popup: popup card, popup login\r ---------------------------------------------------------\r - (NHI)\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/97be3c58-4181-40a6-866d-0bf54808cec2)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/484753df-5c46-497d-a6ca-8b9194a6753c)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/c5a39804-8981-4a69-b824-9193664e2485)\r - ...\r - (CƯỜNG)\r - ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/070d1d22-63ff-4c98-9fbd-e7de18e4d862)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/47ff6ebb-78f2-4f3b-b2f9-2d05167d013f)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/f358e9e2-ec4a-46fa-906c-9b8838808b7d)\r - ...\r (TRINH)\r - ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/9c2fb60d-b1ae-4ab3-8694-58de6bceb83f)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/488fba6c-39a0-4e68-9192-c1524d9c9fd5)\r - ...\r ![image](https://github.com/TrinhTrg/Teamwork/assets/133855300/cb257936-276d-4418-90c7-575c747cb664)\r - ...\r - (HUY)\r - ...\r CODE ĐỘNG 2 TRANG DETAIL VÀ HOMEPAGE, CHUYỂN TRANG + LINK",
-  "main": "index.js",
+  "main": "homepage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "vite": "^5.2.12"
   }
 }
