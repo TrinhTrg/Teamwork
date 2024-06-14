@@ -27,6 +27,7 @@ body {
 }
 
 ::-webkit-scrollbar {
+  display: none ;
   width: 1.3rem;
 }
 
@@ -43,6 +44,7 @@ body {
 ::-webkit-scrollbar-track {
   background: #f9f9f9;
 }
+
 
 /* Responsive Zoom Levels */
 @media (min-width: 1440px) {
@@ -65,7 +67,7 @@ body {
 
 /* Utility Classes */
 .container {
-  height: 100%;
+  /* height: 100%; */
   max-width: 124rem;
   padding: 0 1rem;
   margin: 0 auto;

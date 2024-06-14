@@ -6,6 +6,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        /* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
+        @media (max-width: 780px) {
+
+            /* Đảm bảo rằng body có kích thước tối thiểu là 780px */
+            body {
+                min-width: 780px;
+                /* Ẩn thanh cuộn ngang nếu trình duyệt cố gắng thu nhỏ */
+                overflow-x: hidden;
+            }
+        }
+
+
+        /* General carousel styles */
+        .carousel-inner img {
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+        }
+        .carousel {
+            width: 100%;
+            height: 600px;
+        }
+
+        .dropdown-menu {
+            display: none;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .navbar-link {
+            padding: 0 15px;
+        }
+
+        .navbar-link:hover {
+            color: #00dc64 !important;
+            text-decoration: none;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            justify-content: space-around;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            width: 500px;
+            height: auto;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 0.25rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+        }
+
+        .dropdown-menu .list-item {
+            width: 25%;
+            float: left;
+            padding: 0 15px;
+        }
+
+        .dropdown-menu .list-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .dropdown-menu .title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .dropdown-menu ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .dropdown-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-menu ul li a {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .dropdown-menu ul li a:hover {
+            color: #00dc64;
+        }
+
+        /* Show the menu on hover */
+        .menu-item-has-children:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Clearfix */
+        .dropdown-menu::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .button {
+            background-color: #ffffff;
+            /* Màu nền trắng */
+            color: #000000;
+            /* Màu chữ đen */
+            border: 1px solid #000000;
+            /* Viền đen */
+            transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+            /* Hiệu ứng chuyển đổi */
+
+            /* Thêm padding và border-radius */
+            padding: 8px 20px;
+            border-radius: 9999px;
+            /* Đảm bảo góc cong đầy đủ */
+            /* Ẩn vùng chọn khi được focus */
+            /* outline: none; */
+        }
+
+        /* Hover state */
+        .button:hover {
+            background-image: linear-gradient(to right, #FCFF, #b48def);
+            /* Gradient màu */
+            color: #fff;
+            /* Màu chữ trắng */
+        }
+
+        /* Khi nút được click */
+        .button:active,
+        /* Khi nút được focus */
+        .button:focus {
+            /* border-color: transparent; Đặt màu viền thành trong suốt */
+            outline: none;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 
 <body>
@@ -80,7 +238,7 @@
     <section class="scroll s-one" data-section-name="s-one">
             <main class="container mx-auto py-6">
                 <!-- Tim kiem -->
-                <section id="carouselExampleIndicators" class="carousel slide mb-6" data-ride="carousel" data-interval="3000">
+                <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -329,11 +487,11 @@
                     </div>
     
                     <div class="trending-slider-control">
-                        <div class="swiper-button-prev slider-arrow">
+                        <!-- <div class="swiper-button-prev slider-arrow">
                             <ion-icon name="arrow-back-outline"></ion-icon>
                         </div>
                         <div class="swiper-button-next slider-arrow">
-                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                            <ion-icon name="arrow-forward-outline"></ion-icon> -->
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -446,6 +604,107 @@
             </section>
     </section>
 
+    <section>
+        <div class="slider-list">
+            <div class="header-title">
+                Đặc sắc
+            </div>
+            <div class="photo-slider">
+                <div class="slider-content">
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-content">
+                            <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                            <div class="photo-description">
+                                <div>Image Name</div>
+                                <button>more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         <!-- </div> -->
         <!-- <section class="books mb-6">
             <div class="container mx-auto flex justify-between items-center mb-4">
@@ -504,7 +763,7 @@
             </div>
         </section> -->
 
-        <section class="scholarary mb-6">
+        <!-- <section class="scholarary mb-6">
             <div class="container mx-auto">
                 <img src="path/to/scholar.jpg" alt="Scholar" class="h-64 w-full object-cover rounded-md">
                 <p class="text-center mt-2">Scholarary: Content about scholars and authors</p>
@@ -522,7 +781,7 @@
                 </div>
             </div>
         </section> 
-    </main>
+    </main> -->
 
     <footer class="bg-gray-200 py-4">
         <div class="container mx-auto text-center">
@@ -532,7 +791,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/scripts.js"></script>
+    <script src="./js/slider.2.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const dropdownToggle = document.querySelector('.dropdown-toggle');
