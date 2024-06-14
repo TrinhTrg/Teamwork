@@ -1,6 +1,6 @@
 Creating a website for selling books involves several key tasks that need to be assigned to ensure efficient and effective development. Here's a breakdown of tasks for the 4 team members:
 
-### Nhi: Front-End Developer
+### Trinh: Front-End Developer
 - **Homepage**
   - Design and layout of the homepage
   - Implement navigation to other pages
@@ -13,7 +13,7 @@ Creating a website for selling books involves several key tasks that need to be 
   - Implement functionality to add/remove books
   - Display the total price and quantity of items in the cart
 
-### Trinh: Back-End Developer
+### Nhi: Back-End Developer
 - **Database Design**
   - Set up the database structure (tables for users, books, orders, etc.)
   - Ensure relationships between tables are properly defined
