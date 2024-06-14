@@ -13,7 +13,7 @@ Creating a website for selling books involves several key tasks that need to be 
   - Implement functionality to add/remove books
   - Display the total price and quantity of items in the cart
 
-### Nhi: Back-End Developer
+### Huy: Back-End Developer
 - **Database Design**
   - Set up the database structure (tables for users, books, orders, etc.)
   - Ensure relationships between tables are properly defined
@@ -38,7 +38,7 @@ Creating a website for selling books involves several key tasks that need to be 
   - Implement functionality to update user details
   - Fetch and display past orders from the database
 
-### Huy: Front-End Developer & UX/UI Designer
+### Nhi: Front-End Developer & UX/UI Designer
 - **About Us Page**
   - Design and layout of the About Us page
   - Include company history, mission, team members, and contact information
