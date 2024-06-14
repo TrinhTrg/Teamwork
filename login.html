@@ -5,53 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="css/login.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-box {
+      backdrop-filter: blur(15px);
+      width: 500px; /* Giảm chiều rộng */
+    }
+    .inputbox label {
+      top: 1.25rem;
+    }
+    .inputbox input:focus + label,
+    .inputbox input:valid + label {
+      top: -0.5rem;
+      font-size: 0.875rem;
+    }
+  </style>
 </head>
-<body>
-  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-    <div class="text-center mb-8">
-      <img src="images/logo.png" alt="Logo" class="mx-auto h-20 w-20">
-    </div>
-    <div class="mb-6 space-y-3">
-      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Logo" class="h-6 w-6 mr-2">
-        Continue with Google
-      </button>
-      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/612px-Apple_logo_black.svg.png" alt="Apple Logo" class="h-6 w-6 mr-2">
-        Continue with Apple
-      </button>
-      <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="h-6 w-6 mr-2">
-        Continue with Facebook
-      </button>
-    </div>
-    <div class="flex items-center justify-between mb-4">
-      <hr class="w-full border-gray-300">
-      <span class="px-4 text-gray-500">OR</span>
-      <hr class="w-full border-gray-300">
-    </div>
-    <form>
-      <div class="mb-4">
-        <input type="text" placeholder="Username or email" class="input-field">
+<body class="flex items-center justify-center min-h-screen bg-cover bg-center" style="background-image: url('/resource/bg_login_register.jpg');">
+  <section>
+    <div class="form-box bg-white bg-opacity-10 border-2 border-white border-opacity-50 rounded-2xl p-8">
+      <div class="form-value">
+        <form action="">
+          <h2 class="text-2xl text-center text-white mb-8">Login</h2>
+          <div class="inputbox relative mb-6">
+            <input type="email" required class="peer w-full h-12 bg-transparent border-b-2 border-white text-white placeholder-transparent focus:outline-none">
+            <label class="absolute left-0 text-white transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm">Email</label>
+            <ion-icon name="mail-outline" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-xl"></ion-icon>
+          </div>
+          <div class="inputbox relative mb-6">
+            <input type="password" required class="peer w-full h-12 bg-transparent border-b-2 border-white text-white placeholder-transparent focus:outline-none">
+            <label class="absolute left-0 text-white transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm">Password</label>
+            <ion-icon name="lock-closed-outline" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-xl"></ion-icon>
+          </div>
+          <div class="forget flex justify-between text-white text-sm mb-6">
+            <label><input type="checkbox" class="mr-2">Remember Me</label>
+            <a href="#" class="hover:underline">Forget Password</a>
+          </div>
+          <button class="w-full h-12 rounded-full bg-white text-gray-800 font-semibold">Log in</button>
+          <div class="register text-center text-white text-sm mt-6">
+            <p>Don't have an account? <a href="register.html" class="font-semibold hover:underline">Register</a></p>
+          </div>
+        </form>
       </div>
-      <div class="mb-4">
-        <div class="flex justify-between items-center">
-          <input type="password" placeholder="Password" class="input-field">
-          <!-- <a href="#" class="text-sm text-green-500 ml-2">Forgot</a> -->
-        </div>
-      </div>
-      <div class="flex items-center justify-between mb-4">
-        <label class="inline-flex items-center">
-          <input type="checkbox" class="form-checkbox text-green-500">
-          <span class="ml-2 text-gray-700">Remind me</span>
-        </label>
-      </div>
-      <button type="submit" class="w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Sign In</button>
-    </form>
-    <div class="text-center mt-4">
-      <p class="text-gray-700">no account? <a href="register.html" class="text-green-500">Create an Account here</a></p>
     </div>
-  </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
