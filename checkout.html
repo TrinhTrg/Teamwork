@@ -57,6 +57,15 @@
             display: none;
             }
         }
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .search-input {
+            transition: width 0.3s ease;
+        }
     </style>
 </head>
 
@@ -65,20 +74,25 @@
     <header class="bg-white py-2 mx-auto header fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto flex justify-between items-center h-16">
             <nav class="flex items-center w-full">
-                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
                 <div class="nav-menu flex-grow" id="navMenu">
-                    <ul class="flex space-x-4">
-                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">HOMEPAGE</a></li>
-                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">BOOKS</a></li>
-                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">AUTHORS</a></li>
-                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">CATEGORIES</a></li>
-                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">ABOUT US</a></li>
+                    <ul class="flex space-x-2 ">
+                        <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4 " /></a>
+                        <ul class="flex space-x-2 mt-2"></ul>
+                        <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                        <li><a href="#" class="p-4">BOOKS</a></li>
+                        <li><a href="#" class="p-4">AUTHORS</a></li>
+                        <li><a href="#" class="p-4">CATEGORIES</a></li>
+                        <li><a href="#" class="p-4">ABOUT US</a></li>
                         <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
                     </ul>
+                    </ul>
                 </div>
-                <div class="search-bar flex items-center space-x-4 ml-4">
-                    <input type="text" placeholder="Enter ..." class="border border-gray-300 px-4 py-1 rounded-full focus:outline-none focus:ring focus:border-green-500">
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full">Search</button>
+                <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input lg:block hidden">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
                 <div class="flex items-center ml-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
@@ -125,7 +139,7 @@
         <div class="grid lg:grid-cols-2 gap-8 py-8">
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
+                <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
                 <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
                 <div class="mt-4 space-y-4">
                     <!-- Product 1 -->
