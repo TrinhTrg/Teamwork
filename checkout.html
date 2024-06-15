@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +67,12 @@
         .search-input {
             transition: width 0.3s ease;
         }
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -74,17 +81,15 @@
     <header class="bg-white py-2 mx-auto header fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto flex justify-between items-center h-16">
             <nav class="flex items-center w-full">
+                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
                 <div class="nav-menu flex-grow" id="navMenu">
-                    <ul class="flex space-x-2 ">
-                        <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4 " /></a>
-                        <ul class="flex space-x-2 mt-2"></ul>
-                        <li><a href="#" class="p-4">HOMEPAGE</a></li>
-                        <li><a href="#" class="p-4">BOOKS</a></li>
-                        <li><a href="#" class="p-4">AUTHORS</a></li>
-                        <li><a href="#" class="p-4">CATEGORIES</a></li>
-                        <li><a href="#" class="p-4">ABOUT US</a></li>
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">HOMEPAGE</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">BOOKS</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">AUTHORS</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">CATEGORIES</a></li>
+                        <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">ABOUT US</a></li>
                         <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
-                    </ul>
                     </ul>
                 </div>
                 <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
@@ -108,6 +113,7 @@
             </nav>
         </div>
         <!-- Sidebar Menu -->
+        <script>
         <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50">
             <div class="p-4">
                 <button id="closeButton" class="text-black focus:outline-none">
@@ -133,13 +139,15 @@
                 </ul>
             </nav>
         </div>
+    </script>
+
     </header>
 
     <main class="container mx-auto py-4 mt-6">
         <div class="grid lg:grid-cols-2 gap-8 py-8">
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
+                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
                 <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
                 <div class="mt-4 space-y-4">
                     <!-- Product 1 -->
@@ -306,7 +314,6 @@
                 </ul>
             </div>
             <!-- Email Signup Section -->
-             
             <div class="flex-1">
                 <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
                 <ul>
@@ -315,7 +322,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="text-center mt-8">
             <p>&copy; 2024 Echobinary. All rights reserved.</p>
         </div>
