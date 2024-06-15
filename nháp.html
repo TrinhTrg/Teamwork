@@ -1,614 +1,247 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>Book Detail Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-login {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-login input {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+
+        .book-detail {
+            display: flex;
+        }
+
+        .book-images {
+            margin-right: 20px;
+        }
+
+        .book-images img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .book-info {
+            max-width: 500px;
+        }
+
+        .book-info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .book-info .price {
+            font-size: 20px;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .quantity input {
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .add-to-cart, .buy-now {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .book-description, .book-details, .related-products, .recommended-products {
+            margin-top: 40px;
+        }
+
+        .related-products, .recommended-products {
+            overflow: hidden;
+        }
+
+        .product-carousel {
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .product-card {
+            min-width: 150px;
+            margin-right: 15px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .social-media a {
+            margin-right: 10px;
+        }
+
+        .social-media img {
+            width: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <header class="bg-white py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16" /></a>
-            </div>
-            <nav class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Trang chủ</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Tác giả</a>
-                <div class="relative menu-item-has-children dropdown">
-                    <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link dropdown-toggle">Thể
-                        loại </a>
-                    <div class="sub-menu mega-menu mega-menu-column-4 dropdown-menu">
-                        <div class="list-item">
-                            <h4 class="title">Hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Văn học hiện đại</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phi hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Triết học</a></li>
-                                <li><a href="#">Sử học</a></li>
-                                <li><a href="#">Khoa học</a></li>
-                                <li><a href="#">Kinh doanh</a></li>
-                                <li><a href="#">Kinh tế chính trị</a></li>
-                                <li><a href="#">Kỹ năng</a></li>
-                                <li><a href="#">Nghệ thuật</a></li>
-                                <li><a href="#">Nuôi dạy con</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Thiếu nhi</h4>
-                            <ul>
-                                <li><a href="#">0-5 tuổi</a></li>
-                                <li><a href="#">6-8 tuổi</a></li>
-                                <li><a href="#">9-12 tuổi</a></li>
-                                <li><a href="#">13-15 tuổi</a></li>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phân loại khác</h4>
-                            <ul>
-                                <li><a href="#">Sách bán chạy</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
-            </nav>
-
-            <button class="button" style="font-size: 12px;">Sign Up</button>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <a href="#">Homepage</a>
+            <a href="#">Sách</a>
+            <a href="#">Tác giả</a>
+            <a href="#">Về chúng tôi</a>
+        </nav>
+        <div class="search-login">
+            <input type="text" placeholder="Tìm kiếm">
+            <button>Tìm kiếm</button>
+            <button>Đăng nhập</button>
         </div>
     </header>
-
-    <section class="scroll s-one" data-section-name="s-one">
-            <main class="container mx-auto py-6">
-                <!-- Tim kiem -->
-                <section id="carouselExampleIndicators" class="carousel slide mb-6" data-ride="carousel" data-interval="3000">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="./img/crs1.img" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./img/crs2.webp" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Fourth slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Fifth slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </section>
-    </section>
-
-    <section class="scroll s-two" data-section-name="s-two"> 
-        <section id="trending">
-            <div class="container">
-                <h3 class="text-center section-subheading">- Popular Books -</h3>
-                <h1 class="text-center section-heading">Trending Books</h1>
+    <main>
+        <div class="breadcrumb">
+            <a href="#">Trang chủ</a> &gt; <a href="#">Sách</a> &gt; <span>Thông tin chi tiết</span>
+        </div>
+        <section class="book-detail">
+            <div class="book-images">
+                <img src="path/to/book-cover.jpg" alt="Book Cover" class="main-image">
+                <img src="path/to/book-back.jpg" alt="Book Back" class="sub-image">
             </div>
-            <div class="container">
-                <div class="swiper trending-slider">
-                    <button class=" icon-left">
-    
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button class=" icon-right">
-    
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                    <div class="swiper-wrapper">
-                        <!-- Slide-start -->
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <div class="trending-slide-heading">
-    
-                                    <h1 class="book-price">$20</h1>
-                                </div>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide-end -->
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/bongdembatxichmon01e1717383369.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$25</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 2
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 2
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.7</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Additional slides can be added similarly -->
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/conthonguyenrua011e17173832478.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$20</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/dinhluatmurphy01e1716776653238.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$20</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/hondonvakhuvuon01e171766606841.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$20</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/ketinhnghihoanmy01e17163433481.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$20</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="swiper-slide trending-slide">
-                            <div class="trending-slide-img">
-                                <img src="./img/vaitientruongan01e171677668510.jpg" alt="Book">
-                            </div>
-                            <div class="trending-slide-content">
-                                <h1 class="book-price">$20</h1>
-                                <div class="trending-slide-content-bottom">
-                                    <h2 class="book-title">
-                                        Book Title 1
-                                    </h2>
-                                    <h3 class="book-author">
-                                        Author 1
-                                    </h3>
-                                    <h3 class="book-rating">
-                                        <span>4.5</span>
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star"></ion-icon>
-                                            <ion-icon name="star-outline"></ion-icon>
-                                        </div>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="trending-slider-control">
-                        <div class="swiper-button-prev slider-arrow">
-                            <ion-icon name="arrow-back-outline"></ion-icon>
-                        </div>
-                        <div class="swiper-button-next slider-arrow">
-                            <ion-icon name="arrow-forward-outline"></ion-icon>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+            <div class="book-info">
+                <h1>Atomic Habits - Thay Đổi Tí Hon Hiệu Quả Bất Ngờ (Tái Bản 2023)</h1>
+                <p class="price">100.000 đ</p>
+                <p>Tác giả: ĐÀO DUY ANH</p>
+                <div class="quantity">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" value="1" min="1">
                 </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                <button class="buy-now">Mua ngay</button>
+                <p class="shipping-info">Dự kiến giao hàng: Thứ năm - 08/06</p>
+                <p class="return-info">Chính sách đổi trả trong 30 ngày</p>
             </div>
         </section>
-    
-        <div>
-            <section>
-                <div class="slider-list">
-                    <div class="header-title">
-                        Collection Photo
-                    </div>
-                    <div class="photo-slider">
-    
-                        <div class="slider-content">
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                        <button>more</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="book-description">
+            <h2>Giới thiệu sách</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        </section>
+        <section class="book-details">
+            <h2>Thông tin chi tiết</h2>
+            <p>Tác giả: Trần Công Quốc Huy</p>
+            <p>Ngày xuất bản: 30/5/2000</p>
+            <p>Nhà xuất bản: NXB Trẻ</p>
+            <p>Ngôn ngữ: Tiếng Việt</p>
+            <p>Số trang: 300 trang</p>
+        </section>
+        <section class="related-products">
+            <h2>Sản phẩm liên quan</h2>
+            <div class="product-carousel">
+                <div class="product-card">
+                    <img src="path/to/related-product.jpg" alt="Related Product">
+                    <p>Book Title</p>
+                    <p>Author: Lorem</p>
+                    <p>50.000vnđ</p>
                 </div>
-            </section>
-    </section>
-
-        <!-- </div> -->
-        <!-- <section class="books mb-6">
-            <div class="container mx-auto flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-semibold">Sách</h2>
-                <a href="#" class="text-blue-500">Xem tất cả</a>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book4.jpg" alt="Book 4" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book5.jpg" alt="Book 5" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book6.jpg" alt="Book 6" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book7.jpg" alt="Book 7" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-            </div>
-        </section> -->
-        <!-- <section class="new-and-trending mb-6">
-            <div class="container mx-auto flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-semibold">Sách mới và xu hướng</h2>
-                <a href="#" class="text-blue-500">Xem tất cả</a>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book8.jpg" alt="Book 8" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book9.jpg" alt="Book 9" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book10.jpg" alt="Book 10" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md">
-                    <img src="path/to/book11.jpg" alt="Book 11" class="h-40 w-full object-cover mb-2 rounded-md">
-                    <h3 class="text-lg font-semibold mb-2">Title</h3>
-                    <p>Content</p>
-                </div>
-            </div>
-        </section> -->
-
-        <section class="scholarary mb-6">
-            <div class="container mx-auto">
-                <img src="path/to/scholar.jpg" alt="Scholar" class="h-64 w-full object-cover rounded-md">
-                <p class="text-center mt-2">Scholarary: Content about scholars and authors</p>
+                <!-- Repeat similar product cards as needed -->
             </div>
         </section>
-
-        <section class="authors">
-            <div class="container mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Đặc sắc</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="path/to/author1.jpg" alt="Author 1" class="h-32 w-full object-cover rounded-md">
-                    <img src="path/to/author2.jpg" alt="Author 2" class="h-32 w-full object-cover rounded-md">
-                    <img src="path/to/author3.jpg" alt="Author 3" class="h-32 w-full object-cover rounded-md">
-                    <img src="path/to/author4.jpg" alt="Author 4" class="h-32 w-full object-cover rounded-md">
+        <section class="recommended-products">
+            <h2>Recommended</h2>
+            <div class="product-carousel">
+                <div class="product-card">
+                    <img src="path/to/recommended-product.jpg" alt="Recommended Product">
+                    <p>Book Title</p>
+                    <p>Author: Lorem</p>
+                    <p>50.000vnđ</p>
                 </div>
+                <!-- Repeat similar product cards as needed -->
             </div>
-        </section> 
+        </section>
     </main>
-
-    <footer class="bg-gray-200 py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Bookstore. All rights reserved.</p>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Logo</div>
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Feedback</a>
+                <a href="#">Help</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Advertise</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="social-media">
+                <a href="#"><img src="path/to/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/youtube-icon.png" alt="YouTube"></a>
+                <a href="#"><img src="path/to/email-icon.png" alt="Email"></a>
+            </div>
         </div>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/scripts.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggle = document.querySelector('.dropdown-toggle');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-
-            dropdownToggle.addEventListener('click', function (event) {
-                event.preventDefault();
-                dropdownMenu.classList.toggle('show');
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!event.target.closest('.dropdown')) {
-                    dropdownMenu.classList.remove('show');
-                }
-            });
-        });
-    </script>
-    		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
-                integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
-                crossorigin="anonymous"
-                referrerpolicy="no-referrer"
-            ></script>
-            <script>
-                $(document).ready(function () {
-                    screenCheck();
-    
-                    $('.scroll-control .one').click(function () {
-                        $.scrollify.move('#s-one');
-                    });
-                    $('.scroll-control .two').click(function () {
-                        $.scrollify.move('#s-two');
-                    });
-                    $('.scroll-control .three').click(function () {
-                        $.scrollify.move('#s-three');
-                    });
-                });
-    
-                $(window).on('resize', function () {
-                    screenCheck();
-                });
-    
-                function applyScroll() {
-                    $.scrollify({
-                        section: '.scroll',
-                        sectionName: 'section-name',
-                        standardScrollElements: 'section',
-                        easing: 'easeOutExpo',
-                        scrollSpeed: 1100,
-                        offset: 0,
-                        scrollbars: true,
-                        setHeights: true,
-                        overflowScroll: true,
-                        updateHash: false,
-                        touchScroll: true,
-                    });
-                }
-    
-                function screenCheck() {
-                    var deviceAgent = navigator.userAgent.toLowerCase();
-                    var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
-                    if (agentID || $(window).width() <= 1024) {
-                        // its mobile screen
-                        $.scrollify.destroy();
-                        $('section').removeClass('scroll').removeAttr('style');
-                        $.scrollify.disable();
-                    } else {
-                        // its desktop
-                        $('section').addClass('scroll');
-                        applyScroll();
-                        $.scrollify.enable();
-                    }
-                }
-            </script>
+    <script src="script.js"></script>
 </body>
 </html>

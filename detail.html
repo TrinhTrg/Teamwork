@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const quantityInput = document.getElementById("quantity");
+            const priceElement = document.getElementById("price");
+            const unitPrice = 100000;
+
+            function updatePrice() {
+                const quantity = parseInt(quantityInput.value);
+                priceElement.textContent = (unitPrice * quantity).toLocaleString('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                });
+            }
+
+            document.getElementById("increment").addEventListener("click", function () {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updatePrice();
+            });
+
+            document.getElementById("decrease").addEventListener("click", function () {
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                    updatePrice();
+                }
+            });
+
+            quantityInput.addEventListener("input", function () {
+                if (parseInt(quantityInput.value) < 1) {
+                    quantityInput.value = 1;
+                }
+                updatePrice();
+            });
+        });
+    </script>
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -23,28 +57,43 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Content -->
     <main class="container mx-auto p-8">
         <div class="grid grid-cols-2 gap-8">
-            <!-- Book Image and Info -->
+            
             <div>
-                <div class="bg-gray-200 h-80 w-full mb-4"></div>
+                <div class="max-w-lg">
+                    <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Books">
+                </div>
                 <div class="flex space-x-4">
-                    <div class="bg-gray-200 h-24 w-24"></div>
-                    <div class="bg-gray-200 h-24 w-24"></div>
+                    <div class="h-24 w-24">
+                        <img src="" alt="books">
+                    </div>
+                    <div class="h-24 w-24">
+                        <img src="" alt="books">
+                    </div>
                 </div>
             </div>
 
-            <!-- Book Details -->
+            <!-- Details -->
             <div>
-                <h1 class="text-2xl font-bold mb-4">Atomic Habits - Thay Đổi Tí Hon Hiệu Quả Bất Ngờ (Tái Bản 2023)</h1>
-                <div class="text-3xl text-green-500 font-bold mb-4">100.000 đ</div>
+                <h1 class="text-2xl font-bold mb-4">When Breath Become Air Ngờ (Tái Bản 2023)</h1>
+                <div id="price" class="text-3xl text-green-500 font-bold mb-4">100.000 đ</div>
                 <div class="text-gray-600 mb-4">Tác giả: ĐÀO DUY ANH</div>
-                <div class="flex items-center space-x-4 mb-4">
-                    <input type="number" class="border p-2 w-16" value="1">
-                    <button class="bg-green-500 text-white px-4 py-2 rounded-md">Thêm vào giỏ hàng</button>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Mua ngay</button>
+                <div class="container flex flex-wrap items-center justify-center gap-4 mb-4">
+                    <div class="flex flex-wrap items-center border border-gray-300 rounded-md overflow-hidden mb-4 md:w-auto">
+                        <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="decrease">-</button>
+                        <input id="quantity" type="number" value="1" min="1" max="99" class="bg-gray-100 text-xl border-gray-300 focus:outline-none text-center" style="width: 4rem; height: 2.5rem;">
+                        <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="increment">+</button>
+                    </div>
+                    <button class="text-white bg-red-500 rounded-lg hover:bg-red-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                        Add to cart
+                    </button>
+                    <button class="text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                       Buy now
+                    </button>
                 </div>
+                
                 <p class="text-gray-600 mb-8">
                     Giao hàng toàn quốc (Dự kiến giao hàng từ 3-5 ngày)
                 </p>
