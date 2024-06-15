@@ -45,6 +45,150 @@ body {
   background: #f9f9f9;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
+@media (max-width: 780px) {
+
+    /* Đảm bảo rằng body có kích thước tối thiểu là 780px */
+    body {
+        min-width: 780px;
+        /* Ẩn thanh cuộn ngang nếu trình duyệt cố gắng thu nhỏ */
+        overflow-x: hidden;
+    }
+}
+
+
+/* General carousel styles */
+.carousel-inner img {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+}
+.carousel {
+    width: 100%;
+    height: 600px;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.navbar-link {
+    padding: 0 15px;
+}
+
+.navbar-link:hover {
+    color: #00dc64 !important;
+    text-decoration: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    justify-content: space-around;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 500px;
+    height: auto;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-menu .list-item {
+    width: 25%;
+    float: left;
+    padding: 0 15px;
+}
+
+.dropdown-menu .list-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.dropdown-menu .title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.dropdown-menu ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.dropdown-menu ul li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu ul li a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.dropdown-menu ul li a:hover {
+    color: #00dc64;
+}
+
+/* Show the menu on hover */
+.menu-item-has-children:hover .dropdown-menu {
+    display: block;
+}
+
+/* Clearfix */
+.dropdown-menu::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button {
+    background-color: #ffffff;
+    /* Màu nền trắng */
+    color: #000000;
+    /* Màu chữ đen */
+    border: 1px solid #000000;
+    /* Viền đen */
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+    /* Hiệu ứng chuyển đổi */
+
+    /* Thêm padding và border-radius */
+    padding: 8px 20px;
+    border-radius: 9999px;
+    /* Đảm bảo góc cong đầy đủ */
+    /* Ẩn vùng chọn khi được focus */
+    /* outline: none; */
+}
+
+/* Hover state */
+.button:hover {
+    background-image: linear-gradient(to right, #FCFF, #b48def);
+    /* Gradient màu */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+/* Khi nút được click */
+.button:active,
+/* Khi nút được focus */
+.button:focus {
+    /* border-color: transparent; Đặt màu viền thành trong suốt */
+    outline: none;
+    opacity: 0.5;
+}
 
 /* Responsive Zoom Levels */
 @media (min-width: 1440px) {
@@ -115,6 +259,7 @@ body {
 
 /* Trending Section */
 #trending {
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 4rem 0;
 }
 
@@ -349,7 +494,7 @@ body {
 .header-title {
   font-size: 45px;
   padding: 20px 0;
-  color: #333;
+  color: #fff;
   text-shadow: 0 0 10px #333;
   font-weight: 500;
   /* font-size: large; */
@@ -359,6 +504,9 @@ body {
   border-radius: 20px;
   border: none;
   font-family: system-ui;
+  font-size: small;
+  text-decoration: none;
+  /* padding-left: 10px; */
 }
 
 .slider-content .photo-item {

@@ -19,149 +19,86 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
 		/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        /* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
-        @media (max-width: 780px) {
-
-            /* Đảm bảo rằng body có kích thước tối thiểu là 780px */
-            body {
-                min-width: 780px;
-                /* Ẩn thanh cuộn ngang nếu trình duyệt cố gắng thu nhỏ */
-                overflow-x: hidden;
-            }
+        .container-limited {
+            max-width: 1200px;
+            min-width: 300px;
+            margin: auto;
         }
 
-
-        /* General carousel styles */
-        .carousel-inner img {
+        .image-rectangle {
             width: 100%;
-            height: 600px;
-            object-fit: contain;
+            max-width: 500px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
         }
-        .carousel {
+
+        .image-rectangle:hover {
+            transform: scale(1.05);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: 'Georgia', serif;
+            color: #2d3748;
+        }
+
+        .section-subtitle {
+            font-family: 'Arial', sans-serif;
+            color: #4a5568;
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member img {
             width: 100%;
-            height: 600px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        .dropdown-menu {
-            display: none;
+        .team-member:hover img {
+            transform: scale(1.05);
         }
 
-        .dropdown-menu.show {
-            display: block;
-        }
-
-        .navbar-link {
-            padding: 0 15px;
-        }
-
-        .navbar-link:hover {
-            color: #00dc64 !important;
-            text-decoration: none;
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            display: none;
+        .team-member-info {
             position: absolute;
-            justify-content: space-around;
-            top: 100%;
+            top: 0;
             left: 0;
-            z-index: 1000;
-            width: 500px;
-            height: auto;
-            margin: 0.5rem 0;
-            padding: 1rem;
-            background-color: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 0.25rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
         }
 
-        .dropdown-menu .list-item {
-            width: 25%;
-            float: left;
-            padding: 0 15px;
+        .team-member:hover .team-member-info {
+            opacity: 1;
         }
-
-        .dropdown-menu .list-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .dropdown-menu .title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #000;
-        }
-
-        .dropdown-menu ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .dropdown-menu ul li {
-            margin-bottom: 10px;
-        }
-
-        .dropdown-menu ul li a {
-            color: #000;
+        .nul{
             text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-
-        .dropdown-menu ul li a:hover {
-            color: #00dc64;
-        }
-
-        /* Show the menu on hover */
-        .menu-item-has-children:hover .dropdown-menu {
-            display: block;
-        }
-
-        /* Clearfix */
-        .dropdown-menu::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .button {
-            background-color: #ffffff;
-            /* Màu nền trắng */
-            color: #000000;
-            /* Màu chữ đen */
-            border: 1px solid #000000;
-            /* Viền đen */
-            transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-            /* Hiệu ứng chuyển đổi */
-
-            /* Thêm padding và border-radius */
-            padding: 8px 20px;
-            border-radius: 9999px;
-            /* Đảm bảo góc cong đầy đủ */
-            /* Ẩn vùng chọn khi được focus */
-            /* outline: none; */
-        }
-
-        /* Hover state */
-        .button:hover {
-            background-image: linear-gradient(to right, #FCFF, #b48def);
-            /* Gradient màu */
-            color: #fff;
-            /* Màu chữ trắng */
-        }
-
-        /* Khi nút được click */
-        .button:active,
-        /* Khi nút được focus */
-        .button:focus {
-            /* border-color: transparent; Đặt màu viền thành trong suốt */
-            outline: none;
-            opacity: 0.5;
         }
     </style>
 </head>
@@ -170,6 +107,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <header class="bg-white py-4">
         <div class="container mx-auto flex justify-between items-center">
             <div>
@@ -177,8 +115,8 @@
             </div>
             <nav class="flex space-x-4">
                 <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Trang chủ</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Tác giả</a>
+                <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
+                <!-- <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Tác giả</a> -->
                 <div class="relative menu-item-has-children dropdown">
                     <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link dropdown-toggle">Thể
                         loại </a>
@@ -228,10 +166,24 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
             </nav>
+            <div class="flex justify-center items-center ml-4">
+                <a href="./checkout.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                </a>
 
-            <button class="button" style="font-size: 12px;">Sign Up</button>
+                <a href="./register.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </a>
+                <button class="button ml-4" style="font-size: 8px;">
+                    <a href="./login.html" class="nul">Sign Up</a></button>
+            </div>
+            
         </div>
     </header>
 
@@ -503,7 +455,7 @@
             <section>
                 <div class="slider-list">
                     <div class="header-title">
-                        Collection Photo
+                        Collection Book
                     </div>
                     <div class="photo-slider">
     
@@ -513,7 +465,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -522,7 +474,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -531,7 +483,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -540,7 +492,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -549,7 +501,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -558,7 +510,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +519,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -576,7 +528,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -585,7 +537,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -594,7 +546,7 @@
                                     <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                     <div class="photo-description">
                                         <div>Image Name</div>
-                                        <button>more</button>
+                                        <!-- <button>more</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -604,7 +556,7 @@
             </section>
     </section>
 
-    <section>
+    <!-- <section>
         <div class="slider-list">
             <div class="header-title">
                 Đặc sắc
@@ -704,7 +656,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
         <!-- </div> -->
         <!-- <section class="books mb-6">
             <div class="container mx-auto flex justify-between items-center mb-4">
@@ -783,9 +735,45 @@
         </section> 
     </main> -->
 
-    <footer class="bg-gray-200 py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Bookstore. All rights reserved.</p>
+    
+    <!-- Footer Section -->
+       <!-- Footer Section -->
+       <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0 md:absolute md:left-4">
+                <img src="logo2.jpg" alt="Logo" class="h-16">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="/homepage.html" class="hover:underline">Home</a>
+                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 md:absolute md:right-4">
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center container-limited">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
