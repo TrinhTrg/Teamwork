@@ -1,62 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Cá Nhân Người Dùng</title>
+    <title>User Account Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .header {
-            box-shadow: 0 4px 2px -2px gray;
-        }
-        .menu-item {
-            margin-left: 20px;
-        }
-        .container {
-            padding: 0 1.5rem;
-        }
-        body {
-            padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
-        }
-        .breadcrumb li {
-            display: inline-block;
-            position: relative;
-            padding-right: 10px; /* Khoảng cách giữa các mục breadcrumb */
-        }
-        
-        .breadcrumb li:hover {
-            color: green; /* Màu chữ khi di chuột qua */
-        }
-        
-        .separator {
-            margin: 0 5px; /* Khoảng cách giữa dấu ">" và chữ */
-        }
-        
-        .separator:before {
-            content: '>'; /* Hiển thị dấu ">" */
-            margin: 0 5px;
-        }
-        .menu li {
-            display: inline-block;
-            position: relative;
-            padding-right: 4px;
-        }
-        .menu li:hover {
-            color: green;
-        }
-
-        
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-mono">
 
-    <!-- Header -->
-    <header class="bg-white py-2 mx-auto header fixed top-0 left-0 right-0 z-10">
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-white py-2 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
         <div class="container mx-auto flex justify-between items-center h-16">
             <nav class="flex items-center w-full">
                 <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
                 <div class="nav-menu flex-grow" id="navMenu">
-                    <ul class=" menu flex space-x-4">
+                    <ul class="menu flex space-x-4">
                         <li><a href="#" class="p-4">HOMEPAGE</a></li>
                         <li><a href="#" class="p-4">BOOKS</a></li>
                         <li><a href="#" class="p-4">AUTHORS</a></li>
@@ -73,7 +35,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
-                
+
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
@@ -86,106 +48,63 @@
     </header>
 
     <!-- Main Content -->
-    <main class="wrapperMain_content">
-        <div class="container mx-auto py-4 mt-8"></div>
-        <nav class="bread-crumb lazyload" data-src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bg-breadcrumb.jpg?1704690471681" data-was-processed="true" style="background-image: url('//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bg-breadcrumb.jpg?1704690471681');">
-            <div class="container ml-10">
-                <ul class="breadcrumb">					
-                    <li class="home">
-                        <a href="/"><span>Trang chủ</span></a>						
-                    </li>
-                    <span class="separator"></span> <!-- Dấu ">" giữa các mục breadcrumb -->
-                    <li>
-                        <strong><span>Đăng ký tài khoản</span></strong>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main class="wrapperMain_content">
-            <div class="container mx-auto py-4 mt-8 ml-10">
-                <h1 class="text-2xl font-semibold text-gray-800">Xin chào, [Tên người dùng]</h1>
-                <p class="text-gray-600 mt-2">Đây là trang cá nhân của bạn.</p>
-                <!-- Các phần nội dung khác của trang cá nhân -->
-            </div>
-            <nav class="ml-4">
-                <ul class="container mx-auto ml-6 mt-4">
-                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">User account</a></li>
-                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">Your Cart added</a></li>
-                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">Log Out</a></li>
-                </ul>
-            </nav>
-        </main>
+    <main class="pt-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <!-- Sidebar -->
+                <aside class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md mb-4">
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h2 class="text-xl font-semibold mb-2">John Doe</h2>
+                        <p class="text-gray-600 mb-4">john.doe@example.com</p>
+                        <a href="#" class="hover:text-green-700 py-1 px-3 mb-2 font-bold rounded-full">
+                            <i class="fas fa-edit mr-2"></i>Edit Profile
+                        </a>
+                    </div>
+                    <nav class="mt-2 text-center">
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Log Out</button>
+                    </nav>
+                </aside>                
 
+                <!-- Main Content -->
+                <section class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Account Overview</h2>
+                    <div class="grid grid-cols-1 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold mb-2">Personal Information</h3>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> John Doe</p>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> john.doe@example.com</p>
+                            <p class="text-gray-700"><span class="font-semibold">Phone:</span> (123) 456-7890</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold mb-2">Recent Orders</h3>
+                            <ul class="list-disc pl-4">
+                                <li class="text-gray-700 mb-2">Order #12345 - Delivered</li>
+                                <li class="text-gray-700 mb-2">Order #12346 - In Transit</li>
+                                <li class="text-gray-700 mb-2">Order #12347 - Pending</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold mb-2">Recent Activity</h3>
+                        <ul class="list-disc pl-4">
+                            <li class="text-gray-700 mb-2">Added "Book Title" to wishlist</li>
+                            <li class="text-gray-700 mb-2">Updated profile information</li>
+                            <li class="text-gray-700 mb-2">Reviewed "Book Title"</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 
     <script>
         function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
-            }
+            const navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("hidden");
         }
     </script>
-    <script type="module" src="/src/scripts/application.js"></script>
-        <!-- footer.html -->
-<footer class="bg-white text-gray-800 mx-auto py-8 mt-8">
-    <div class="container mx-auto px-4" style="min-width: 800px;">
-        <div class="flex justify-between items-start">
-            <!-- Logo Section -->
-            <div class="flex items-center">
-                <img src="./logo2.jpg" alt="Logo" class="h-16 mr-4">
-            </div>
-            <!-- Help Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">HELP</h3>
-                <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
-                </ul>
-            </div>
-            <!-- Services Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">SERVICES</h3>
-                <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
-                </ul>
-            </div>
-            <!-- About Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
-                
-                <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
-                </ul>
-            </div>
-            
-            <!-- Email Signup Section -->
-            <div class="flex-1">
 
-                <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
-
-                <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center mt-8">
-            <p>&copy; 2024 Echobinary. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
 </body>
+
 </html>
