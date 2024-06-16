@@ -6,6 +6,33 @@
     <title>Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Tối ưu hóa cuộn */
+        .book-list {
+            will-change: transform;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .book-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        /* Cuộn mượt */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Lazy load placeholder */
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        img.lazy.loaded {
+            opacity: 1;
+        }
+        .scroll-content {
+            will-change: transform;
+        }
         /* Custom styles for the menu */
         .menu {
             display: none;
@@ -399,7 +426,34 @@
         </div>
     </div>
 
+    <div class="scroll-content">
+        <!-- Nội dung cần tối ưu hóa khi cuộn -->
+    </div>
+
     <script type="module" src="./src/scripts/application.js"></script>
     <script type="module" src="/src/scripts/application.js"></script>
+    <script>
+        // Lazy load cho hình ảnh
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback cho các trình duyệt cũ hơn
+            }
+        });
+    </script>
 </body>
 </html>
