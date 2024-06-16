@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Store</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <style>
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const quantityInput = document.getElementById("quantity");
@@ -39,6 +54,47 @@
                 updatePrice();
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const recommendedList = document.getElementById('recommended-list');
+        let page = 1;
+
+        function loadMoreBooks() {
+            // Mô phỏng việc tải thêm sách từ máy chủ
+            for (let i = 0; i < 4; i++) {
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'bg-white p-4 rounded shadow';
+                bookDiv.innerHTML = `
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
+                `;
+                recommendedList.appendChild(bookDiv);
+            }
+            page++;
+        }
+
+        window.addEventListener('scroll', function () {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                loadMoreBooks();
+            }
+        });
+    });
     </script>
 </head>
 
@@ -102,7 +158,7 @@
                 <div class="bg-white p-4 rounded shadow">
                     <h2 class="text-xl font-bold">Thông tin chi tiết</h2>
                     <ul class="text-gray-700">
-                        <li><strong>Tác giả:</strong> Trần Công Quốc Huy</li>
+                        <li><strong>Tác giả:</strong> Đào Duy Anh</li>
                         <li><strong>Ngày xuất bản:</strong> 30/5/2000</li>
                         <li><strong>Nhà xuất bản:</strong> NXB Trẻ</li>
                         <li><strong>Ngôn ngữ:</strong> Tiếng Việt</li>
@@ -115,60 +171,59 @@
         <!-- Related Products -->
         <section class="mt-8">
             <h2 class="text-xl font-bold">Related Products</h2>
-            <div class="flex space-x-4 overflow-x-auto">
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                </div>
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
             </div>
         </section>
 
-        <!-- Recommended -->
-        <section class="mt-8">
+        <section class="mt-8" id="recommended-section">
             <h2 class="text-xl font-bold">Recommended</h2>
-            <div class="flex space-x-4 overflow-x-auto">
-                <div class="bg-white p-4 rounded shadow w-48">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="recommended-list">
+                <div class="bg-white p-4 rounded shadow">
                     <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
                     <p class="mt-2">Author: Lorem</p>
                     <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 rounded shadow w-48">
+                <div class="bg-white p-4 rounded shadow">
                     <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
                     <p class="mt-2">Author: Lorem</p>
                     <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 rounded shadow w-48">
+                <div class="bg-white p-4 rounded shadow">
                     <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
                     <p class="mt-2">Author: Lorem</p>
                     <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 rounded shadow w-48">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow w-48">
+                <div class="bg-white p-4 rounded shadow">
                     <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
                     <p class="mt-2">Author: Lorem</p>
                     <p class="text-green-500">50.000vnđ</p>
@@ -191,6 +246,83 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+
+            const recommendedList = document.getElementById('recommended-list');
+            let page = 1;
+            let lastScrollTop = 0;
+
+            function loadMoreBooks() {
+                // Mô phỏng việc tải thêm sách từ máy chủ
+                for (let i = 0; i < 4; i++) {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.className = 'bg-white p-4 rounded shadow';
+                    bookDiv.setAttribute('data-aos', 'fade-up'); // Thêm hiệu ứng AOS
+                    bookDiv.innerHTML = `
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    `;
+                    recommendedList.appendChild(bookDiv);
+                }
+                AOS.refresh(); // Làm mới AOS để nhận diện các phần tử mới
+                page++;
+            }
+
+            function hideBooksUpwards() {
+                const scrollTop = window.scrollY;
+                let scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up';
+                lastScrollTop = scrollTop;
+
+                if (scrollDirection === 'up') {
+                    // Tìm index của cuốn sách gần nhất với đầu trang
+                    let topVisibleBookIndex = 0;
+                    const books = Array.from(recommendedList.children);
+                    for (let i = 0; i < books.length; i++) {
+                        const rect = books[i].getBoundingClientRect();
+                        if (rect.top >= 0) {
+                            topVisibleBookIndex = i;
+                            break;
+                        }
+                    }
+
+                    // Ẩn đi các cuốn sách từ đầu trang đến cuốn sách topVisibleBookIndex
+                    for (let i = 0; i < topVisibleBookIndex; i++) {
+                        books[i].style.display = 'none';
+                    }
+                }
+            }       
+
+            window.addEventListener('scroll', function () {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                    loadMoreBooks();
+                }
+
+                // Ẩn đi sách khi cuộn lên
+                hideBooksUpwards();
+            });
+
+            // Khởi tạo AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+
+    </script>
 </body>
 
 </html>
