@@ -11,7 +11,6 @@
             display: none;
             z-index: 1000; /* Ensure the menu is above other elements */
         }
-<<<<<<< HEAD
 
         .menu.active {
             display: block;
@@ -46,63 +45,6 @@
             <div class="w-24 z-20">
                 <img src="./logo2.jpg" alt="Logo" class="h-20 w-20">
             </div>
-=======
-
-        .menu.active {
-            display: block;
-        }
-
-        .hidden-on-scroll {
-            transition: transform 0.3s ease;
-            z-index: 999; /* Ensure the header is above other elements, but below the menu */
-        }
-
-        .hidden-on-scroll.hidden {
-            transform: translateY(-100%);
-        }
-
-        .menu ul li {
-            z-index: 1001; /* Ensure list items are above everything */
-        }
-
-        /* Hide menu items on small screens */
-        @media (max-width: 768px) {
-            .nav-items {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body class="text-white">
-    <!-- header -->
-    <header class="bg-white py-4 hidden-on-scroll fixed w-full top-0 left-0">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <!-- logo -->
-            <div class="w-24 z-20">
-                <img src="./logo2.jpg" alt="Logo" class="h-20 w-20">
-            </div>
-
-
-    <!-- Header -->
-    <header class="bg-white py-4">
-        <div class="h-45">
-            <nav class="flex justify-between w-5/6 mx-auto items-center">
-                <div>
-                    <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-20 w-15 " /></a>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Homepage</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Books</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Authurs</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">Categories</a>
-                    <a href="#" class="text-gray-700 hover:text-gray-900">About Us</a>
-                </div>
-                <!-- Cart Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>
-                <!-- Login Button -->
->>>>>>> c94eea62b023813d51016812ff03d96d3ec6c582
 
             <!-- menu items -->
             <nav class="nav-items hidden md:flex space-x-4">
@@ -114,10 +56,6 @@
 
             <!-- icons vs login -->
             <div class="hidden md:flex items-center space-x-4">
-<<<<<<< HEAD
-=======
-
->>>>>>> c94eea62b023813d51016812ff03d96d3ec6c582
                 <button class="bg-gray-500 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full">
                     <a href="#">Login</a>
                 </button>
