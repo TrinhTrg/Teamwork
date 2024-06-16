@@ -4,8 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Detail</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Book Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <style>
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const quantityInput = document.getElementById("quantity");
@@ -39,165 +54,275 @@
                 updatePrice();
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const recommendedList = document.getElementById('recommended-list');
+        let page = 1;
+
+        function loadMoreBooks() {
+            // Mô phỏng việc tải thêm sách từ máy chủ
+            for (let i = 0; i < 4; i++) {
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'bg-white p-4 rounded shadow';
+                bookDiv.innerHTML = `
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
+                `;
+                recommendedList.appendChild(bookDiv);
+            }
+            page++;
+        }
+
+        window.addEventListener('scroll', function () {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                loadMoreBooks();
+            }
+        });
+    });
     </script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100">
     <!-- Header -->
-    <header class="bg-white p-4 shadow-md flex justify-between items-center">
-        <div class="text-xl font-bold">LOGO</div>
-        <nav>
-            <a href="#" class="mx-2 text-gray-600">Home</a>
-            <a href="#" class="mx-2 text-gray-600">Shop</a>
-            <a href="#" class="mx-2 text-gray-600">About</a>
-            <a href="#" class="mx-2 text-gray-600">Contact</a>
-        </nav>
-        <div class="flex items-center">
-            <button class="bg-green-500 text-white px-4 py-2 rounded-md">Đăng nhập</button>
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-lg font-bold">LOGO</div>
+            <nav class="flex space-x-4">
+                <a href="#" class="text-gray-700">Homepage</a>
+                <a href="#" class="text-gray-700">Sách</a>
+                <a href="#" class="text-gray-700">Tác giả</a>
+                <a href="#" class="text-gray-700">Về chúng tôi</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Tìm kiếm" class="border p-2 rounded">
+                <button class="bg-green-500 text-white p-2 rounded">Tìm kiếm</button>
+                <button class="bg-gray-700 text-white p-2 rounded">Đăng nhập</button>
+            </div>
         </div>
     </header>
 
-    <!-- Content -->
-    <main class="container mx-auto p-8">
-        <div class="grid grid-cols-2 gap-8">
-            
-            <div>
-                <div class="max-w-lg">
-                    <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Books">
-                </div>
-                <div class="flex space-x-4">
-                    <div class="h-24 w-24">
-                        <img src="" alt="books">
-                    </div>
-                    <div class="h-24 w-24">
-                        <img src="" alt="books">
-                    </div>
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Book Image -->
+            <div class="col-span-1">
+                <div class="border p-4 bg-white rounded">
+                    <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
                 </div>
             </div>
 
-            <!-- Details -->
-            <div>
-                <h1 class="text-2xl font-bold mb-4">When Breath Become Air Ngờ (Tái Bản 2023)</h1>
-                <div id="price" class="text-3xl text-green-500 font-bold mb-4">100.000 đ</div>
-                <div class="text-gray-600 mb-4">Tác giả: ĐÀO DUY ANH</div>
-                <div class="container flex flex-wrap items-center justify-center gap-4 mb-4">
-                    <div class="flex flex-wrap items-center border border-gray-300 rounded-md overflow-hidden mb-4 md:w-auto">
-                        <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="decrease">-</button>
-                        <input id="quantity" type="number" value="1" min="1" max="99" class="bg-gray-100 text-xl border-gray-300 focus:outline-none text-center" style="width: 4rem; height: 2.5rem;">
-                        <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="increment">+</button>
+            <!-- Book Details -->
+            <div class="col-span-2 space-y-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h1 class="text-2xl font-bold">When Breath Becomes Air</h1>
+                    <p class="text-xl text-green-500 font-semibold">100.000 đ</p>
+                    <p class="text-gray-700">Author: Paul Kalanithi</p>
+                    <div class="container flex flex-wrap items-start justify-start gap-4 mb-4">
+                        <div class="flex flex-wrap items-center border border-gray-300 rounded-md overflow-hidden mb-4 md:w-auto">
+                            <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="decrease">-</button>
+                            <input id="quantity" type="number" value="1" min="1" max="99"
+                            class="bg-gray-100 text-xl border-gray-300 focus:outline-none text-center"
+                            style="width: 4rem; height: 2.5rem;">
+                            <button class="px-3 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="increment">+</button>
+                        </div>
+                        <button class="text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                            Add to cart
+                        </button>
+                        <button class="text-white bg-green-400 rounded-lg hover:bg-green-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                           Buy now
+                        </button>
                     </div>
-                    <button class="text-white bg-red-500 rounded-lg hover:bg-red-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
-                        Add to cart
-                    </button>
-                    <button class="text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
-                       Buy now
-                    </button>
+                    <p class="text-gray-500 mt-2">Tình trạng kho hàng: Dự kiến giao Thứ năm, 06/06</p>
+                    <p class="text-gray-500">Chính sách đổi trả trong vòng 30 ngày</p>
                 </div>
-                
-                <p class="text-gray-600 mb-8">
-                    Giao hàng toàn quốc (Dự kiến giao hàng từ 3-5 ngày)
-                </p>
-                <div class="mb-8">
-                    <h2 class="text-xl font-bold mb-2">Giới thiệu sách</h2>
-                    <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold">Giới thiệu sách</h2>
+                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
                 </div>
-                <div>
-                    <h2 class="text-xl font-bold mb-2">Thông tin chi tiết</h2>
-                    <p class="text-gray-600">Tác giả: Tiến Sĩ Công Đức Huy</p>
-                    <p class="text-gray-600">Ngày xuất bản: 30/05/2020</p>
-                    <p class="text-gray-600">Thể loại: Tâm lý, Kỹ năng sống</p>
-                    <p class="text-gray-600">Ngôn ngữ: Tiếng Việt</p>
-                    <p class="text-gray-600">Số trang: 300 trang</p>
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold">Thông tin chi tiết</h2>
+                    <ul class="text-gray-700">
+                        <li><strong>Tác giả:</strong> Đào Duy Anh</li>
+                        <li><strong>Ngày xuất bản:</strong> 30/5/2000</li>
+                        <li><strong>Nhà xuất bản:</strong> NXB Trẻ</li>
+                        <li><strong>Ngôn ngữ:</strong> Tiếng Việt</li>
+                        <li><strong>Số trang:</strong> 300 trang</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <!-- Related Products -->
-        <div class="mt-12">
-            <h2 class="text-2xl font-bold mb-4">Related Products</h2>
-            <div class="flex space-x-4 overflow-x-auto">
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
+        <section class="mt-8">
+            <h2 class="text-xl font-bold">Related Products</h2>
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow w-48">
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
-                </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
-                </div>
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
             </div>
-        </div>
+        </section>
 
-        <!-- Recommended -->
-        <div class="mt-12">
-            <h2 class="text-2xl font-bold mb-4">Recommended</h2>
-            <div class="flex space-x-4 overflow-x-auto">
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
+        <section class="mt-8" id="recommended-section">
+            <h2 class="text-xl font-bold">Recommended</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="recommended-list">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
                 </div>
-                <div class="bg-white p-4 shadow-md rounded-md w-48">
-                    <div class="bg-gray-200 h-48 mb-4"></div>
-                    <h3 class="text-lg font-bold">Book Title</h3>
-                    <p class="text-gray-600">Author: Lorem Ipsum</p>
-                    <p class="text-gray-600">100.000 đ</p>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
+                    <p class="mt-2">Author: Lorem</p>
+                    <p class="text-green-500">50.000vnđ</p>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-8 mt-12">
-        <div class="container mx-auto flex justify-between">
-            <div class="text-lg font-bold">Logo</div>
-            <div class="flex space-x-4">
-                <a href="#" class="text-gray-400">About</a>
-                <a href="#" class="text-gray-400">Feedback</a>
-                <a href="#" class="text-gray-400">Help</a>
-                <a href="#" class="text-gray-400">Terms</a>
-                <a href="#" class="text-gray-400">Privacy</a>
-                <a href="#" class="text-gray-400">Advertise</a>
-                <a href="#" class="text-gray-400">Contact</a>
+    <footer class="bg-gray-800 text-white mt-8">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <div>
+                <p class="font-bold">Logo</p>
+                <p>About | Feedback | Help | Terms | Privacy | Advertise | Contact</p>
             </div>
             <div class="flex space-x-4">
-                <a href="#" class="text-gray-400">Facebook</a>
-                <a href="#" class="text-gray-400">LinkedIn</a>
-                <a href="#" class="text-gray-400">Twitter</a>
-                <a href="#" class="text-gray-400">Instagram</a>
+                <a href="#" class="text-white">Facebook</a>
+                <a href="#" class="text-white">LinkedIn</a>
+                <a href="#" class="text-white">YouTube</a>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+
+            const recommendedList = document.getElementById('recommended-list');
+            let page = 1;
+            let lastScrollTop = 0;
+
+            function loadMoreBooks() {
+                // Mô phỏng việc tải thêm sách từ máy chủ
+                for (let i = 0; i < 4; i++) {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.className = 'bg-white p-4 rounded shadow';
+                    bookDiv.setAttribute('data-aos', 'fade-up'); // Thêm hiệu ứng AOS
+                    bookDiv.innerHTML = `
+                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
+                        <p class="mt-2">Author: Lorem</p>
+                        <p class="text-green-500">50.000vnđ</p>
+                    `;
+                    recommendedList.appendChild(bookDiv);
+                }
+                AOS.refresh(); // Làm mới AOS để nhận diện các phần tử mới
+                page++;
+            }
+
+            function hideBooksUpwards() {
+                const scrollTop = window.scrollY;
+                let scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up';
+                lastScrollTop = scrollTop;
+
+                if (scrollDirection === 'up') {
+                    // Tìm index của cuốn sách gần nhất với đầu trang
+                    let topVisibleBookIndex = 0;
+                    const books = Array.from(recommendedList.children);
+                    for (let i = 0; i < books.length; i++) {
+                        const rect = books[i].getBoundingClientRect();
+                        if (rect.top >= 0) {
+                            topVisibleBookIndex = i;
+                            break;
+                        }
+                    }
+
+                    // Ẩn đi các cuốn sách từ đầu trang đến cuốn sách topVisibleBookIndex
+                    for (let i = 0; i < topVisibleBookIndex; i++) {
+                        books[i].style.display = 'none';
+                    }
+                }
+            }       
+
+            window.addEventListener('scroll', function () {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                    loadMoreBooks();
+                }
+
+                // Ẩn đi sách khi cuộn lên
+                hideBooksUpwards();
+            });
+
+            // Khởi tạo AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+
+    </script>
 </body>
 
 </html>
