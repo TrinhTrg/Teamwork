@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-lg font-bold">LOGO</div>
+            <nav class="flex space-x-4">
+                <a href="#" class="text-gray-700">Homepage</a>
+                <a href="#" class="text-gray-700">Sách</a>
+                <a href="#" class="text-gray-700">Tác giả</a>
+                <a href="#" class="text-gray-700">Về chúng tôi</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Tìm kiếm" class="border p-2 rounded">
+                <button class="bg-green-500 text-white p-2 rounded">Tìm kiếm</button>
+                <button class="bg-gray-700 text-white p-2 rounded">Đăng nhập</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 px-6">
+        <!-- Breadcrumb -->
+        <div class="container mx-auto px-4 py-4 container-limited">
+            <nav class="text-gray-600 text-sm">
+                <a href="#" class="hover:underline">Home</a>
+                <span class="mx-2">></span>
+                <a href="#" class="hover:underline">Books</a>
+                <span class="mx-2">></span>
+                <a href="#" class="hover:underline">When Breath Becomes Air</a>
+            </nav>
+        </div>
+
+        <!-- Product -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row">
+            <!-- Image -->
+            <div class="md:w-1/3 flex justify-center mb-4 md:mb-0">
+                <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
+            </div>
+            <!-- Detail -->
+            <div class="md:w-2/3 md:ml-6 col-span-2 space-y-4">
+                <h1 class="text-2xl font-bold mb-2">When Breath Becomes Air</h1>
+                <p>By Paul Kalanithi</p>
+                <div class="container flex flex-wrap items-start justify-start gap-4 mb-4">
+                    <div class="flex flex-wrap items-center border border-gray-300 rounded-md overflow-hidden mb-4 md:w-auto">
+                        <button class="px-4 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="decrease">-</button>
+                        <input id="quantity" type="number" value="1" min="1" max="99"
+                        class="bg-gray-100 text-xl border-gray-300 focus:outline-none text-center"
+                        style="width: 4rem; height: 2.5rem;">
+                        <button class="px-3 py-2 text-xl text-gray-700 hover:bg-gray-200 focus:outline-none w-10 h-10" id="increment">+</button>
+                    </div>
+                    <button class="text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                        Add to cart
+                    </button>
+                    <button class="text-white bg-green-400 rounded-lg hover:bg-green-600 focus:outline-none px-4 py-2 h-10 mb-4 sm:w-full md:w-auto">
+                       Buy now
+                    </button>
+                </div>
+                <p class="mb-4">старинном доме, распахнувшем двери для престижного общества, произошло что-то жуткое. Теперь здесь живет его история. Главный герой, некогда обещающий бизнесмен, оказывается в центре мистических событий, и кажется, что выхода нет...</p>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-4 hover:bg-blue-700 transition duration-300">Добавить в корзину</button>
+                <hr class="my-4">
+                <!-- Specifications Section -->
+                <div class="text-gray-700">
+                    <p><span class="font-semibold">Автор:</span> Адэм Невилл</p>
+                    <p><span class="font-semibold">Серия:</span> Мастера ужаса</p>
+                    <p><span class="font-semibold">Раздел:</span> Ужасы и Мистика</p>
+                    <p><span class="font-semibold">Возрастные ограничения:</span> 18+</p>
+                    <p><span class="font-semibold">Год издания:</span> 2022</p>
+                    <p><span class="font-semibold">Количество страниц:</span> 354</p>
+                    <p><span class="font-semibold">Переплет:</span> Твердый</p>
+                    <p><span class="font-semibold">Вес:</span> 0.5 кг</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Reviews -->
+        <div class="mt-8 bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-bold mb-4">Reviews</h3>
+            <div class="grid grid-cols-3 gap-4">
+                <div>
+                    <p class="text-gray-500 text-sm">March 8, 2023</p>
+                    <p class="text-gray-700 mt-2">Crying through the first scenes entitled, "Where"...</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm">March 6, 2023</p>
+                    <p class="text-gray-700 mt-2">It took hold of my attention and held so tight...</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm">January 28, 2023</p>
+                    <p class="text-gray-700 mt-2">I felt as though I'd walked through that marsh...</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="text-blue-600">See more</button>
+            </div>
+        </div>
+
+        <!-- Similar Books -->
+        <div class="mt-8">
+            <h3 class="text-xl font-bold mb-4">You may also like</h3>
+            <div class="grid grid-cols-5 gap-4">
+                <div class="bg-white p-4 rounded shadow-md">
+                    <img src="path/to/your/image.jpg" alt="Book Title" class="w-full h-48 object-cover rounded">
+                    <h4 class="mt-4 text-lg font-bold">The Man Who Died Twice</h4>
+                    <p class="text-gray-600 mt-2">by Richard Osman</p>
+                    <div class="mt-2">
+                        <span class="text-xl font-bold text-blue-600">$7.80</span>
+                    </div>
+                    <button class="bg-blue-600 text-white rounded px-4 py-2 mt-4 w-full">Add to the basket</button>
+                </div>
+                <!-- Repeat similar blocks for other books -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6 shadow">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">Location</p>
+            <p class="text-gray-600 mt-2">Contact information</p>
+        </div>
+    </footer>
+</body>
+</html>

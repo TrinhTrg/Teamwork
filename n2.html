@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Nook</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Main Container -->
+<main class="max-w-6xl mx-auto p-4">
+    <!-- Breadcrumb -->
+    <nav class="text-gray-600 mb-4">
+        <ol class="list-reset flex">
+            <li><a href="#" class="text-blue-600 hover:underline">Главная</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Каталог</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Художественная литература</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li><a href="#" class="text-blue-600 hover:underline">Ужасы и Мистика</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li class="text-gray-500">Номер 15</li>
+        </ol>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row">
+            <!-- Image Section -->
+            <div class="md:w-1/3 flex justify-center mb-4 md:mb-0">
+                <div class="w-56 h-80 bg-gray-200 rounded-lg"></div>
+            </div>
+            <!-- Detail Section -->
+            <div class="md:w-2/3 md:ml-6">
+                <h1 class="text-2xl font-bold mb-2">Адэм Невилл - Номер 15</h1>
+                <p class="text-xl text-red-600 font-semibold mb-4">719 ₽</p>
+                <p class="mb-4">В старинном доме, распахнувшем двери для престижного общества, произошло что-то жуткое. Теперь здесь живет его история. Главный герой, некогда обещающий бизнесмен, оказывается в центре мистических событий, и кажется, что выхода нет...</p>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-4 hover:bg-blue-700 transition duration-300">Добавить в корзину</button>
+                <hr class="my-4">
+                <!-- Specifications Section -->
+                <div class="text-gray-700">
+                    <p><span class="font-semibold">Автор:</span> Адэм Невилл</p>
+                    <p><span class="font-semibold">Серия:</span> Мастера ужаса</p>
+                    <p><span class="font-semibold">Раздел:</span> Ужасы и Мистика</p>
+                    <p><span class="font-semibold">Возрастные ограничения:</span> 18+</p>
+                    <p><span class="font-semibold">Год издания:</span> 2022</p>
+                    <p><span class="font-semibold">Количество страниц:</span> 354</p>
+                    <p><span class="font-semibold">Переплет:</span> Твердый</p>
+                    <p><span class="font-semibold">Вес:</span> 0.5 кг</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+        <h2 class="text-xl font-bold mb-4">Отзывы</h2>
+        <div class="border-t pt-4">
+            <p class="font-semibold">Андрей</p>
+            <div class="flex items-center mb-2">
+                <div class="text-yellow-500 mr-2">
+                    <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 1.5-6.5L1 8h6.5L10 2l2.5 6H19l-4 3.5 1.5 6.5L10 15z"/></svg>
+                    <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 1.5-6.5L1 8h6.5L10 2l2.5 6H19l-4 3.5 1.5 6.5L10 15z"/></svg>
+                    <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 1.5-6.5L1 8h6.5L10 2l2.5 6H19l-4 3.5 1.5 6.5L10 15z"/></svg>
+                    <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 1.5-6.5L1 8h6.5L10 2l2.5 6H19l-4 3.5 1.5 6.5L10 15z"/></svg>
+                    <svg class="w-4 h-4 inline-block text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 1.5-6.5L1 8h6.5L10 2l2.5 6H19l-4 3.5 1.5 6.5L10 15z"/></svg>
+                </div>
+                <p class="text-gray-600">24.05.2023</p>
+            </div>
+            <p>Отличная книга! Очень напряженная. Сначала медленно, но потом захватывает.</p>
+        </div>
+    </div>
+
+    <!-- Similar Products Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+        <h2 class="text-xl font-bold mb-4">Похожие товары</h2>
+        <div class="flex space-x-4">
+            <!-- Product Item -->
+            <div class="w-1/3 bg-gray-100 p-4 rounded-lg">
+                <div class="w-full h-48 bg-gray-200 mb-4"></div>
+                <h3 class="text-lg font-semibold">Зов Ктулху</h3>
+                <p class="text-red-600 font-semibold mb-2">580 ₽</p>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">В корзину</button>
+            </div>
+            <!-- Product Item -->
+            <div class="w-1/3 bg-gray-100 p-4 rounded-lg">
+                <div class="w-full h-48 bg-gray-200 mb-4"></div>
+                <h3 class="text-lg font-semibold">Дракула</h3>
+                <p class="text-red-600 font-semibold mb-2">680 ₽</p>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">В корзину</button>
+            </div>
+            <!-- Product Item -->
+            <div class="w-1/3 bg-gray-100 p-4 rounded-lg">
+                <div class="w-full h-48 bg-gray-200 mb-4"></div>
+                <h3 class="text-lg font-semibold">Дом Ночи</h3>
+                <p class="text-red-600 font-semibold mb-2">600 ₽</p>
+                <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">В корзину</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 mt-8">
+    <div class="max-w-6xl mx-auto p-4">
+        <div class="flex justify-between items-center">
+            <p>© Book Nook</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-white">О компании</a>
+                <a href="#" class="hover:text-white">Доставка и Оплата</a>
+                <a href="#" class="hover:text-white">Контакты</a>
+                <a href="#" class="hover:text-white">FAQ</a>
+            </div>
+        </div>
+        <div class="mt-4">
+            <p>Доставка и Оплата: Правила продажи товаров и оказания услуг Служба поддержки</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
