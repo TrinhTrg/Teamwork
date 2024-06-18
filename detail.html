@@ -71,30 +71,55 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-        const recommendedList = document.getElementById('recommended-list');
-        let page = 1;
+            const recommendedList = document.getElementById('recommended-list');
+            let page = 1;
 
-        function loadMoreBooks() {
-            // Mô phỏng việc tải thêm sách từ máy chủ
-            for (let i = 0; i < 4; i++) {
-                const bookDiv = document.createElement('div');
-                bookDiv.className = 'bg-white p-4 rounded shadow';
-                bookDiv.innerHTML = `
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
-                `;
-                recommendedList.appendChild(bookDiv);
+            function getRandomItem(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
             }
-            page++;
-        }
 
-        window.addEventListener('scroll', function () {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                loadMoreBooks();
+            function loadMoreBooks() {
+                const titles = ['Book Title 1', 'Book Title 2', 'Book Title 3', 'Book Title 4', 'Book Title 5'];
+                const prices = ['50.000vnđ', '75.000vnđ', '100.000vnđ', '150.000vnđ', '200.000vnđ'];
+                const image = [
+                    './resource/sách 1.jpg ',
+                    './resource/sách2-removebg-preview.png'
+                ];
+
+                for (let i = 0; i < 2; i++) {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.className = 'p-4 rounded shadow';
+                    const randomTitle = getRandomItem(titles);
+                    const randomPrice = getRandomItem(prices);
+                    const randomImage = getRandomItem(image);
+
+                    bookDiv.innerHTML = `
+                        <div class="flex items-center justify-center">
+                            <img src="${randomImage}" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>${randomTitle}</p>
+                            <p>${randomPrice}</p>
+                        </div>
+                    `;
+                    recommendedList.appendChild(bookDiv);
+                }
             }
+
+            loadMoreBooks(); // Initial load
+
+            window.addEventListener('scroll', function () {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                    loadMoreBooks();
+                }
+            });
+
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
         });
-    });
     </script>
 </head>
 
@@ -155,10 +180,10 @@
                       </div>
                     <p class="text-xl text-green-500 font-semibold">100.000 đ</p>
                     <div class="mb-4">
-                        <label class="block text-gray-700">Bracelet animal</label>
+                        <label class="block text-gray-700">Format</label>
                         <select class="border rounded w-full py-2 px-3 mt-1">
-                          <option>Dog</option>
-                          <option>Cat</option>
+                          <option>Hardcover</option>
+                          <option>Paperback</option>
                         </select>
                     </div>
 
@@ -194,23 +219,30 @@
 
                     <div class="mt-4 space-x-4">
                         <button class="text-gray-600">Share on:</button>
-                        <button class="text-gray-600"><a href=""></a>Facebook</button>
-                        <button class="text-gray-600"><a href="">Instagram</a></button>
+                        <button class="text-gray-600"><a href="https://www.instagram.com/echolibrary43/">Facebook</a></button>
+                        <button class="text-gray-600"><a href="https://www.instagram.com/echolibrary43/">Instagram</a></button>
                     </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow">
+                <div class="p-4 rounded shadow">
                     <h2 class="text-xl font-bold">Description</h2>
                     <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus libero ut dicta. Praesentium iste ex cum, esse repellat omnis voluptatem ullam voluptatibus! Quo necessitatibus quis omnis neque labore? Iure, sint.
                     Assumenda officia iste repellendus sit, qui quo architecto mollitia esse quas impedit accusantium iusto aliquid vel magnam necessitatibus ut doloribus illum facilis. Aliquam iure iste harum, quasi maiores ad iusto.</p>
                 </div>
-                <div class="bg-white p-4 rounded shadow">
+
+                <!-- detail -->
+                <div class="p-4 rounded-md shadow">
                     <h2 class="text-xl font-bold">Product Details</h2>
                     <ul class="text-gray-700">
-                        <li><strong>Author: Paul Kalanithi</strong> </li>
-                        <li><strong>Publishing year:</strong>2017 </li>
-                        <li><strong>Puplisher:</strong>Vintage</li>
-                        <li><strong>Language:</strong>English</li>
+                        <li><strong>Product code:</strong> 9781529110944</li>
+                        <li><strong>Supplier:</strong> Grantham Book Services</li>
+                        <li><strong>Author:</strong> Paul Kalanithi</li>
+                        <li><strong>Publishing year:</strong> 2017</li>
+                        <li><strong>Puplisher:</strong> Vintage</li>
+                        <li><strong>Language:</strong> English</li>
+                        <li><strong>Weight:</strong> 139</li>
+                        <li><strong>Size:</strong> 12.9 x 1.6 x 19.8</li>
                         <li><strong>Quantity of Page:</strong> 256 pages</li>
+                        <li><strong>Book Layout:</strong> Paperback</li>
                     </ul>
                 </div>
             </div>
@@ -219,32 +251,57 @@
         <!-- Related Products -->
         <section class="mt-8">
             <h2 class="text-xl font-bold">Related Products</h2>
-            <div class="mb-20 glider-contain bg-green-200 rounded-md">
+            <div class="mb-20 glider-contain bg-green-50 rounded-md">
                 <div class="glider">
-                    <div class="bg-white p-4 rounded shadow w-48">
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
+                    <!-- b1 -->
+                    <div class="p-4 rounded w-48">
+                        <div class="flex items-center justify-center">
+                            <img src="./resource/sách 1.jpg" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>Book Title</p>
+                            <p>50.000vnđ</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded shadow w-48">
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
+                    <!-- b1 -->
+                    <div class="p-4 rounded w-48">
+                        <div class="flex items-center justify-center">
+                            <img src="./resource/sách 1.jpg" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>Book Title</p>
+                            <p>50.000vnđ</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded shadow w-48">
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
+                    <!-- b1 -->
+                    <div class="p-4 rounded w-48">
+                        <div class="flex items-center justify-center">
+                            <img src="./resource/sách 1.jpg" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>Book Title</p>
+                            <p>50.000vnđ</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded shadow w-48">
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
+                    <!-- b1 -->
+                    <div class="p-4 rounded w-48">
+                        <div class="flex items-center justify-center">
+                            <img src="./resource/sách 1.jpg" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>Book Title</p>
+                            <p>50.000vnđ</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded shadow w-48">
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
+                    <!-- b1 -->
+                    <div class="p-4 rounded w-48">
+                        <div class="flex items-center justify-center">
+                            <img src="./resource/sách 1.jpg" alt="">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <p>Book Title</p>
+                            <p>50.000vnđ</p>
+                        </div>
                     </div>
                 </div>
                 <button aria-label="Previous" class="glider-prev">«</button>
@@ -257,25 +314,50 @@
         <section class="mt-8" id="recommended-section">
             <h2 class="text-xl font-bold">Recommended</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="recommended-list">
-                <div class="bg-white p-4 rounded shadow">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
+                <div class="p-4 rounded shadow">
+                    <div class="flex items-center justify-center">
+                        <img src="./resource/sách2-removebg-preview.png" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p>Book Title</p>
+                        <p>50.000vnđ</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">100.000vnđ</p>
+                <div class="p-4 rounded shadow">
+                    <div class="flex items-center justify-center">
+                        <img src="./resource/sách2-removebg-preview.png" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p>Book Title</p>
+                        <p>50.000vnđ</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">50.000vnđ</p>
+                <div class="p-4 rounded shadow">
+                    <div class="flex items-center justify-center">
+                        <img src="./resource/sách2-removebg-preview.png" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p>Book Title</p>
+                        <p>50.000vnđ</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title</div>
-                    <p class="mt-2">Author: Lorem</p>
-                    <p class="text-green-500">250.000vnđ</p>
+                <div class="p-4 rounded shadow">
+                    <div class="flex items-center justify-center">
+                        <img src="./resource/sách2-removebg-preview.png" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p>Book Title</p>
+                        <p>50.000vnđ</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded shadow">
+                    <div class="flex items-center justify-center">
+                        <img src="./resource/sách2-removebg-preview.png" alt="">
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p>Book Title</p>
+                        <p>50.000vnđ</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -295,83 +377,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Glider(document.querySelector('.glider'), {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                draggable: true,
-                dots: '.dots',
-                arrows: {
-                    prev: '.glider-prev',
-                    next: '.glider-next'
-                }
-            });
-
-            const recommendedList = document.getElementById('recommended-list');
-            let page = 1;
-            let lastScrollTop = 0;
-
-            function loadMoreBooks() {
-                // Mô phỏng việc tải thêm sách từ máy chủ
-                for (let i = 0; i < 4; i++) {
-                    const bookDiv = document.createElement('div');
-                    bookDiv.className = 'bg-white p-4 rounded shadow';
-                    bookDiv.setAttribute('data-aos', 'fade-up'); // Thêm hiệu ứng AOS
-                    bookDiv.innerHTML = `
-                        <div class="h-32 bg-gray-200 flex items-center justify-center">Book Title ${page * 4 + i + 1}</div>
-                        <p class="mt-2">Author: Lorem</p>
-                        <p class="text-green-500">50.000vnđ</p>
-                    `;
-                    recommendedList.appendChild(bookDiv);
-                }
-                AOS.refresh(); // Làm mới AOS để nhận diện các phần tử mới
-                page++;
-            }
-
-            function hideBooksUpwards() {
-                const scrollTop = window.scrollY;
-                let scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up';
-                lastScrollTop = scrollTop;
-
-                if (scrollDirection === 'up') {
-                    // Tìm index của cuốn sách gần nhất với đầu trang
-                    let topVisibleBookIndex = 0;
-                    const books = Array.from(recommendedList.children);
-                    for (let i = 0; i < books.length; i++) {
-                        const rect = books[i].getBoundingClientRect();
-                        if (rect.top >= 0) {
-                            topVisibleBookIndex = i;
-                            break;
-                        }
-                    }
-
-                    // Ẩn đi các cuốn sách từ đầu trang đến cuốn sách topVisibleBookIndex
-                    for (let i = 0; i < topVisibleBookIndex; i++) {
-                        books[i].style.display = 'none';
-                    }
-                }
-            }       
-
-            window.addEventListener('scroll', function () {
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                    loadMoreBooks();
-                }
-
-                // Ẩn đi sách khi cuộn lên
-                hideBooksUpwards();
-            });
-
-            // Khởi tạo AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-            });
-        });
-
-    </script>
 </body>
 
 </html>
