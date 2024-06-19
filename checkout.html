@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .header {
-            box-shadow: 0 4px 2px -2px gray;
+            box-shadow: 0 2px 2px -2px gray;
         }
         .menu-item {
             margin-left: 20px;
@@ -72,7 +72,46 @@
         }
         .hover-bounce:hover {
             transform: scale(1.1);
+            
         }
+        .inline-flex {
+    display: inline-flex;
+    align-items: center; /* Canh dòng chữ theo chiều ngang */
+    gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+.inline-flex li {
+    list-style-type: none; /* Loại bỏ dấu đầu dòng */
+    font-size: 1.5rem; /* Kích thước phù hợp */
+    font-weight: bold; /* Độ đậm chữ */
+}
+
+    /* Thêm styles cho modal */
+    .modal {
+        display: none; /* Ẩn modal mặc định */
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+        z-index: 1000; /* Z-index lớn hơn header và menu */
+    }
+
+    .modal-content {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+    }
+
+    /* Biểu tượng done */
+    .modal-content svg {
+        height: 48px;
+        width: 48px;
+        color: #34D399; /* Màu xanh lá cây */
+        margin-bottom: 16px;
+    }
+
+
     </style>
 </head>
 
@@ -81,7 +120,7 @@
     <header class="bg-white py-2 mx-auto header fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto flex justify-between items-center h-16">
             <nav class="flex items-center w-full">
-                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+                <a href="#"><img src="./logo2.jpg" alt="Logo" class="md:h-16 md:w-16 md:mr-3" /></a>
                 <div class="nav-menu flex-grow" id="navMenu">
                     <ul class="flex space-x-4">
                         <li><a href="#" class="p-5 hover:underline underline-offset-4 focus:underline">HOMEPAGE</a></li>
@@ -147,8 +186,13 @@
         <div class="grid lg:grid-cols-2 gap-8 py-8">
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
-                <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
+                <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
+                <h1 class="text-2xl font-bold mt-4">
+                    <ul class="inline-flex">
+                        <li>List Product in Cart</li>
+                        <li>Số lượng đơn</li>
+                    </ul>
+                </h1>
                 <div class="mt-4 space-y-4">
                     <!-- Product 1 -->
                     <div class="flex items-center border-b py-4">
@@ -158,12 +202,10 @@
                             <div class="text-gray-500 price" data-price="22">$22/1 product</div>
                         </div>
                         <div class="flex items-center">
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product1')">-</button>
                             <input id="product1" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product1')">+</button>
+   
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
-                        <button class=" remove-btn ml-4" onclick="removeProduct(this)">X</button>
                     </div>
                     <!-- Product 2 -->
                     <div class="flex items-center border-b py-4">
@@ -173,12 +215,10 @@
                             <div class="text-gray-500 price" data-price="35">$35/1 product</div>
                         </div>
                         <div class="flex items-center">
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product2')">-</button>
+
                             <input id="product2" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product2')">+</button>
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
-                        <button class="remove-btn ml-4" onclick="removeProduct(this)">X</button>
                     </div>
                 </div>
             </div>
@@ -226,25 +266,50 @@
                 <button class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">PAYMENT</button>
             </div>
         </div>
+        <!-- Modal Popup -->
+        <body class="bg-gray-100 font-mono">
+
+            <!-- Phần còn lại của mã HTML -->
+        
+            <!-- Modal Popup -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold">Đơn hàng đã đặt thành công</h2>
+                    <p class="mt-4 text-gray-700">Cảm ơn bạn đã đặt hàng của chúng tôi. Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể.</p>
+                    <button id="closeModal" class="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none">Đóng</button>
+                </div>
+            </div>
+        
+            <!-- Script -->
+            <script>
+                // JavaScript để điều khiển modal
+                document.addEventListener("DOMContentLoaded", function () {
+                    var modal = document.getElementById("myModal");
+        
+                    // Lấy nút PAYMENT và thêm sự kiện click
+                    var paymentBtn = document.querySelector('.bg-green-500.hover\:bg-green-700.text-white.font-bold.py-2.px-4.rounded-lg');
+                    paymentBtn.addEventListener('click', function () {
+                        modal.style.display = "block"; // Hiển thị modal khi nhấn nút PAYMENT
+                    });
+        
+                    // Lấy nút Đóng modal và thêm sự kiện click
+                    var closeModalBtn = document.getElementById("closeModal");
+                    closeModalBtn.addEventListener('click', function () {
+                        modal.style.display = "none"; // Ẩn modal khi nhấn nút Đóng
+                    });
+                });
+            </script>
+        
+            <!-- Phần còn lại của mã HTML -->
+        </body>
         
     </main>
 
     <script>
-        function decreaseQuantity(id) {
-            var input = document.getElementById(id);
-            var value = parseInt(input.value);
-            if (value > 1) {
-                input.value = value - 1;
-                updateTotal();
-            }
-        }
-
-        function increaseQuantity(id) {
-            var input = document.getElementById(id);
-            var value = parseInt(input.value);
-            input.value = value + 1;
-            updateTotal();
-        }
+    
 
         function updateTotal() {
             var totalQuantity = 0;
@@ -271,6 +336,7 @@
                 i.className = "nav-menu";
             }
         }
+        
     </script>
     <script type="module" src="/src/scripts/application.js"></script>
     <!-- footer.html -->
