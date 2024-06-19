@@ -91,24 +91,77 @@
 <body class="font-sans bg-gray-100">
 
     <!-- Header Section -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
-            <div class="flex items-center">
-                <img src="logo2.jpg" alt="Logo" class="h-12">
-                <nav class="ml-10 space-x-6">
-                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
-                </nav>
+    <header>
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4 pr-8">
+                    <a href="#" class="text-xl font-bold">Logo</a>
+                </div>
+                <div class="hidden md:flex space-x-8 flex-grow items-center">
+                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
+                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
+                    <div class="relative">
+                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
+                            Categories
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
+                            <!-- <h4 class="title">Hư cấu</h4> -->
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
+                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
-                <a href="#" class="text-gray-600 hover:text-green-600">
-                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
-                </a>
+            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
+                <div class="relative w-full">
+                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Instagram</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Facebook</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">YouTube</a>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Main Content Section -->
@@ -256,6 +309,34 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactBtn = document.getElementById('contactBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            contactBtn.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+
+            mobileContactBtn.addEventListener('click', function () {
+                mobileDropdownMenu.classList.toggle('hidden');
+            });
+
+            hamburgerBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver(entries => {
