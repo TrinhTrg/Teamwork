@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .hidden-on-scroll {
+            transition: transform 0.3s ease;
+            z-index: 999; /* Ensure the header is above other elements */
+        }
+
+        .hidden-on-scroll.hidden {
+            transform: translateY(-100%);
+        }
+
+        .menu ul li {
+            z-index: 1001; /* Ensure list items are above everything */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 40px; /* Adjust padding as needed */
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .footer-heading {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .footer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #00ff00; /* Change color on hover as needed */
+        }
+        
+        .footer-logo {
+            height: 80px; /* Adjust logo height as needed */
+        }
+        
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-social-icon {
+            width: 30px; /* Adjust social icon size as needed */
+            height: auto;
+            margin: 0 5px;
+        }
+        
+        .footer-bottom {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body class=" text-white">
+    <!-- header -->
+    <header class="bg-white py-4 hidden-on-scroll fixed w-full top-0 left-0">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- logo -->
+            <div class="w-24 z-20">
+                <img src="./logo2.jpg" alt="Logo" class="h-16 w-16">
+            </div>
+
+            <!-- icons vs login -->
+            <div class="flex items-center space-x-4">
+                <button class="bg-gray-500 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full">
+                    <a href="#">Login</a>
+                </button>
+                <a href="#" class="text-black hover:text-green-500 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                </a>
+                <a href="#" class="text-black hover:text-green-500 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <!-- search -->
+    <main class="container mx-auto py-6 mt-24">
+
+    <!-- Main content -->
+    <div class="container mx-auto mt-8 p-4">
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-500" viewBox="0 0 30 30">
+                <image href="https://static.vecteezy.com/system/resources/previews/020/589/769/original/checkbox-icon-in-green-vector.jpg" x="0" y="0" width="30" height="30" />
+                
+            </svg>
+    <div class="text-center p-10">
+      <h1 class="text-3xl text-black font-bold mb-2">Đơn hàng của bạn đã được đặt thành công!</h1>
+      <p class="text-xl mb-6  text-black ">Cảm ơn bạn vì đã tin tưởng chúng tôi</p>
+      <div class="mt-8 grid grid-cols-2 gap-4"></div>
+      <button class="bg-green-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-4">
+        
+        Trang chủ
+      </button>
+      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+        Theo dõi đơn hàng
+      </button>
+ 
+        
+      
+    </div>
+
+        <div class="container mx-auto mt-8">
+        <h2 class="text-xl text-black font-semibold mb-4">Sản phẩm bạn đã từng mua</h2>
+    </div>
+    <div class="flex justify-center mt-4">
+        <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+        <!-- Thêm các chấm phân trang khác nếu cần -->
+    </div>
+    
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Thay thế các phần tử này bằng dữ liệu thực tế -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://wall.vn/wp-content/uploads/2020/04/hinh-anh-da-nang-dep-scaled.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+            <p class="text-sm text-gray-600">Giá : bao nhiêu cho 1 trang thank ??</p>
+            </div>
+            <!-- ... các sản phẩm khác -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://vcdn1-dulich.vnecdn.net/2022/06/03/cauvang-1654247842-9403-1654247849.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=Swd6JjpStebEzT6WARcoOA" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                <p class="text-sm text-gray-600">Giá :1 jack </p>
+                </div>
+
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://image.donghohaitrieu.com/wp-content/uploads/2023/09/avt-40-canh-dep-da-nang-hap-dan-du-khach-ghe-tham.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                    <p class="text-sm text-gray-600">Giá: 500 củ</p>
+                    </div> 
+
+                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                         <img src="https://www.vietfuntravel.com.vn/image/data/Da-Nang/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man-h1.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                        <p class="text-sm text-gray-600">Giá : như chúng ta có xiền</p>
+                        </div> 
+
+                        <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                            <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                            <p class="text-sm text-gray-600">Giá</p>
+                            </div>
+
+                            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                <p class="text-sm text-gray-600">Giá</p>
+                                </div>
+
+                                <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                    <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                    <p class="text-sm text-gray-600">Giá</p>
+                                    </div>
+
+                                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                        <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                        <p class="text-sm text-gray-600">Giá</p>
+                                        </div>
+        </div>
+        <!-- Phân trang -->
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span> 
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-gray-400 rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        
+        </div>
+    </body>
+
+     <!-- Bestseller Section -->
+     <section class="flex items-center justify-center mt-6">
+        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-black">
+            <!-- Text Section -->
+            <div class="flex-wrap pr-8 absolute left-16">
+            </div>
+            <!-- Image Section -->
+            <div class="flex justify-end space-x-4">
+                <div class="relative mx-auto">
+                    <img src="./resource/sách 1.jpg" alt="Image 1" class="w-52 h-52 object-cover relative z-30 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="./resource/sách2-removebg-preview.png" alt="Image 2" class="absolute top-4 left-36 w-44 h-48 object-cover z-20 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="./resource/sách3-removebg-preview.png" alt="Image 3" class="absolute top-6 left-60 w-30 h-44 object-cover z-10 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section> 
+</main>     
+
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-start"> 
+                <!-- Logo Section -->
+                <div class="flex items-center">
+                    <img src="./logo2-removebg-preview.png" alt="Logo" class="h-16 mr-4">
+                </div>
+                <!-- Help Section -->
+                <div class="flex-1">
+                    <h3 class="font-semibold mb-2">HELP</h3>
+                    <ul>
+                        <li><a href="#" class="hover:underline">FAQs</a></li>
+                        <li><a href="#" class="hover:underline">Product Care</a></li>
+                        <li><a href="#" class="hover:underline">Stores</a></li>
+                    </ul>
+                </div>
+                <!-- Services Section -->
+                <div class="flex-1">
+                    <h3 class="font-semibold mb-2">SERVICES</h3>
+                    <ul>
+                        <li><a href="#" class="hover:underline">Repairs</a></li>
+                        <li><a href="#" class="hover:underline">Personalization</a></li>
+                        <li><a href="#" class="hover:underline">Art of Gifting</a></li>
+                        <li><a href="#" class="hover:underline">Download our Apps</a></li>
+                    </ul>
+                </div>
+                <!-- About Section -->
+                <div class="flex-1">
+                    <h3 class="font-semibold mb-2">ABOUT US</h3>
+                    <ul>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                        <li><a href="#" class="hover:underline"></a></li>
+                    </ul>
+                </div>
+                <!-- Email Signup Section -->
+                <div class="flex-1">
+                    <h3 class="font-semibold mb-2">CONTACT US</h3>
+                    <ul class="container flex justify-start items-center space-x-5">
+                        <li><a href="#" class="">
+                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/facebook.png" alt="facebook">
+                        </a></li>
+                        <li><a href="#" class="hover:underline">
+                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/youtube.png" alt="">
+                        </a></li>
+                        <li><a href="#" class="hover:underline">
+                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/linkedin.png" alt="">
+                        </a></li>
+                        <li><a href="#" class="hover:underline">
+                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/github.png" alt="">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Echobinary. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./src/scripts/application.js"></script>
+</body>
+</html>

@@ -9,44 +9,90 @@
     <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Hide menu items on small screens */
-        @media (max-width: 768px) {
-            .nav-items {
-                display: none;
-                }
-            }
-            .search-bar {
-                border: 1px solid #CBD5E0; /* Border color */
-                border-radius: 9999px; /* Full rounded border */
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-            .search-input {
-                transition: width 0.3s ease;
-            }
+        .search-bar {
+            border: 1px solid #CBD5E0;
+            border-radius: 9999px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .search-input {
+            transition: width 0.3s ease;
+        }
+
+        .order-container {
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-id {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .order-status {
+            font-weight: 600;
+        }
+
+        .order-status.delivered {
+            color: #16a34a;
+        }
+
+        .order-status.in-transit {
+            color: #d97706;
+        }
+
+        .order-status.pending {
+            color: #4b5563;
+        }
+
+        .view-more-btn {
+            margin-top: 16px;
+            font-weight: 600;
+            color: #16a34a;
+        }
     </style>
 </head>
-
 
 <body class="bg-gray-100">
 
     <!-- Header Section -->
-    <header class="bg-white py-2 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+    <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
         <div class="container mx-auto flex justify-between items-center h-16">
-            <nav class="flex items-center w-full">
-                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
-                <div class="nav-menu flex-grow" id="navMenu">
-                    <ul class="menu flex space-x-4">
-                        <li><a href="#" class="p-4">HOMEPAGE</a></li>
-                        <li><a href="#" class="p-4">BOOKS</a></li>
-                        <li><a href="#" class="p-4">AUTHORS</a></li>
-                        <li><a href="#" class="p-4">CATEGORIES</a></li>
-                        <li><a href="#" class="p-4">ABOUT US</a></li>
-                        <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
-                    </ul>
-                </div>
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+            <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                <ul class="menu flex space-x-4">
+                    <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4">BOOKS</a></li>
+                    <li><a href="#" class="p-4">AUTHORS</a></li>
+                    <li><a href="#" class="p-4">CATEGORIES</a></li>
+                    <li><a href="#" class="p-4">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                </ul>
+            </div>
+            <div class="flex items-center">
                 <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
-                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input lg:block hidden">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
                     <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
                     <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
                         <i class="fas fa-search"></i>
@@ -61,12 +107,30 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                 </div>
-                <div class="nav-menu-btn ml-4">
-                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+                <div class="nav-menu-btn ml-4 md:hidden">
+                    <i class="fas fa-bars" onclick="myMenuFunction()"></i>
                 </div>
+            </div>
+        </div>
+        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+            <div class="p-4">
+                <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="pt-24">
@@ -76,8 +140,8 @@
                 <aside class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md mb-4">
                     <div class="text-center">
                         <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
-                        <h2 class="text-xl font-semibold mb-2">John Doe</h2>
-                        <p class="text-gray-600 mb-4">john.doe@example.com</p>
+                        <h2 class="text-xl font-semibold mb-2">Username</h2>
+                        <p class="text-gray-600 mb-4">username.abc@example.com</p>
                         <a href="#" class="hover:text-green-700 py-1 px-3 mb-2 font-bold rounded-full">
                             <i class="fas fa-edit mr-2"></i>Edit Profile
                         </a>
@@ -93,27 +157,29 @@
                     <div class="grid grid-cols-1 gap-4 mb-4">
                         <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
                             <h3 class="text-lg font-semibold mb-2">Personal Information</h3>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> John Doe</p>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> john.doe@example.com</p>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> Username</p>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> username.abc@example.com</p>
                             <p class="text-gray-700"><span class="font-semibold">Phone:</span> (123) 456-7890</p>
                         </div>
-                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-semibold mb-2">Recent Orders</h3>
-                            <ul class="list-disc pl-4">
-                                <li class="text-gray-700 mb-2">Order #12345 - Delivered</li>
-                                <li class="text-gray-700 mb-2">Order #12346 - In Transit</li>
-                                <li class="text-gray-700 mb-2">Order #12347 - Pending</li>
+                        <div class="order-container bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold mb-4">Đơn hàng gần đây</h3>
+                            <ul class="order-list">
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12345</span>
+                                    <span class="order-status delivered text-green-600 font-semibold">Đã giao</span>
+                                </li>
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12346</span>
+                                    <span class="order-status in-transit text-yellow-500 font-semibold">Đang vận chuyển</span>
+                                </li>
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12347</span>
+                                    <span class="order-status pending text-gray-600 font-semibold">Đang chờ xử lý</span>
+                                </li>
                             </ul>
+                            <button class="view-more-btn text-green-500 font-semibold mt-4 ">Xem thêm</button>
                         </div>
-                    </div>
-                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h3 class="text-lg font-semibold mb-2">Recent Activity</h3>
-                        <ul class="list-disc pl-4">
-                            <li class="text-gray-700 mb-2">Added "Book Title" to wishlist</li>
-                            <li class="text-gray-700 mb-2">Updated profile information</li>
-                            <li class="text-gray-700 mb-2">Reviewed "Book Title"</li>
-                        </ul>
-                    </div>
+    
                 </section>
             </div>
         </div>
@@ -121,11 +187,10 @@
 
     <script>
         function myMenuFunction() {
-            const navMenu = document.getElementById("navMenu");
-            navMenu.classList.toggle("hidden");
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
         }
     </script>
-
 </body>
 
 </html>
