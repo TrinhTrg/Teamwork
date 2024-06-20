@@ -1,312 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Bookstore</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <style>
-        /* Custom styles for the menu */
-        .menu {
-            display: none;
-            z-index: 1000; /* Ensure the menu is above other elements */
+        .container-scroll {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
         }
 
-        .menu.active {
-            display: block;
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
         }
 
-        .hidden-on-scroll {
-            transition: transform 0.3s ease;
-            z-index: 999; /* Ensure the header is above other elements, but below the menu */
-        }
-
-        .hidden-on-scroll.hidden {
-            transform: translateY(-100%);
-        }
-
-        .menu ul li {
-            z-index: 1001; /* Ensure list items are above everything */
-        }
-
-        /* Hide menu items on small screens */
-        @media (max-width: 768px) {
-            .nav-items {
-                display: none;
-            }
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 1rem;
         }
     </style>
 </head>
-<body class="text-white">
-    <!-- header -->
-    <header class="bg-white py-4 hidden-on-scroll fixed w-full top-0 left-0">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <!-- logo -->
-            <div class="w-24 z-20">
-                <img src="./logo2.jpg" alt="Logo" class="h-20 w-20">
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <header class="bg-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16" /></a>
             </div>
-
-            <!-- menu items -->
-            <nav class="nav-items hidden md:flex space-x-4">
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a>
+            <nav class="flex space-x-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Trang chủ</a>
+                <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
+                <div class="relative menu-item-has-children dropdown">
+                    <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link dropdown-toggle">Thể
+                        loại </a>
+                    <div class="sub-menu mega-menu mega-menu-column-4 dropdown-menu">
+                        <div class="list-item">
+                            <h4 class="title">Hư cấu</h4>
+                            <ul>
+                                <li><a href="#">Văn học hiện đại</a></li>
+                                <li><a href="#">Văn học kinh điển</a></li>
+                                <li><a href="#">Văn học thiếu nhi</a></li>
+                                <li><a href="#">Lãng mạn</a></li>
+                                <li><a href="#">Kỳ ảo</a></li>
+                                <li><a href="#">Trinh thám - Kinh dị</a></li>
+                            </ul>
+                        </div>
+                        <div class="list-item">
+                            <h4 class="title">Phi hư cấu</h4>
+                            <ul>
+                                <li><a href="#">Triết học</a></li>
+                                <li><a href="#">Sử học</a></li>
+                                <li><a href="#">Khoa học</a></li>
+                                <li><a href="#">Kinh doanh</a></li>
+                                <li><a href="#">Kinh tế chính trị</a></li>
+                                <li><a href="#">Kỹ năng</a></li>
+                                <li><a href="#">Nghệ thuật</a></li>
+                                <li><a href="#">Nuôi dạy con</a></li>
+                            </ul>
+                        </div>
+                        <div class="list-item">
+                            <h4 class="title">Thiếu nhi</h4>
+                            <ul>
+                                <li><a href="#">0-5 tuổi</a></li>
+                                <li><a href="#">6-8 tuổi</a></li>
+                                <li><a href="#">9-12 tuổi</a></li>
+                                <li><a href="#">13-15 tuổi</a></li>
+                        </div>
+                        <div class="list-item">
+                            <h4 class="title">Phân loại khác</h4>
+                            <ul>
+                                <li><a href="#">Sách bán chạy</a></li>
+                                <li><a href="#">Văn học kinh điển</a></li>
+                                <li><a href="#">Văn học thiếu nhi</a></li>
+                                <li><a href="#">Lãng mạn</a></li>
+                                <li><a href="#">Kỳ ảo</a></li>
+                                <li><a href="#">Trinh thám - Kinh dị</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
             </nav>
-
-            <!-- icons vs login -->
-            <div class="hidden md:flex items-center space-x-4">
-                <button class="bg-gray-500 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full">
-                    <a href="#">Login</a>
-                </button>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <div class="flex justify-center items-center ml-4">
+                <a href="./checkout.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
                 </a>
-                <a href="#" class="text-black hover:text-green-500 transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+
+                <a href="./userpage.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6 ml-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                 </a>
+                <button class="button ml-4" style="font-size: 8px;">
+                    <a href="./login.html" class="nul">Sign Up</a></button>
             </div>
-
-            <!-- menu button  -->
-            <div class="flex items-center md:hidden">
-                <button id="menuButton" class="text-black focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50">
-            <div class="p-4">
-                <button id="closeButton" class="text-black focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav class="p-4">
-                <ul class="space-y-4">
-                    <li>
-                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!-- content -->
-    <!-- search -->
-    <main class="container mx-auto py-6 mt-24">
-        <div class="search-bar flex items-center justify-center space-x-4">
-            <input type="text" placeholder="Enter ..." class="border border-gray-300 px-4 py-1 rounded-full focus:outline-none focus:ring focus:border-green-500">
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full">Search</button>
-        </div>
-    
-        <!-- Banner -->
-        <div class="relative mt-6 bg-gray-200 h-64 flex items-center justify-center">
-            <span class="text-gray-500 text-2xl">Banner</span>
-            <!--Arrow-->
-                <svg class="absolute left-0 ml-0 h-10 w-10 cursor-pointer text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                <svg class="absolute right-0 mr-0 h-10 w-10 cursor-pointer text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M9 5l7 7-7 7"></path>
-                </svg>
-                        <!-- Navigation Dots -->
-            <div class="absolute bottom-4 flex space-x-2">
-                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
-                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
-                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
-                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
-                <div class="h-2 w-2 bg-gray-400 rounded-full cursor-pointer transition duration-500"></div>
-            </div>
-        </div>
-    
-        <!-- Bestseller Section -->
-        <section class="flex items-center justify-center mt-6">
-            <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-black">
-                <!-- Text Section -->
-                <div class="flex-wrap pr-8 absolute left-16">
-                    <h1 class="text-2xl font-bold ">Bestseller Books</h1>
-                    <p class="mb-4">Content</p>
-                </div>
-                <!-- Image Section -->
-                <div class="flex justify-end space-x-4">
-                    <div class="relative mx-auto">
-                        <img src="./resource/sách 1.jpg" alt="Image 1" class="w-52 h-52 object-cover relative z-30 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
-                        <img src="./resource/sách2-removebg-preview.png" alt="Image 2" class="absolute top-4 left-36 w-44 h-48 object-cover z-20 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
-                        <img src="./resource/sách3-removebg-preview.png" alt="Image 3" class="absolute top-6 left-60 w-30 h-44 object-cover z-10 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+    <div class="container-scroll">
+        <section class="one">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="./img/crs1.img" alt="First slide">
                     </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./img/crs2.webp" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./img/bobaphepthuatgauhoggs.webp" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <section class="two">
+            <div class="container mx-auto px-4 py-12">
+                <h1 class="text-4xl font-semibold text-gray-800">Giới thiệu cửa hàng sách</h1>
+                <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                    volutpat nisi vel massa ultricies, a venenatis nisl suscipit. Sed ut pretium risus, ut laoreet
+                    justo.</p>
+                <div class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-800">Dịch vụ</h2>
+                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at
+                        lacinia mauris, sed viverra ex.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Books -->
-        <section class="">
-            <div class="max-w-4xl mx-auto bg-green-50 rounded-lg shadow p-4 mt-8 border border-green-100">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-2xl font-bold text-black">Books</h2>
-                    <a href="#" class="text-blue-600">See all</a>
-                </div>
-                <div class="flex justify-center items-center">
-                    <button class="text-gray-500 hover:text-green-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <div class="flex overflow-x-scroll space-x-4 mx-4">
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                    </div>
-                    <button class="text-gray-500 hover:text-green-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+        <section class="three">
+            <div class="container mx-auto px-4 py-12">
+                <h1 class="text-4xl font-semibold text-gray-800">Bộ sưu tập sách</h1>
+                <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                    volutpat nisi vel massa ultricies, a venenatis nisl suscipit. Sed ut pretium risus, ut laoreet
+                    justo.</p>
+                <div class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-800">Tác giả nổi bật</h2>
+                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at
+                        lacinia mauris, sed viverra ex.</p>
                 </div>
             </div>
         </section>
+    </div>
 
-        <section class="">
-            <div class="max-w-4xl mx-auto bg-white rounded-lg p-4 mt-8">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-2xl font-bold">Authors</h2>
-                    <a href="#" class="text-blue-600">See All</a>
-                </div>
-                <div class="flex justify-center items-center">
-                    <button class="text-gray-500 hover:text-green-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <div class="flex overflow-x-scroll space-x-4 mx-4">
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                        <div class="w-32 bg-gray-200 p-4 rounded">
-                            <div class="h-32 bg-gray-400 mb-2"></div>
-                            <h3 class="text-lg font-semibold">Title</h3>
-                            <p class="text-gray-600">Content</p>
-                        </div>
-                    </div>
-                    <button class="text-gray-500 hover:text-green-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-start"> 
-                <!-- Logo Section -->
-                <div class="flex items-center">
-                    <img src="./logo2-removebg-preview.png" alt="Logo" class="h-16 mr-4">
-                </div>
-                <!-- Help Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">HELP</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">FAQs</a></li>
-                        <li><a href="#" class="hover:underline">Product Care</a></li>
-                        <li><a href="#" class="hover:underline">Stores</a></li>
-                    </ul>
-                </div>
-                <!-- Services Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">SERVICES</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline">Repairs</a></li>
-                        <li><a href="#" class="hover:underline">Personalization</a></li>
-                        <li><a href="#" class="hover:underline">Art of Gifting</a></li>
-                        <li><a href="#" class="hover:underline">Download our Apps</a></li>
-                    </ul>
-                </div>
-                <!-- About Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">ABOUT US</h3>
-                    <ul>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                        <li><a href="#" class="hover:underline"></a></li>
-                    </ul>
-                </div>
-                <!-- Email Signup Section -->
-                <div class="flex-1">
-                    <h3 class="font-semibold mb-2">CONTACT US</h3>
-                    <ul class="container flex justify-start items-center space-x-5">
-                        <li><a href="#" class="">
-                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/facebook.png" alt="facebook">
-                        </a></li>
-                        <li><a href="#" class="hover:underline">
-                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/youtube.png" alt="">
-                        </a></li>
-                        <li><a href="#" class="hover:underline">
-                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/linkedin.png" alt="">
-                        </a></li>
-                        <li><a href="#" class="hover:underline">
-                            <img class="w-12 grayscale hover:grayscale-0" src="./resource/github.png" alt="">
-                        </a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <p>&copy; 2024 Echobinary. All rights reserved.</p>
+    <footer class="footer-container">
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy; 2023 Bookstore. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
-    <script src="./src/scripts/application.js"></script>
 </body>
+
 </html>

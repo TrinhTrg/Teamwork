@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân Người Dùng</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .header {
+            box-shadow: 0 4px 2px -2px gray;
+        }
+        .menu-item {
+            margin-left: 20px;
+        }
+        .container {
+            padding: 0 1.5rem;
+        }
+        body {
+            padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
+        }
+        .breadcrumb li {
+            display: inline-block;
+            position: relative;
+            padding-right: 10px; /* Khoảng cách giữa các mục breadcrumb */
+        }
+        
+        .breadcrumb li:hover {
+            color: green; /* Màu chữ khi di chuột qua */
+        }
+        
+        .separator {
+            margin: 0 5px; /* Khoảng cách giữa dấu ">" và chữ */
+        }
+        
+        .separator:before {
+            content: '>'; /* Hiển thị dấu ">" */
+            margin: 0 5px;
+        }
+        .menu li {
+            display: inline-block;
+            position: relative;
+            padding-right: 4px;
+        }
+        .menu li:hover {
+            color: green;
+        }
+
+        
+    </style>
+</head>
+<body class="bg-gray-100 font-mono">
+
+    <!-- Header -->
+    <header>
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4 pr-8">
+                    <a href="#" class="text-xl font-bold">Logo</a>
+                </div>
+                <div class="hidden md:flex space-x-8 flex-grow items-center">
+                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
+                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
+                    <div class="relative">
+                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
+                            Categories
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
+                            <!-- <h4 class="title">Hư cấu</h4> -->
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
+                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
+                <div class="relative w-full">
+                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Instagram</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Facebook</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">YouTube</a>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wrapperMain_content">
+        <div class="container mx-auto py-4 mt-8"></div>
+        <nav class="bread-crumb lazyload" data-src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bg-breadcrumb.jpg?1704690471681" data-was-processed="true" style="background-image: url('//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bg-breadcrumb.jpg?1704690471681');">
+            <div class="container ml-10">
+                <ul class="breadcrumb">					
+                    <li class="home">
+                        <a href="/"><span>Trang chủ</span></a>						
+                    </li>
+                    <span class="separator"></span> <!-- Dấu ">" giữa các mục breadcrumb -->
+                    <li>
+                        <strong><span>Đăng ký tài khoản</span></strong>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="wrapperMain_content">
+            <div class="container mx-auto py-4 mt-8 ml-10">
+                <h1 class="text-2xl font-semibold text-gray-800">Xin chào, [Tên người dùng]</h1>
+                <p class="text-gray-600 mt-2">Đây là trang cá nhân của bạn.</p>
+                <!-- Các phần nội dung khác của trang cá nhân -->
+            </div>
+            <nav class="ml-4">
+                <ul class="container mx-auto ml-6 mt-4">
+                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">User account</a></li>
+                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">Your Cart added</a></li>
+                    <li class="mt-7"><a href="#" class="text-gray-600 hover:text-green-800">Log Out</a></li>
+                </ul>
+            </nav>
+        </main>
+
+    </main>
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+    </script>
+    <script type="module" src="/src/scripts/application.js"></script>
+        <!-- footer.html -->
+<footer class="bg-white text-gray-800 mx-auto py-8 mt-8">
+    <div class="container mx-auto px-4" style="min-width: 800px;">
+        <div class="flex justify-between items-start">
+            <!-- Logo Section -->
+            <div class="flex items-center">
+                <img src="./logo2.jpg" alt="Logo" class="h-16 mr-4">
+            </div>
+            <!-- Help Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">HELP</h3>
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
+                </ul>
+            </div>
+            <!-- Services Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">SERVICES</h3>
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
+                </ul>
+            </div>
+            <!-- About Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
+                
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
+                </ul>
+            </div>
+            
+            <!-- Email Signup Section -->
+            <div class="flex-1">
+
+                <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
+
+                <ul>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
+                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2024 Echobinary. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
