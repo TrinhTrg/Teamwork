@@ -19,9 +19,19 @@
             -moz-appearance: textfield;
             appearance: textfield;
         }
+
+        .glider-slide {
+            margin-right: 5px; /* Adjust this value to change the gap between products */
+        }
     </style>
 
     <script>
+
+        function changeMainImage(element) {
+            const mainImage = document.getElementById('main-book-image');
+            mainImage.src = element.src;
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             const quantityInput = document.getElementById("quantity");
             const priceElement = document.getElementById("price");
@@ -53,17 +63,35 @@
                 }
                 updatePrice();
             });
+
+            const showMoreBtn = document.getElementById("show-more");
+            const relatedProducts = document.querySelectorAll(".related-product");
+            let visibleProducts = 3;
+
+            function showMoreProducts() {
+                for (let i = visibleProducts; i < visibleProducts + 3; i++) {
+                    if (relatedProducts[i]) {
+                        relatedProducts[i].classList.remove("hidden");
+                    }
+                }
+                visibleProducts += 3;
+
+                if (visibleProducts >= relatedProducts.length) {
+                    showMoreBtn.classList.add("hidden");
+                }
+            }
+
+            showMoreBtn.addEventListener("click", showMoreProducts);
+
         });
 
         document.addEventListener('DOMContentLoaded', function () {
             new Glider(document.querySelector('.glider'), {
-
-                slidesToShow: 2,
+                slidesToShow: 4,  // Ensure this is set to 4
                 slidesToScroll: 1,
                 draggable: true,
                 dots: '.dots',
                 arrows: {
-
                     prev: '.glider-prev',
                     next: '.glider-next'
                 }
@@ -160,14 +188,15 @@
             <!-- Book Image -->
             <div class="col-span-1">
                 <div class="p-4 rounded">
-                    <img class="w-full h-auto object-cover mb-4" src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
+                    <img id="main-book-image" class="w-full h-auto object-cover mb-4" src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
                 </div>
                 <div>
+                    <!-- more image -->
                     <div class="grid grid-cols-4 gap-2">
-                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full">
-                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full">
-                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full">
-                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full">
+                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                        <img src="https://m.media-amazon.com/images/I/61gwba1pQnL._SY522_.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                        <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_09_09_41_10_3-390x510.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                        <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_29_16_08_31_3-390x510.png" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
                     </div>
                 </div>
             </div>
@@ -178,7 +207,6 @@
                     <h1 class="text-2xl font-bold">When Breath Becomes Air</h1>
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-500">★★★★☆</div>
-                        <span class="ml-2 text-gray-600">5 reviews</span>
                       </div>
                     <p class="text-xl text-green-500 font-semibold">100.000 đ</p>
                     <div class="mb-4">
@@ -235,141 +263,214 @@
                 <div class="bg-white p-5 rounded-md shadow">
                     <h2 class="pb-2 text-xl font-bold">Product Details</h2>
                     <ul class="p-2 text-gray-700">
-                        <li><strong class="pr-12">Product code</strong>9781529110944</li>
-                        <li><strong class="pr-20 ">Supplier</strong> Grantham Book Services</li>
-                        <li><strong class="pr-24">Author</strong>Paul Kalanithi</li>
-                        <li><strong class="pr-8">Publishing year</strong>2017</li>
-                        <li><strong class="pr-20">Puplisher</strong>Vintage</li>
-                        <li><strong class="pr-20">Language</strong>English</li>
-                        <li><strong class="pr-24">Weight</strong>139</li>
-                        <li><strong class="pr-28">Size</strong> 12.9 x 1.6 x 19.8</li>
-                        <li><strong class="pr-3">Quantity of Page</strong> 256 pages</li>
-                        <li><strong class="pr-12">Book Layout</strong>Paperback</li>
+                        <li><strong class="md:pr-12">Product code</strong>9781529110944</li>
+                        <li><strong class="md:pr-20 ">Supplier</strong> Grantham Book Services</li>
+                        <li><strong class="md:pr-24">Author</strong>Paul Kalanithi</li>
+                        <li><strong class="md:pr-8">Publishing year</strong>2017</li>
+                        <li><strong class="md:pr-20">Puplisher</strong>Vintage</li>
+                        <li><strong class="md:pr-20">Language</strong>English</li>
+                        <li><strong class="md:pr-24">Weight</strong>139</li>
+                        <li><strong class="md:pr-28">Size</strong> 12.9 x 1.6 x 19.8</li>
+                        <li><strong class="md:pr-3">Quantity of Page</strong> 256 pages</li>
+                        <li><strong class="md:pr-12">Book Layout</strong>Paperback</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Related Products -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold">Related Products</h2>
-            <div class="mb-20 glider-contain bg-green-50 rounded-md">
-                <div class="glider">
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                </div>
-                <button aria-label="Previous" class="glider-prev">«</button>
-                <button aria-label="Next" class="glider-next">»</button>
-                <div role="tablist" class="dots"></div>
-            </div>
-        </section>
         
 
-        <!-- Recommended Products Section -->
-        <div class="mt-8">
-            <h2 class="text-2xl font-bold mb-4">Recommended for You</h2>
-            <div class="glider-contain">
+        <!-- Related Products -->
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Related Products</h2>
+            <div class="glider-contain relative rounded-md p-1">
                 <div class="glider">
-                    <!-- Recommended Product Card 1 -->
-                    <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
-                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold">Book Title 1</h3>
-                                <p class="text-gray-500">Author Name 1</p>
-                                <p class="text-green-500 font-semibold">150.000 đ</p>
-                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                    <!-- product 1 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
                                     Add to cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <!-- Recommended Product Card 2 -->
-                    <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
-                            <img src="https://example.com/book2.jpg" alt="Book 2" class="w-full h-24 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold">Book Title 2</h3>
-                                <p class="text-gray-500">Author Name 2</p>
-                                <p class="text-green-500 font-semibold">200.000 đ</p>
-                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                    <!-- product 2 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
                                     Add to cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <!-- Recommended Product Card 3 -->
-                    <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
-                            <img src="https://example.com/book3.jpg" alt="Book 3" class="w-full h-24 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold">Book Title 3</h3>
-                                <p class="text-gray-500">Author Name 3</p>
-                                <p class="text-green-500 font-semibold">120.000 đ</p>
-                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                    <!-- product 3 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
                                     Add to cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more product cards as needed -->
+                    <!-- product 4 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product 5 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product 6 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-32 rounded-lg shadow-md overflow-hidden">
+                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-32 h-40 object-cover">
+                            <div class="p-2">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="glider-prev">&laquo;</button>
-                <button class="glider-next">&raquo;</button>
-                <div class="dots"></div>
+                <button aria-label="Previous" class="glider-prev absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-300 rounded-full p-2">«</button>
+                <button aria-label="Next" class="glider-next absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-300 rounded-full p-2">»</button>
+                <div role="tablist" class="dots mt-4"></div>
             </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Related Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Related Product Card 1 -->
+                <div class="p-4 related-product">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book4.jpg" alt="Book 4" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 4</h3>
+                            <p class="text-gray-500">Author Name 4</p>
+                            <p class="text-green-500 font-semibold">130.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Product Card 2 -->
+                <div class="p-4 related-product">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book5.jpg" alt="Book 5" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 5</h3>
+                            <p class="text-gray-500">Author Name 5</p>
+                            <p class="text-green-500 font-semibold">160.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Product Card 3 -->
+                <div class="p-4 related-product">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book6.jpg" alt="Book 6" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 6</h3>
+                            <p class="text-gray-500">Author Name 6</p>
+                            <p class="text-green-500 font-semibold">140.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Product Card 4 (initially hidden) -->
+                <div class="p-4 related-product hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book7.jpg" alt="Book 7" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 7</h3>
+                            <p class="text-gray-500">Author Name 7</p>
+                            <p class="text-green-500 font-semibold">180.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Product Card 5 (initially hidden) -->
+                <div class="p-4 related-product hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book8.jpg" alt="Book 8" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 8</h3>
+                            <p class="text-gray-500">Author Name 8</p>
+                            <p class="text-green-500 font-semibold">170.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Product Card 6 (initially hidden) -->
+                <div class="p-4 related-product hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book9.jpg" alt="Book 9" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 9</h3>
+                            <p class="text-gray-500">Author Name 9</p>
+                            <p class="text-green-500 font-semibold">190.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="show-more" class="mt-4 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                Show More
+            </button>
         </div>
 
-
-
+    </main>
     <!-- Footer -->
     <footer class="bg-white text-black py-8 border-t border-gray-200">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
