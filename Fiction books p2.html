@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Page</title>
+    <title>Fiction Books</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .hidden-child { display: none; }
@@ -97,7 +97,9 @@
         <nav class="text-gray-600 text-sm">
             <a href="./index.html" class="hover:underline">Home</a>
             <span class="mx-2">></span>
-            <a href="./books.html" class="text-green-700 font-bold hover:underline">Books</a>
+            <a href="./books.html" class="hover:underline">Books</a>
+            <span class="mx-2">></span>
+            <a href="./books.html" class="text-green-700 font-bold hover:underline">Fiction</a>
         </nav>
     </div>
     </main>
@@ -109,12 +111,18 @@
                 <h2 class="font-bold mb-2">All Categories</h2>
                 <ul>
                     <li>
-                        <a href="./Fiction books.html" class="block py-1 text-black">Fiction</a> 
-                    </li>
-                    <li>
-                        <a href="#" class="block py-1 text-black">Non-fiction</a>
-                        <a href="#" class="block py-1 text-black">Children</a>
-                        <a href="#" class="block py-1 text-black">Other Categories</a>
+                        <a href="#" class="block py-1 text-green-600">Fiction</a>
+                        <div>
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Romance</a>
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Fantasy</a>
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Detective - Horror</a>
+                        </div>
+                        <div class="hidden-child">
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Modern Literature</a>
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Classics</a>
+                            <a href="#" class="block py-1 text-gray-500 pl-4">Children's Literature</a>
+                        </div>
+                        <button id="toggleButton" class="text-green-500 mt-2">Show more</button>
                     </li>
                 </ul>
             </div>
@@ -383,8 +391,8 @@
             <!-- Pagination -->
             <div class="flex justify-center mt-8">
                 <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-l transition duration-300 ease-in-out hover:text-white">Previous</a>
-                <a href="#" class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white">1</a>
-                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">2</a>
+                <a href="./Fiction books.html" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">1</a>
+                <a href="#" class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white">2</a>
                 <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">3</a>
                 <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-r hover:text-white transition duration-300 ease-in-out">Next</a>
             </div>
