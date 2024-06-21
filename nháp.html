@@ -53,79 +53,35 @@
                 }
                 updatePrice();
             });
-        });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            new Glider(document.querySelector('.glider'), {
-
+            new Glider(document.querySelector('.glider-recommended'), {
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 draggable: true,
-                dots: '.dots',
+                dots: '.dots-recommended',
                 arrows: {
+                    prev: '.glider-prev-recommended',
+                    next: '.glider-next-recommended'
+                }
+            });
 
-                    prev: '.glider-prev',
-                    next: '.glider-next'
+            new Glider(document.querySelector('.glider-related'), {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots-related',
+                arrows: {
+                    prev: '.glider-prev-related',
+                    next: '.glider-next-related'
                 }
             });
         });
-
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const recommendedList = document.getElementById('recommended-list');
-        //     let page = 1;
-
-        //     function getRandomItem(arr) {
-        //         return arr[Math.floor(Math.random() * arr.length)];
-        //     }
-
-        //     function loadMoreBooks() {
-        //         const titles = ['Book Title 1', 'Book Title 2', 'Book Title 3', 'Book Title 4', 'Book Title 5'];
-        //         const prices = ['50.000vnđ', '75.000vnđ', '100.000vnđ', '150.000vnđ', '200.000vnđ'];
-        //         const image = [
-        //             './resource/sách 1.jpg ',
-        //             './resource/sách2-removebg-preview.png'
-        //         ];
-
-        //         for (let i = 0; i < 2; i++) {
-        //             const bookDiv = document.createElement('div');
-        //             bookDiv.className = 'p-4 rounded shadow';
-        //             const randomTitle = getRandomItem(titles);
-        //             const randomPrice = getRandomItem(prices);
-        //             const randomImage = getRandomItem(image);
-
-        //             bookDiv.innerHTML = `
-        //                 <div class="flex items-center justify-center">
-        //                     <img src="${randomImage}" alt="">
-        //                 </div>
-        //                 <div class="mt-2 text-center">
-        //                     <p>${randomTitle}</p>
-        //                     <p>${randomPrice}</p>
-        //                 </div>
-        //             `;
-        //             recommendedList.appendChild(bookDiv);
-        //         }
-        //     }
-
-        //     loadMoreBooks(); // Initial load
-
-        //     window.addEventListener('scroll', function () {
-        //         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-        //             loadMoreBooks();
-        //         }
-        //     });
-
-        //     // Initialize AOS
-        //     AOS.init({
-        //         duration: 800,
-        //         once: true,
-        //     });
-        // });
     </script>
 </head>
 
 <body class="bg-gray-100">
     <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center">
                 <img src="logo2.jpg" alt="Logo" class="h-12">
                 <nav class="ml-10 space-x-6">
@@ -144,10 +100,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto p-4">
-        <!-- Breadcrumb -->
-        <div class="container mx-auto px-4 py-4 container-limited">
+        <div class="px-4 py-4">
             <nav class="text-gray-600 text-sm">
                 <a href="#" class="hover:underline">Home</a>
                 <span class="mx-2">></span>
@@ -235,93 +189,85 @@
                 <div class="bg-white p-5 rounded-md shadow">
                     <h2 class="pb-2 text-xl font-bold">Product Details</h2>
                     <ul class="p-2 text-gray-700">
-                        <li><strong class="pr-12">Product code</strong>9781529110944</li>
-                        <li><strong class="pr-20 ">Supplier</strong> Grantham Book Services</li>
-                        <li><strong class="pr-24">Author</strong>Paul Kalanithi</li>
-                        <li><strong class="pr-8">Publishing year</strong>2017</li>
-                        <li><strong class="pr-20">Puplisher</strong>Vintage</li>
-                        <li><strong class="pr-20">Language</strong>English</li>
-                        <li><strong class="pr-24">Weight</strong>139</li>
-                        <li><strong class="pr-28">Size</strong> 12.9 x 1.6 x 19.8</li>
-                        <li><strong class="pr-3">Quantity of Page</strong> 256 pages</li>
-                        <li><strong class="pr-12">Book Layout</strong>Paperback</li>
+                        <li><strong class="md:pr-12">Product code</strong>9781529110944</li>
+                        <li><strong class="md:pr-20 ">Supplier</strong> Grantham Book Services</li>
+                        <li><strong class="md:pr-24">Author</strong>Paul Kalanithi</li>
+                        <li><strong class="md:pr-8">Publishing year</strong>2017</li>
+                        <li><strong class="md:pr-20">Puplisher</strong>Vintage</li>
+                        <li><strong class="md:pr-20">Language</strong>English</li>
+                        <li><strong class="md:pr-24">Weight</strong>139</li>
+                        <li><strong class="md:pr-28">Size</strong> 12.9 x 1.6 x 19.8</li>
+                        <li><strong class="md:pr-3">Quantity of Page</strong> 256 pages</li>
+                        <li><strong class="md:pr-12">Book Layout</strong>Paperback</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Related Products -->
-        <section class="mt-8">
-            <h2 class="text-xl font-bold">Related Products</h2>
-            <div class="mb-20 glider-contain bg-green-50 rounded-md">
-                <div class="glider">
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
+        <!-- Related Products Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Related Products</h2>
+            <div class="glider-contain">
+                <div class="glider glider-related">
+                    <!-- Related Product Card 1 -->
+                    <div class="p-4">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="https://example.com/book4.jpg" alt="Book 4" class="w-full h-24 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold">Book Title 4</h3>
+                                <p class="text-gray-500">Author Name 4</p>
+                                <p class="text-green-500 font-semibold">130.000 đ</p>
+                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
-                        </div>
-                    </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
+                    <!-- Related Product Card 2 -->
+                    <div class="p-4">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="https://example.com/book5.jpg" alt="Book 5" class="w-full h-24 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold">Book Title 5</h3>
+                                <p class="text-gray-500">Author Name 5</p>
+                                <p class="text-green-500 font-semibold">160.000 đ</p>
+                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <!-- b1 -->
-                    <div class="p-4 rounded w-48">
-                        <div class="flex items-center justify-center">
-                            <img src="./resource/sách 1.jpg" alt="">
-                        </div>
-                        <div class="mt-2 text-center">
-                            <p>Book Title</p>
-                            <p>50.000vnđ</p>
+                    <!-- Related Product Card 3 -->
+                    <div class="p-4">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="https://example.com/book6.jpg" alt="Book 6" class="w-full h-24 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold">Book Title 6</h3>
+                                <p class="text-gray-500">Author Name 6</p>
+                                <p class="text-green-500 font-semibold">140.000 đ</p>
+                                <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    <!-- Add more product cards as needed -->
                 </div>
-                <button aria-label="Previous" class="glider-prev">«</button>
-                <button aria-label="Next" class="glider-next">»</button>
-                <div role="tablist" class="dots"></div>
+                <button class="glider-prev glider-prev-related">&laquo;</button>
+                <button class="glider-next glider-next-related">&raquo;</button>
+                <div class="dots dots-related"></div>
             </div>
-        </section>
-        
+        </div>
 
         <!-- Recommended Products Section -->
         <div class="mt-8">
             <h2 class="text-2xl font-bold mb-4">Recommended for You</h2>
             <div class="glider-contain">
-                <div class="glider">
+                <div class="glider glider-recommended">
                     <!-- Recommended Product Card 1 -->
                     <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
-                            <img src="./resource/sách 1.jpg" alt="Book 1" class="w-48 object-cover">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="https://example.com/book1.jpg" alt="Book 1" class="w-full h-24 object-cover">
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold">Book Title 1</h3>
                                 <p class="text-gray-500">Author Name 1</p>
@@ -334,7 +280,7 @@
                     </div>
                     <!-- Recommended Product Card 2 -->
                     <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
                             <img src="https://example.com/book2.jpg" alt="Book 2" class="w-full h-24 object-cover">
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold">Book Title 2</h3>
@@ -348,7 +294,7 @@
                     </div>
                     <!-- Recommended Product Card 3 -->
                     <div class="p-4">
-                        <div class="w-48 rounded-lg shadow-md overflow-hidden">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
                             <img src="https://example.com/book3.jpg" alt="Book 3" class="w-full h-24 object-cover">
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold">Book Title 3</h3>
@@ -362,62 +308,12 @@
                     </div>
                     <!-- Add more product cards as needed -->
                 </div>
-                <button class="glider-prev">&laquo;</button>
-                <button class="glider-next">&raquo;</button>
-                <div class="dots"></div>
+                <button class="glider-prev glider-prev-recommended">&laquo;</button>
+                <button class="glider-next glider-next-recommended">&raquo;</button>
+                <div class="dots dots-recommended"></div>
             </div>
         </div>
-
-
-
-    <!-- Footer -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img src="logo2.jpg" alt="Logo" class="h-16">
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
-                </div>
-            </div>
-
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>
-        </div>
-
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center container-limited">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
-
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        
-     
+    </main>
 </body>
 
 </html>
-
-
-

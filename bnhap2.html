@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <style>
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const quantityInput = document.getElementById("quantity");
+            const priceElement = document.getElementById("price");
+            const unitPrice = 100000;
+
+            function updatePrice() {
+                const quantity = parseInt(quantityInput.value);
+                priceElement.textContent = (unitPrice * quantity).toLocaleString('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                });
+            }
+
+            document.getElementById("increment").addEventListener("click", function () {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updatePrice();
+            });
+
+            document.getElementById("decrease").addEventListener("click", function () {
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                    updatePrice();
+                }
+            });
+
+            quantityInput.addEventListener("input", function () {
+                if (parseInt(quantityInput.value) < 1) {
+                    quantityInput.value = 1;
+                }
+                updatePrice();
+            });
+
+            // Initialize Glider.js for recommended products only
+            new Glider(document.querySelector('.glider-recommended'), {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots-recommended',
+                arrows: {
+                    prev: '.glider-prev-recommended',
+                    next: '.glider-next-recommended'
+                }
+            });
+
+            // Show More button functionality
+            document.getElementById("show-more").addEventListener("click", function () {
+                document.querySelectorAll(".related-hidden").forEach(function (el) {
+                    el.classList.remove("hidden");
+                });
+                this.classList.add("hidden");
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- ... other content ... -->
+
+    <!-- Related Products Section -->
+    <div class="mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Related Product Card 1 -->
+            <div class="p-4">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://example.com/book4.jpg" alt="Book 4" class="w-full h-24 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Book Title 4</h3>
+                        <p class="text-gray-500">Author Name 4</p>
+                        <p class="text-green-500 font-semibold">130.000 đ</p>
+                        <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Related Product Card 2 -->
+            <div class="p-4">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://example.com/book5.jpg" alt="Book 5" class="w-full h-24 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Book Title 5</h3>
+                        <p class="text-gray-500">Author Name 5</p>
+                        <p class="text-green-500 font-semibold">160.000 đ</p>
+                        <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Related Product Card 3 -->
+            <div class="p-4 related-hidden hidden">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://example.com/book6.jpg" alt="Book 6" class="w-full h-24 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Book Title 6</h3>
+                        <p class="text-gray-500">Author Name 6</p>
+                        <p class="text-green-500 font-semibold">140.000 đ</p>
+                        <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+        <button id="show-more" class="mt-4 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2">
+            Show More
+        </button>
+    </div>
+
+    <!-- Recommended Products Section -->
+    <div class="mt-8">
+        <h2 class="text-2xl font-bold mb-4">Recommended for You</h2>
+        <div class="glider-contain">
+            <div class="glider glider-recommended">
+                <!-- Recommended Product Card 1 -->
+                <div class="p-4">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book1.jpg" alt="Book 1" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 1</h3>
+                            <p class="text-gray-500">Author Name 1</p>
+                            <p class="text-green-500 font-semibold">150.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recommended Product Card 2 -->
+                <div class="p-4">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book2.jpg" alt="Book 2" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 2</h3>
+                            <p class="text-gray-500">Author Name 2</p>
+                            <p class="text-green-500 font-semibold">200.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recommended Product Card 3 -->
+                <div class="p-4">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://example.com/book3.jpg" alt="Book 3" class="w-full h-24 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Book Title 3</h3>
+                            <p class="text-gray-500">Author Name 3</p>
+                            <p class="text-green-500 font-semibold">120.000 đ</p>
+                            <button class="mt-2 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+            <button class="glider-prev glider-prev-recommended">&laquo;</button>
+            <button class="glider-next glider-next-recommended">&raquo;</button>
+            <div role="tablist" class="dots dots-recommended"></div>
+        </div>
+    </div>
+
+    <!-- Add your other content and sections here -->
+
+</body>
+
+</html>
