@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
     <title>Trang Chủ và Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+ 
         .header {
             box-shadow: 0 2px 2px -2px gray;
         }
@@ -23,35 +23,100 @@
             padding: 0.25rem 0.5rem;
             border: 1px solid #CBD5E0; /* Border color */
             border-radius: 0.25rem; /* Border radius */
-            
         }
         .remove-btn:hover {
             background-color: #e85959; /* Hover background color */
-            
         }
         /* Custom styles for the menu */
         .menu {
             display: none;
             z-index: 1000; /* Ensure the menu is above other elements */
         }
-        
         .menu.active {
             display: block;
         }
-
         .hidden-on-scroll {
             transition: transform 0.3s ease;
             z-index: 999; /* Ensure the header is above other elements, but below the menu */
-            }
-        
+        }
         .hidden-on-scroll.hidden {
             transform: translateY(-100%);
-            }
-        
+        }
         .menu ul li {
             z-index: 1001; /* Ensure list items are above everything */
+        }
+        /* Hide menu items on small screens */
+        @media (max-width: 768px) {
+        .nav-items {
+            display: none;
             }
+        }
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .search-input {
+            transition: width 0.3s ease;
+        }
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 60px;
+            border: 1px solid #888;
+            width: 40%; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute; /* Position it absolutely within .modal-content */
+            top: 10px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+        }
         
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+      .inline-flex {
+    display: inline-flex;
+    align-items: center; /* Canh dòng chữ theo chiều ngang */
+    gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+.inline-flex li {
+    list-style-type: none; /* Loại bỏ dấu đầu dòng */
+    font-size: 1.5rem; /* Kích thước phù hợp */
+    font-weight: bold; /* Độ đậm chữ */
+}
+    
         /* Hide menu items on small screens */
         @media (max-width: 768px) {
         .nav-items {
@@ -86,22 +151,7 @@
     font-weight: bold; /* Độ đậm chữ */
 }
 
-    /* Thêm styles cho modal */
-    .modal {
-        display: none; /* Ẩn modal mặc định */
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
-        z-index: 1000; /* Z-index lớn hơn header và menu */
-    }
-
-    .modal-content {
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        width: 300px;
-        text-align: center;
-    }
+  
 
     /* Biểu tượng done */
     .modal-content svg {
@@ -227,17 +277,12 @@
 </html>
 
 
-    <main class="container mx-auto py-4 mt-6">
+    <<main class="container mx-auto py-4 mt-6">
         <div class="grid lg:grid-cols-2 gap-8 py-8">
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
-                <h1 class="text-2xl font-bold mt-4">
-                    <ul class="inline-flex">
-                        <li>List Product in Cart</li>
-                        <li>Số lượng đơn</li>
-                    </ul>
-                </h1>
+                <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
                 <div class="mt-4 space-y-4">
                     <!-- Product 1 -->
                     <div class="flex items-center border-b py-4">
@@ -308,83 +353,92 @@
                         <div class="font-semibold totalPrice">$215.00</div>
                     </div>
                 </div>
-                <button class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">PAYMENT</button>
-            </div>
-        </div>
-        <!-- Modal Popup -->
-        <body class="bg-gray-100 font-mono">
-
-            <!-- Phần còn lại của mã HTML -->
-        
-            <!-- Modal Popup -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <h2 class="text-2xl font-bold">Đơn hàng đã đặt thành công</h2>
-                    <p class="mt-4 text-gray-700">Cảm ơn bạn đã đặt hàng của chúng tôi. Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể.</p>
-                    <button id="closeModal" class="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none">Đóng</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-full" id="paymentButton">PAYMENT</button>
                 </div>
             </div>
-        
-            <!-- Script -->
-            <script>
-                // JavaScript để điều khiển modal
-                document.addEventListener("DOMContentLoaded", function () {
-                    var modal = document.getElementById("myModal");
-        
-                    // Lấy nút PAYMENT và thêm sự kiện click
-                    var paymentBtn = document.querySelector('.bg-green-500.hover\:bg-green-700.text-white.font-bold.py-2.px-4.rounded-lg');
-                    paymentBtn.addEventListener('click', function () {
-                        modal.style.display = "block"; // Hiển thị modal khi nhấn nút PAYMENT
-                    });
-        
-                    // Lấy nút Đóng modal và thêm sự kiện click
-                    var closeModalBtn = document.getElementById("closeModal");
-                    closeModalBtn.addEventListener('click', function () {
-                        modal.style.display = "none"; // Ẩn modal khi nhấn nút Đóng
-                    });
-                });
-            </script>
-        
-            <!-- Phần còn lại của mã HTML -->
-        </body>
-        
-    </main>
+        </div>
+    </div>
+    
+    <!-- The Modal -->
+    <div id="successModal" class="modal">
+        <div  class="modal-content flex flex-col justify-center items-center">
+            <span class="close">&times;</span>
+            <p>Payment Successful!</p>
+                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-30 mt-4" id="nextButton">NEXT</button>
+        </div>
+    </div>
 
     <script>
-    
-
-        function updateTotal() {
-            var totalQuantity = 0;
-            var totalPrice = 0;
-            var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-            products.forEach(product => {
-                var quantity = parseInt(product.querySelector('input').value);
-                var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
-                totalQuantity += quantity;
-                totalPrice += price * quantity;
-                product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
-            });
-            document.querySelector('.totalQuantity').textContent = totalQuantity;
-            document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
+        // Toggle menu function
+        function myMenuFunction() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
         }
 
-        window.onload = updateTotal;
+        // Close menu button function
+        var closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.remove('active');
+        });
+        nextButton.onclick = function() {
+            window.location.href = './contact.html';
+        }
+        // Get modal elements
+        var modal = document.getElementById("successModal");
+        var btn = document.getElementById("paymentButton");
+        var span = document.getElementsByClassName("close")[0];
 
-        function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
-        
     </script>
-    <script type="module" src="/src/scripts/application.js"></script>
-    <!-- footer.html -->
+</main>
+
+<script>
+
+
+    function updateTotal() {
+        var totalQuantity = 0;
+        var totalPrice = 0;
+        var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
+        products.forEach(product => {
+            var quantity = parseInt(product.querySelector('input').value);
+            var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
+            totalQuantity += quantity;
+            totalPrice += price * quantity;
+            product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
+        });
+        document.querySelector('.totalQuantity').textContent = totalQuantity;
+        document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
+    }
+
+    window.onload = updateTotal;
+
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if (i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+</script>
+<script type="module" src="/src/scripts/application.js"></script>
+      <!-- footer.html -->
 <footer class="bg-white text-gray-800 py-8">
     <div class="container mx-auto px-4" style="min-width: 800px;">
         <div class="flex justify-between items-start">
@@ -438,6 +492,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>
