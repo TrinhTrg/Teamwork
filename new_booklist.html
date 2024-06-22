@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden-child { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- header -->
+    <header>
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4 pr-8">
+                    <a href="#" class="text-xl font-bold">Logo</a>
+                </div>
+                <div class="hidden md:flex space-x-8 flex-grow items-center">
+                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
+                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
+                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
+                    <div class="relative">
+                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
+                            Categories
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
+                            <!-- <h4 class="title">Hư cấu</h4> -->
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
+                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
+                <div class="relative w-full">
+                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Instagram</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Facebook</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">YouTube</a>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- content -->
+    <div class="container mx-auto px-4 py-4 container-limited">
+        <nav class="text-gray-600 text-sm">
+            <a href="./index.html" class="hover:underline">Home</a>
+            <span class="mx-2">></span>
+            <a href="./books.html" class="text-green-700 font-bold hover:underline">Books</a>
+        </nav>
+    </div>
+    
+    
+    <div class="container mx-auto my-8 flex flex-wrap">
+        <!-- Sidebar (All Categories + Price) -->
+        <aside class="w-full lg:w-1/4 p-4">
+            <!-- All Categories -->
+            <div class="bg-white p-4 rounded-lg shadow mb-4">
+                <h2 class="font-bold mb-2">All Categories</h2>
+                <ul>
+                    <li>
+                        <a href="./Fiction books.html" class="block py-1 text-black">Fiction</a> 
+                    </li>
+                    <li>
+                        <a href="#" class="block py-1 text-black">Non-fiction</a>
+                        <a href="#" class="block py-1 text-black">Children</a>
+                        <a href="#" class="block py-1 text-black">Other Categories</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Price Section -->
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold mb-2">Price</h2>
+                <ul>
+                    <li>
+                        <label class="block py-1 text-gray-500">
+                            <input type="radio" name="price" value="0-150000" class="mr-2">
+                            0đ - 150,000đ
+                        </label>
+                    </li>
+                    <li>
+                        <label class="block py-1 text-gray-500">
+                            <input type="radio" name="price" value="150000-300000" class="mr-2">
+                            150,000đ - 300,000đ
+                        </label>
+                    </li>
+                    <li>
+                        <label class="block py-1 text-gray-500">
+                            <input type="radio" name="price" value="300000-500000" class="mr-2">
+                            300,000đ - 500,000đ
+                        </label>
+                    </li>
+                    <li>
+                        <label class="block py-1 text-gray-500">
+                            <input type="radio" name="price" value="500000-700000" class="mr-2">
+                            500,000đ - 700,000đ
+                        </label>
+                    </li>
+                    <li>
+                        <label class="block py-1 text-gray-500">
+                            <input type="radio" name="price" value="700000-tro-len" class="mr-2">
+                            700,000đ - Above
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content (Filter + Products) -->
+        <main class="w-full lg:w-3/4 p-4">
+            <!-- Filter -->
+            <div class="p-4 rounded-lg mb-4">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex space-x-4">
+                        <div class="flex items-center">
+                            <span class="mr-2">Sort By:</span>
+                            <select class="border rounded-md px-4 py-2 focus:ring-2  focus:border-transparent">
+                                <option class="">Latest</option>
+                                <option value="">Weekly Bestsellers</option>
+                                <option value="">Monthly Bestsellers</option>
+                                <option value="">Yearly Bestsellers</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            
+                            <select class="border rounded-md px-4 py-2 focus:ring-1  focus:border-transparent">
+                                <option value="">8 products</option>
+                                <option value="">12 products</option>
+                                <option value="">24 products</option>
+                                <option value="">48 products</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/image_195509_1_33143.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">WHEN BREATH BECOME THE AIR</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-1.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-2.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-3.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-4.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-5.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-6.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/BOOK-7.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- sp1 -->
+                <!-- <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/image_195509_1_33143.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- sp1 -->
+                <!-- <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/image_195509_1_33143.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">Book Title</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- sp1 -->
+                <!-- <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/image_195509_1_33143.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">WHEN BREATH BECOME THE AIR</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- sp1 -->
+                <!-- <div class="bg-white mb-auto rounded-xl">
+                    <a href="./detail.html">
+                        <div class="relative overflow-hidden rounded-xl" >
+                            <img class="w-full h-40 object-contain" src="./resource/image_195509_1_33143.jpg" alt="sách">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group hover:opacity-100 transition">
+                                <button class="px-4 py-2 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition ">Buy now</button>
+                                <svg class=" w-8 h-9 bg-green-500 text-white font-semibold  rounded-md flex items-start justify-center hover:text-green-500 hover:bg-white transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>                          
+                            </div>
+                            <div class="py-5">
+                                <h3 class="font-semibold text-center">WHEN BREATH BECOME THE AIR</h3>
+                                <p class="font-medium text-center">150.000đ</p>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+
+            </div>
+            <!-- Pagination -->
+            <div class="flex justify-center mt-8">
+                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-l transition duration-300 ease-in-out hover:text-white">Previous</a>
+                <a href="#" class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white">1</a>
+                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">2</a>
+                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">3</a>
+                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-r hover:text-white transition duration-300 ease-in-out">Next</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0 md:absolute md:left-4">
+                <img src="logo2.jpg" alt="Logo" class="h-16">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="/homepage.html" class="hover:underline">Home</a>
+                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 md:absolute md:right-4">
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
+            </div>           
+        </div>
+
+        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("toggleButton").addEventListener("click", function() {
+            var hiddenContent = document.querySelector(".hidden-child");
+            if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+                hiddenContent.style.display = "block";
+                this.textContent = "Show less";
+            } else {
+                hiddenContent.style.display = "none";
+                this.textContent = "Show more";
+            }
+        });
+    </script>
+</body>
+</html>
