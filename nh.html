@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <script>
+        function changeMainImage(element) {
+            const mainImage = document.getElementById('main-book-image');
+            mainImage.src = element.src;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const quantityInput = document.getElementById("quantity");
+            const priceElement = document.getElementById("price");
+            const unitPrice = 100000;
+
+            function updatePrice() {
+                const quantity = parseInt(quantityInput.value);
+                priceElement.textContent = (unitPrice * quantity).toLocaleString('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                });
+            }
+
+            document.getElementById("increment").addEventListener("click", function () {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updatePrice();
+            });
+
+            document.getElementById("decrease").addEventListener("click", function () {
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                    updatePrice();
+                }
+            });
+
+            quantityInput.addEventListener("input", function () {
+                if (parseInt(quantityInput.value) < 1) {
+                    quantityInput.value = 1;
+                }
+                updatePrice();
+            });
+
+            const showMoreBtn = document.getElementById("show-more");
+            const relatedProducts = document.querySelectorAll(".related-product");
+            let visibleProducts = 3;
+
+            function showMoreProducts() {
+                for (let i = visibleProducts; i < visibleProducts + 3; i++) {
+                    if (relatedProducts[i]) {
+                        relatedProducts[i].classList.remove("hidden");
+                    }
+                }
+                visibleProducts += 3;
+
+                if (visibleProducts >= relatedProducts.length) {
+                    showMoreBtn.classList.add("hidden");
+                }
+            }
+
+            showMoreBtn.addEventListener("click", showMoreProducts);
+
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4"></a>
+            <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                <ul class="menu flex space-x-4">
+                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                    <li class="relative group">
+                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                        <div class="absolute hidden bg-white min-w-max shadow-md group-hover:block">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Category 1</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Category 2</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Category 3</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center border border-gray-300 rounded-full overflow-hidden transition-all duration-300">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow hidden lg:block transition-width duration-300">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 hidden lg:block">Search</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex items-center ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm10.5 3a9.005 9.005 0 0 1-1.513 5.108A8.987 8.987 0 0 1 12 23.25a8.987 8.987 0 0 1-8.987-8.988A9.005 9.005 0 0 1 4.5 9" />
+                    </svg>
+                </div>
+            </div>
+            <div class="block md:hidden">
+                <button class="text-gray-700 focus:outline-none" id="menuButton">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M4 5h16M4 12h16m-7 7h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Section -->
+    <nav class="bg-gray-200 py-2 mt-16">
+        <div class="container mx-auto px-4">
+            <ol class="list-reset flex text-gray-600">
+                <li><a href="#" class="hover:text-gray-800">Home</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li><a href="#" class="hover:text-gray-800">Books</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li>Book Details</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-10 p-4">
+        <div class="flex">
+            <div class="col-span-1">
+                <div class="p-4 rounded">
+                    <img id="main-book-image" class="w-full object-cover mb-4" src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
+                </div>
+                <div class="grid grid-cols-4 gap-2">
+                    <!-- More image -->
+                    <!-- t1 -->
+                    <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="md:w-full md:h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t2 -->
+                    <img src="https://m.media-amazon.com/images/I/61gwba1pQnL._SY522_.jpg" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t3 -->
+                    <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_09_09_41_10_3-390x510.jpg" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t4 -->
+                    <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_29_16_08_31_3-390x510.png" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                </div>
+            </div>
+            <div class="w-1/2 pl-10">
+                <h1 class="text-3xl font-bold">Book Title</h1>
+                <p class="text-gray-700 mt-4">Author: Author Name</p>
+                <p class="text-gray-700 mt-4">Genre: Genre Name</p>
+                <p class="text-gray-700 mt-4">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex a enim vehicula, ac egestas nisi aliquet. Sed non arcu eget felis convallis consectetur sit amet nec tortor. Aliquam erat volutpat. Integer pulvinar ante eu fringilla posuere.</p>
+                <div class="flex items-center mt-4">
+                    <span class="text-xl font-semibold" id="price">100,000 VND</span>
+                    <div class="flex items-center ml-4">
+                        <button id="decrease" class="px-2 py-1 bg-gray-300">-</button>
+                        <input type="number" id="quantity" value="1" class="w-12 text-center border mx-2">
+                        <button id="increment" class="px-2 py-1 bg-gray-300">+</button>
+                    </div>
+                </div>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mt-4">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-4">Related Books</h2>
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="glider-slide">
+                        <img src="path/to/related-book1.jpg" alt="Related Book 1">
+                        <p class="text-center mt-2">Related Book 1</p>
+                    </div>
+                    <div class="glider-slide">
+                        <img src="path/to/related-book2.jpg" alt="Related Book 2">
+                        <p class="text-center mt-2">Related Book 2</p>
+                    </div>
+                    <div class="glider-slide">
+                        <img src="path/to/related-book3.jpg" alt="Related Book 3">
+                        <p class="text-center mt-2">Related Book 3</p>
+                    </div>
+                    <div class="glider-slide">
+                        <img src="path/to/related-book4.jpg" alt="Related Book 4">
+                        <p class="text-center mt-2">Related Book 4</p>
+                    </div>
+                    <div class="glider-slide">
+                        <img src="path/to/related-book5.jpg" alt="Related Book 5">
+                        <p class="text-center mt-2">Related Book 5</p>
+                    </div>
+                    <div class="glider-slide">
+                        <img src="path/to/related-book6.jpg" alt="Related Book 6">
+                        <p class="text-center mt-2">Related Book 6</p>
+                    </div>
+                </div>
+                <button class="glider-prev">&laquo;</button>
+                <button class="glider-next">&raquo;</button>
+                <div class="dots"></div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-4">Customer Reviews</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center">
+                        <span class="text-lg font-semibold">Reviewer Name</span>
+                        <span class="ml-2 text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    </div>
+                    <p class="mt-2 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex a enim vehicula, ac egestas nisi aliquet.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center">
+                        <span class="text-lg font-semibold">Reviewer Name</span>
+                        <span class="ml-2 text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    </div>
+                    <p class="mt-2 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex a enim vehicula, ac egestas nisi aliquet.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center">
+                        <span class="text-lg font-semibold">Reviewer Name</span>
+                        <span class="ml-2 text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    </div>
+                    <p class="mt-2 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex a enim vehicula, ac egestas nisi aliquet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

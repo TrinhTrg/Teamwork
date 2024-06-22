@@ -10,53 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
     <style>
 
-input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-            appearance: textfield;
-        }
-            .search-bar {
-                border: 1px solid #CBD5E0;
-                border-radius: 9999px;
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-    
-            .search-input {
-                transition: width 0.3s ease;
-            }
-            .dropdown {
-                position: relative;
-            }
-    
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #fff;
-                min-width: 160px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                z-index: 1;
-            }
-    
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-    
-            .dropdown-content a:hover {
-                background-color: #f1f1f1;
-            }
-    
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
         
 
     .search-bar {
@@ -300,24 +253,49 @@ input[type="number"]::-webkit-inner-spin-button,
             </nav>
         </div>
     </header>
-    
-    <hr>
 
-    <main>
+    
+
+    <!-- <nav class="py-2 mt-48 pt-8">
+        <div class="container mx-auto px-4">
+            <ol class="list-reset flex text-gray-600">
+                <li><a href="#" class="hover:text-gray-800">Home</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li><a href="#" class="hover:text-gray-800">Books</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li>Book Details</li>
+            </ol>
+        </div>
+    </nav> -->
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <!-- Breadcrumb -->
+        <div class="container mx-auto px-4 py-4 pt-20 container-limited">
+            <nav class="text-gray-600 text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span class="mx-2">></span>
+                <a href="books.html" class="hover:underline">Books</a>
+                <span class="mx-2">></span>
+                <a href="#" class="text-green-400 font-semibold hover:underline">When Breath Becomes Air</a>
+            </nav>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <!-- Book Image -->
             <div class="col-span-1">
                 <div class="p-4 rounded">
                     <img id="main-book-image" class="w-full h-auto object-cover mb-4" src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="When Breath Becomes Air">
                 </div>
-                <div>
+                <div class="grid grid-cols-4 gap-2">
                     <!-- More image -->
-                    <div class="grid grid-cols-4 gap-2">
-                        <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
-                        <img src="https://m.media-amazon.com/images/I/61gwba1pQnL._SY522_.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
-                        <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_09_09_41_10_3-390x510.jpg" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
-                        <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_29_16_08_31_3-390x510.png" alt="Thumbnail" class="w-full cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
-                    </div>
+                    <!-- t1 -->
+                    <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_33143.jpg" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t2 -->
+                    <img src="https://m.media-amazon.com/images/I/61gwba1pQnL._SY522_.jpg" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t3 -->
+                    <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_09_09_41_10_3-390x510.jpg" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
+                    <!-- t4 -->
+                    <img src="https://cdn0.fahasa.com/media/flashmagazine/images/page_images/when_breath_becomes_air/2020_04_29_16_08_31_3-390x510.png" alt="Thumbnail" class="w-full h-full object-cover cursor-pointer transform transition-transform duration-300 hover:scale-110 z-0 hover:z-10" onclick="changeMainImage(this)">
                 </div>
             </div>
 
@@ -498,6 +476,20 @@ input[type="number"]::-webkit-inner-spin-button,
                             </div>
                         </div>
                     </div>
+                    <!-- product 6 -->
+                    <div class="glider-slide p-1">
+                        <div class="w-52 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg">
+                            <img src="./resource/rec-3.jpg" alt="Book 1" class="w-52 h-56 object-cover">
+                            <div class="p-2 bg-white">
+                                <h3 class="text-sm font-semibold">Book Title 1</h3>
+                                <p class="text-xs text-gray-500">Author Name 1</p>
+                                <p class="text-sm text-green-500 font-semibold">150.000 đ</p>
+                                <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <button aria-label="Previous" class="glider-prev absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-300 rounded-full p-2">«</button>
                 <button aria-label="Next" class="glider-next absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-300 rounded-full p-2">»</button>
@@ -599,9 +591,7 @@ input[type="number"]::-webkit-inner-spin-button,
                 Show More
             </button>
         </div>
-    </main>    
-        
-    
+    </main>
     <!-- Footer -->
     <footer class="bg-white text-black py-8 border-t border-gray-200">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
