@@ -13,6 +13,7 @@
             margin: auto;
         }
 
+        
         .image-rectangle {
             width: 100%;
             max-width: 500px;
@@ -86,30 +87,280 @@
             opacity: 1;
         }
     </style>
-</head>
-
-<body class="font-sans bg-gray-100">
-
-    <!-- Header Section -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
-            <div class="flex items-center">
-                <img src="logo2.jpg" alt="Logo" class="h-12">
-                <nav class="ml-10 space-x-6">
-                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trang Chủ và Checkout</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+     
+            .header {
+                box-shadow: 0 2px 2px -2px gray;
+            }
+            .menu-item {
+                margin-left: 20px;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+            body {
+                padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
+            }
+            .remove-btn {
+                padding: 0.25rem 0.5rem;
+                border: 1px solid #CBD5E0; /* Border color */
+                border-radius: 0.25rem; /* Border radius */
+            }
+            .remove-btn:hover {
+                background-color: #e85959; /* Hover background color */
+            }
+            /* Custom styles for the menu */
+            .menu {
+                display: none;
+                z-index: 1000; /* Ensure the menu is above other elements */
+            }
+            .menu.active {
+                display: block;
+            }
+            .hidden-on-scroll {
+                transition: transform 0.3s ease;
+                z-index: 999; /* Ensure the header is above other elements, but below the menu */
+            }
+            .hidden-on-scroll.hidden {
+                transform: translateY(-100%);
+            }
+            .menu ul li {
+                z-index: 1001; /* Ensure list items are above everything */
+            }
+            /* Hide menu items on small screens */
+            @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                }
+            }
+            .search-bar {
+                border: 1px solid #CBD5E0; /* Border color */
+                border-radius: 9999px; /* Full rounded border */
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .search-input {
+                transition: width 0.3s ease;
+            }
+            .hover-bounce {
+                transition: transform 0.2s ease-in-out;
+            }
+            .hover-bounce:hover {
+                transform: scale(1.1);
+            }
+            /* Modal styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1000; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+                transition: opacity 0.3s ease;
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 60px;
+                border: 1px solid #888;
+                width: 40%; /* Could be more or less, depending on screen size */
+                border-radius: 10px;
+                text-align: center;
+            }
+            .close {
+                
+                font-size: 28px;
+                font-weight: bold;
+                position: absolute; /* Position it absolutely within .modal-content */
+                top: 10px; /* Adjust as needed */
+                right: 20px; /* Adjust as needed */
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    
+          .inline-flex {
+        display: inline-flex;
+        align-items: center; /* Canh dòng chữ theo chiều ngang */
+        gap: 1rem; /* Khoảng cách giữa các mục */
+    }
+    
+    .inline-flex li {
+        list-style-type: none; /* Loại bỏ dấu đầu dòng */
+        font-size: 1.5rem; /* Kích thước phù hợp */
+        font-weight: bold; /* Độ đậm chữ */
+    }
+        
+            /* Hide menu items on small screens */
+            @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                }
+            }
+            .search-bar {
+                border: 1px solid #000000; /* Border color */
+                border-radius: 9999px; /* Full rounded border */
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .search-input {
+                transition: width 0.3s ease;
+            }
+            .hover-bounce {
+                transition: transform 0.2s ease-in-out;
+            }
+            .hover-bounce:hover {
+                transform: scale(1.1);
+                
+            }
+            .inline-flex {
+        display: inline-flex;
+        align-items: center; /* Canh dòng chữ theo chiều ngang */
+        gap: 1rem; /* Khoảng cách giữa các mục */
+    }
+    
+    .inline-flex li {
+        list-style-type: none; /* Loại bỏ dấu đầu dòng */
+        font-size: 1.5rem; /* Kích thước phù hợp */
+        font-weight: bold; /* Độ đậm chữ */
+    }
+    
+      
+    
+        /* Biểu tượng done */
+        .modal-content svg {
+            height: 48px;
+            width: 48px;
+            color: #34D399; /* Màu xanh lá cây */
+            margin-bottom: 16px;
+        }
+    
+    
+        </style>
+    </head>
+    
+    <body class="bg-gray-100 font-mono ">
+        
+        <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Account Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .dropdown {
+                position: relative;
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #fff;
+                min-width: 160px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+            }
+    
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body class="bg-gray-100">
+    
+        <!-- Header Section -->
+        <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+            <div class="container mx-auto flex justify-between items-center h-16">
+                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+                <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                    <ul class="menu flex space-x-4">
+                        <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                        <li><a href="#" class="p-4">BOOKS</a></li>
+                        <li><a href="#" class="p-4">AUTHORS</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="p-4">CATEGORIES</a>
+                            <div class="dropdown-content">
+                                <a href="#">Category 1</a>
+                                <a href="#">Category 2</a>
+                                <a href="#">Category 3</a>
+                            </div>
+                        </li>
+                        <li><a href="#" class="p-4">ABOUT US</a></li>
+                        <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center">
+                    <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                        <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
+                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center ml-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                    </div>
+                    <div class="nav-menu-btn ml-4 md:hidden">
+                        <i class="fas fa-bars" onclick="myMenuFunction()"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+                <div class="p-4">
+                    <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="p-4">
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                        <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                        <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                        <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+                    </ul>
                 </nav>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
-                <a href="#" class="text-gray-600 hover:text-green-600">
-                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
-                </a>
-            </div>
-        </div>
-    </header>
+        </header>
+
 
     <!-- Main Content Section -->
     <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
@@ -273,6 +524,30 @@
                 observer.observe(element);
             });
         });
+    </script>
+    <script>
+        // Toggle menu function
+        function myMenuFunction() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    
+        // Close menu button function
+        var closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.remove('active');
+        });
+    
+        // Responsive nav menu
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
     </script>
 </body>
 
