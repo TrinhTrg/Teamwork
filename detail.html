@@ -60,10 +60,6 @@
             -moz-appearance: textfield;
             appearance: textfield;
         }
-
-        .glider-slide {
-            margin-right: 5px; /* Adjust this value to change the gap between products */
-        }
     </style>
 
     <script>
@@ -192,24 +188,68 @@
     </script>
 </head>
 
+
 <body class="bg-gray-100">
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
+
+    <!-- Header Section -->
+    <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+            <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                <ul class="menu flex space-x-4">
+                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="hover:text-green-700">Category 1</a>
+                            <a href="#" class="hover:text-green-700">Category 2</a>
+                            <a href="#" class="hover:text-green-700">Category 3</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                </ul>
+            </div>
             <div class="flex items-center">
-                <img src="logo2.jpg" alt="Logo" class="h-12">
-                <nav class="ml-10 space-x-6">
-                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
-                </nav>
+                <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex items-center ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+                <div class="nav-menu-btn ml-4 md:hidden">
+                    <i class="fas fa-bars" onclick="myMenuFunction()"></i>
+                </div>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
-                <a href="#" class="text-gray-600 hover:text-green-600">
-                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
-                </a>
+        </div>
+        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+            <div class="p-4">
+                <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
+            <nav class="p-4">
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -516,13 +556,11 @@
                     </div>
                 </div>
             </div>
-            <button id="show-more" class="mt-4 text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-4 py-2 w-full">
-                Show More
-            </button>
-        </div>
-    </main>
+
+
+
     <!-- Footer -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
+    <footer class="bg-white text-black py-8 border-t border-gray-200 w-full">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
             <!-- Logo -->
             <div class="mb-4 md:mb-0 md:absolute md:left-4">
@@ -560,11 +598,6 @@
             <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </footer>
-
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        
      
 </body>
 

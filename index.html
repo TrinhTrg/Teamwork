@@ -35,162 +35,110 @@
         
     </style>
 </head>
+<style>
+    .search-bar {
+        border: 1px solid #CBD5E0;
+        border-radius: 9999px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
 
-<body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <!-- <header class="bg-white py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16" /></a>
-            </div>
-            <nav class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Trang chủ</a>
-                <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
-                <div class="relative menu-item-has-children dropdown">
-                    <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link dropdown-toggle">Thể
-                        loại </a>
-                    <div class="sub-menu mega-menu mega-menu-column-4 dropdown-menu">
-                        <div class="list-item">
-                            <h4 class="title">Hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Văn học hiện đại</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phi hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Triết học</a></li>
-                                <li><a href="#">Sử học</a></li>
-                                <li><a href="#">Khoa học</a></li>
-                                <li><a href="#">Kinh doanh</a></li>
-                                <li><a href="#">Kinh tế chính trị</a></li>
-                                <li><a href="#">Kỹ năng</a></li>
-                                <li><a href="#">Nghệ thuật</a></li>
-                                <li><a href="#">Nuôi dạy con</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Thiếu nhi</h4>
-                            <ul>
-                                <li><a href="#">0-5 tuổi</a></li>
-                                <li><a href="#">6-8 tuổi</a></li>
-                                <li><a href="#">9-12 tuổi</a></li>
-                                <li><a href="#">13-15 tuổi</a></li>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phân loại khác</h4>
-                            <ul>
-                                <li><a href="#">Sách bán chạy</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
-                        </div>
+    .search-input {
+        transition: width 0.3s ease;
+    }
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- Header Section -->
+<header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+    <div class="container mx-auto flex justify-between items-center h-16">
+        <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+        <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+            <ul class="menu flex space-x-4">
+                <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
+                <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
+                <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                    <div class="dropdown-content">
+                        <a href="#" class="hover:text-green-700">Category 1</a>
+                        <a href="#" class="hover:text-green-700">Category 2</a>
+                        <a href="#" class="hover:text-green-700">Category 3</a>
                     </div>
-                </div>
-                <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
-            </nav>
-            <div class="flex justify-center items-center ml-4">
-                <a href="./checkout.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
-                </a>
-
-                <a href="./userpage.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6 ml-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                </a>
-                <button class="button ml-4" style="font-size: 8px;">
-                    <a href="./login.html" class="nul">Sign Up</a></button>
-            </div> 
+                </li>
+                <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
+                <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+            </ul>
         </div>
-    </header> -->
-    <header>
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4 pr-8">
-                    <a href="#" class="text-xl font-bold">Logo</a>
-                </div>
-                <div class="hidden md:flex space-x-8 flex-grow items-center">
-                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
-                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
-                    <div class="relative">
-                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
-                            Categories
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
-                            <!-- <h4 class="title">Hư cấu</h4> -->
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
-                </div>
-                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+        <div class="flex items-center">
+            <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                    <i class="fas fa-search"></i>
                 </button>
             </div>
-            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Books</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Categories</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
-                <div class="relative w-full">
-                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
-                        Contact
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học hiện đại</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học cổ đại</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học trung đại</a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
-                </div>
+            <div class="flex items-center ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
             </div>
+            <div class="nav-menu-btn ml-4 md:hidden">
+                <i class="fas fa-bars" onclick="myMenuFunction()"></i>
+            </div>
+        </div>
+    </div>
+    <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+        <div class="p-4">
+            <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-4">
+                <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+            </ul>
         </nav>
-    </header>
+    </div>
+</header>
     <div class="container-scroll"> 
         <section class="s-one">
                 <main class="container mx-auto py-6">
