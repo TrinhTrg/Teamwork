@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 
         
@@ -139,6 +140,11 @@
             });
         });
 
+        function myMenuFunction() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+
         // document.addEventListener('DOMContentLoaded', function () {
         //     const recommendedList = document.getElementById('recommended-list');
         //     let page = 1;
@@ -193,25 +199,26 @@
 </head>
 
 <body class="bg-gray-100">
+
     <!-- Header Section -->
     <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
         <div class="container mx-auto flex justify-between items-center h-16">
-            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4"></a>
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
             <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
                 <ul class="menu flex space-x-4">
-                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
-                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
-                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                    <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4">BOOKS</a></li>
+                    <li><a href="#" class="p-4">AUTHORS</a></li>
                     <li class="dropdown">
-                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                        <a href="#" class="p-4">CATEGORIES</a>
                         <div class="dropdown-content">
-                            <a href="#" class=" hover:text-green-700">Category 1</a>
-                            <a href="#" class=" hover:text-green-700">Category 2</a>
-                            <a href="#" class=" hover:text-green-700">Category 3</a>
+                            <a href="#">Category 1</a>
+                            <a href="#">Category 2</a>
+                            <a href="#">Category 3</a>
                         </div>
                     </li>
-                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
-                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>    
+                    <li><a href="#" class="p-4">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
                 </ul>
             </div>
             <div class="flex items-center">
@@ -226,6 +233,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
+
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>

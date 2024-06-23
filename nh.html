@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <title>User Account Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .search-bar {
             border: 1px solid #CBD5E0;
@@ -19,6 +19,8 @@
         .search-input {
             transition: width 0.3s ease;
         }
+
+
         .dropdown {
             position: relative;
         }
@@ -57,18 +59,18 @@
             <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
             <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
                 <ul class="menu flex space-x-4">
-                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
-                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
-                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                    <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4">BOOKS</a></li>
+                    <li><a href="#" class="p-4">AUTHORS</a></li>
                     <li class="dropdown">
-                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                        <a href="#" class="p-4">CATEGORIES</a>
                         <div class="dropdown-content">
-                            <a href="#" class="hover:text-green-700">Category 1</a>
-                            <a href="#" class="hover:text-green-700">Category 2</a>
-                            <a href="#" class="hover:text-green-700">Category 3</a>
+                            <a href="#">Category 1</a>
+                            <a href="#">Category 2</a>
+                            <a href="#">Category 3</a>
                         </div>
                     </li>
-                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
+                    <li><a href="#" class="p-4">ABOUT US</a></li>
                     <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
                 </ul>
             </div>
@@ -114,156 +116,65 @@
     </header>
 
 
-
-
     <!-- Main Content -->
-    <main class="container mx-auto py-4 mt-6">
+    <main class="pt-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <!-- Sidebar -->
+                <aside class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md mb-4">
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h2 class="text-xl font-semibold mb-2">Username</h2>
+                        <p class="text-gray-600 mb-4">username.abc@example.com</p>
+                        <a href="#" class="hover:text-green-700 py-1 px-3 mb-2 font-bold rounded-full">
+                            <i class="fas fa-edit mr-2"></i>Edit Profile
+                        </a>
+                    </div>
+                    <nav class="mt-2 text-center">
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Log Out</button>
+                    </nav>
+                </aside>                
 
-        <!-- Cart Section -->
-        <section class="grid lg:grid-cols-5 gap-8 py-8">
-
-            <!-- Left Side: Cart Items -->
-            <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
-                <h1 class="text-2xl font-bold mt-4">Shopping Cart</h1>
-
-                <!-- Product 1 -->
-                <div class="flex items-center border-b py-4" id="product1">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/chungtalanhungvitinhtu01e17176.jpg" alt="Product Image" class="w-20 h-20 object-cover rounded-lg ml-4">
-                    <div class="ml-4 flex-grow">
-                        <div class="font-semibold">PRODUCT 1</div>
-                        <div class="text-gray-500 price" data-price="22">$22/1 product</div>
-                    </div>
-                    <div class="flex items-center">
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product1')">-</button>
-                        <input type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product1')">+</button>
-                    </div>
-                    <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="flex items-center border-b py-4" id="product2">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/conthonguyenrua011e17173832478.jpg" alt="Product Image" class="w-20 h-20 object-cover rounded-lg ml-4">
-                    <div class="ml-4 flex-grow">
-                        <div class="font-semibold">PRODUCT 2</div>
-                        <div class="text-gray-500 price" data-price="35">$35/1 product</div>
-                    </div>
-                    <div class="flex items-center">
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product2')">-</button>
-                        <input type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product2')">+</button>
-                    </div>
-                    <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="flex items-center border-b py-4" id="product3">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/bobaphepthuatumbalabienranhasa.jpg" alt="Product Image" class="w-20 h-20 object-cover rounded-lg ml-4">
-                    <div class="ml-4 flex-grow">
-                        <div class="font-semibold">PRODUCT 3</div>
-                        <div class="text-gray-500 price" data-price="45">$45/1 product</div>
-                    </div>
-                    <div class="flex items-center">
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product3')">-</button>
-                        <input type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product3')">+</button>
-                    </div>
-                    <div class="text-green-500 font-bold ml-4 item-total">$45.00</div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="flex items-center border-b py-4" id="product4">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/bongdembatxichmon01e1717383369.jpg" alt="Product Image" class="w-20 h-20 object-cover rounded-lg ml-4">
-                    <div class="ml-4 flex-grow">
-                        <div class="font-semibold">PRODUCT 4</div>
-                        <div class="text-gray-500 price" data-price="30">$30/1 product</div>
-                    </div>
-                    <div class="flex items-center">
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product4')">-</button>
-                        <input type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product4')">+</button>
-                    </div>
-                    <div class="text-green-500 font-bold ml-4 item-total">$30.00</div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="flex items-center border-b py-4" id="product5">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/dinhluatmurphy01e1716776653238.jpg" alt="Product Image" class="w-20 h-20 object-cover rounded-lg ml-4">
-                    <div class="ml-4 flex-grow">
-                        <div class="font-semibold">PRODUCT 5</div>
-                        <div class="text-gray-500 price" data-price="50">$50/1 product</div>
-                    </div>
-                    <div class="flex items-center">
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product5')">-</button>
-                        <input type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                        <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product5')">+</button>
-                    </div>
-                    <div class="text-green-500 font-bold ml-4 item-total">$50.00</div>
-                </div>
-
-                <div class="mt-6">
-                    <label for="discount" class="block text-sm font-medium">Discount Code</label>
-                    <input type="text" name="discount" id="discount" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500 uppercase">
-                    <button onclick="applyDiscount()" class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">Apply</button>
-                </div>
-            
-                <!-- Popup Modal -->
-                <div id="popup" class="fixed inset-0 flex items-center justify-center hidden bg-gray-900 bg-opacity-50">
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                        <h2 id="popupMessage" class="text-lg font-semibold"></h2>
-                        <button onclick="closePopup()" class="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">Close</button>
-                    </div>
-                </div>
+                <!-- Main Content -->
+                <section class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Account Overview</h2>
+                    <div class="grid grid-cols-1 gap-4 mb-4">
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold mb-2">Personal Information</h3>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> Username</p>
+                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> username.abc@example.com</p>
+                            <p class="text-gray-700"><span class="font-semibold">Phone:</span> (123) 456-7890</p>
+                        </div>
+                        <div class="order-container bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold mb-4">Đơn hàng gần đây</h3>
+                            <ul class="order-list">
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12345</span>
+                                    <span class="order-status delivered text-green-600 font-semibold">Đã giao</span>
+                                </li>
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12346</span>
+                                    <span class="order-status in-transit text-yellow-500 font-semibold">Đang vận chuyển</span>
+                                </li>
+                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
+                                    <span class="order-id font-medium text-gray-900">Order #12347</span>
+                                    <span class="order-status pending text-gray-600 font-semibold">Đang chờ xử lý</span>
+                                </li>
+                            </ul>
+                            <button class="view-more-btn text-green-500 font-semibold mt-4 ">Xem thêm</button>
+                        </div>
+    
+                </section>
             </div>
-
-            <!-- Right Side: Cart Summary -->
-            <div class="lg:col-span-2 bg-white text-black p-8 rounded-lg shadow-md">
-                <h1 class="text-2xl font-bold">Cart Summary</h1>
-
-                <!-- Totals -->
-                <div class="grid grid-cols-2 gap-4 mt-6 border-b border-gray-700 pb-4" id="totalsSection">
-                    <div class="col-span-2">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Total Price:</span>
-                            <span class="text-green-500 font-bold total">$0.00</span>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Shipping Fee:</span>
-                            <span class="text-green-500 font-bold shipping">$0.00</span>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Total Discount:</span>
-                            <span class="text-green-500 font-bold discount">$0.00</span>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Final Amount:</span>
-                            <span class="text-green-500 font-bold final-amount">$0.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Checkout Button -->
-                <button onclick="location.href='checkout.html';" class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
-                    Proceed to Checkout
-                </button>
-            </div>
-
-        </section>
-
+        </div>
     </main>
 
+    <script>
+        function myMenuFunction() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
     <!-- Footer Section -->
     <footer class="bg-white text-black py-8 border-t border-gray-200">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
@@ -303,98 +214,6 @@
             <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <!-- Scripts -->
-    <script>
-        let shippingFee = 10;
-        let discountPercentage = 0;
-
-        function decreaseQuantity(id) {
-            var input = document.getElementById(id).querySelector('input[type="text"]');
-            var value = parseInt(input.value);
-            if (value > 1) {
-                input.value = value - 1;
-            } else {
-                // Remove the product from the cart list if quantity is reduced to 0
-                var product = document.getElementById(id);
-                product.parentNode.removeChild(product);
-            }
-            updateTotal();
-        }
-        function myMenuFunction() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function increaseQuantity(id) {
-            var input = document.getElementById(id).querySelector('input[type="text"]');
-            var value = parseInt(input.value);
-            input.value = value + 1;
-            updateTotal();
-        }
-
-        function applyDiscount() {
-            const discountCode = document.getElementById('discount').value.toUpperCase();
-            const discountLists = {
-                'LIST1': { codes: ['ECHO', 'ALPHA'], discount: 10 },
-                'LIST2': { codes: ['BRAVO', 'DELTA'], discount: 15 },
-                'LIST3': { codes: ['CHARLIE', 'FOXTROT'], discount: 20 }
-            };
-            let found = false;
-
-            for (const list in discountLists) {
-                if (discountLists[list].codes.includes(discountCode)) {
-                    discountPercentage = discountLists[list].discount;
-                    found = true;
-                    break;
-                }
-            }
-
-            const popupMessage = found ? `Successfully applied! You get a ${discountPercentage}% discount.` : 'Invalid discount code.';
-            showPopup(popupMessage);
-            updateTotal();  // Call updateTotal without parameters, as the global discountPercentage is now updated
-        }
-
-        function showPopup(message) {
-            document.getElementById('popupMessage').innerText = message;
-            document.getElementById('popup').classList.remove('hidden');
-        }
-
-        function closePopup() {
-            document.getElementById('popup').classList.add('hidden');
-        }
-
-        function updateTotal() {
-            let subtotal = 0;
-            let discount = 0;
-            let hasSelectedItems = false;
-
-            const products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-            products.forEach(product => {
-                const checkbox = product.querySelector('input[type="checkbox"]');
-                const quantity = parseInt(product.querySelector('input[type="text"]').value);
-                const price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
-                if (checkbox.checked) {
-                    hasSelectedItems = true;
-                    product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
-                    subtotal += price * quantity;
-                }
-            });
-
-            discount = (subtotal * discountPercentage) / 100;
-            const finalAmount = subtotal - discount + (hasSelectedItems ? shippingFee : 0);
-
-            document.querySelector('.total').textContent = '$' + subtotal.toFixed(2);
-            document.querySelector('.shipping').textContent = '$' + (hasSelectedItems ? shippingFee : 0).toFixed(2);
-            document.querySelector('.discount').textContent = '$' + discount.toFixed(2);
-            document.querySelector('.final-amount').textContent = '$' + finalAmount.toFixed(2);
-        }
-
-    window.onload = updateTotal;
-
-    </script>
 </body>
 
 </html>
