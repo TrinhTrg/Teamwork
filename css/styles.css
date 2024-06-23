@@ -7,12 +7,50 @@
   box-sizing: border-box;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Responsive Zoom Levels */
+@media (min-width: 1440px) {
+    html {
+      zoom: 1.5;
+    }
+}
+
+@media (min-width: 2560px) {
+html {
+    zoom: 1.7;
+}
+}
+
+@media (min-width: 3860px) {
+html {
+    zoom: 2.5;
+}
+}
+
+@media (max-width: 500px) {
+    .trending-slide {
+      width: 28rem ;
+      height: 36rem ;
+    }
+  
+    .trending-slide .trending-slide-img img {
+      width: 28rem ;
+      height: 36rem ;
+    }
+  }
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary: #ec994b;
+  --primary: #e8f5e9 ;
   --white: #ffffff;
   --bg: #f5f5f5;
+  --text-green: #047857;
+  --yellow: #f4f422;
 }
 
 html {
@@ -25,6 +63,8 @@ body {
   font-size: 1.6rem;
   background: var(--bg);
 }
+
+
 
 ::-webkit-scrollbar {
   display: none ;
@@ -47,46 +87,64 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 /* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
-@media (max-width: 780px) {
 
-    /* Đảm bảo rằng body có kích thước tối thiểu là 780px */
-    body {
-        min-width: 780px;
-        /* Ẩn thanh cuộn ngang nếu trình duyệt cố gắng thu nhỏ */
-        overflow-x: hidden;
-    }
+.body-header {
+  background-image: url("../img/bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.container {
+  /* height: 100%; */
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.image-rectangle {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-rectangle:hover {
+  transform: scale(1.05);
+}
 
 /* General carousel styles */
 .carousel-inner img {
     width: 100%;
-    height: 600px;
+    height: 500px;
     object-fit: contain;
 }
 .carousel {
     width: 100%;
-    height: 600px;
+    height: 500px;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
     display: none;
 }
 
 .dropdown-menu.show {
     display: block;
-}
+} */
 
-.navbar-link {
+/* .navbar-link {
     padding: 0 15px;
 }
 
 .navbar-link:hover {
-    color: #00dc64 !important;
+    color: #00dc64 ;
     text-decoration: none;
-}
+} */
 
-/* Dropdown Menu Styles */
+/* Dropdown Menu Styles
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -141,81 +199,46 @@ body {
 
 .dropdown-menu ul li a:hover {
     color: #00dc64;
-}
+} */
 
 /* Show the menu on hover */
-.menu-item-has-children:hover .dropdown-menu {
+/* .menu-item-has-children:hover .dropdown-menu {
     display: block;
-}
+} */
 
 /* Clearfix */
-.dropdown-menu::after {
+/* .dropdown-menu::after {
     content: "";
     display: table;
     clear: both;
-}
+} */
 
-.button {
+/* .button {
     background-color: #ffffff;
-    /* Màu nền trắng */
     color: #000000;
-    /* Màu chữ đen */
     border: 1px solid #000000;
-    /* Viền đen */
     transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-    /* Hiệu ứng chuyển đổi */
-
-    /* Thêm padding và border-radius */
-    padding: 8px 20px;
+    padding: 4px 10px;
     border-radius: 9999px;
-    /* Đảm bảo góc cong đầy đủ */
-    /* Ẩn vùng chọn khi được focus */
-    /* outline: none; */
-}
+    outline: none;
+} */
 
 /* Hover state */
-.button:hover {
+/* .button:hover {
     background-image: linear-gradient(to right, #FCFF, #b48def);
-    /* Gradient màu */
-    color: #fff;
-    /* Màu chữ trắng */
+    color: #fff !important;
 }
-
-/* Khi nút được click */
 .button:active,
-/* Khi nút được focus */
 .button:focus {
-    /* border-color: transparent; Đặt màu viền thành trong suốt */
     outline: none;
     opacity: 0.5;
+    color: #fff;
 }
+button:hover .nul {
+  text-decoration: none;
+  color: #fff;
+} */
 
-/* Responsive Zoom Levels */
-@media (min-width: 1440px) {
-  html {
-    zoom: 1.5;
-  }
-}
-
-@media (min-width: 2560px) {
-  html {
-    zoom: 1.7;
-  }
-}
-
-@media (min-width: 3860px) {
-  html {
-    zoom: 2.5;
-  }
-}
-
-/* Utility Classes */
-.container {
-  /* height: 100%; */
-  max-width: 124rem;
-  padding: 0 1rem;
-  margin: 0 auto;
-}
 
 .text-center {
   text-align: center;
@@ -223,12 +246,22 @@ body {
 
 .section-heading {
   font-size: 3rem;
-  color: var(--primary);
+  color: var(--text-green);
   padding: 2rem 0;
+  text-shadow: 0 0 10px #FFF;
+  font-weight: 700;
+}
+
+.header-title {
+  font-size: 45px;
+  padding: 20px 0;
+  color: #fff;
+  text-shadow: 0 0 10px #333;
+  font-weight: 500;
 }
 
 /* Box Component */
-.box {
+/* .box {
   height: 30px;
   display: flex;
   cursor: pointer;
@@ -255,18 +288,12 @@ body {
 .box .a .fas {
   color: #757575;
   font-size: 18px;
-}
+} */
 
 /* Trending Section */
 #trending {
   background-color: rgba(255, 255, 255, 0.3);
   padding: 4rem 0;
-}
-
-@media (max-width: 1440px) {
-  #trending {
-    padding: 7rem 0;
-  }
 }
 
 .trending-slider {
@@ -275,33 +302,15 @@ body {
   position: relative;
 }
 
-@media (max-width: 500px) {
-  .trending-slider {
-    height: 45rem;
-  }
-}
-
 .trending-slide {
-  width: 37rem;
-  height: 42rem;
+  width: 30rem;
+  height: 35rem;
   position: relative;
 }
 
-@media (max-width: 500px) {
-  .trending-slide {
-    width: 28rem ;
-    height: 36rem ;
-  }
-
-  .trending-slide .trending-slide-img img {
-    width: 28rem ;
-    height: 36rem ;
-  }
-}
-
 .trending-slide .trending-slide-img img {
-  width: 37rem;
-  height: 42rem;
+  width: 30rem;
+  height: 35rem;
   border-radius: 2rem;
   object-fit: cover;
 }
@@ -372,7 +381,7 @@ body {
 }
 
 .rating ion-icon {
-  color: var(--primary);
+  color: var(--yellow);
 }
 
 /* Swiper Control Styles */
@@ -387,34 +396,6 @@ body {
 .trending-slider-control .swiper-button-next {
   left: 58%;
   transform: translateX(-58%);
-}
-
-@media (max-width: 990px) {
-  .trending-slider-control .swiper-button-next {
-    left: 70%;
-    transform: translateX(-70%);
-  }
-}
-
-@media (max-width: 450px) {
-  .trending-slider-control .swiper-button-next {
-    left: 80%;
-    transform: translateX(-80%);
-  }
-}
-
-@media (max-width: 990px) {
-  .trending-slider-control .swiper-button-prev {
-    left: 30%;
-    transform: translateX(-30%);
-  }
-}
-
-@media (max-width: 450px) {
-  .trending-slider-control .swiper-button-prev {
-    left: 20%;
-    transform: translateX(-20%);
-  }
 }
 
 .trending-slider-control .slider-arrow {
@@ -439,7 +420,7 @@ body {
 .trending-slider-control .swiper-pagination {
   position: relative;
   width: 15rem;
-  bottom: 1rem;
+  bottom: 8rem;
 }
 
 .trending-slider-control .swiper-pagination .swiper-pagination-bullet {
@@ -453,12 +434,12 @@ body {
 /* Slider List */
 .slider-list {
   margin: 0 ;
-  width: 100% ;
-  background-image: url("../img/bg.jpg") ;
+  width: 80% ;
+  background-image: url("../img/marcovaldohaycacmuatrongthanhp.jpg") ;
   background-size: cover ;
   background-position: center ;
   background-attachment: fixed ;
-  min-height: 120vh ;
+  min-height: 80vh ;
   display: flex ;
   flex-direction: column ;
   justify-content: center ;
@@ -466,7 +447,7 @@ body {
 }
 
 .photo-slider {
-  width: 100vw;
+  width: 72vw;
   overflow: auto;
   padding: 30px;
   box-sizing: border-box;
@@ -491,23 +472,15 @@ body {
   transform: translateX(var(--left));
 }
 
-.header-title {
-  font-size: 45px;
-  padding: 20px 0;
-  color: #fff;
-  text-shadow: 0 0 10px #333;
-  font-weight: 500;
-  /* font-size: large; */
-}
 
-.header-title button {
+/* .header-title button {
   border-radius: 20px;
   border: none;
   font-family: system-ui;
   font-size: small;
   text-decoration: none;
-  /* padding-left: 10px; */
-}
+  padding-left: 10px;
+} */
 
 .slider-content .photo-item {
   width: 200px;
