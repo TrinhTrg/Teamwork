@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
             position: relative;
         }
 
+
         section {
             height: 90vh;
             display: flex;
@@ -32,15 +34,18 @@
             scroll-snap-align: start;
         }
 
+
         section .s-five {
             height: calc(90vh + 200px);
             padding-bottom: 200px;
             /* Adjust this value to fit the height of your footer */
         }
 
+
         footer {
             bottom: 0;
         }
+
 
         @keyframes fadeIn {
             from {
@@ -48,35 +53,42 @@
                 transform: translateY(20px);
             }
 
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+
         .animated {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
+
 
         .fade-in {
             opacity: 1;
             animation: fadeIn 1s forwards;
         }
 
+
         .delay-1 {
             animation-delay: 0.5s;
         }
 
+
         .delay-2 {
             animation-delay: 1s;
         }
+
 
         .delay-3 {
             animation-delay: 1.5s;
         }
     </style>
 </head>
+
 
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -168,6 +180,7 @@
         </div>
     </header>
 
+
     <div class="container-scroll">
         <section class="s-four body-header">
             <header class="w-100% mx-auto py-20 px-4 grid gap-8 md:grid-cols-2 items-center">
@@ -184,6 +197,7 @@
                     </h1>
                     <p class="mb-8 text-black text-2xl leading-relaxed mr-8 animated delay-4">
 
+
                         Let's Make Your Digital Bookshelf a Reality
                         Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading
                         and
@@ -193,8 +207,9 @@
                         confidence.
                     </p>
 
+
                     <div class="header__btn mb-8 animated delay-5">
-                        <button class="py-4 px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-2xl 
+                        <button class="py-4 px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-2xl
            hover:text-green-600 hover:opacity-80 focus:outline-none">
                             Learn More
                         </button>
@@ -210,6 +225,7 @@
                 </div>
             </header>
         </section>
+
 
         <section class="s-one bg-gray-100">
             <div class="container mx-auto py-4 bg-green-50 shadow-md border rounded-xl">
@@ -249,6 +265,7 @@
                 </section>
             </div>
         </section>
+
 
         <section class="s-two py-16 flex flex-col items-center mb-20 bg-gray-100">
             <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="height: 100%;">
@@ -477,6 +494,7 @@
             </div>
         </section>
 
+
         <section class="s-three flex flex-col bg-gray-100">
             <div class="slider-list shadow-md border rounded-xl ">
                 <div class="header-title">
@@ -568,6 +586,7 @@
                 </div>
             </div>
         </section>
+
 
         <section class="s-five flex flex-col py-8 bg-gray-100">
             <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="margin-top: 200px;">
@@ -700,6 +719,7 @@
                     <button id="nextBtn2" class="text-green-600 focus:outline-none">
                         <i class="fa-solid fa-chevron-right" style="font-size: 30px;"></i>
 
+
                     </button>
                 </div>
             </div>
@@ -713,6 +733,7 @@
                                 <p class="text-center md:text-left">Your gateway to a world of books. Discover, Read,
                                     and Grow with EchoLibrary.</p>
                             </div>
+
 
                             <!-- Navigation Links -->
                             <div>
@@ -729,6 +750,7 @@
                                 </ul>
                             </div>
 
+
                             <!-- Customer Service -->
                             <div>
                                 <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
@@ -743,6 +765,7 @@
                                             style="text-decoration: none; color: black;">Shipping Information</a></li>
                                 </ul>
                             </div>
+
 
                             <!-- Contact Information -->
                             <div>
@@ -774,6 +797,7 @@
                             </div>
                         </div>
 
+
                         <!-- Copyright -->
                         <div class="border-t border-accent text-center">
                             <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
@@ -783,8 +807,10 @@
             </section>
         </section>
 
+
     </div>
     <!-- Footer Section -->
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -803,10 +829,12 @@
                 threshold: 0.1
             });
 
+
             document.querySelectorAll('.animated').forEach(element => {
                 observer.observe(element);
             });
         });
+
 
         document.addEventListener('DOMContentLoaded', function () {
             const authorList = document.getElementById('authorList');
@@ -816,24 +844,31 @@
             const prevBtn2 = document.getElementById('prevBtn2');
             const nextBtn2 = document.getElementById('nextBtn2');
 
+
             const scrollAmount = 300;
+
 
             prevBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
+
             nextBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
+
 
             prevBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
+
             nextBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         });
+
+
 
 
     </script>
@@ -850,9 +885,11 @@
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const mobileMenu = document.getElementById('mobileMenu');
 
+
             contactBtn.addEventListener('click', function () {
                 dropdownMenu.classList.toggle('hidden');
             });
+
 
             document.addEventListener('click', function (event) {
                 if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
@@ -860,9 +897,11 @@
                 }
             });
 
+
             mobileContactBtn.addEventListener('click', function () {
                 mobileDropdownMenu.classList.toggle('hidden');
             });
+
 
             hamburgerBtn.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
@@ -878,18 +917,22 @@
             const intervalTime = carousel.getAttribute('data-interval');
             let isSliding = false;
 
+
             function showSlide(index) {
                 if (isSliding) return;
                 isSliding = true;
                 const currentItem = items[currentIndex];
                 const nextItem = items[index];
 
+
                 nextItem.classList.add(index > currentIndex ? 'carousel-item-next' : 'carousel-item-prev');
+
 
                 setTimeout(() => {
                     currentItem.classList.add(index > currentIndex ? 'carousel-item-left' : 'carousel-item-right');
                     nextItem.classList.add('active');
                     nextItem.classList.remove('carousel-item-next', 'carousel-item-prev');
+
 
                     setTimeout(() => {
                         currentItem.classList.remove('active', 'carousel-item-left', 'carousel-item-right');
@@ -902,25 +945,30 @@
                 }, 20);
             }
 
+
             function nextSlide() {
                 let nextIndex = (currentIndex + 1) % items.length;
                 showSlide(nextIndex);
             }
+
 
             function prevSlide() {
                 let prevIndex = (currentIndex - 1 + items.length) % items.length;
                 showSlide(prevIndex);
             }
 
+
             document.querySelector('.carousel-control-next').addEventListener('click', function (e) {
                 e.preventDefault();
                 nextSlide();
             });
 
+
             document.querySelector('.carousel-control-prev').addEventListener('click', function (e) {
                 e.preventDefault();
                 prevSlide();
             });
+
 
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function () {
@@ -928,9 +976,13 @@
                 });
             });
 
+
             setInterval(nextSlide, intervalTime);
         });
     </script>
 </body>
 
+
 </html>
+
+

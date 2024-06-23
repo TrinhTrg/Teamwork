@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .search-bar {
+            border: 1px solid #CBD5E0;
+            border-radius: 9999px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .search-input {
+            transition: width 0.3s ease;
+        }
+
+
+        .view-more-btn {
+            margin-top: 16px;
+            font-weight: 600;
+            color: #16a34a;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .hidden-on-scroll {
+            transition: transform 0.3s ease;
+            z-index: 999; /* Ensure the header is above other elements */
+        }
+
+        .hidden-on-scroll.hidden {
+            transform: translateY(-100%);
+        }
+
+        .menu ul li {
+            z-index: 1001; /* Ensure list items are above everything */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 40px; /* Adjust padding as needed */
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .footer-heading {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .footer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #00ff00; /* Change color on hover as needed */
+        }
+        
+        .footer-logo {
+            height: 80px; /* Adjust logo height as needed */
+        }
+        
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-social-icon {
+            width: 30px; /* Adjust social icon size as needed */
+            height: auto;
+            margin: 0 5px;
+        }
+        
+        .footer-bottom {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+            <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                <ul class="menu flex space-x-4">
+                    <li><a href="#" class="p-4">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4">BOOKS</a></li>
+                    <li><a href="#" class="p-4">AUTHORS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="p-4">CATEGORIES</a>
+                        <div class="dropdown-content">
+                            <a href="#">Category 1</a>
+                            <a href="#">Category 2</a>
+                            <a href="#">Category 3</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="p-4">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex items-center ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+                <div class="nav-menu-btn ml-4 md:hidden">
+                    <i class="fas fa-bars" onclick="myMenuFunction()"></i>
+                </div>
+            </div>
+        </div>
+        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+            <div class="p-4">
+                <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- content -->
+    <!-- search -->
+    <main class="container mx-auto py-6 mt-24">
+
+    <!-- Main content -->
+    <div class="container mx-auto mt-8 p-4">
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-500" viewBox="0 0 30 30">
+                <image href="https://static.vecteezy.com/system/resources/previews/020/589/769/original/checkbox-icon-in-green-vector.jpg" x="0" y="0" width="30" height="30" />
+                
+            </svg>
+    <div class="text-center p-10">
+      <h1 class="text-3xl text-black font-bold mb-2">Đơn hàng của bạn đã được đặt thành công!</h1>
+      <p class="text-xl mb-6  text-black ">Cảm ơn bạn vì đã tin tưởng chúng tôi</p>
+      <div class="mt-8 grid grid-cols-2 gap-4"></div>
+      <button class="bg-green-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-4">
+        
+        Trang chủ
+      </button>
+      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+        Theo dõi đơn hàng
+      </button>
+ 
+        
+      
+    </div>
+
+        <div class="container mx-auto mt-8">
+        <h2 class="text-xl text-black font-semibold mb-4">Sản phẩm bạn đã từng mua</h2>
+    </div>
+    <div class="flex justify-center mt-4">
+        <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+        <!-- Thêm các chấm phân trang khác nếu cần -->
+    </div>
+    
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Thay thế các phần tử này bằng dữ liệu thực tế -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://wall.vn/wp-content/uploads/2020/04/hinh-anh-da-nang-dep-scaled.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+            <p class="text-sm text-gray-600">Giá : bao nhiêu cho 1 trang thank ??</p>
+            </div>
+            <!-- ... các sản phẩm khác -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://vcdn1-dulich.vnecdn.net/2022/06/03/cauvang-1654247842-9403-1654247849.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=Swd6JjpStebEzT6WARcoOA" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                <p class="text-sm text-gray-600">Giá :1 jack </p>
+                </div>
+
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://image.donghohaitrieu.com/wp-content/uploads/2023/09/avt-40-canh-dep-da-nang-hap-dan-du-khach-ghe-tham.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                    <p class="text-sm text-gray-600">Giá: 500 củ</p>
+                    </div> 
+
+                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                         <img src="https://www.vietfuntravel.com.vn/image/data/Da-Nang/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man-h1.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                        <p class="text-sm text-gray-600">Giá : như chúng ta có xiền</p>
+                        </div> 
+
+                        <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                            <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                            <p class="text-sm text-gray-600">Giá</p>
+                            </div>
+
+                            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                <p class="text-sm text-gray-600">Giá</p>
+                                </div>
+
+                                <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                    <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                    <p class="text-sm text-gray-600">Giá</p>
+                                    </div>
+
+                                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                        <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                        <p class="text-sm text-gray-600">Giá</p>
+                                        </div>
+        </div>
+        <!-- Phân trang -->
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span> 
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-gray-400 rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        
+        </div>
+    </body>
+
+     <!-- Bestseller Section -->
+     <section class="flex items-center justify-center mt-6">
+        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-black">
+            <!-- Text Section -->
+            <div class="flex-wrap pr-8 absolute left-16">
+            </div>
+            <!-- Image Section -->
+            <div class="flex justify-end space-x-4">
+                <div class="relative mx-auto">
+                    <img src="./resource/sách 1.jpg" alt="Image 1" class="w-52 h-52 object-cover relative z-30 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="./resource/sách2-removebg-preview.png" alt="Image 2" class="absolute top-4 left-36 w-44 h-48 object-cover z-20 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="./resource/sách3-removebg-preview.png" alt="Image 3" class="absolute top-6 left-60 w-30 h-44 object-cover z-10 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section> 
+</main>     
+
+
+    <!-- Footer Section -->
+    <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0 md:absolute md:left-4">
+                <img src="logo2.jpg" alt="Logo" class="h-16">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="/homepage.html" class="hover:underline">Home</a>
+                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 md:absolute md:right-4">
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
+            </div>           
+        </div>
+
+        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./src/scripts/application.js"></script>
+</body>
+</html>
