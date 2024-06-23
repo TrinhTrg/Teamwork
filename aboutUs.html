@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echobinary Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between max-w-screen-xl">
+            <div class="flex items-center">
+                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-12">
+                <nav class="ml-10 space-x-6">
+                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
+                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
+                <a href="#" class="text-gray-600 hover:text-green-600">
+                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
+        <div class="container mx-auto h-full flex items-center justify-center max-w-screen-xl">
+            <div class="text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">About Echolibrary</h1>
+                <p class="text-lg">Echolibrary is a modern digital library offering thousands of documents, books, articles, and other academic resources for all ages and fields of study. We are committed to providing high-quality knowledge and information, helping readers expand their understanding and develop personal skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container mx-auto px-4 py-4 max-w-screen-xl">
+        <nav class="text-gray-600 text-sm">
+            <a href="/index.html" class="hover:underline">Home</a>
+            <span class="mx-2">></span>
+            <a href="/aboutUs.html" class="hover:underline">About Us</a>
+        </nav>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="container mx-auto px-4 py-12 max-w-screen-xl">
+        <div class="text-center mb-8 fade-in">
+            <h2 class="text-3xl font-bold font-serif text-gray-800">Brief Introduction</h2>
+            <p class="text-gray-600 font-sans">Our mission is to help Vietnamese readers reach the world.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col items-center fade-in">
+                <img srcset="/resource/AboutUs1.jpg" loading="lazy" alt="Image 1" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">Echolibrary offers thousands of books across diverse genres, helping Vietnamese readers access the vast treasure of global knowledge. Whether you are interested in fiction, non-fiction, or educational resources, Echolibrary has something for everyone. Our extensive collection ensures that readers can find the latest bestsellers as well as timeless classics.</p>
+            </div>
+            <div class="flex flex-col items-center fade-in">
+                <img srcset="/resource/AboutUs3.png" loading="lazy" alt="Image 3" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">Our platform is designed to offer a seamless and enjoyable reading experience, with features that cater to all book lovers. Whether you prefer reading on your tablet, smartphone, or computer, Echolibrary provides a user-friendly interface that makes reading convenient and enjoyable. Additionally, our personalized recommendations ensure you always find books that match your interests and preferences.</p>
+            </div>
+            <div class="flex flex-col items-center fade-in">
+                <img srcset="/resource/AboutUs2.webp" loading="lazy" alt="Image 2" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">We constantly update the latest titles from renowned authors worldwide, bringing the latest literary trends to our readers. Our platform not only focuses on international bestsellers but also promotes Vietnamese authors, giving them a global stage to showcase their work. This way, Echolibrary bridges the gap between local and global literary scenes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed About Us Section -->
+    <section class="container mx-auto px-4 py-12 max-w-screen-xl">
+        <div class="space-y-8 fade-in">
+            <div>
+                <h2 class="text-3xl font-bold font-serif text-gray-800">History</h2>
+                <p class="text-gray-600 font-sans mt-2">Echolibrary was founded in 2010 by a group of book and technology enthusiasts with the desire to create an accessible and rich digital library platform. Initially, we only had a few hundred titles, but thanks to the enthusiastic support from the community and partners, Echolibrary has grown tremendously and become one of the leading digital libraries today.</p>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold font-serif text-gray-800">Mission and Vision</h2>
+                <ul class="list-disc list-inside text-gray-600 font-sans mt-2">
+                    <li><strong>Mission:</strong> Echolibrary's mission is to provide a vast, easily accessible repository of knowledge for everyone, helping them enhance their knowledge and skills, thereby contributing positively to society.</li>
+                    <li><strong>Vision:</strong> Echolibrary aims to become the world's leading digital library, where everyone can access and share unlimited knowledge, regardless of their location.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="container mx-auto px-4 py-12 max-w-screen-xl">
+        <div class="text-center mb-8 fade-in">
+            <h2 class="text-3xl font-bold font-serif text-gray-800">Our Team</h2>
+            <p class="text-gray-600 font-sans">Meet the dedicated team behind Echolibrary</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem1.jpg" loading="lazy" alt="Team Member 1" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Cuong Tran</h3>
+                    <p>Chief Technology Officer</p>
+                    <p>Cuong is a tech genius who ensures our platform runs smoothly and efficiently. His innovative ideas keep us ahead of the curve.</p>
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem2.jpg" loading="lazy" alt="Team Member 2" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Trinh Truong</h3>
+                    <p>Head of Content</p>
+                    <p>Trinh curates and reviews all the materials we provide. Her keen eye for quality ensures our library is filled with valuable content.</p>
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem3.webp" loading="lazy" alt="Team Member 3" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Huy Tran</h3>
+                    <p>Marketing Director</p>
+                    <p>Huy's creative marketing strategies help us reach a wider audience and keep our community engaged and growing.</p>
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem4.jpg" loading="lazy" alt="Team Member 4" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Bao Nhi</h3>
+                    <p>Customer Support Lead</p>
+                    <p>Nhi ensures our users have the best experience possible, providing top-notch support and addressing any concerns promptly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
+            <!-- Logo -->
+            <div class="mb-4 md:mb-0 md:absolute md:left-4">
+                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-16">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="/homepage.html" class="hover:underline">Home</a>
+                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 md:absolute md:right-4">
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
