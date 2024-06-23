@@ -6,637 +6,936 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-		/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <style>
         .container-scroll {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            height: 100vh;
+            height: 90vh;
+            position: relative;
         }
 
         section {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             scroll-snap-align: start;
         }
-        
+
+        section .s-five {
+            height: calc(90vh + 200px);
+            padding-bottom: 200px;
+            /* Adjust this value to fit the height of your footer */
+        }
+
+        footer {
+            bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in {
+            opacity: 1;
+            animation: fadeIn 1s forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-2 {
+            animation-delay: 1s;
+        }
+
+        .delay-3 {
+            animation-delay: 1.5s;
+        }
     </style>
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <!-- <header class="bg-white py-4">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.2/js/bootstrap.min.js"></script>
+    <header class="bg-white py-4 shadow-md ">
         <div class="container mx-auto flex justify-between items-center">
             <div>
                 <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16" /></a>
             </div>
-            <nav class="flex space-x-4">
+            <nav class="flex space-x-6">
                 <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Trang chủ</a>
                 <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Sách</a>
                 <div class="relative menu-item-has-children dropdown">
                     <a href="#" class="text-gray-700 hover:text-gray-900 no-underline navbar-link dropdown-toggle">Thể
-                        loại </a>
-                    <div class="sub-menu mega-menu mega-menu-column-4 dropdown-menu">
-                        <div class="list-item">
-                            <h4 class="title">Hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Văn học hiện đại</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phi hư cấu</h4>
-                            <ul>
-                                <li><a href="#">Triết học</a></li>
-                                <li><a href="#">Sử học</a></li>
-                                <li><a href="#">Khoa học</a></li>
-                                <li><a href="#">Kinh doanh</a></li>
-                                <li><a href="#">Kinh tế chính trị</a></li>
-                                <li><a href="#">Kỹ năng</a></li>
-                                <li><a href="#">Nghệ thuật</a></li>
-                                <li><a href="#">Nuôi dạy con</a></li>
-                            </ul>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Thiếu nhi</h4>
-                            <ul>
-                                <li><a href="#">0-5 tuổi</a></li>
-                                <li><a href="#">6-8 tuổi</a></li>
-                                <li><a href="#">9-12 tuổi</a></li>
-                                <li><a href="#">13-15 tuổi</a></li>
-                        </div>
-                        <div class="list-item">
-                            <h4 class="title">Phân loại khác</h4>
-                            <ul>
-                                <li><a href="#">Sách bán chạy</a></li>
-                                <li><a href="#">Văn học kinh điển</a></li>
-                                <li><a href="#">Văn học thiếu nhi</a></li>
-                                <li><a href="#">Lãng mạn</a></li>
-                                <li><a href="#">Kỳ ảo</a></li>
-                                <li><a href="#">Trinh thám - Kinh dị</a></li>
-                            </ul>
+                        loại</a>
+                    <div
+                        class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md z-20 dropdown-menu hidden group-hover:block">
+                        <div class="p-4">
+                            <div class="list-item mb-4">
+                                <h4 class="font-bold text-lg text-gray-800 mb-2">Hư cấu</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><a href="#" class="hover:text-gray-900">Văn học hiện đại</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Văn học kinh điển</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Văn học thiếu nhi</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Lãng mạn</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Kỳ ảo</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Trinh thám - Kinh dị</a></li>
+                                </ul>
+                            </div>
+                            <div class="list-item mb-4">
+                                <h4 class="font-bold text-lg text-gray-800 mb-2">Phi hư cấu</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><a href="#" class="hover:text-gray-900">Triết học</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Sử học</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Khoa học</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Kinh doanh</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Kinh tế chính trị</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Kỹ năng</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Nghệ thuật</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Nuôi dạy con</a></li>
+                                </ul>
+                            </div>
+                            <div class="list-item mb-4">
+                                <h4 class="font-bold text-lg text-gray-800 mb-2">Thiếu nhi</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><a href="#" class="hover:text-gray-900">0-5 tuổi</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">6-8 tuổi</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">9-12 tuổi</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">13-15 tuổi</a></li>
+                                </ul>
+                            </div>
+                            <div class="list-item">
+                                <h4 class="font-bold text-lg text-gray-800 mb-2">Phân loại khác</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><a href="#" class="hover:text-gray-900">Sách bán chạy</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Văn học kinh điển</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Văn học thiếu nhi</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Lãng mạn</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Kỳ ảo</a></li>
+                                    <li><a href="#" class="hover:text-gray-900">Trinh thám - Kinh dị</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng tôi</a>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline navbar-link">Về chúng
+                    tôi</a>
             </nav>
-            <div class="flex justify-center items-center ml-4">
+            <div class="flex items-center space-x-4">
                 <a href="./checkout.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="black" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
                 </a>
-
                 <a href="./userpage.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="h-6 w-6 ml-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="black" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                 </a>
-                <button class="button ml-4" style="font-size: 8px;">
-                    <a href="./login.html" class="nul">Sign Up</a></button>
-            </div> 
-        </div>
-    </header> -->
-    <header>
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4 pr-8">
-                    <a href="#" class="text-xl font-bold">Logo</a>
-                </div>
-                <div class="hidden md:flex space-x-8 flex-grow items-center">
-                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
-                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
-                    <div class="relative">
-                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
-                            Categories
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
-                            <!-- <h4 class="title">Hư cấu</h4> -->
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
-                </div>
-                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                <button class="ml-4 px-4 py-2 bg-gray-800 text-white text-xs font-semibold rounded hover:bg-gray-700">
+                    <a href="./login.html">Sign Up</a>
                 </button>
             </div>
-            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Books</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Categories</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
-                <div class="relative w-full">
-                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
-                        Contact
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học hiện đại</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học cổ đại</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Văn học trung đại</a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
-                </div>
-            </div>
-        </nav>
+        </div>
     </header>
-    <div class="container-scroll"> 
-        <section class="s-one">
-                <main class="container mx-auto py-6">
-                    <!-- Tim kiem -->
-                    <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="./img/crs1.img" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/crs2.webp" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Fourth slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Fifth slide">
-                            </div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                            </ol>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </section>
+
+    <div class="container-scroll">
+        <section class="s-four body-header">
+            <header class="w-100% mx-auto py-20 px-4 grid gap-8 md:grid-cols-2 items-center">
+                <div class="header__image animated delay-1">
+                    <img src="../Teamwork/img/header.png" alt="header" class="w-full max-w-full mx-auto rounded-lg" />
+                </div>
+                <div class="header__content text-left relative">
+                    <h2 class="relative inline-block mb-4 text-3xl font-medium text-green-700 animated delay-2">Amplify
+                        Your Story, One
+                        Book at a Time</h2>
+                    <h1 class="text-7xl font-bold text-green-700 leading-none mb-4 animated delay-3">ECHOLIBRARY<br />
+                        <span class="text-6xl text-[#38761d]">with </span>
+                        <span class="text-4xl font-light mt-2">our Website</span>
+                    </h1>
+                    <p class="mb-8 text-black text-2xl leading-relaxed mr-8 animated delay-4">
+
+                        Let's Make Your Digital Bookshelf a Reality
+                        Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading
+                        and
+                        reputable platform, Echo Library ensures that all books available here are fully compliant with
+                        copyright laws, providing you with a secure and trustworthy shopping experience. Our dedication
+                        to upholding intellectual property rights means you can browse and purchase with complete
+                        confidence.
+                    </p>
+
+                    <div class="header__btn mb-8 animated delay-5">
+                        <button class="py-4 px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-2xl 
+           hover:text-green-600 hover:opacity-80 focus:outline-none">
+                            Learn More
+                        </button>
+                    </div>
+                    <ul class="flex items-center justify-start gap-8 pb-8 animated delay-6">
+                        <li><a href="#" class="text-5xl text-black hover:text-green-600 transition-colors"><i
+                                    class="ri-facebook-circle-fill"></i></a></li>
+                        <li><a href="#" class="text-5xl text-black hover:text-green-600 transition-colors"><i
+                                    class="ri-twitter-fill"></i></a></li>
+                        <li><a href="#" class="text-5xl text-black hover:text-green-600 transition-colors"><i
+                                    class="ri-youtube-fill"></i></a></li>
+                    </ul>
+                </div>
+            </header>
         </section>
 
-        <section class="s-two"> 
-            <div id="trending">
-                <div class="container">
-                    <h3 class="text-center section-subheading">- Popular Books -</h3>
-                    <h1 class="text-center section-heading">Trending Books</h1>
-                </div>
-                <div class="container">
-                    <div class="swiper trending-slider">
-                        <button class=" icon-left">
-        
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                        <button class=" icon-right">
-        
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                        <div class="swiper-wrapper">
-                            <!-- Slide-start -->
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <div class="trending-slide-heading">
-        
-                                        <h1 class="book-price">$20</h1>
-                                    </div>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/bongdembatxichmon01e1717383369.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$25</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 2
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 2
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.7</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Additional slides can be added similarly -->
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/conthonguyenrua011e17173832478.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$20</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/dinhluatmurphy01e1716776653238.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$20</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/hondonvakhuvuon01e171766606841.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$20</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/ketinhnghihoanmy01e17163433481.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$20</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="swiper-slide trending-slide">
-                                <div class="trending-slide-img">
-                                    <img src="./img/vaitientruongan01e171677668510.jpg" alt="Book">
-                                </div>
-                                <div class="trending-slide-content">
-                                    <h1 class="book-price">$20</h1>
-                                    <div class="trending-slide-content-bottom">
-                                        <h2 class="book-title">
-                                            Book Title 1
-                                        </h2>
-                                        <h3 class="book-author">
-                                            Author 1
-                                        </h3>
-                                        <h3 class="book-rating">
-                                            <span>4.5</span>
-                                            <div class="rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
+        <section class="s-one bg-gray-100">
+            <div class="container mx-auto py-4 bg-green-50 shadow-md border rounded-xl">
+                <!-- Title -->
+                <h1 class="text-center section-heading text-green-700">Summer Promotion</h1>
+                <!-- Carousel -->
+                <section id="carouselExampleIndicators" class="carousel slide relative" data-ride="carousel"
+                    data-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active h-full">
+                            <img class="d-block w-full h-full object-cover" src="./img/NgoaiVanT6_310x210_2.jpg" alt="First slide">
                         </div>
-                        <div class="trending-slider-control">
+                        <div class="carousel-item h-full">
+                            <img class="d-block w-full h-full object-cover" src="./img/Silver_0624_Ver1SmallBanner_310x210.jpg"
+                                alt="Second slide">
+                        </div>
+                        <div class="carousel-item h-full">
+                            <img class="d-block w-full h-full object-cover" src="./img/Silver_0624_Ver2_ZenBooksSmallBanner_310x210.png"
+                                alt="Third slide">
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators absolute bottom-0 left-0 right-0 flex justify-center p-0 mb-4">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active bg-gray-700 w-2 h-2 rounded-full mx-1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-gray-700 w-2 h-2 rounded-full mx-1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-gray-700 w-2 h-2 rounded-full mx-1"></li>
+                    </ol>
+                    <a class="carousel-control-prev custom-carousel absolute flex items-center justify-center p-2" href="#carouselExampleIndicators"
+                        role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="font-size: 40px; color: black;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next custom-carousel absolute flex items-center justify-center p-2" href="#carouselExampleIndicators"
+                        role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="font-size: 40px; color: black;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </section>
+            </div>
+        </section>
+
+        <section class="s-two py-16 flex flex-col items-center mb-20 bg-gray-100">
+            <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="height: 100%;">
+                <div id="trending-container">
+                    <div class="text-center">
+                        <h1 class="text-center section-heading mb-4">Trending Books</h1>
+                        <div class="swiper trending-slider relative">
+                            <button class="icon-left absolute left-0 top-1/2 transform -translate-y-1/2">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button class="icon-right absolute right-0 top-1/2 transform -translate-y-1/2">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <div class="swiper-wrapper flex">
+                                <!-- Slide-start -->
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide-end -->
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Additional slides can be added similarly -->
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- More slides here... -->
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide trending-slide flex flex-col items-center">
+                                    <div class="trending-slide-img mb-4">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                    </div>
+                                    <div class="trending-slide-content text-center">
+                                        <div class="trending-slide-heading mb-2">
+                                            <h1 class="book-price text-lg font-bold">$20</h1>
+                                        </div>
+                                        <div class="trending-slide-content-bottom">
+                                            <h2 class="book-title text-xl font-semibold">Bộ ba phép thuật: Gấu Hoggs
+                                                dũng cảm</h2>
+                                            <h3 class="book-author text-md font-medium">Stefanie Dahle</h3>
+                                            <h3 class="book-rating flex items-center justify-center">
+                                                <span class="mr-2">4.0</span>
+                                                <div class="rating flex">
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star"></ion-icon>
+                                                    <ion-icon name="star-outline"></ion-icon>
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        <div class="swiper-pagination"></div>
+                            <div class="trending-slider-control p-3">
+                                <div class="swiper-pagination "></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="s-three flex flex-col bg-gray-100">
+            <div class="slider-list shadow-md border rounded-xl ">
+                <div class="header-title">
+                    Collection Book
+                </div>
+                <div class="photo-slider">
+                    <div class="slider-content">
+                        <div class="photo-item">
+                            <div class="photo-content">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description text-center ">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description text-center">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description text-center">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <div class="photo-content text-center">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <div class="photo-description">
+                                    <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-five flex flex-col py-8 bg-gray-100">
+            <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="margin-top: 200px;">
+                <h3 class="text-center section-heading mb-10">- Famous Author -</h3>
+                <div class="flex justify-center items-center space-x-4 mb-8">
+                    <button id="prevBtn" class="text-green-600 focus:outline-none ">
+                        <i class="fa-solid fa-chevron-left" style="font-size: 30px;"></i>
+                    </button>
+                    <div id="authorList" class="flex overflow-x-auto space-x-8 w-full px-4">
+                        <!-- Author Item Start -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/nguyenvinhtien.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Nguyễn Vĩnh Tiến</p>
+                        </div>
+                        <!-- Author Item End -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Anomyous.webp" alt="Caryl"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lee Jin Song</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/lightman.webp" alt="lightman"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lightman</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Richard.webp" alt="Richard"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Richard</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/perec.webp" alt="Perec"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Perec</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/UrakamiTetsuya.webp" alt="Urakami Tetsuya"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Urakami Tetsuya</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Anonymous.webp" alt="Nhóm tư vấn Từ Mạn Mạn"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Nhóm tư vấn Từ Mạn Mạn</p>
+                        </div>
+                        <!-- Repeat the Author Item block for each author -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Caryl.webp" alt="Caryl Férey"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Caryl Férey</p>
+                        </div>
+                        <!-- Add more authors as needed -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Anonymous.webp" alt="Chí Tinh"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Chí Tinh</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/author/Anonymous.webp" alt="Marnie Old"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Marnie Old</p>
+                        </div>
+                    </div>
+                    <button id="nextBtn" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-right" style="font-size: 30px;"></i> </button>
+                </div>
+                <!-- Horizontal Line -->
+                <div class="border-t border-green-400 my-8"></div>
+                <!-- Second Part -->
+                <h3 class="text-center section-heading mb-10">- Partner -</h3>
+                <div class="flex justify-center items-center space-x-4 mb-10">
+                    <button id="prevBtn2" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-left" style="font-size: 30px;"></i>
+                    </button>
+                    <div id="authorList2" class="flex overflow-x-auto space-x-8 w-full px-4">
+                        <!-- Author Item Start -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/DK.webp" alt="DK" class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">DK</p>
+                        </div>
+                        <!-- Author Item End -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/VNUK.png" alt="VNUK"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">VNUK</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/Harvard.png" alt="VNUK"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Harvard Uni</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/harper.webp" alt="harper"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Harper Collins</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/vien-pham.webp" alt="Viện Goethe"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Viện Goethe</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/popup.webp" alt="Popup"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Pop up</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/lotte.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lotte</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/penguin.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Penguin House</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/UK.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">The UK</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../Teamwork/img/partner/Japan.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Japan Foundation</p>
+                        </div>
+                        <!-- Repeat the Author Item block for each author -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="../tranding-food-1.png" alt="Caryl Férey" class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Caryl Férey</p>
+                        </div>
+                        <!-- Add more authors as needed -->
+                    </div>
+                    <button id="nextBtn2" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-right" style="font-size: 30px;"></i>
+
+                    </button>
+                </div>
+            </div>
+            <section class="container mx-auto py-4 bg-white" style="margin-top: 45px;">
+                <footer class="bg-background text-text border-t border-accent">
+                    <div class="container w-full mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <!-- Logo -->
+                            <div class="flex flex-col items-center md:items-start">
+                                <img srcset="logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
+                                <p class="text-center md:text-left">Your gateway to a world of books. Discover, Read,
+                                    and Grow with EchoLibrary.</p>
+                            </div>
+
+                            <!-- Navigation Links -->
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Navigation</h3>
+                                <ul>
+                                    <li><a href="/homepage.html" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Home</a></li>
+                                    <li><a href="/aboutUs.html" class="hover:underline"
+                                            style="text-decoration: none; color: black;">About Us</a></li>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Services</a></li>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Contact</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Customer Service -->
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
+                                <ul>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Help Center</a></li>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Returns</a></li>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Order Status</a></li>
+                                    <li><a href="#" class="hover:underline"
+                                            style="text-decoration: none; color: black;">Shipping Information</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
+                                <ul>
+                                    <li><span>Email: </span><a href="mailto:support@echolibrary.com"
+                                            class="hover:underline"
+                                            style="text-decoration: none; color: black;">support@echolibrary.com</a>
+                                    </li>
+                                    <li><span>Phone: </span><a href="tel:1234567890" class="hover:underline"
+                                            style="text-decoration: none; color: black;">(123)
+                                            456-7890 </a></li>
+                                    <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
+                                </ul>
+                                <div class="flex space-x-6 mt-4">
+                                    <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
+                                        <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                                    </a>
+                                    <a href="https://www.twitter.com/echolibrary43/" class="hover:text-secondary">
+                                        <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                                    </a>
+                                    <a href="https://www.instagram.com/echolibrary43/" class="hover:text-secondary">
+                                        <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                                    </a>
+                                    <a href="https://www.linkedin.com/echolibrary43/" class="hover:text-secondary">
+                                        <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Copyright -->
+                        <div class="border-t border-accent text-center">
+                            <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
+                        </div>
+                    </div>
+                </footer>
             </section>
-        
-            <section class="s-three">
-                <div class="slider-list">
-                    <div class="header-title">
-                        Collection Book
-                    </div>
-                    <div class="photo-slider">
-                        <div class="slider-content">
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="photo-content">
-                                    <img src="./img/bobaphepthuatumbalaanhsanghien.jpg" alt="">
-                                    <div class="photo-description">
-                                        <div>Image Name</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        </section>
+
     </div>
-    
     <!-- Footer Section -->
-       <!-- Footer Section -->
-       <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img src="logo2.jpg" alt="Logo" class="h-16">
-            </div>
 
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
-                </div>
-            </div>
-
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>
-        </div>
-
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center container-limited">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/slider.2.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggle = document.querySelector('.dropdown-toggle');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
 
-            dropdownToggle.addEventListener('click', function (event) {
-                event.preventDefault();
-                dropdownMenu.classList.toggle('show');
+            document.querySelectorAll('.animated').forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const authorList = document.getElementById('authorList');
+            const authorList2 = document.getElementById('authorList2');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn2 = document.getElementById('prevBtn2');
+            const nextBtn2 = document.getElementById('nextBtn2');
+
+            const scrollAmount = 300;
+
+            prevBtn.addEventListener('click', () => {
+                authorList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                authorList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn2.addEventListener('click', () => {
+                authorList2.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn2.addEventListener('click', () => {
+                authorList2.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        });
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
+        integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactBtn = document.getElementById('contactBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            contactBtn.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('hidden');
             });
 
             document.addEventListener('click', function (event) {
-                if (!event.target.closest('.dropdown')) {
-                    dropdownMenu.classList.remove('show');
+                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
                 }
             });
+
+            mobileContactBtn.addEventListener('click', function () {
+                mobileDropdownMenu.classList.toggle('hidden');
+            });
+
+            hamburgerBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('#carouselExampleIndicators');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const indicators = carousel.querySelectorAll('.carousel-indicators li');
+            let currentIndex = 0;
+            const intervalTime = carousel.getAttribute('data-interval');
+            let isSliding = false;
+
+            function showSlide(index) {
+                if (isSliding) return;
+                isSliding = true;
+                const currentItem = items[currentIndex];
+                const nextItem = items[index];
+
+                nextItem.classList.add(index > currentIndex ? 'carousel-item-next' : 'carousel-item-prev');
+
+                setTimeout(() => {
+                    currentItem.classList.add(index > currentIndex ? 'carousel-item-left' : 'carousel-item-right');
+                    nextItem.classList.add('active');
+                    nextItem.classList.remove('carousel-item-next', 'carousel-item-prev');
+
+                    setTimeout(() => {
+                        currentItem.classList.remove('active', 'carousel-item-left', 'carousel-item-right');
+                        currentIndex = index;
+                        indicators.forEach((indicator, i) => {
+                            indicator.classList.toggle('active', i === currentIndex);
+                        });
+                        isSliding = false;
+                    }, 500);
+                }, 20);
+            }
+
+            function nextSlide() {
+                let nextIndex = (currentIndex + 1) % items.length;
+                showSlide(nextIndex);
+            }
+
+            function prevSlide() {
+                let prevIndex = (currentIndex - 1 + items.length) % items.length;
+                showSlide(prevIndex);
+            }
+
+            document.querySelector('.carousel-control-next').addEventListener('click', function (e) {
+                e.preventDefault();
+                nextSlide();
+            });
+
+            document.querySelector('.carousel-control-prev').addEventListener('click', function (e) {
+                e.preventDefault();
+                prevSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function () {
+                    showSlide(index);
+                });
+            });
+
+            setInterval(nextSlide, intervalTime);
         });
     </script>
-    		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
-                integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
-                crossorigin="anonymous"
-                referrerpolicy="no-referrer"
-            ></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const contactBtn = document.getElementById('contactBtn');
-                    const dropdownMenu = document.getElementById('dropdownMenu');
-                    const mobileContactBtn = document.getElementById('mobileContactBtn');
-                    const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
-                    const hamburgerBtn = document.getElementById('hamburgerBtn');
-                    const mobileMenu = document.getElementById('mobileMenu');
-        
-                    contactBtn.addEventListener('click', function () {
-                        dropdownMenu.classList.toggle('hidden');
-                    });
-        
-                    document.addEventListener('click', function (event) {
-                        if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                            dropdownMenu.classList.add('hidden');
-                        }
-                    });
-        
-                    mobileContactBtn.addEventListener('click', function () {
-                        mobileDropdownMenu.classList.toggle('hidden');
-                    });
-        
-                    hamburgerBtn.addEventListener('click', function () {
-                        mobileMenu.classList.toggle('hidden');
-                    });
-                });
-            </script>
 </body>
+
 </html>
