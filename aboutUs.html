@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echobinary Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/@heroicons/react@1.0.5/dist/index.js"></script>
     <style>
         .fade-in {
             opacity: 0;
@@ -25,9 +24,9 @@
 
     <!-- Header Section -->
     <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between container-limited">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between max-w-screen-xl">
             <div class="flex items-center">
-                <img src="logo2.jpg" alt="Logo" class="h-12">
+                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-12">
                 <nav class="ml-10 space-x-6">
                     <a href="#" class="text-green-600 font-semibold">Homepage</a>
                     <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
@@ -45,18 +44,14 @@
     </header>
 
     <!-- Main Content Section -->
-    <section class="relative bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
+    <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
         <div class="container mx-auto h-full flex items-center justify-center max-w-screen-xl">
-            <div class="text-center text-white z-10 px-4 md:px-0">
+            <div class="text-center text-white">
                 <h1 class="text-4xl font-bold mb-4">About Echolibrary</h1>
-                <p class="text-lg leading-relaxed max-w-2xl mx-auto">
-                    Echolibrary is a modern digital library offering thousands of documents, books, articles, and other academic resources for all ages and fields of study. We are committed to providing high-quality knowledge and information, helping readers expand their understanding and develop personal skills.
-                </p>
+                <p class="text-lg">Echolibrary is a modern digital library offering thousands of documents, books, articles, and other academic resources for all ages and fields of study. We are committed to providing high-quality knowledge and information, helping readers expand their understanding and develop personal skills.</p>
             </div>
         </div>
     </section>
-
 
     <!-- Breadcrumb -->
     <div class="container mx-auto px-4 py-4 max-w-screen-xl">
@@ -68,7 +63,7 @@
     </div>
 
     <!-- Introduction Section -->
-    <section class="container mx-auto px-4 py-12 container-limited">
+    <section class="container mx-auto px-4 py-12 max-w-screen-xl">
         <div class="text-center mb-8 fade-in">
             <h2 class="text-3xl font-bold font-serif text-gray-800">Brief Introduction</h2>
             <p class="text-gray-600 font-sans">Our mission is to help Vietnamese readers reach the world.</p>
@@ -112,158 +107,83 @@
             <h2 class="text-3xl font-bold font-serif text-gray-800">Our Team</h2>
             <p class="text-gray-600 font-sans">Meet the dedicated team behind Echolibrary</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in group">
-                <img src="/resource/mem1.jpg" loading="lazy" alt="Team Member 1" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105 aspect-square">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-300 group-hover:opacity-100">
-                    <div class="transition-transform duration-300 transform group-hover:translate-y-0 translate-y-8">
-                        <h3 class="text-xl font-bold mb-2">Cuong Tran</h3>
-                        <p class="mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1116.5 10 6.5 6.5 0 0110 16.5zm1-8.75h-2V7.5h2v.25zm0 2.25h-2v5h2v-5z"/></svg>
-                            Chief Technology Officer
-                        </p>
-                        <p class="text-sm">Cuong is a tech genius who ensures our platform runs smoothly and efficiently. His innovative ideas keep us ahead of the curve.</p>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem1.jpg" loading="lazy" alt="Team Member 1" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Cuong Tran</h3>
+                    <p>Chief Technology Officer</p>
+                    <p>Cuong is a tech genius who ensures our platform runs smoothly and efficiently. His innovative ideas keep us ahead of the curve.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in group">
-                <img src="/resource/mem2.jpg" loading="lazy" alt="Team Member 2" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105 aspect-square">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-300 group-hover:opacity-100">
-                    <div class="transition-transform duration-300 transform group-hover:translate-y-0 translate-y-8">
-                        <h3 class="text-xl font-bold mb-2">Trinh Truong</h3>
-                        <p class="mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1116.5 10 6.5 6.5 0 0110 16.5zm1-8.75h-2V7.5h2v.25zm0 2.25h-2v5h2v-5z"/></svg>
-                            Head of Content
-                        </p>
-                        <p class="text-sm">Trinh curates and reviews all the materials we provide. Her keen eye for quality ensures our library is filled with valuable content.</p>
-                    </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem2.jpg" loading="lazy" alt="Team Member 2" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Trinh Truong</h3>
+                    <p>Head of Content</p>
+                    <p>Trinh curates and reviews all the materials we provide. Her keen eye for quality ensures our library is filled with valuable content.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in group">
-                <img src="/resource/mem3.webp" loading="lazy" alt="Team Member 3" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105 aspect-square">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-300 group-hover:opacity-100">
-                    <div class="transition-transform duration-300 transform group-hover:translate-y-0 translate-y-8">
-                        <h3 class="text-xl font-bold mb-2">Huy Tran</h3>
-                        <p class="mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1116.5 10 6.5 6.5 0 0110 16.5zm1-8.75h-2V7.5h2v.25zm0 2.25h-2v5h2v-5z"/></svg>
-                            Marketing Director
-                        </p>
-                        <p class="text-sm">Huy's creative marketing strategies help us reach a wider audience and keep our community engaged and growing.</p>
-                    </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem3.webp" loading="lazy" alt="Team Member 3" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Huy Tran</h3>
+                    <p>Marketing Director</p>
+                    <p>Huy's creative marketing strategies help us reach a wider audience and keep our community engaged and growing.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in group">
-                <img src="/resource/mem4.jpg" loading="lazy" alt="Team Member 4" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105 aspect-square">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-300 group-hover:opacity-100">
-                    <div class="transition-transform duration-300 transform group-hover:translate-y-0 translate-y-8">
-                        <h3 class="text-xl font-bold mb-2">Bao Nhi</h3>
-                        <p class="mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1116.5 10 6.5 6.5 0 0110 16.5zm1-8.75h-2V7.5h2v.25zm0 2.25h-2v5h2v-5z"/></svg>
-                            Customer Support Lead
-                        </p>
-                        <p class="text-sm">Nhi ensures our users have the best experience possible, providing top-notch support and addressing any concerns promptly.</p>
-                    </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
+                <img srcset="/resource/mem4.jpg" loading="lazy" alt="Team Member 4" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                    <h3 class="text-xl font-bold">Bao Nhi</h3>
+                    <p>Customer Support Lead</p>
+                    <p>Nhi ensures our users have the best experience possible, providing top-notch support and addressing any concerns promptly.</p>
                 </div>
             </div>
         </div>
     </section>
-
-
     <!-- Footer Section -->
-    <footer class="bg-background text-text py-10 border-t border-accent">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
             <!-- Logo -->
-            <div class="flex flex-col items-center md:items-start">
-              <img srcset="logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
-              <p class="text-center md:text-left">Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
+            <div class="mb-4 md:mb-0 md:absolute md:left-4">
+                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-16">
             </div>
-      
+
             <!-- Navigation Links -->
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Navigation</h3>
-              <ul>
-                <li><a href="/homepage.html" class="hover:underline">Home</a></li>
-                <li><a href="/aboutUs.html" class="hover:underline">About Us</a></li>
-                <li><a href="#" class="hover:underline">Services</a></li>
-                <li><a href="#" class="hover:underline">Contact</a></li>
-              </ul>
+            <div class="flex-1 flex justify-center mb-4 md:mb-0">
+                <div class="flex space-x-8">
+                    <a href="/homepage.html" class="hover:underline">Home</a>
+                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
+                    <a href="#" class="hover:underline">Services</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
             </div>
-      
-            <!-- Customer Service -->
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
-              <ul>
-                <li><a href="#" class="hover:underline">Help Center</a></li>
-                <li><a href="#" class="hover:underline">Returns</a></li>
-                <li><a href="#" class="hover:underline">Order Status</a></li>
-                <li><a href="#" class="hover:underline">Shipping Information</a></li>
-              </ul>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 md:absolute md:right-4">
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
+                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                </a>
             </div>
-      
-            <!-- Contact Information -->
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
-              <ul>
-                <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline">support@echolibrary.com</a></li>
-                <li><span>Phone: </span><a href="tel:1234567890" class="hover:underline">(123) 456-7890</a></li>
-                <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
-              </ul>
-              <div class="flex space-x-6 mt-4">
-                <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
-                  <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.twitter.com/echolibrary43/" class="hover:text-secondary">
-                  <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-secondary">
-                  <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.linkedin.com/echolibrary43/" class="hover:text-secondary">
-                  <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Copyright -->
-          <div class="border-t border-accent pt-4 mt-8 text-center">
-            <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
-          </div>
         </div>
-      </footer>
-      
-    
+
+        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactBtn = document.getElementById('contactBtn');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const mobileContactBtn = document.getElementById('mobileContactBtn');
-            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-            contactBtn.addEventListener('click', function () {
-                dropdownMenu.classList.toggle('hidden');
-            });
-
-            document.addEventListener('click', function (event) {
-                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.classList.add('hidden');
-                }
-            });
-
-            mobileContactBtn.addEventListener('click', function () {
-                mobileDropdownMenu.classList.toggle('hidden');
-            });
-
-            hamburgerBtn.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver(entries => {

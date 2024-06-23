@@ -1,13 +1,18 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ và Checkout</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>User Account Page</title>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+ 
         .header {
-            box-shadow: 0 4px 2px -2px gray;
+            box-shadow: 0 2px 2px -2px gray;
         }
         .menu-item {
             margin-left: 20px;
@@ -18,126 +23,282 @@
         body {
             padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
         }
+        .remove-btn {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 0.25rem; /* Border radius */
+        }
+        .remove-btn:hover {
+            background-color: #e85959; /* Hover background color */
+        }
         /* Custom styles for the menu */
         .menu {
             display: none;
             z-index: 1000; /* Ensure the menu is above other elements */
         }
-        
         .menu.active {
             display: block;
         }
-
         .hidden-on-scroll {
             transition: transform 0.3s ease;
             z-index: 999; /* Ensure the header is above other elements, but below the menu */
-            }
-        
+        }
         .hidden-on-scroll.hidden {
             transform: translateY(-100%);
-            }
-        
+        }
         .menu ul li {
             z-index: 1001; /* Ensure list items are above everything */
-            }
-        
+        }
         /* Hide menu items on small screens */
         @media (max-width: 768px) {
         .nav-items {
             display: none;
             }
         }
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .search-input {
+            transition: width 0.3s ease;
+        }
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 60px;
+            border: 1px solid #888;
+            width: 40%; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+           
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute; /* Position it absolutely within .modal-content */
+            top: 10px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+        }
+       
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+      .inline-flex {
+    display: inline-flex;
+    align-items: center; /* Canh dòng chữ theo chiều ngang */
+    gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+
+.inline-flex li {
+    list-style-type: none; /* Loại bỏ dấu đầu dòng */
+    font-size: 1.5rem; /* Kích thước phù hợp */
+    font-weight: bold; /* Độ đậm chữ */
+}
+   
+        /* Hide menu items on small screens */
+        @media (max-width: 768px) {
+        .nav-items {
+            display: none;
+            }
+        }
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .search-input {
+            transition: width 0.3s ease;
+        }
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-bounce:hover {
+            transform: scale(1.1);
+           
+        }
+        .inline-flex {
+    display: inline-flex;
+    align-items: center; /* Canh dòng chữ theo chiều ngang */
+    gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+
+.inline-flex li {
+    list-style-type: none; /* Loại bỏ dấu đầu dòng */
+    font-size: 1.5rem; /* Kích thước phù hợp */
+    font-weight: bold; /* Độ đậm chữ */
+}
+
+
+ 
+
+
+    /* Biểu tượng done */
+    .modal-content svg {
+        height: 48px;
+        width: 48px;
+        color: #34D399; /* Màu xanh lá cây */
+        margin-bottom: 16px;
+    }
+
+
+
+
+    </style>
+
+
+
+
+    <body class="bg-gray-100 font-mono ">
+
+
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
+    <style>
+        .dropdown {
+            position: relative;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
-<body class="bg-gray-100 font-mono ">
-    
-    <header>
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4 pr-8">
-                    <a href="#" class="text-xl font-bold">Logo</a>
-                </div>
-                <div class="hidden md:flex space-x-8 flex-grow items-center">
-                    <a href="./index.html" class="text-gray-700 hover:text-gray-900 no-underline">Home</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Books</a>
-                    <a href="./books.html" class="text-gray-700 hover:text-gray-900 no-underline">Categories</a>
-                    <a href="./aboutUs.html" class="text-gray-700 hover:text-gray-900 no-underline">About Us</a>
-                    <div class="relative">
-                        <button id="contactBtn" class="text-gray-700 hover:text-gray-900 flex items-center focus:outline-none">
-                            Categories
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
-                            <!-- <h4 class="title">Hư cấu</h4> -->
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học hiện đại</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học kinh điển</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 no-underline">Văn học thiếu nhi</a>
+
+<body class="bg-gray-100">
+
+
+    <!-- Header Section -->
+    <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
+            <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
+                <ul class="menu flex space-x-4">
+                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
+                        <div class="dropdown-content">
+                            <a href="#" class=" hover:text-green-700">Category 1</a>
+                            <a href="#" class=" hover:text-green-700">Category 2</a>
+                            <a href="#" class=" hover:text-green-700">Category 3</a>
                         </div>
-                    </div>
+                    </li>
+                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
+                    <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <div class="search-bar flex items-center ml-4 lg:flex-grow lg:border-none">
+                    <input type="text" placeholder="Enter ..." class="border-none px-4 py-1 focus:outline-none focus:ring focus:border-green-500 flex-grow search-input hidden lg:block">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-btn hidden lg:block">Search</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 search-icon lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button id="searchBtn" class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.42-1.42l4.38 4.38a1 1 0 01-1.42 1.42l-4.38-4.38zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 3a1 1 0 00-1 1v16a1 1 0 001 1h18a1 1 0 001-1V4a 1 1 0 00-1-1H3zm4 9h10" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 109 21h6a4 4 0 10.879-3.196M7 11a4 4 0 0110 0v2m-5 4h.01" />
-                        </svg>
-                    </button>
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
+                <div class="flex items-center ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
                 </div>
-                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <div class="nav-menu-btn ml-4 md:hidden">
+                    <i class="fas fa-bars" onclick="myMenuFunction()"></i>
+                </div>
+            </div>
+        </div>
+        <div id="menu" class="menu fixed right-0 top-0 bg-white h-full w-64 shadow-lg z-50 hidden md:hidden">
+            <div class="p-4">
+                <button id="closeButton" class="text-black focus:outline-none" onclick="myMenuFunction()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
-            <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 mt-4">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
-                <div class="relative w-full">
-                    <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex items-center justify-center">
-                        Contact
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Instagram</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Facebook</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">YouTube</a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <button class="text-gray-700 hover:text-gray-900">Log In</button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container mx-auto py-4 mt-6">
-        <!-- Breadcrumb -->
-        <div class="container mx-auto px-4 py-4 container-limited">
-            <nav class="text-gray-600 text-sm">
-                <a href="#" class="hover:underline">Home</a>
-                <span class="mx-2">></span>
-                <a href="#" class="hover:underline">About Us</a>
+            <nav class="p-4">
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
+                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
+                </ul>
             </nav>
         </div>
+    </header>
+
+
+</body>
+
+
+</html>
+
+
+
+
+    <main class="container mx-auto py-4 mt-6">
         <div class="grid lg:grid-cols-2 gap-8 py-8">
             <!-- Left Side: Cart Summary -->
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="./undo.png" class="h-7 w-7 mr-4" /></a>
+                <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
                 <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
                 <div class="mt-4 space-y-4">
                     <!-- Product 1 -->
@@ -148,9 +309,8 @@
                             <div class="text-gray-500 price" data-price="22">$22/1 product</div>
                         </div>
                         <div class="flex items-center">
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product1')">-</button>
                             <input id="product1" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product1')">+</button>
+   
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
                     </div>
@@ -162,9 +322,9 @@
                             <div class="text-gray-500 price" data-price="35">$35/1 product</div>
                         </div>
                         <div class="flex items-center">
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="decreaseQuantity('product2')">-</button>
+
+
                             <input id="product2" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                            <button class="px-2 py-1 bg-gray-300 rounded" onclick="increaseQuantity('product2')">+</button>
                         </div>
                         <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
                     </div>
@@ -211,155 +371,156 @@
                         <div class="font-semibold totalPrice">$215.00</div>
                     </div>
                 </div>
-                <button class="mt-6 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">PAYMENT</button>
-            </div>
-        </div>       
-    </main>
-    <!-- Footer Section -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img src="logo2.jpg" alt="Logo" class="h-16">
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-full" id="paymentButton">PAYMENT</button>
                 </div>
             </div>
-
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>           
         </div>
-
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+   
+    <!-- The Modal -->
+    <div id="successModal" class="modal">
+        <div  class="modal-content flex flex-col justify-center items-center">
+            <span class="close">&times;</span>
+            <p>Payment Successful!</p>
+                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-30 mt-4" id="nextButton">NEXT</button>
         </div>
-    </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+
 
     <script>
-        function decreaseQuantity(id) {
-            var input = document.getElementById(id);
-            var value = parseInt(input.value);
-            if (value > 1) {
-                input.value = value - 1;
-                updateTotal();
-            }
-        }
-
-        function increaseQuantity(id) {
-            var input = document.getElementById(id);
-            var value = parseInt(input.value);
-            input.value = value + 1;
-            updateTotal();
-        }
-
-        function updateTotal() {
-            var totalQuantity = 0;
-            var totalPrice = 0;
-            var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-            products.forEach(product => {
-                var quantity = parseInt(product.querySelector('input').value);
-                var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
-                totalQuantity += quantity;
-                totalPrice += price * quantity;
-                product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
-            });
-            document.querySelector('.totalQuantity').textContent = totalQuantity;
-            document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
-        }
-
-        window.onload = updateTotal;
-
+        // Toggle menu function
         function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+
+        // Close menu button function
+        var closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.remove('active');
+        });
+        nextButton.onclick = function() {
+            window.location.href = './thanks.html';
+        }
+        // Get modal elements
+        var modal = document.getElementById("successModal");
+        var btn = document.getElementById("paymentButton");
+        var span = document.getElementsByClassName("close")[0];
+
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
     </script>
-    <script type="module" src="/src/scripts/application.js"></script>
-    <!-- footer.html -->
-<footer class="bg-white text-gray-800 py-8">
-    <div class="container mx-auto px-4" style="min-width: 800px;">
-        <div class="flex justify-between items-start">
+</main>
+
+
+<script>
+
+
+
+
+    function updateTotal() {
+        var totalQuantity = 0;
+        var totalPrice = 0;
+        var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
+        products.forEach(product => {
+            var quantity = parseInt(product.querySelector('input').value);
+            var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
+            totalQuantity += quantity;
+            totalPrice += price * quantity;
+            product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
+        });
+        document.querySelector('.totalQuantity').textContent = totalQuantity;
+        document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
+    }
+
+
+    window.onload = updateTotal;
+
+
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if (i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+</script>
+<script type="module" src="/src/scripts/application.js"></script>
+      <!-- footer.html -->
+      <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4 text-center">
             <!-- Logo Section -->
-            <div class="flex items-center">
-                <img src="./logo2.jpg" alt="Logo" class="h-16 mr-4">
+            <div class="flex items-center justify-center mb-6 md:mb-0 w-full md:w-auto">
+                <img src="./logo2.jpg" alt="Logo" class="h-16">
             </div>
             <!-- Help Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">HELP</h3>
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">HELP</h3>
                 <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
                 </ul>
             </div>
             <!-- Services Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">SERVICES</h3>
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">SERVICES</h3>
                 <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
                 </ul>
             </div>
             <!-- About Section -->
-            <div class="flex-1">
-                <h3 class="font-semibold mb-2">ABOUT LOUIS VUITTON</h3>
-                
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">ABOUT LOUIS VUITTON</h3>
                 <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
                 </ul>
             </div>
-            
             <!-- Email Signup Section -->
             <div class="flex-1">
-
-                <h3 class="font-semibold mb-2">EMAIL SIGN-UP</h3>
-
+                <h3 class="font-semibold mb-2 text-lg md:text-base">EMAIL SIGN-UP</h3>
                 <ul>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
-                    <li><a href="#" class="p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="text-center mt-8">
             <p>&copy; 2024 Echobinary. All rights reserved.</p>
         </div>
-    </div>
-</footer>
-
-
+    </footer>
+   
 </body>
 </html>
+
+
+
