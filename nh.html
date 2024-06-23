@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +14,67 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-
+    
         .search-input {
             transition: width 0.3s ease;
         }
-
-
+    
+        .order-container {
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .order-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    
+        .order-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+    
+        .order-item:last-child {
+            border-bottom: none;
+        }
+    
+        .order-id {
+            font-weight: 500;
+            color: #1f2937;
+        }
+    
+        .order-status {
+            font-weight: 600;
+        }
+    
+        .order-status.delivered {
+            color: #16a34a;
+        }
+    
+        .order-status.in-transit {
+            color: #d97706;
+        }
+    
+        .order-status.pending {
+            color: #4b5563;
+        }
+    
+        .view-more-btn {
+            margin-top: 16px;
+            font-weight: 600;
+            color: #16a34a;
+        }
+    
         .dropdown {
             position: relative;
         }
-
+    
         .dropdown-content {
             display: none;
             position: absolute;
@@ -33,24 +83,41 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
-
+    
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
+    
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
-
+    
         .dropdown:hover .dropdown-content {
             display: block;
         }
     </style>
-</head>
 
+    <script>
+        function myMenuFunction() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const priceFilters = document.querySelectorAll('input[name="price"]');
+            priceFilters.forEach(filter => {
+                filter.addEventListener('change', function() {
+                    const selectedPriceRange = this.value;
+                    window.location.href = `books.html?price=${selectedPriceRange}`;
+                });
+            });
+        });
+    </script>
+</head>
+    
 <body class="bg-gray-100">
 
     <!-- Header Section -->
@@ -104,116 +171,61 @@
                     </svg>
                 </button>
             </div>
-            <nav class="p-4">
-                <ul class="space-y-4">
-                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Homepage</a></li>
-                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Books</a></li>
-                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">Authors</a></li>
-                    <li><a href="#" class="text-black hover:text-green-500 transition duration-300">About Us</a></li>
-                </ul>
-            </nav>
+            <ul class="menu-list mt-4 space-y-4 p-4">
+                <li><a href="#" class="p-2 block">HOMEPAGE</a></li>
+                <li><a href="#" class="p-2 block">BOOKS</a></li>
+                <li><a href="#" class="p-2 block">AUTHORS</a></li>
+                <li><a href="#" class="p-2 block">CATEGORIES</a></li>
+                <li><a href="#" class="p-2 block">ABOUT US</a></li>
+            </ul>
         </div>
     </header>
 
-
-    <!-- Main Content -->
-    <main class="pt-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <!-- Sidebar -->
-                <aside class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md mb-4">
-                    <div class="text-center">
-                        <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
-                        <h2 class="text-xl font-semibold mb-2">Username</h2>
-                        <p class="text-gray-600 mb-4">username.abc@example.com</p>
-                        <a href="#" class="hover:text-green-700 py-1 px-3 mb-2 font-bold rounded-full">
-                            <i class="fas fa-edit mr-2"></i>Edit Profile
-                        </a>
+    <!-- Main Content Section -->
+    <div class="container mx-auto px-4 py-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="order-container col-span-1 md:col-span-2">
+                <h1 class="text-2xl font-semibold mb-6">My Orders</h1>
+                <ul class="order-list">
+                    <li class="order-item">
+                        <span class="order-id">Order #1234</span>
+                        <span class="order-status delivered">Delivered</span>
+                    </li>
+                    <li class="order-item">
+                        <span class="order-id">Order #5678</span>
+                        <span class="order-status in-transit">In Transit</span>
+                    </li>
+                    <li class="order-item">
+                        <span class="order-id">Order #91011</span>
+                        <span class="order-status pending">Pending</span>
+                    </li>
+                </ul>
+                <a href="#" class="view-more-btn">View More</a>
+            </div>
+            <div class="col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-semibold mb-4">Filter by Price</h2>
+                    <div class="space-y-2">
+                        <label class="block">
+                            <input type="radio" name="price" value="0-50" id="price-0-50" class="mr-2"> 0-50
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="price" value="51-100" id="price-51-100" class="mr-2"> 51-100
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="price" value="101-200" id="price-101-200" class="mr-2"> 101-200
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="price" value="201-300" id="price-201-300" class="mr-2"> 201-300
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="price" value="301-400" id="price-301-400" class="mr-2"> 301-400
+                        </label>
                     </div>
-                    <nav class="mt-2 text-center">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Log Out</button>
-                    </nav>
-                </aside>                
-
-                <!-- Main Content -->
-                <section class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Account Overview</h2>
-                    <div class="grid grid-cols-1 gap-4 mb-4">
-                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-semibold mb-2">Personal Information</h3>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> Username</p>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> username.abc@example.com</p>
-                            <p class="text-gray-700"><span class="font-semibold">Phone:</span> (123) 456-7890</p>
-                        </div>
-                        <div class="order-container bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-semibold mb-4">Đơn hàng gần đây</h3>
-                            <ul class="order-list">
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12345</span>
-                                    <span class="order-status delivered text-green-600 font-semibold">Đã giao</span>
-                                </li>
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12346</span>
-                                    <span class="order-status in-transit text-yellow-500 font-semibold">Đang vận chuyển</span>
-                                </li>
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12347</span>
-                                    <span class="order-status pending text-gray-600 font-semibold">Đang chờ xử lý</span>
-                                </li>
-                            </ul>
-                            <button class="view-more-btn text-green-500 font-semibold mt-4 ">Xem thêm</button>
-                        </div>
-    
-                </section>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        function myMenuFunction() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
-    <!-- Footer Section -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img src="logo2.jpg" alt="Logo" class="h-16">
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
                 </div>
             </div>
-
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>           
         </div>
+    </div>
 
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
-
 </html>
