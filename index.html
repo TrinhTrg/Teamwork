@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
     <!-- Google tag (gtag.js) -->
@@ -35,6 +36,7 @@
             position: relative;
         }
 
+
         section {
             height: 90vh;
             display: flex;
@@ -43,15 +45,18 @@
             scroll-snap-align: start;
         }
 
+
         section .s-five {
             height: calc(90vh + 200px);
             padding-bottom: 200px;
             /* Adjust this value to fit the height of your footer */
         }
 
+
         footer {
             bottom: 0;
         }
+
 
         @keyframes fadeIn {
             from {
@@ -59,35 +64,42 @@
                 transform: translateY(20px);
             }
 
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+
         .animated {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
+
 
         .fade-in {
             opacity: 1;
             animation: fadeIn 1s forwards;
         }
 
+
         .delay-1 {
             animation-delay: 0.5s;
         }
 
+
         .delay-2 {
             animation-delay: 1s;
         }
+
 
         .delay-3 {
             animation-delay: 1.5s;
         }
     </style>
 </head>
+
 
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -177,12 +189,14 @@
                 </button>
             </div>
         </div>
-    </header> -->
-    <header>
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4 pr-8">
-                    <a href="#" class="text-xl font-bold">Logo</a>
+    </header>
+
+
+    <div class="container-scroll">
+        <section class="s-four body-header">
+            <header class="w-100% mx-auto py-20 px-4 grid gap-8 md:grid-cols-2 items-center">
+                <div class="header__image animated delay-1">
+                    <img src="./img/header.png" alt="header" class="w-full max-w-full mx-auto rounded-lg" />
                 </div>
                 <div class="header__content text-left relative">
                     <h2 class="relative inline-block mb-4 text-3xl font-medium text-green-700 animated delay-2">Amplify
@@ -194,6 +208,7 @@
                     </h1>
                     <p class="mb-8 text-black text-2xl leading-relaxed mr-8 animated delay-4">
 
+
                         Let's Make Your Digital Bookshelf a Reality
                         Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading
                         and
@@ -203,8 +218,9 @@
                         confidence.
                     </p>
 
+
                     <div class="header__btn mb-8 animated delay-5">
-                        <button class="py-4 px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-2xl 
+                        <button class="py-4 px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-2xl
            hover:text-green-600 hover:opacity-80 focus:outline-none">
                             Learn More
                         </button>
@@ -220,6 +236,7 @@
                 </div>
             </header>
         </section>
+
 
         <section class="s-one bg-gray-100">
             <div class="container mx-auto py-4 bg-green-50 shadow-md border rounded-xl">
@@ -259,6 +276,7 @@
                 </section>
             </div>
         </section>
+
 
         <section class="s-two py-16 flex flex-col items-center mb-20 bg-gray-100">
             <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="height: 100%;">
@@ -487,6 +505,7 @@
             </div>
         </section>
 
+
         <section class="s-three flex flex-col bg-gray-100">
             <div class="slider-list shadow-md border rounded-xl ">
                 <div class="header-title">
@@ -577,14 +596,142 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
+
+        <section class="s-five flex flex-col py-8 bg-gray-100">
+            <div class="container mx-auto py-4 bg-white shadow-md border rounded-xl" style="margin-top: 200px;">
+                <h3 class="text-center section-heading mb-10">- Famous Author -</h3>
+                <div class="flex justify-center items-center space-x-4 mb-8">
+                    <button id="prevBtn" class="text-green-600 focus:outline-none ">
+                        <i class="fa-solid fa-chevron-left" style="font-size: 30px;"></i>
+                    </button>
+                    <div id="authorList" class="flex overflow-x-auto space-x-8 w-full px-4">
+                        <!-- Author Item Start -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/nguyenvinhtien.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Nguyễn Vĩnh Tiến</p>
+                        </div>
+                        <!-- Author Item End -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Anomyous.webp" alt="Caryl"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lee Jin Song</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/lightman.webp" alt="lightman"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lightman</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Richard.webp" alt="Richard"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Richard</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/perec.webp" alt="Perec"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Perec</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/UrakamiTetsuya.webp" alt="Urakami Tetsuya"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Urakami Tetsuya</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Anomyous.webp" alt="Nhóm tư vấn Từ Mạn Mạn"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Nhóm tư vấn Từ Mạn Mạn</p>
+                        </div>
+                        <!-- Repeat the Author Item block for each author -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Caryl.webp" alt="Caryl Férey"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Caryl Férey</p>
+                        </div>
+                        <!-- Add more authors as needed -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Anomyous.webp" alt="Chí Tinh"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Chí Tinh</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/author/Anomyous.webp" alt="Marnie Old"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Marnie Old</p>
+                        </div>
+                    </div>
+                    <button id="nextBtn" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-right" style="font-size: 30px;"></i> </button>
+                </div>
+                <!-- Horizontal Line -->
+                <div class="border-t border-green-400 my-8"></div>
+                <!-- Second Part -->
+                <h3 class="text-center section-heading mb-10">- Partner -</h3>
+                <div class="flex justify-center items-center space-x-4 mb-10">
+                    <button id="prevBtn2" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-left" style="font-size: 30px;"></i>
+                    </button>
+                    <div id="authorList2" class="flex overflow-x-auto space-x-8 w-full px-4">
+                        <!-- Author Item Start -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/DK.webp" alt="DK" class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">DK</p>
+                        </div>
+                        <!-- Author Item End -->
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/VNUK.png" alt="VNUK"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">VNUK</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/Harvard.png" alt="VNUK"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Harvard Uni</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/harper.webp" alt="harper"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Harper Collins</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/vien-pham.webp" alt="Viện Goethe"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Viện Goethe</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/popup.webp" alt="Popup"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Pop up</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/lotte.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Lotte</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/penguin.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Penguin House</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/UK.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">The UK</p>
+                        </div>
+                        <div class="author flex-shrink-0 text-center">
+                            <img src="./img/partner/Japan.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-2 text-lg font-medium">Japan Foundation</p>
+                        </div>
+                        <!-- Add more authors as needed -->
+                    </div>
+                    <button id="nextBtn2" class="text-green-600 focus:outline-none">
+                        <i class="fa-solid fa-chevron-right" style="font-size: 30px;"></i>
+
+
+                    </button>
                 </div>
             </div>
             <section class="container mx-auto py-4 bg-white" style="margin-top: 45px;">
@@ -593,10 +740,11 @@
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                             <!-- Logo -->
                             <div class="flex flex-col items-center md:items-start">
-                                <img srcset="logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
+                                <img srcset="resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
                                 <p class="text-center md:text-left">Your gateway to a world of books. Discover, Read,
                                     and Grow with EchoLibrary.</p>
                             </div>
+
 
                             <!-- Navigation Links -->
                             <div>
@@ -613,6 +761,7 @@
                                 </ul>
                             </div>
 
+
                             <!-- Customer Service -->
                             <div>
                                 <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
@@ -627,6 +776,7 @@
                                             style="text-decoration: none; color: black;">Shipping Information</a></li>
                                 </ul>
                             </div>
+
 
                             <!-- Contact Information -->
                             <div>
@@ -658,6 +808,7 @@
                             </div>
                         </div>
 
+
                         <!-- Copyright -->
                         <div class="border-t border-accent text-center">
                             <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
@@ -667,8 +818,10 @@
             </section>
         </section>
 
+
     </div>
     <!-- Footer Section -->
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -687,10 +840,12 @@
                 threshold: 0.1
             });
 
+
             document.querySelectorAll('.animated').forEach(element => {
                 observer.observe(element);
             });
         });
+
 
         document.addEventListener('DOMContentLoaded', function () {
             const authorList = document.getElementById('authorList');
@@ -700,24 +855,31 @@
             const prevBtn2 = document.getElementById('prevBtn2');
             const nextBtn2 = document.getElementById('nextBtn2');
 
+
             const scrollAmount = 300;
+
 
             prevBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
+
             nextBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
+
 
             prevBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
+
             nextBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         });
+
+
 
 
     </script>
@@ -734,9 +896,11 @@
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const mobileMenu = document.getElementById('mobileMenu');
 
+
             contactBtn.addEventListener('click', function () {
                 dropdownMenu.classList.toggle('hidden');
             });
+
 
             document.addEventListener('click', function (event) {
                 if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
@@ -744,9 +908,11 @@
                 }
             });
 
+
             mobileContactBtn.addEventListener('click', function () {
                 mobileDropdownMenu.classList.toggle('hidden');
             });
+
 
             hamburgerBtn.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
@@ -762,18 +928,22 @@
             const intervalTime = carousel.getAttribute('data-interval');
             let isSliding = false;
 
+
             function showSlide(index) {
                 if (isSliding) return;
                 isSliding = true;
                 const currentItem = items[currentIndex];
                 const nextItem = items[index];
 
+
                 nextItem.classList.add(index > currentIndex ? 'carousel-item-next' : 'carousel-item-prev');
+
 
                 setTimeout(() => {
                     currentItem.classList.add(index > currentIndex ? 'carousel-item-left' : 'carousel-item-right');
                     nextItem.classList.add('active');
                     nextItem.classList.remove('carousel-item-next', 'carousel-item-prev');
+
 
                     setTimeout(() => {
                         currentItem.classList.remove('active', 'carousel-item-left', 'carousel-item-right');
@@ -786,25 +956,30 @@
                 }, 20);
             }
 
+
             function nextSlide() {
                 let nextIndex = (currentIndex + 1) % items.length;
                 showSlide(nextIndex);
             }
+
 
             function prevSlide() {
                 let prevIndex = (currentIndex - 1 + items.length) % items.length;
                 showSlide(prevIndex);
             }
 
+
             document.querySelector('.carousel-control-next').addEventListener('click', function (e) {
                 e.preventDefault();
                 nextSlide();
             });
 
+
             document.querySelector('.carousel-control-prev').addEventListener('click', function (e) {
                 e.preventDefault();
                 prevSlide();
             });
+
 
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function () {
@@ -812,9 +987,13 @@
                 });
             });
 
+
             setInterval(nextSlide, intervalTime);
         });
     </script>
 </body>
 
+
 </html>
+
+

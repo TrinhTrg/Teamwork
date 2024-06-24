@@ -1,6 +1,7 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <!-- Google tag (gtag.js) -->
@@ -16,101 +17,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Account Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ 
     <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+ 
+        .header {
+            box-shadow: 0 2px 2px -2px gray;
+        }
+        .menu-item {
+            margin-left: 20px;
+        }
+        .container {
+            padding: 0 1.5rem;
+        }
+        body {
+            padding-top: 4rem; /* Adjust this value based on the actual height of your fixed header */
+        }
+        .remove-btn {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 0.25rem; /* Border radius */
+        }
+        .remove-btn:hover {
+            background-color: #e85959; /* Hover background color */
+        }
+        /* Custom styles for the menu */
+        .menu {
+            display: none;
+            z-index: 1000; /* Ensure the menu is above other elements */
+        }
+        .menu.active {
+            display: block;
+        }
+        .hidden-on-scroll {
+            transition: transform 0.3s ease;
+            z-index: 999; /* Ensure the header is above other elements, but below the menu */
+        }
+        .hidden-on-scroll.hidden {
+            transform: translateY(-100%);
+        }
+        .menu ul li {
+            z-index: 1001; /* Ensure list items are above everything */
+        }
+        /* Hide menu items on small screens */
+        @media (max-width: 768px) {
+        .nav-items {
+            display: none;
+            }
+        }
         .search-bar {
-            border: 1px solid #CBD5E0;
-            border-radius: 9999px;
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
             overflow: hidden;
             transition: all 0.3s ease;
         }
-
         .search-input {
             transition: width 0.3s ease;
         }
-
-        .order-container {
-            background-color: #fff;
-            padding: 16px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
         }
-
-        .order-list {
-            list-style-type: none;
-            padding-left: 0;
+        .hover-bounce:hover {
+            transform: scale(1.1);
         }
-
-        .order-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .order-item:last-child {
-            border-bottom: none;
-        }
-
-        .order-id {
-            font-weight: 500;
-            color: #1f2937;
-        }
-
-        .order-status {
-            font-weight: 600;
-        }
-
-        .order-status.delivered {
-            color: #16a34a;
-        }
-
-        .order-status.in-transit {
-            color: #d97706;
-        }
-
-        .order-status.pending {
-            color: #4b5563;
-        }
-
-        .view-more-btn {
-            margin-top: 16px;
-            font-weight: 600;
-            color: #16a34a;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 160px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-               /* Modal styles */
+        /* Modal styles */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -134,14 +105,14 @@
             text-align: center;
         }
         .close {
-            
+           
             font-size: 28px;
             font-weight: bold;
             position: absolute; /* Position it absolutely within .modal-content */
             top: 10px; /* Adjust as needed */
             right: 20px; /* Adjust as needed */
         }
-        
+       
         .close:hover,
         .close:focus {
             color: black;
@@ -149,21 +120,118 @@
             cursor: pointer;
         }
 
+
       .inline-flex {
     display: inline-flex;
     align-items: center; /* Canh dòng chữ theo chiều ngang */
     gap: 1rem; /* Khoảng cách giữa các mục */
 }
 
+
 .inline-flex li {
     list-style-type: none; /* Loại bỏ dấu đầu dòng */
     font-size: 1.5rem; /* Kích thước phù hợp */
     font-weight: bold; /* Độ đậm chữ */
 }
+   
+        /* Hide menu items on small screens */
+        @media (max-width: 768px) {
+        .nav-items {
+            display: none;
+            }
+        }
+        .search-bar {
+            border: 1px solid #CBD5E0; /* Border color */
+            border-radius: 9999px; /* Full rounded border */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .search-input {
+            transition: width 0.3s ease;
+        }
+        .hover-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-bounce:hover {
+            transform: scale(1.1);
+           
+        }
+        .inline-flex {
+    display: inline-flex;
+    align-items: center; /* Canh dòng chữ theo chiều ngang */
+    gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+
+.inline-flex li {
+    list-style-type: none; /* Loại bỏ dấu đầu dòng */
+    font-size: 1.5rem; /* Kích thước phù hợp */
+    font-weight: bold; /* Độ đậm chữ */
+}
+
+
+ 
+
+
+    /* Biểu tượng done */
+    .modal-content svg {
+        height: 48px;
+        width: 48px;
+        color: #34D399; /* Màu xanh lá cây */
+        margin-bottom: 16px;
+    }
+
+
+
+
+    </style>
+
+
+
+
+    <body class="bg-gray-100 font-mono ">
+
+
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
+    <style>
+        .dropdown {
+            position: relative;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
+
 <body class="bg-gray-100">
+
 
     <!-- Header Section -->
     <header class="bg-white py-0 mx-auto fixed top-0 left-0 right-0 z-10 shadow-md">
@@ -171,18 +239,18 @@
             <a href="#"><img src="./logo2.jpg" alt="Logo" class="h-16 w-16 mr-4" /></a>
             <div class="nav-menu flex-grow hidden md:flex justify-center" id="navMenu">
                 <ul class="menu flex space-x-4">
-                    <li><a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">HOMEPAGE</a></li>
-                    <li><a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">BOOKS</a></li>
-                    <li><a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">AUTHORS</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">HOMEPAGE</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">BOOKS</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">AUTHORS</a></li>
                     <li class="dropdown">
-                        <a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">CATEGORIES</a>
+                        <a href="#" class="p-4 hover:text-green-700">CATEGORIES</a>
                         <div class="dropdown-content">
-                            <a href="# " class="p-4 text-black hover:text-green-500 transition duration-300" >Category 1</a>
-                            <a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">Category 2</a>
-                            <a href="#" class="p-4 text-black hover:text-green-500 transition duration-300">Category 3</a>
+                            <a href="#" class=" hover:text-green-700">Category 1</a>
+                            <a href="#" class=" hover:text-green-700">Category 2</a>
+                            <a href="#" class=" hover:text-green-700">Category 3</a>
                         </div>
                     </li>
-                    <li><a href="#" class="p-4 p-4 text-black hover:text-green-500 transition duration-300"">ABOUT US</a></li>
+                    <li><a href="#" class="p-4 hover:text-green-700">ABOUT US</a></li>
                     <li><a href="#"><i class="bx bx-shopping-bag p-3 text-xl"></i></a></li>
                 </ul>
             </div>
@@ -198,6 +266,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
+
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 ml-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -228,240 +297,241 @@
     </header>
 
 
-      <!-- Main Content -->
-      <main class="pt-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <!-- Sidebar -->
-
-    
-                <main class="container mx-auto py-4 mt-6">
-                    <div class="grid lg:grid-cols-2 gap-8 py-8">
-                        <!-- Left Side: Cart Summary -->
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
-                            <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
-                            <div class="mt-4 space-y-4">
-                                <!-- Product 1 -->
-                                <div class="flex items-center border-b py-4">
-                                    <img src="images/1.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
-                                    <div class="ml-4 flex-grow">
-                                        <div class="font-semibold">PRODUCT 1</div>
-                                        <div class="text-gray-500 price" data-price="22">$22/1 product</div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="product1" type="text" value="3" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-               
-                                    </div>
-                                    <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
-                                </div>
-                                <!-- Product 2 -->
-                                <div class="flex items-center border-b py-4">
-                                    <img src="images/2.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
-                                    <div class="ml-4 flex-grow">
-                                        <div class="font-semibold">PRODUCT 2</div>
-                                        <div class="text-gray-500 price" data-price="35">$35/1 product</div>
-                                    </div>
-                                    <div class="flex items-center">
-            
-                                        <input id="product2" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
-                                    </div>
-                                    <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Right Side: Checkout Form -->
-                        <div class="bg-white text-black p-8 rounded-lg shadow-md">
-                            <h1 class="text-2xl font-bold">Checkout</h1>
-                            <div class="grid grid-cols-2 gap-4 mt-6 border-b border-gray-700 pb-4">
-                                <div class="col-span-2">
-                                    <label for="name" class="block text-sm font-medium">Full Name</label>
-                                    <input type="text" name="name" id="name" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
-                                </div>
-                                <div class="col-span-2">
-                                    <label for="phone" class="block text-sm font-medium">Phone Number</label>
-                                    <input type="text" name="phone" id="phone" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
-                                </div>
-                                <div class="col-span-2">
-                                    <label for="address" class="block text-sm font-medium">Address</label>
-                                    <input type="text" name="address" id="address" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
-                                </div>
-                                <div>
-                                    <label for="country" class="block text-sm font-medium">Country</label>
-                                    <select name="country" id="country" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
-                                        <option value="">Choose..</option>
-                                        <option value="kingdom">Kingdom</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="city" class="block text-sm font-medium">City</label>
-                                    <select name="city" id="city" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
-                                        <option value="">Choose..</option>
-                                        <option value="london">London</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mt-6">
-                                <div class="flex justify-between">
-                                    <div>Total Quantity</div>
-                                    <div class="font-semibold totalQuantity">8</div>
-                                </div>
-                                <div class="flex justify-between mt-2">
-                                    <div>Total Price</div>
-                                    <div class="font-semibold totalPrice">$215.00</div>
-                                </div>
-                            </div>
-                                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-full" id="paymentButton">PAYMENT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- The Modal -->
-                <div id="successModal" class="modal">
-                    <div  class="modal-content flex flex-col justify-center items-center">
-                        <span class="close">&times;</span>
-                        <p>Payment Successful!</p>
-                              <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-30 mt-4" id="nextButton">NEXT</button>
-                    </div>
-                </div>
-            
-                <script>
-                    // Toggle menu function
-                    function myMenuFunction() {
-                        var menu = document.getElementById('menu');
-                        menu.classList.toggle('active');
-                    }
-            
-                    // Close menu button function
-                    var closeButton = document.getElementById('closeButton');
-                    closeButton.addEventListener('click', function() {
-                        var menu = document.getElementById('menu');
-                        menu.classList.remove('active');
-                    });
-                    nextButton.onclick = function() {
-                        window.location.href = './contact.html';
-                    }
-                    // Get modal elements
-                    var modal = document.getElementById("successModal");
-                    var btn = document.getElementById("paymentButton");
-                    var span = document.getElementsByClassName("close")[0];
-            
-                    // When the user clicks the button, open the modal 
-                    btn.onclick = function() {
-                        modal.style.display = "block";
-                    }
-            
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                        modal.style.display = "none";
-                    }
-            
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-                </script>
-            </main>
-            
-            <script>
-            
-            
-                function updateTotal() {
-                    var totalQuantity = 0;
-                    var totalPrice = 0;
-                    var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-                    products.forEach(product => {
-                        var quantity = parseInt(product.querySelector('input').value);
-                        var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
-                        totalQuantity += quantity;
-                        totalPrice += price * quantity;
-                        product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
-                    });
-                    document.querySelector('.totalQuantity').textContent = totalQuantity;
-                    document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
-                }
-            
-                window.onload = updateTotal;
-            
-                function myMenuFunction() {
-                    var i = document.getElementById("navMenu");
-                    if (i.className === "nav-menu") {
-                        i.className += " responsive";
-                    } else {
-                        i.className = "nav-menu";
-                    }
-                }
-            </script>
-            <script type="module" src="/src/scripts/application.js"></script>
-
-    <script>
-        function myMenuFunction() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
-    <script>
-            
-            
-        function updateTotal() {
-            var totalQuantity = 0;
-            var totalPrice = 0;
-            var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
-            products.forEach(product => {
-                var quantity = parseInt(product.querySelector('input').value);
-                var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
-                totalQuantity += quantity;
-                totalPrice += price * quantity;
-                product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
-            });
-            document.querySelector('.totalQuantity').textContent = totalQuantity;
-            document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
-        }
-    
-        window.onload = updateTotal;
-    </script>
-    <!-- Footer Section -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img src="logo2.jpg" alt="Logo" class="h-16">
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
-                </div>
-            </div>
-
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>           
-        </div>
-
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 
+
 </html>
+
+
+
+
+    <main class="container mx-auto py-4 mt-6">
+        <div class="grid lg:grid-cols-2 gap-8 py-8">
+            <!-- Left Side: Cart Summary -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <a href="#"><img src="./return.png" class="h-7 w-7 mr-4" /></a>
+                <h1 class="text-2xl font-bold mt-4">List Product in Cart</h1>
+                <div class="mt-4 space-y-4">
+                    <!-- Product 1 -->
+                    <div class="flex items-center border-b py-4">
+                        <img src="images/1.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
+                        <div class="ml-4 flex-grow">
+                            <div class="font-semibold">PRODUCT 1</div>
+                            <div class="text-gray-500 price" data-price="22">$22/1 product</div>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="product1" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
+   
+                        </div>
+                        <div class="text-green-500 font-bold ml-4 item-total">$22.00</div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="flex items-center border-b py-4">
+                        <img src="images/2.webp" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
+                        <div class="ml-4 flex-grow">
+                            <div class="font-semibold">PRODUCT 2</div>
+                            <div class="text-gray-500 price" data-price="35">$35/1 product</div>
+                        </div>
+                        <div class="flex items-center">
+
+
+                            <input id="product2" type="text" value="1" class="mx-2 w-12 text-center border border-gray-300 rounded" readonly>
+                        </div>
+                        <div class="text-green-500 font-bold ml-4 item-total">$35.00</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Checkout Form -->
+            <div class="bg-white text-black p-8 rounded-lg shadow-md">
+                <h1 class="text-2xl font-bold">Checkout</h1>
+                <div class="grid grid-cols-2 gap-4 mt-6 border-b border-gray-700 pb-4">
+                    <div class="col-span-2">
+                        <label for="name" class="block text-sm font-medium">Full Name</label>
+                        <input type="text" name="name" id="name" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="phone" class="block text-sm font-medium">Phone Number</label>
+                        <input type="text" name="phone" id="phone" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="address" class="block text-sm font-medium">Address</label>
+                        <input type="text" name="address" id="address" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-sm font-medium">Country</label>
+                        <select name="country" id="country" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Choose..</option>
+                            <option value="kingdom">Kingdom</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="city" class="block text-sm font-medium">City</label>
+                        <select name="city" id="city" class="w-full mt-2 p-2 rounded-lg bg-green-100 border-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Choose..</option>
+                            <option value="london">London</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="flex justify-between">
+                        <div>Total Quantity</div>
+                        <div class="font-semibold totalQuantity">8</div>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <div>Total Price</div>
+                        <div class="font-semibold totalPrice">$215.00</div>
+                    </div>
+                </div>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-full" id="paymentButton">PAYMENT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- The Modal -->
+    <div id="successModal" class="modal">
+        <div  class="modal-content flex flex-col justify-center items-center">
+            <span class="close">&times;</span>
+            <p>Payment Successful!</p>
+                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-30 mt-4" id="nextButton">NEXT</button>
+        </div>
+    </div>
+
+
+    <script>
+        // Toggle menu function
+        function myMenuFunction() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+
+        // Close menu button function
+        var closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.remove('active');
+        });
+        nextButton.onclick = function() {
+            window.location.href = './thanks.html';
+        }
+        // Get modal elements
+        var modal = document.getElementById("successModal");
+        var btn = document.getElementById("paymentButton");
+        var span = document.getElementsByClassName("close")[0];
+
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</main>
+
+
+<script>
+
+
+
+
+    function updateTotal() {
+        var totalQuantity = 0;
+        var totalPrice = 0;
+        var products = document.querySelectorAll('.flex.items-center.border-b.py-4');
+        products.forEach(product => {
+            var quantity = parseInt(product.querySelector('input').value);
+            var price = parseFloat(product.querySelector('.price').getAttribute('data-price'));
+            totalQuantity += quantity;
+            totalPrice += price * quantity;
+            product.querySelector('.item-total').textContent = '$' + (price * quantity).toFixed(2);
+        });
+        document.querySelector('.totalQuantity').textContent = totalQuantity;
+        document.querySelector('.totalPrice').textContent = '$' + totalPrice.toFixed(2);
+    }
+
+
+    window.onload = updateTotal;
+
+
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if (i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+</script>
+<script type="module" src="/src/scripts/application.js"></script>
+      <!-- footer.html -->
+      <footer class="bg-white text-black py-8 border-t border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between container-limited relative px-4 text-center">
+            <!-- Logo Section -->
+            <div class="flex items-center justify-center mb-6 md:mb-0 w-full md:w-auto">
+                <img src="./logo2.jpg" alt="Logo" class="h-16">
+            </div>
+            <!-- Help Section -->
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">HELP</h3>
+                <ul>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">FAQs</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Product Care</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Stores</a></li>
+                </ul>
+            </div>
+            <!-- Services Section -->
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">SERVICES</h3>
+                <ul>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Repairs</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Personalization</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Art of Gifting</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Download our Apps</a></li>
+                </ul>
+            </div>
+            <!-- About Section -->
+            <div class="flex-1 mb-6 md:mb-0">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">ABOUT LOUIS VUITTON</h3>
+                <ul>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Fashion Shows</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Arts & Culture</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">La Maison</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Sustainability</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Latest News</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Careers</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Foundation Louis Vuitton</a></li>
+                </ul>
+            </div>
+            <!-- Email Signup Section -->
+            <div class="flex-1">
+                <h3 class="font-semibold mb-2 text-lg md:text-base">EMAIL SIGN-UP</h3>
+                <ul>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Sign up for Louis Vuitton emails</a></li>
+                    <li><a href="#" class="block p-1 hover:underline underline-offset-4 focus:underline">Follow Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2024 Echobinary. All rights reserved.</p>
+        </div>
+    </footer>
+   
+</body>
+</html>
+
+
+
