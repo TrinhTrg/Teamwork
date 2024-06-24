@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-
-        
+    <style> 
 
     .search-bar {
             border: 1px solid #CBD5E0;
@@ -144,57 +142,6 @@
             const menu = document.getElementById('menu');
             menu.classList.toggle('hidden');
         }
-
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const recommendedList = document.getElementById('recommended-list');
-        //     let page = 1;
-
-        //     function getRandomItem(arr) {
-        //         return arr[Math.floor(Math.random() * arr.length)];
-        //     }
-
-        //     function loadMoreBooks() {
-        //         const titles = ['Book Title 1', 'Book Title 2', 'Book Title 3', 'Book Title 4', 'Book Title 5'];
-        //         const prices = ['50.000vnđ', '75.000vnđ', '100.000vnđ', '150.000vnđ', '200.000vnđ'];
-        //         const image = [
-        //             './resource/sách 1.jpg ',
-        //             './resource/sách2-removebg-preview.png'
-        //         ];
-
-        //         for (let i = 0; i < 2; i++) {
-        //             const bookDiv = document.createElement('div');
-        //             bookDiv.className = 'p-4 rounded shadow';
-        //             const randomTitle = getRandomItem(titles);
-        //             const randomPrice = getRandomItem(prices);
-        //             const randomImage = getRandomItem(image);
-
-        //             bookDiv.innerHTML = `
-        //                 <div class="flex items-center justify-center">
-        //                     <img src="${randomImage}" alt="">
-        //                 </div>
-        //                 <div class="mt-2 text-center">
-        //                     <p>${randomTitle}</p>
-        //                     <p>${randomPrice}</p>
-        //                 </div>
-        //             `;
-        //             recommendedList.appendChild(bookDiv);
-        //         }
-        //     }
-
-        //     loadMoreBooks(); // Initial load
-
-        //     window.addEventListener('scroll', function () {
-        //         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-        //             loadMoreBooks();
-        //         }
-        //     });
-
-        //     // Initialize AOS
-        //     AOS.init({
-        //         duration: 800,
-        //         once: true,
-        //     });
-        // });
     </script>
 </head>
 
@@ -261,20 +208,6 @@
             </nav>
         </div>
     </header>
-
-    
-
-    <!-- <nav class="py-2 mt-48 pt-8">
-        <div class="container mx-auto px-4">
-            <ol class="list-reset flex text-gray-600">
-                <li><a href="#" class="hover:text-gray-800">Home</a></li>
-                <li><span class="mx-2">/</span></li>
-                <li><a href="#" class="hover:text-gray-800">Books</a></li>
-                <li><span class="mx-2">/</span></li>
-                <li>Book Details</li>
-            </ol>
-        </div>
-    </nav> -->
 
     <!-- Main Content -->
     <main class="container mx-auto p-4">
@@ -527,7 +460,7 @@
                             <img src="./resource/rel-9.jpg" alt="Book 1" class="w-52 h-56 object-cover">
                             <div class="p-2 bg-white">
                                 <h3 class="text-sm font-semibold text-center">Book Title 1</h3>
-                                <p class="text-xs text-gray-500 text-center text-center">Author Name 1</p>
+                                <p class="text-xs text-gray-500 text-center">Author Name 1</p>
                                 <p class="text-sm text-green-500 font-semibold text-center">150.000 đ</p>
                                 <button class="mt-2 text-xs text-green-300 rounded-lg hover:bg-green-400 hover:text-white border border-green-300 focus:outline-none px-2 py-1 w-full">
                                     Add to cart
