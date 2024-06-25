@@ -17,6 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echobinary Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+    
     <style>
         .fade-in {
             opacity: 0;
@@ -34,24 +39,91 @@
 <body class="font-sans bg-gray-100">
 
     <!-- Header Section -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between max-w-screen-xl">
-            <div class="flex items-center">
-                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-12">
-                <nav class="ml-10 space-x-6">
-                    <a href="#" class="text-green-600 font-semibold">Homepage</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Books</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">Authors</a>
-                    <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
-                </nav>
+    <header>
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4 pr-8">
+                    <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
+                </div>
+                <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
+                    <a href="./index.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Home</a>
+                    <a href="./new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Books</a>
+                    <div class="relative">
+                        <button id="contactBtn"
+                            class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
+                            Categories
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu"
+                            class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50" style="width: 200px;">
+                            <!-- <h4 class="title">Hư cấu</h4> -->
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
+                                hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
+                                kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
+                                thiếu nhi</a>
+                        </div>
+                        
+                    </div>
+                    <a href="#authors" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Author</a>
+                    <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">About Us</a>
+                    
+                    
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="search-box">
+                        <button id="searchBtn" class="btn-search text-gray-700 hover:text-green-600"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="input-search" placeholder=" Search...">
+                    </div> 
+
+                    <button class="text-gray-700 hover:text-green-600 h-12 w-12 text-2xl">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>                    
+
+                    <button class="text-gray-700 hover:text-green-600 h-12 w-12 text-2xl">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </button>  
+                    <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
+                </div>
+                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
-                <a href="#" class="text-gray-600 hover:text-green-600">
-                    <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
-                </a>
+            <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Home</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">About Us</a>
+                <div class="relative w-full">
+                    <button id="mobileContactBtn"
+                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none flex items-center justify-center">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Instagram</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Facebook</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">YouTube</a>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="text-gray-700 hover:text-green-600">Log In</button>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Main Content Section -->
@@ -154,44 +226,87 @@
         </div>
     </section>
     <!-- Footer Section -->
-    <footer class="bg-white text-black py-8 border-t border-gray-200">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative px-4">
-            <!-- Logo -->
-            <div class="mb-4 md:mb-0 md:absolute md:left-4">
-                <img srcset="logo2.jpg" loading="lazy" alt="Logo" class="h-16">
-            </div>
+    <section class="w-full py-4 bg-white" style="margin-top: 45px;">
+        <!-- Footer Section -->
+        <footer class="bg-background text-text border-t border-accent">
+            <div class="container w-full mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Logo -->
+                    <div class="flex flex-col items-center justify-center text-center md:items-center">
+                        <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
+                        <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
+                    </div>
 
-            <!-- Navigation Links -->
-            <div class="flex-1 flex justify-center mb-4 md:mb-0">
-                <div class="flex space-x-8">
-                    <a href="/homepage.html" class="hover:underline">Home</a>
-                    <a href="/aboutUs.html" class="hover:underline">About Us</a>
-                    <a href="#" class="hover:underline">Services</a>
-                    <a href="#" class="hover:underline">Contact</a>
+
+                    <!-- Navigation Links -->
+                    <div class="mt-8">
+                        <h3 class="font-semibold text-lg mb-2">Navigation</h3>
+                        <ul>
+                            <li><a href="/homepage.html" class="hover:underline"
+                                    style="text-decoration: none; color: black;">Home</a></li>
+                            <li><a href="/aboutUs.html" class="hover:underline"
+                                    style="text-decoration: none; color: black;">About Us</a></li>
+                            <li><a href="#" class="hover:underline"
+                                    style="text-decoration: none; color: black;">Services</a></li>
+                            <li><a href="#" class="hover:underline"
+                                    style="text-decoration: none; color: black;">Contact</a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Customer Service -->
+                    <div class="mt-8">
+                        <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
+                        <ul>
+                            <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Help
+                                    Center</a></li>
+                            <li><a href="#" class="hover:underline"
+                                    style="text-decoration: none; color: black;">Returns</a></li>
+                            <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Order
+                                    Status</a></li>
+                            <li><a href="#" class="hover:underline"
+                                    style="text-decoration: none; color: black;">Shipping Information</a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Contact Information -->
+                    <div class="mt-8">
+                        <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
+                        <ul>
+                            <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline"
+                                    style="text-decoration: none; color: black;">support@echolibrary.com</a></li>
+                            <li><span>Phone: </span><a href="tel:1234567890" class="hover:underline"
+                                    style="text-decoration: none; color: black;">(123) 456-7890 </a></li>
+                            <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
+                        </ul>
+                        <div class="flex space-x-6 mt-4">
+                            <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
+                                <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                            </a>
+                            <a href="https://www.twitter.com/echolibrary43/" class="hover:text-secondary">
+                                <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                            </a>
+                            <a href="https://www.instagram.com/echolibrary43/" class="hover:text-secondary">
+                                <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                            </a>
+                            <a href="https://www.linkedin.com/echolibrary43/" class="hover:text-secondary">
+                                <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Copyright -->
+                <div class="border-t border-accent text-center mt-4 pt-4">
+                    <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
                 </div>
             </div>
+        </footer>
+    </section>
 
-            <!-- Social Media Links -->
-            <div class="flex space-x-6 md:absolute md:right-4">
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/echolibrary43/" class="hover:text-gray-600">
-                    <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                </a>
-            </div>
-        </div>
 
-        <div class="container mx-auto mt-8 border-t border-gray-200 pt-4 text-center max-w-screen-xl">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
