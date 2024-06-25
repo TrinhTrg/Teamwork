@@ -6,65 +6,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-/* Responsive Zoom Levels */
-@media (min-width: 1440px) {
-    html {
-      zoom: 1.5;
-    }
-}
-
-@media (min-width: 2560px) {
-html {
-    zoom: 1.7;
-}
-}
-
-@media (min-width: 3860px) {
-html {
-    zoom: 2.5;
-}
-}
-
-@media (max-width: 500px) {
-    .trending-slide {
-      width: 28rem ;
-      height: 36rem ;
-    }
-  
-    .trending-slide .trending-slide-img img {
-      width: 28rem ;
-      height: 36rem ;
-    }
-  }
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
 
 :root {
   --primary: #e8f5e9 ;
   --white: #ffffff;
-  --bg: #f5f5f5;
+  --bg: #f3f4f6;
   --text-green: #047857;
   --yellow: #f4f422;
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 90%;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   font-size: 1.6rem;
-  background: var(--bg);
+  background: rgb(243,244,246);
 }
-
-
 
 ::-webkit-scrollbar {
   display: none ;
@@ -85,8 +47,76 @@ body {
   background: #f9f9f9;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-/* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
+.container-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 90vh;
+  position: relative;
+}
+
+
+section {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+
+section .s-five {
+  height: 100vh;
+  padding-bottom: 300px;
+  /* Adjust this value to fit the height of your footer */
+}
+
+
+
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+.animated {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.fade-in {
+  opacity: 1;
+  animation: fadeIn 1s forwards;
+}
+
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+.text-center {
+  text-align: center;
+}
 
 .body-header {
   background-image: url("../img/bg.png");
@@ -95,25 +125,24 @@ body {
   background-repeat: no-repeat;
 }
 
-.container {
-  /* height: 100%; */
-  max-width: 124rem;
-  padding: 0 1rem;
-  margin: 0 auto;
+.container-content {
+  height: 85%;
+  width: 90%;
+  margin:auto auto;
 }
 
-.image-rectangle {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.image-rectangle:hover {
-  transform: scale(1.05);
+.slider-list {
+  margin: 0;
+  width: 90%;
+  background-image: url("../img/bg-slider.avif") ;
+  background-size: cover ;
+  background-position: center ;
+  background-attachment: fixed ;
+  min-height: 80vh ;
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center ;
+  align-items: center ;
 }
 
 /* General carousel styles */
@@ -127,122 +156,6 @@ body {
     height: 500px;
 }
 
-/* .dropdown-menu {
-    display: none;
-}
-
-.dropdown-menu.show {
-    display: block;
-} */
-
-/* .navbar-link {
-    padding: 0 15px;
-}
-
-.navbar-link:hover {
-    color: #00dc64 ;
-    text-decoration: none;
-} */
-
-/* Dropdown Menu Styles
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    justify-content: space-around;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    width: 500px;
-    height: auto;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
-}
-
-.dropdown-menu .list-item {
-    width: 25%;
-    float: left;
-    padding: 0 15px;
-}
-
-.dropdown-menu .list-item img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.dropdown-menu .title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #000;
-}
-
-.dropdown-menu ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.dropdown-menu ul li {
-    margin-bottom: 10px;
-}
-
-.dropdown-menu ul li a {
-    color: #000;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-
-.dropdown-menu ul li a:hover {
-    color: #00dc64;
-} */
-
-/* Show the menu on hover */
-/* .menu-item-has-children:hover .dropdown-menu {
-    display: block;
-} */
-
-/* Clearfix */
-/* .dropdown-menu::after {
-    content: "";
-    display: table;
-    clear: both;
-} */
-
-/* .button {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #000000;
-    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    outline: none;
-} */
-
-/* Hover state */
-/* .button:hover {
-    background-image: linear-gradient(to right, #FCFF, #b48def);
-    color: #fff !important;
-}
-.button:active,
-.button:focus {
-    outline: none;
-    opacity: 0.5;
-    color: #fff;
-}
-button:hover .nul {
-  text-decoration: none;
-  color: #fff;
-} */
-
-
-.text-center {
-  text-align: center;
-}
 
 .section-heading {
   font-size: 3rem;
@@ -260,36 +173,6 @@ button:hover .nul {
   font-weight: 500;
 }
 
-/* Box Component */
-/* .box {
-  height: 30px;
-  display: flex;
-  cursor: pointer;
-  padding: 10px 20px;
-  background: #fff;
-  border-radius: 30px;
-  align-items: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.box:hover input {
-  width: 400px;
-}
-
-.box input {
-  width: 0;
-  outline: none;
-  border: none;
-  font-weight: 500;
-  transition: width 0.8s;
-  background: transparent;
-}
-
-.box .a .fas {
-  color: #757575;
-  font-size: 18px;
-} */
-
 /* Trending Section */
 #trending {
   background-color: rgba(255, 255, 255, 0.3);
@@ -297,19 +180,19 @@ button:hover .nul {
 }
 
 .trending-slider {
-  height: 52rem;
+  height: 45rem;
   padding: 2rem 0;
   position: relative;
 }
 
 .trending-slide {
-  width: 30rem;
+  width: 25rem;
   height: 35rem;
   position: relative;
 }
 
 .trending-slide .trending-slide-img img {
-  width: 30rem;
+  width: 25rem;
   height: 35rem;
   border-radius: 2rem;
   object-fit: cover;
@@ -387,7 +270,7 @@ button:hover .nul {
 /* Swiper Control Styles */
 .trending-slider-control {
   position: relative;
-  bottom: 2rem;
+  bottom: -3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,8 +317,8 @@ button:hover .nul {
 /* Slider List */
 .slider-list {
   margin: 0 ;
-  width: 80% ;
-  background-image: url("../img/marcovaldohaycacmuatrongthanhp.jpg") ;
+  width: 90% ;
+  background-image: url("../img/bg-slider.avif") ;
   background-size: cover ;
   background-position: center ;
   background-attachment: fixed ;
@@ -447,12 +330,12 @@ button:hover .nul {
 }
 
 .photo-slider {
-  width: 72vw;
+  width: 80vw;
   overflow: auto;
   padding: 30px;
   box-sizing: border-box;
-  backdrop-filter: blur(10px);
-  background-color: #fff3;
+  backdrop-filter: blur(1px);
+  background-color: #fff1;
   border-radius: 20px;
 }
 
@@ -471,16 +354,6 @@ button:hover .nul {
   --left: 0;
   transform: translateX(var(--left));
 }
-
-
-/* .header-title button {
-  border-radius: 20px;
-  border: none;
-  font-family: system-ui;
-  font-size: small;
-  text-decoration: none;
-  padding-left: 10px;
-} */
 
 .slider-content .photo-item {
   width: 200px;
