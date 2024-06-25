@@ -6,8 +6,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-/* Phần này chỉ áp dụng khi kích thước màn hình nhỏ hơn hoặc bằng 780px */
 
 :root {
   --primary: #e8f5e9 ;
@@ -19,7 +17,6 @@
 
 html {
   font-size: 90%;
-  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -69,9 +66,6 @@ section .s-five {
   padding-bottom: 300px;
   /* Adjust this value to fit the height of your footer */
 }
-
-
-
 
 
 @keyframes fadeIn {
@@ -381,7 +375,6 @@ section .s-five {
   height: 50px;
   backdrop-filter: blur(10px);
   color: #fff;
-  font-family: monospace;
   display: flex;
   justify-content: space-between;
   align-items: center;
