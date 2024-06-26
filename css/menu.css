@@ -1,7 +1,8 @@
 html {
     font-size: 90%;
     scroll-behavior: smooth;
-  }
+}
+  
 .dropdown-menu.show {
     display: block;
 }
