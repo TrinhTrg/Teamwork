@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/menu.css">
-    <style>
-        /* Add any custom styles you need here */
-    </style>
-</head>
-
-<body class="bg-gray-100">
+    
+  </head>
+  <body class="bg-gray-100">
     <!-- Header Section -->
     <header>
-        <nav class="bg-white flex flex-row justify-between items-center px-11 py-4">
+        <nav class="bg-white flex flex-row justify-between items-center py-4">
             <div class="flex items-center space-x-4 pr-8">
                 <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
             </div>
@@ -50,7 +52,7 @@
                     </div>
 
                 </div>
-                <a href="#authors" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="./index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">Author</a>
                 <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">About Us</a>
@@ -75,7 +77,7 @@
                     <a href=""></a>
                     <i class="fa-solid fa-circle-user"></i>
                 </button>
-                <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
+                <button><a href="login.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">Log In</a></button>
             </div>
             <button id="hamburgerBtn" class="md:hidden focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
@@ -111,757 +113,848 @@
         </nav>
     </header>
 
-
     <!-- Content -->
     <div class="container mx-auto px-4 py-4 pt-20 container-limited">
-        <nav class="text-gray-600 text-sm">
-            <a href="./index.html" class="hover:underline">Home</a>
-            <span class="mx-2">></span>
-            <a href="./books.html" class="text-green-400 font-bold hover:underline">Books</a>
-        </nav>
+      <nav class="text-gray-600 text-sm">
+        <a href="./index.html" class="hover:underline">Home</a>
+        <span class="mx-2">></span>
+        <a href="./books.html" class="text-green-400 font-bold hover:underline"
+          >Books</a
+        >
+      </nav>
     </div>
 
     <div class="container mx-auto my-8 flex flex-wrap">
-        <!-- Sidebar (All Categories + Price) -->
-        <aside class="w-full lg:w-1/4 p-4">
-            <!-- All Categories -->
-            <div class="bg-white p-4 rounded-lg shadow mb-4">
-                <h2 class="font-bold mb-2">All Categories</h2>
-                <ul>
-                    <li>
-                        <a href="#" class="block py-1 text-black">Fiction</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-1 text-black">Non-fiction</a>
-                        <a href="#" class="block py-1 text-black">Children</a>
-                        <a href="#" class="block py-1 text-black">Other Categories</a>
-                    </li>
-                </ul>
-            </div>
+      <!-- Sidebar (All Categories + Price) -->
+      <aside class="w-full lg:w-1/4 p-4">
+        <!-- All Categories -->
+        <div class="bg-white p-4 rounded-lg shadow mb-4">
+          <h2 class="font-bold mb-2">All Categories</h2>
+          <ul>
+            <li>
+              <a href="#" class="block py-1 text-black">Fiction</a>
+            </li>
+            <li>
+              <a href="#" class="block py-1 text-black">Non-fiction</a>
+              <a href="#" class="block py-1 text-black">Children</a>
+              <a href="#" class="block py-1 text-black">Other Categories</a>
+            </li>
+          </ul>
+        </div>
 
-            <!-- Price Section -->
-            <div class="bg-white p-4 rounded-lg shadow">
-                <h2 class="font-bold mb-2">Price</h2>
-                <ul>
-                    <li>
-                        <label class="block py-1 text-gray-500">
-                            <input type="radio" name="price" value="0-50000" class="mr-2">
-                            0đ - 50,000đ
-                        </label>
-                    </li>
-                    <li>
-                        <label class="block py-1 text-gray-500">
-                            <input type="radio" name="price" value="50000-100000" class="mr-2">
-                            50,000đ - 100,000đ
-                        </label>
-                    </li>
-                    <li>
-                        <label class="block py-1 text-gray-500">
-                            <input type="radio" name="price" value="100000-150000" class="mr-2">
-                            100,000đ - 150,000đ
-                        </label>
-                    </li>
-                    <li>
-                        <label class="block py-1 text-gray-500">
-                            <input type="radio" name="price" value="150000-200000" class="mr-2">
-                            150,000đ - 200,000đ
-                        </label>
-                    </li>
-                    <li>
-                        <label class="block py-1 text-gray-500">
-                            <input type="radio" name="price" value="200000-tro-len" class="mr-2">
-                            200,000đ - Above
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </aside>
+        <!-- Price Section -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h2 class="font-bold mb-2">Price</h2>
+          <ul>
+            <li>
+              <label class="block py-1 text-gray-500">
+                <input type="radio" name="price" value="0-50000" class="mr-2" />
+                0đ - 50,000đ
+              </label>
+            </li>
+            <li>
+              <label class="block py-1 text-gray-500">
+                <input
+                  type="radio"
+                  name="price"
+                  value="50000-100000"
+                  class="mr-2"
+                />
+                50,000đ - 100,000đ
+              </label>
+            </li>
+            <li>
+              <label class="block py-1 text-gray-500">
+                <input
+                  type="radio"
+                  name="price"
+                  value="100000-150000"
+                  class="mr-2"
+                />
+                100,000đ - 150,000đ
+              </label>
+            </li>
+            <li>
+              <label class="block py-1 text-gray-500">
+                <input
+                  type="radio"
+                  name="price"
+                  value="150000-200000"
+                  class="mr-2"
+                />
+                150,000đ - 200,000đ
+              </label>
+            </li>
+            <li>
+              <label class="block py-1 text-gray-500">
+                <input
+                  type="radio"
+                  name="price"
+                  value="200000-tro-len"
+                  class="mr-2"
+                />
+                200,000đ - Above
+              </label>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-        <!-- Main Content (Filter + Products) -->
-        <main class="w-full lg:w-3/4 p-4">
-            <!-- Filter -->
-            <div class="p-4 rounded-lg mb-4">
-                <div class="flex justify-between items-center mb-4">
-                    <div class="flex space-x-4">
-                        <div class="flex items-center">
-                            <span class="mr-2">Sort By:</span>
-                            <select id="sort-by"
-                                class="border rounded-md px-4 py-2 focus:ring-2 focus:border-transparent">
-                                <option value="all">All</option>
-                                <option value="weekly-best-seller">Weekly Best Seller</option>
-                                <option value="monthly-best-seller">Monthly Best Seller</option>
-                                <option value="yearly-best-seller">Yearly Best Seller</option>
-                            </select>
-                        </div>
-                        <div class="flex items-center">
-                            <select id="product-count"
-                                class="border rounded-md px-4 py-2 focus:ring-1 focus:border-transparent">
-                                <option value="8">8 products</option>
-                                <option value="12">12 products</option>
-                                <option value="24">24 products</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+      <!-- Main Content (Filter + Products) -->
+      <main class="w-full lg:w-3/4 p-4">
+        <!-- Filter -->
+        <div class="p-4 rounded-lg mb-4">
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+              <div class="flex items-center">
+                <span class="mr-2">Sort By:</span>
+                <select
+                  id="sort-by"
+                  class="border rounded-md px-4 py-2 focus:ring-2 focus:border-transparent"
+                >
+                  <option value="all">All</option>
+                  <option value="weekly-best-seller">Weekly Best Seller</option>
+                  <option value="monthly-best-seller">
+                    Monthly Best Seller
+                  </option>
+                  <option value="yearly-best-seller">Yearly Best Seller</option>
+                </select>
+              </div>
+              <div class="flex items-center">
+                <select
+                  id="product-count"
+                  class="border rounded-md px-4 py-2 focus:ring-1 focus:border-transparent"
+                >
+                  <option value="8">8 products</option>
+                  <option value="12">12 products</option>
+                  <option value="24">24 products</option>
+                </select>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Products -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- sp1 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="200000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="./detail.html" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/b-0.jpg" alt="sách">
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">When Breath Becomes Air</h3>
-                                <p class="font-medium text-center">170.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+        <!-- Products -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-6"
+        >
+          <!-- sp1 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="170000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="./detail.html" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/b-0.jpg"
+                  alt="sách"
+                />
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    When Breath Becomes Air
+                  </h3>
                 </div>
-                <!-- sp2 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-2.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">And The Mountains Echoed</h3>
-                                <p class="font-medium text-center">135.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">170.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp2 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-2.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    And The Mountains Echoed
+                  </h3>
                 </div>
-                <!-- sp3 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="true" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-3.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Master Of His Fate: The House Of Falconer</h3>
-                                <p class="font-medium text-center">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">135.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp3 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="true"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-3.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    Master Of His Fate: The House Of Falconer
+                  </h3>
                 </div>
-                <!-- sp4 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="true" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-4.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Anne Of Green Gables (A Bantam Classic)</h3>
-                                <p class="font-medium text-center">120.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">150.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp4 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="true"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-4.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    Anne Of Green Gables (A Bantam Classic)
+                  </h3>
                 </div>
-                <!-- sp5 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="100000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="true"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-5.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Sharpe's Assassin</h3>
-                                <p class="font-medium text-center">90.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">120.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp5 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="100000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="true"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-5.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">Sharpe's Assassin</h3>
                 </div>
-                <!-- sp6 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="true">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-6.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">The Kite Runner</h3>
-                                <p class="font-medium text-center">170.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">90.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp6 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="true"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-6.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">The Kite Runner</h3>
                 </div>
-                <!-- sp7 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="true">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-7.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Andersen's Fairy Tales</h3>
-                                <p class="font-medium text-center">125.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">170.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp7 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="true"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-7.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    Andersen's Fairy Tales
+                  </h3>
                 </div>
-                <!-- sp8 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="200000" data-all="true" data-weekly-best-seller="true" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-8.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">The Book Thief</h3>
-                                <p class="font-medium text-center">200.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">125.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp8 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="200000"
+            data-all="true"
+            data-weekly-best-seller="true"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-8.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">The Book Thief</h3>
                 </div>
-                <!-- sp9 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="true" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-9.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Ivy Newt And The Time Thief</h3>
-                                <p class="font-medium text-center">155.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">200.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp9 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="true"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-9.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    Ivy Newt And The Time Thief
+                  </h3>
                 </div>
-                <!-- sp10 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-10.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">The Little Book Of Aliens</h3>
-                                <p class="font-medium text-center">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
+              </div>
+              <div>
+                <p class="font-medium text-center">155.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp10 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-10.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    The Little Book Of Aliens
+                  </h3>
                 </div>
-                <!-- sp11 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="200000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="true">
-                    <div class="relative overflow-hidden rounded-xl flex-1">
-                        <img class="w-full h-40 object-contain" src="./resource/BOOK-11.jpg" alt="sách">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                            <button
-                                class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                now</button>
-                            <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </div>
-                        <div class="flex flex-col items-center py-5 space-y-2">
-                            <h3 class="font-semibold text-center">The Thief Who Sang Storms</h3>
-                            <p class="font-medium text-center">210.000đ</p>
-                        </div>
-                    </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">150.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp11 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="200000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="true"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-11.jpg"
+                  alt="sách"
+                />
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    The Thief Who Sang Storms
+                  </h3>
                 </div>
-                <!-- sp12 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="200000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="true">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-12.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">The Graveyard Book</h3>
-                                <p class="font-medium text-center">250.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp13 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="true"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-13.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Sapiens: A Brief History of Humankind</h3>
-                                <p class="font-medium text-center">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp14 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="true"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-14.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Think and Grow Rich</h3>
-                                <p class="font-medium text-center">150.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp15 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="200000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="true"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-15.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">The Thing You Can See Only When You Down</h3>
-                                <p class="font-medium text-center">270.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp16 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-16.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Charlotte's Web</h3>
-                                <p class="font-medium text-center">190.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp17 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="false" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-17.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">To Kill A Mockingbird</h3>
-                                <p class="font-medium text-center">135.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- sp18 -->
-                <div class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
-                    data-price="150000" data-all="true" data-weekly-best-seller="true" data-monthly-best-seller="false"
-                    data-yearly-best-seller="false">
-                    <a href="" class="flex flex-col h-full">
-                        <div class="relative overflow-hidden rounded-xl flex-1">
-                            <img class="w-full h-40 object-contain" src="./resource/BOOK-18.jpg" alt="sách">
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
-                                <button
-                                    class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition">Buy
-                                    now</button>
-                                <svg class="w-8 h-9 bg-green-500 text-white font-semibold rounded-md flex items-center justify-center hover:text-green-500 hover:bg-white transition"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col items-center py-5 space-y-2">
-                                <h3 class="font-semibold text-center">Wonder</h3>
-                                <p class="font-medium text-center">165.000đ</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+              </div>
+            </a>
+            <div>
+              <p class="font-medium text-center">210.000đ</p>
             </div>
-            <!-- Pagination -->
-            <div class="flex justify-center mt-8">
-                <a href="#"
-                    class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-l transition duration-300 ease-in-out hover:text-white">Previous</a>
-                <a href="#" class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white">1</a>
-                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">2</a>
-                <a href="#" class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white">3</a>
-                <a href="#"
-                    class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-r hover:text-white transition duration-300 ease-in-out">Next</a>
-            </div>
-        </main>
+          </div>
+          <!-- sp12 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="200000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="true"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-12.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">The Graveyard Book</h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">250.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp13 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="true"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-13.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    Sapiens: A Brief History of Humankind
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">150.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp14 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="true"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-14.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">Think and Grow Rich</h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">150.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp15 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="200000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="true"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-15.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    The Thing You Can See Only When You Down
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">270.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp16 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-16.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">Charlotte's Web</h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">190.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp17 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="false"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-17.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">
+                    To Kill A Mockingbird
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">135.000đ</p>
+              </div>
+            </a>
+          </div>
+          <!-- sp18 -->
+          <div
+            class="bg-white rounded-xl flex flex-col h-full p-4 transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-lg"
+            data-price="150000"
+            data-all="true"
+            data-weekly-best-seller="true"
+            data-monthly-best-seller="false"
+            data-yearly-best-seller="false"
+          >
+            <a href="" class="flex flex-col h-full">
+              <div class="relative overflow-hidden rounded-xl flex-1">
+                <img
+                  class="w-full h-40 object-contain"
+                  src="./resource/BOOK-18.jpg"
+                  alt="sách"
+                />
+
+                <div class="flex flex-col items-center py-5 space-y-2">
+                  <h3 class="font-semibold text-center">Wonder</h3>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-center">165.000đ</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="flex justify-center mt-8">
+          <a
+            href="#"
+            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-l transition duration-300 ease-in-out hover:text-white"
+            >Previous</a
+          >
+          <a
+            href=""
+            class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white"
+            >1</a
+          >
+          <a
+            href="./newb2.html"
+            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white"
+            >2</a
+          >
+          <a
+            href="#"
+            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white"
+            >3</a
+          >
+          <a
+            href="#"
+            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black rounded-r hover:text-white transition duration-300 ease-in-out"
+            >Next</a
+          >
+        </div>
+      </main>
     </div>
+
+    <!-- Footer -->
     <section class="w-full py-4 bg-white" style="margin-top: 45px;">
-        <footer class="bg-background text-text border-t border-accent">
-            <div class="container w-full mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- Logo -->
-                    <div class="flex flex-col items-center justify-center text-center md:items-center">
-                        <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
-                        <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
-                    </div>
+      <footer class="bg-background text-text border-t border-accent">
+          <div class="container w-full mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                  <!-- Logo -->
+                  <div class="flex flex-col items-center justify-center text-center md:items-center">
+                      <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
+                      <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
+                  </div>
+                  <!-- Navigation Links -->
+                  <div class="mt-8">
+                      <h3 class="font-semibold text-lg mb-2">Navigation</h3>
+                      <ul>
+                          <li><a href="/homepage.html" class="hover:underline"
+                                  style="text-decoration: none; color: black;">Home</a></li>
+                          <li><a href="/aboutUs.html" class="hover:underline"
+                                  style="text-decoration: none; color: black;">About Us</a></li>
+                          <li><a href="#" class="hover:underline"
+                                  style="text-decoration: none; color: black;">Services</a></li>
+                          <li><a href="#" class="hover:underline"
+                                  style="text-decoration: none; color: black;">Contact</a></li>
+                      </ul>
+                  </div>
+                  
+                  <!-- Customer Service -->
+                  <div class="mt-8">
+                      <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
+                      <ul>
+                          <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Help
+                                  Center</a></li>
+                          <li><a href="#" class="hover:underline"
+                                  style="text-decoration: none; color: black;">Returns</a></li>
+                          <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Order
+                                  Status</a></li>
+                          <li><a href="#" class="hover:underline"
+                                  style="text-decoration: none; color: black;">Shipping Information</a></li>
+                      </ul>
+                  </div>
 
 
 
 
-                    <!-- Navigation Links -->
-                    <div class="mt-8">
-                        <h3 class="font-semibold text-lg mb-2">Navigation</h3>
-                        <ul>
-                            <li><a href="/homepage.html" class="hover:underline"
-                                    style="text-decoration: none; color: black;">Home</a></li>
-                            <li><a href="/aboutUs.html" class="hover:underline"
-                                    style="text-decoration: none; color: black;">About Us</a></li>
-                            <li><a href="#" class="hover:underline"
-                                    style="text-decoration: none; color: black;">Services</a></li>
-                            <li><a href="#" class="hover:underline"
-                                    style="text-decoration: none; color: black;">Contact</a></li>
-                        </ul>
-                    </div>
 
 
 
 
-                    <!-- Customer Service -->
-                    <div class="mt-8">
-                        <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
-                        <ul>
-                            <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Help
-                                    Center</a></li>
-                            <li><a href="#" class="hover:underline"
-                                    style="text-decoration: none; color: black;">Returns</a></li>
-                            <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Order
-                                    Status</a></li>
-                            <li><a href="#" class="hover:underline"
-                                    style="text-decoration: none; color: black;">Shipping Information</a></li>
-                        </ul>
-                    </div>
+                  <!-- Contact Information -->
+                  <div class="mt-8">
+                      <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
+                      <ul>
+                          <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline"
+                                  style="text-decoration: none; color: black;">support@echolibrary.com</a></li>
+                          <li><span>Phone: </span><a href="tel:1234567890" class="hover:underline"
+                                  style="text-decoration: none; color: black;">(123) 456-7890 </a></li>
+                          <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
+                      </ul>
+                      <div class="flex space-x-6 mt-4">
+                          <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
+                              <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+                          </a>
+                          <a href="https://www.twitter.com/echolibrary43/" class="hover:text-secondary">
+                              <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+                          </a>
+                          <a href="https://www.instagram.com/echolibrary43/" class="hover:text-secondary">
+                              <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+                          </a>
+                          <a href="https://www.linkedin.com/echolibrary43/" class="hover:text-secondary">
+                              <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Copyright -->
+              <div class="border-t border-accent text-center mt-4 pt-4">
+                  <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
+              </div>
+          </div>
+      </footer>
+  </section>
 
-                    <!-- Contact Information -->
-                    <div class="mt-8">
-                        <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
-                        <ul>
-                            <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline"
-                                    style="text-decoration: none; color: black;">support@echolibrary.com</a></li>
-                            <li><span>Phone: </span><a href="tel:1234567890" class="hover:underline"
-                                    style="text-decoration: none; color: black;">(123) 456-7890 </a></li>
-                            <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
-                        </ul>
-                        <div class="flex space-x-6 mt-4">
-                            <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
-                                <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
-                            </a>
-                            <a href="https://www.twitter.com/echolibrary43/" class="hover:text-secondary">
-                                <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
-                            </a>
-                            <a href="https://www.instagram.com/echolibrary43/" class="hover:text-secondary">
-                                <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
-                            </a>
-                            <a href="https://www.linkedin.com/echolibrary43/" class="hover:text-secondary">
-                                <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 
-
-
-
-                <!-- Copyright -->
-                <div class="border-t border-accent text-center mt-4 pt-4">
-                    <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const priceFilters = document.querySelectorAll('input[name="price"]');
-            const products = document.querySelectorAll('[data-price]');
-            const productCountSelect = document.getElementById('product-count');
-            const sortBySelect = document.getElementById('sort-by');
+      document.addEventListener("DOMContentLoaded", function () {
+        const priceFilters = document.querySelectorAll('input[name="price"]');
+        const products = document.querySelectorAll("[data-price]");
+        const productCountSelect = document.getElementById("product-count");
+        const sortBySelect = document.getElementById("sort-by");
 
-            let selectedPriceRange = '';
-            let selectedCount = parseInt(productCountSelect.value, 10);
-            let selectedSortBy = sortBySelect.value;
+        let selectedPriceRange = "";
+        let selectedCount = parseInt(productCountSelect.value, 10);
+        let selectedSortBy = sortBySelect.value;
 
-            priceFilters.forEach(filter => {
-                filter.addEventListener('click', function () {
-                    if (selectedPriceRange === this.value) {
-                        // Deselect the price filter if it was already selected
-                        this.checked = false;
-                        selectedPriceRange = '';
-                    } else {
-                        // Select the new price filter
-                        selectedPriceRange = this.value;
-                    }
-                    applyFilters();
-                });
-            });
-
-            productCountSelect.addEventListener('change', function () {
-                selectedCount = parseInt(this.value, 10);
-                applyFilters();
-            });
-
-            sortBySelect.addEventListener('change', function () {
-                selectedSortBy = this.value;
-                applyFilters();
-            });
-
-            function applyFilters() {
-                let visibleProducts = Array.from(products);
-
-                // Filter by price
-                if (selectedPriceRange) {
-                    visibleProducts = visibleProducts.filter(product => {
-                        const productPrice = parseInt(product.getAttribute('data-price'), 10);
-                        switch (selectedPriceRange) {
-                            case '0-50000':
-                                return productPrice >= 0 && productPrice <= 50000;
-                            case '50000-100000':
-                                return productPrice >= 50000 && productPrice <= 100000;
-                            case '100000-150000':
-                                return productPrice >= 100000 && productPrice <= 150000;
-                            case '150000-200000':
-                                return productPrice >= 150000 && productPrice <= 200000;
-                            case '200000-tro-len':
-                                return productPrice >= 200000;
-                            default:
-                                return true;
-                        }
-                    });
-                }
-
-                // Filter by sort
-                if (selectedSortBy) {
-                    visibleProducts = visibleProducts.filter(product => {
-                        const isAll = product.getAttribute('data-all') === 'true';
-                        const isWeeklyBestSeller = product.getAttribute('data-weekly-best-seller') === 'true';
-                        const isMonthlyBestSeller = product.getAttribute('data-monthly-best-seller') === 'true';
-                        const isYearlyBestSeller = product.getAttribute('data-yearly-best-seller') === 'true';
-                        switch (selectedSortBy) {
-                            case 'all':
-                                return isAll;
-                            case 'weekly-best-seller':
-                                return isWeeklyBestSeller;
-                            case 'monthly-best-seller':
-                                return isMonthlyBestSeller;
-                            case 'yearly-best-seller':
-                                return isYearlyBestSeller;
-                            default:
-                                return true;
-                        }
-                    });
-                }
-
-                // Show only the selected number of products
-                visibleProducts.forEach((product, index) => {
-                    if (index < selectedCount) {
-                        product.classList.remove('hidden');
-                    } else {
-                        product.classList.add('hidden');
-                    }
-                });
-
-                // Hide all other products
-                products.forEach(product => {
-                    if (!visibleProducts.includes(product)) {
-                        product.classList.add('hidden');
-                    }
-                });
+        priceFilters.forEach((filter) => {
+          filter.addEventListener("click", function () {
+            if (selectedPriceRange === this.value) {
+              // Deselect the price filter if it was already selected
+              this.checked = false;
+              selectedPriceRange = "";
+            } else {
+              // Select the new price filter
+              selectedPriceRange = this.value;
             }
-
-            // Initialize the display with default filters
             applyFilters();
+          });
         });
+
+        productCountSelect.addEventListener("change", function () {
+          selectedCount = parseInt(this.value, 10);
+          applyFilters();
+        });
+
+        sortBySelect.addEventListener("change", function () {
+          selectedSortBy = this.value;
+          applyFilters();
+        });
+
+        function applyFilters() {
+          let visibleProducts = Array.from(products);
+
+          // Filter by price
+          if (selectedPriceRange) {
+            visibleProducts = visibleProducts.filter((product) => {
+              const productPrice = parseInt(
+                product.getAttribute("data-price"),
+                10
+              );
+              switch (selectedPriceRange) {
+                case "0-50000":
+                  return productPrice >= 0 && productPrice <= 50000;
+                case "50000-100000":
+                  return productPrice >= 50000 && productPrice <= 100000;
+                case "100000-150000":
+                  return productPrice >= 100000 && productPrice <= 150000;
+                case "150000-200000":
+                  return productPrice >= 150000 && productPrice <= 200000;
+                case "200000-tro-len":
+                  return productPrice >= 200000;
+                default:
+                  return true;
+              }
+            });
+          }
+
+          // Filter by sort
+          if (selectedSortBy) {
+            visibleProducts = visibleProducts.filter((product) => {
+              const isAll = product.getAttribute("data-all") === "true";
+              const isWeeklyBestSeller =
+                product.getAttribute("data-weekly-best-seller") === "true";
+              const isMonthlyBestSeller =
+                product.getAttribute("data-monthly-best-seller") === "true";
+              const isYearlyBestSeller =
+                product.getAttribute("data-yearly-best-seller") === "true";
+              switch (selectedSortBy) {
+                case "all":
+                  return isAll;
+                case "weekly-best-seller":
+                  return isWeeklyBestSeller;
+                case "monthly-best-seller":
+                  return isMonthlyBestSeller;
+                case "yearly-best-seller":
+                  return isYearlyBestSeller;
+                default:
+                  return true;
+              }
+            });
+          }
+
+          // Show only the selected number of products
+          visibleProducts.forEach((product, index) => {
+            if (index < selectedCount) {
+              product.classList.remove("hidden");
+            } else {
+              product.classList.add("hidden");
+            }
+          });
+
+          // Hide all other products
+          products.forEach((product) => {
+            if (!visibleProducts.includes(product)) {
+              product.classList.add("hidden");
+            }
+          });
+        }
+
+        // Initialize the display with default filters
+        applyFilters();
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
