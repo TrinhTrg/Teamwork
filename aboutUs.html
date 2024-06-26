@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ6W10FCD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        
+
+
         gtag('config', 'G-ZTQ6W10FCD');
     </script>
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +24,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" href="css/menu.css">
     <style>
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
+
 
         .fade-in.visible {
             opacity: 1;
@@ -36,75 +40,85 @@
     </style>
 </head>
 
-<body class="font-sans bg-gray-100">
+
+<body class="bg-gray-100">
+
 
     <!-- Header Section -->
     <header>
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4 pr-8">
-                    <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
-                </div>
-                <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
-                    <a href="./index.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Home</a>
-                    <a href="./new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Books</a>
-                    <div class="relative">
-                        <button id="contactBtn"
-                            class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
-                            Categories
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div id="dropdownMenu"
-                            class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50" style="width: 200px;">
-                            <!-- <h4 class="title">Hư cấu</h4> -->
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
-                                hiện đại</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
-                                kinh điển</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"style="text-decoration: none;">Văn học
-                                thiếu nhi</a>
-                        </div>
-                        
+        <nav class="bg-white flex flex-row justify-between items-center px-11 py-4">
+            <div class="flex items-center space-x-4 pr-8">
+                <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
+            </div>
+            <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
+                <a href="./index.html" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">Home</a>
+                <a href="./new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">Books</a>
+                <div class="relative">
+                    <button id="contactBtn"
+                        class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
+                        Categories
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="dropdownMenu"
+                        class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50"
+                        style="width: 200px;">
+                        <!-- <h4 class="title">Hư cấu</h4> -->
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học hiện đại</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học kinh điển</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học thiếu nhi</a>
                     </div>
-                    <a href="#authors" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">Author</a>
-                    <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline" style="text-decoration: none;">About Us</a>
-                    
-                    
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="search-box">
-                        <button id="searchBtn" class="btn-search text-gray-700 hover:text-green-600"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="text" class="input-search" placeholder=" Search...">
-                    </div> 
 
-                    <button class="text-gray-700 hover:text-green-600 h-12 w-12 text-2xl">
+                </div>
+                <a href="#authors" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">Author</a>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">About Us</a>
+
+
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="box-search">
+                    <form name="search">
+                        <input type="text" class="input-search" name="txt" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <button class=" h-14 w-14 text-3xl">
+                    <a href="cart.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">
                         <i class="fa-solid fa-cart-shopping"></i>
-                    </button>                    
-
-                    <button class="text-gray-700 hover:text-green-600 h-12 w-12 text-2xl">
-                        <i class="fa-solid fa-circle-user"></i>
-                    </button>  
-                    <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
-                </div>
-                <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                    </a>
                 </button>
+
+                <button class="text-gray-700 hover:text-green-600 h-14 w-14 text-3xl">
+                    <a href=""></a>
+                    <i class="fa-solid fa-circle-user"></i>
+                </button>
+                <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
+            </div>
+            <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
             </div>
             <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Home</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">About Us</a>
                 <div class="relative w-full">
                     <button id="mobileContactBtn"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none flex items-center justify-center">
+                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none px-4 flex items-center justify-center">
                         Contact
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
                             fill="currentColor">
@@ -126,15 +140,17 @@
         </nav>
     </header>
 
+
     <!-- Main Content Section -->
-    <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs1.jpg');">
+    <section class="bg-cover bg-center h-64" style="background-image: url('/resource/AboutUs2.webp');">
         <div class="container mx-auto h-full flex items-center justify-center max-w-screen-xl">
-            <div class="text-center text-white">
-                <h1 class="text-4xl font-bold mb-4">About Echolibrary</h1>
-                <p class="text-lg">Echolibrary is a modern digital library offering thousands of documents, books, articles, and other academic resources for all ages and fields of study. We are committed to providing high-quality knowledge and information, helping readers expand their understanding and develop personal skills.</p>
+            <div class="text-center text-white px-4 md:px-8 lg:px-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">About EchoLibrary</h1>
+                <p class="text-lg md:text-xl leading-relaxed">EchoLibrary is a modern digital library offering thousands of documents, books, articles, and other academic resources for all ages and fields of study. We are committed to providing high-quality knowledge and information, helping readers expand their understanding and develop personal skills.</p>
             </div>
         </div>
     </section>
+
 
     <!-- Breadcrumb -->
     <div class="container mx-auto px-4 py-4 max-w-screen-xl">
@@ -145,89 +161,125 @@
         </nav>
     </div>
 
+
     <!-- Introduction Section -->
     <section class="container mx-auto px-4 py-12 max-w-screen-xl">
         <div class="text-center mb-8 fade-in">
-            <h2 class="text-3xl font-bold font-serif text-gray-800">Brief Introduction</h2>
-            <p class="text-gray-600 font-sans">Our mission is to help Vietnamese readers reach the world.</p>
+            <h2 class="text-3xl font-bold text-gray-800">Brief Introduction</h2>
+            <p class="text-gray-600">Our mission is to help Vietnamese readers reach the world.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="flex flex-col items-center fade-in">
-                <img srcset="/resource/AboutUs1.jpg" loading="lazy" alt="Image 1" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
-                <p class="text-gray-600 text-center">Echolibrary offers thousands of books across diverse genres, helping Vietnamese readers access the vast treasure of global knowledge. Whether you are interested in fiction, non-fiction, or educational resources, Echolibrary has something for everyone. Our extensive collection ensures that readers can find the latest bestsellers as well as timeless classics.</p>
+                <img srcset="/resource/AboutUs1.jpg" loading="lazy" alt="Image 1"
+                    class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">Echolibrary offers thousands of books across diverse genres,
+                    helping Vietnamese readers access the vast treasure of global knowledge. Whether you are interested
+                    in fiction, non-fiction, or educational resources, Echolibrary has something for everyone. Our
+                    extensive collection ensures that readers can find the latest bestsellers as well as timeless
+                    classics.</p>
             </div>
             <div class="flex flex-col items-center fade-in">
-                <img srcset="/resource/AboutUs3.png" loading="lazy" alt="Image 3" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
-                <p class="text-gray-600 text-center">Our platform is designed to offer a seamless and enjoyable reading experience, with features that cater to all book lovers. Whether you prefer reading on your tablet, smartphone, or computer, Echolibrary provides a user-friendly interface that makes reading convenient and enjoyable. Additionally, our personalized recommendations ensure you always find books that match your interests and preferences.</p>
+                <img srcset="/resource/AboutUs3.png" loading="lazy" alt="Image 3"
+                    class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">Our platform is designed to offer a seamless and enjoyable reading
+                    experience, with features that cater to all book lovers. Whether you prefer reading on your tablet,
+                    smartphone, or computer, Echolibrary provides a user-friendly interface that makes reading
+                    convenient and enjoyable. Additionally, our personalized recommendations ensure you always find
+                    books that match your interests and preferences.</p>
             </div>
             <div class="flex flex-col items-center fade-in">
-                <img srcset="/resource/AboutUs2.webp" loading="lazy" alt="Image 2" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
-                <p class="text-gray-600 text-center">We constantly update the latest titles from renowned authors worldwide, bringing the latest literary trends to our readers. Our platform not only focuses on international bestsellers but also promotes Vietnamese authors, giving them a global stage to showcase their work. This way, Echolibrary bridges the gap between local and global literary scenes.</p>
+                <img srcset="/resource/AboutUs2.webp" loading="lazy" alt="Image 2"
+                    class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-4">
+                <p class="text-gray-600 text-center">We constantly update the latest titles from renowned authors
+                    worldwide, bringing the latest literary trends to our readers. Our platform not only focuses on
+                    international bestsellers but also promotes Vietnamese authors, giving them a global stage to
+                    showcase their work. This way, Echolibrary bridges the gap between local and global literary scenes.
+                </p>
             </div>
         </div>
     </section>
+
 
     <!-- Detailed About Us Section -->
     <section class="container mx-auto px-4 py-12 max-w-screen-xl">
         <div class="space-y-8 fade-in">
             <div>
-                <h2 class="text-3xl font-bold font-serif text-gray-800">History</h2>
-                <p class="text-gray-600 font-sans mt-2">Echolibrary was founded in 2010 by a group of book and technology enthusiasts with the desire to create an accessible and rich digital library platform. Initially, we only had a few hundred titles, but thanks to the enthusiastic support from the community and partners, Echolibrary has grown tremendously and become one of the leading digital libraries today.</p>
+                <h2 class="text-3xl font-bold text-gray-800">History</h2>
+                <p class="text-gray-600 mt-2">Echolibrary was founded in 2010 by a group of book and
+                    technology enthusiasts with the desire to create an accessible and rich digital library platform.
+                    Initially, we only had a few hundred titles, but thanks to the enthusiastic support from the
+                    community and partners, Echolibrary has grown tremendously and become one of the leading digital
+                    libraries today.</p>
             </div>
             <div>
-                <h2 class="text-3xl font-bold font-serif text-gray-800">Mission and Vision</h2>
-                <ul class="list-disc list-inside text-gray-600 font-sans mt-2">
-                    <li><strong>Mission:</strong> Echolibrary's mission is to provide a vast, easily accessible repository of knowledge for everyone, helping them enhance their knowledge and skills, thereby contributing positively to society.</li>
-                    <li><strong>Vision:</strong> Echolibrary aims to become the world's leading digital library, where everyone can access and share unlimited knowledge, regardless of their location.</li>
+                <h2 class="text-3xl font-bold text-gray-800">Mission and Vision</h2>
+                <ul class="list-disc list-inside text-gray-600 mt-2">
+                    <li><strong>Mission:</strong> Echolibrary's mission is to provide a vast, easily accessible
+                        repository of knowledge for everyone, helping them enhance their knowledge and skills, thereby
+                        contributing positively to society.</li>
+                    <li><strong>Vision:</strong> Echolibrary aims to become the world's leading digital library, where
+                        everyone can access and share unlimited knowledge, regardless of their location.</li>
                 </ul>
             </div>
         </div>
     </section>
 
+
     <!-- Team Members Section -->
     <section class="container mx-auto px-4 py-12 max-w-screen-xl">
         <div class="text-center mb-8 fade-in">
-            <h2 class="text-3xl font-bold font-serif text-gray-800">Our Team</h2>
-            <p class="text-gray-600 font-sans">Meet the dedicated team behind Echolibrary</p>
+            <h2 class="text-3xl font-bold text-gray-800">Our Team</h2>
+            <p class="text-gray-600">Meet the dedicated team behind Echolibrary</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
-                <img srcset="/resource/mem1.jpg" loading="lazy" alt="Team Member 1" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                <img srcset="/resource/mem1.jpg" loading="lazy" alt="Team Member 1"
+                    class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
                     <h3 class="text-xl font-bold">Cuong Tran</h3>
                     <p>Chief Technology Officer</p>
-                    <p>Cuong is a tech genius who ensures our platform runs smoothly and efficiently. His innovative ideas keep us ahead of the curve.</p>
+                    <p>Cuong is a tech genius who ensures our platform runs smoothly and efficiently. His innovative
+                        ideas keep us ahead of the curve.</p>
                 </div>
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
-                <img srcset="/resource/mem2.jpg" loading="lazy" alt="Team Member 2" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                <img srcset="/resource/mem2.jpg" loading="lazy" alt="Team Member 2"
+                    class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
                     <h3 class="text-xl font-bold">Trinh Truong</h3>
                     <p>Head of Content</p>
-                    <p>Trinh curates and reviews all the materials we provide. Her keen eye for quality ensures our library is filled with valuable content.</p>
+                    <p>Trinh curates and reviews all the materials we provide. Her keen eye for quality ensures our
+                        library is filled with valuable content.</p>
                 </div>
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
-                <img srcset="/resource/mem3.webp" loading="lazy" alt="Team Member 3" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                <img srcset="/resource/mem3.webp" loading="lazy" alt="Team Member 3"
+                    class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
                     <h3 class="text-xl font-bold">Huy Tran</h3>
                     <p>Marketing Director</p>
-                    <p>Huy's creative marketing strategies help us reach a wider audience and keep our community engaged and growing.</p>
+                    <p>Huy's creative marketing strategies help us reach a wider audience and keep our community engaged
+                        and growing.</p>
                 </div>
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg fade-in">
-                <img srcset="/resource/mem4.jpg" loading="lazy" alt="Team Member 4" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
+                <img srcset="/resource/mem4.jpg" loading="lazy" alt="Team Member 4"
+                    class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 flex flex-col items-center justify-center transition-opacity duration-300 hover:opacity-100">
                     <h3 class="text-xl font-bold">Bao Nhi</h3>
                     <p>Customer Support Lead</p>
-                    <p>Nhi ensures our users have the best experience possible, providing top-notch support and addressing any concerns promptly.</p>
+                    <p>Nhi ensures our users have the best experience possible, providing top-notch support and
+                        addressing any concerns promptly.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer Section -->
     <section class="w-full py-4 bg-white" style="margin-top: 45px;">
-        <!-- Footer Section -->
         <footer class="bg-background text-text border-t border-accent">
             <div class="container w-full mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -236,6 +288,8 @@
                         <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
                         <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                     </div>
+
+
 
 
                     <!-- Navigation Links -->
@@ -254,6 +308,8 @@
                     </div>
 
 
+
+
                     <!-- Customer Service -->
                     <div class="mt-8">
                         <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
@@ -268,6 +324,8 @@
                                     style="text-decoration: none; color: black;">Shipping Information</a></li>
                         </ul>
                     </div>
+
+
 
 
                     <!-- Contact Information -->
@@ -298,6 +356,8 @@
                 </div>
 
 
+
+
                 <!-- Copyright -->
                 <div class="border-t border-accent text-center mt-4 pt-4">
                     <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
@@ -305,6 +365,9 @@
             </div>
         </footer>
     </section>
+
+
+
 
 
 
@@ -323,11 +386,12 @@
                 threshold: 0.1
             });
 
+
             document.querySelectorAll('.fade-in').forEach(element => {
                 observer.observe(element);
             });
         });
     </script>
 </body>
-
 </html>
+
