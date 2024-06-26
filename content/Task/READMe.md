@@ -171,9 +171,9 @@ By assigning these tasks to the team members based on their skills, you can ensu
 ### Sprint 3: Basic UI Design (June 06 - June 12)
 
 
-| Task                         | Assigned To      | Details                                            | Deadline | Status   |
-| ---------------------------- | ---------------- | -------------------------------------------------- | -------- | -------- |
-| Design UI by HTML - Tailwind | All Team Members | Main Header, Top menu, Book Page, Footer, bar menu | June 12  | Finished |
+| Task                         | Assigned To      | Details                                            | Deadline              | Status   |
+| ---------------------------- | ---------------- | -------------------------------------------------- | --------------------- | -------- |
+| Design UI by HTML - Tailwind | All Team Members | Main Header, Top menu, Book Page, Footer, bar menu | June 12, June 25 (2)  | Finished |
 
 
 ### Sprint 4: Landing page, Book, Detail and Shopping Cart Pages (June 06 - June 18)
@@ -181,10 +181,10 @@ By assigning these tasks to the team members based on their skills, you can ensu
 
 | Task                            | Assigned To | Details                                  | Deadline      | Status      |
 | ------------------------------- | ----------- | ---------------------------------------- | ------------- | ----------- |
-| Homepage/landing page Bookstore | Quoc Huy    | Design the UI of the landing page.       | June 14/18(2) | in progress |
-| Books Page                      | Bao Nhi     | Design the UI of the Book Page.          | June 14/18(2) | in progress |
+| Homepage/landing page Bookstore | Quoc Huy    | Design the UI of the landing page.       | June 14/18(2) | Finished    |
+| Books Page                      | Bao Nhi     | Design the UI of the Book Page.          | June 14/18(2) | Finished    |
 | Detail page                     | Bao Nhi     | Design the UI of the Detail Page.        | June 16       | Finished    |
-| Shopping Cart Page              | Xuan Cuong  | Design the UI of the Shopping Cart Page. | June 18       | in progress |
+| Shopping Cart Page              | Xuan Cuong  | Design the UI of the Shopping Cart Page. | June 18       | Finished    |
 
 
 ### Sprint 5: Checkout, Thanks and Address Pages (June 10 - June 18)
@@ -193,8 +193,8 @@ By assigning these tasks to the team members based on their skills, you can ensu
 | Task                | Assigned To      | Details                             | Deadline      | Status      |
 | ------------------- | ---------------- | ----------------------------------- | ------------- | ----------- |
 | Update Project Plan | All Team Members | Review and update the project plan. | June 14       | Finished    |
-| Thanks Page         | Tuyet Trinh      | Design the UI of the Thanks Page.   | June 18       | in progress |
-| Checkout Page       | Tuyet Trinh      | Design the UI of the Checkout Page. | June 16/18(2) | in progress |
+| Thanks Page         | Tuyet Trinh      | Design the UI of the Thanks Page.   | June 18       | Finished    |
+| Checkout Page       | Tuyet Trinh      | Design the UI of the Checkout Page. | June 16/18(2) | Finished    |
 | Address Page        | Xuan Cuong       | Design the UI of the Address Page.  | June 15       | Finished    |
 
 
@@ -203,7 +203,7 @@ By assigning these tasks to the team members based on their skills, you can ensu
 
 | Task          | Assigned To | Details                                   | Deadline | Status      |
 | ------------- | ----------- | ----------------------------------------- | -------- | ----------- |
-| Account Page  | Tuyet Trinh | Design the UI of the Account Page.        | June 18  | in progress |
+| Account Page  | Tuyet Trinh | Design the UI of the Account Page.        | June 18  | Finished    |
 | Log in/log up | Xuan Cuong  | Design the UI of the Log in/ Log up Page. | June 14  | Finished    |
 
 
@@ -212,8 +212,8 @@ By assigning these tasks to the team members based on their skills, you can ensu
 
 | Task           | Assigned To             | Details                    | Deadline | Status  |
 | -------------- | ----------------------- | -------------------------- | -------- | ------- |
-| Apply API      | Quoc Huy, Bao Nhi       | Implement API integration. | June 21  | Holding |
-| Apply Database | Quoc Huy, Xuan Cuong    | Set up the database.       | June 21  | Holding |
+| Apply API      | Quoc Huy, Bao Nhi       | Implement API integration. | June 28  | Holding |
+| Apply Database | Quoc Huy, Xuan Cuong    | Set up the database.       | June 28  | Holding |
 
 
 ### Sprint 8: Stripe Integration (June 18 - June 20)
@@ -221,16 +221,16 @@ By assigning these tasks to the team members based on their skills, you can ensu
 
 | Task         | Assigned To | Details                                  | Deadline | Status  |
 | ------------ | ----------- | ---------------------------------------- | -------- | ------- |
-| Stripe Setup | Quoc Huy    | Integrate Stripe for payment processing. | June 20  | Holding |
+| Stripe Setup | Quoc Huy    | Integrate Stripe for payment processing. | June 20  |finished |
 
 
-### Sprint 9: Testing and Final Touches (June 20 - June 23)
+### Sprint 9: Testing and Final Touches (June 20 - June 26)
 
 
-| Task                                                | Assigned To      | Details                                                                      | Deadline | Status  |
-| --------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | -------- | ------- |
-| Test Web Performance, Functionality, and Fix Issues | All Team Members | Test the website's performance and functionality. Fix any identified issues. | June 19  | Holding |
-| UI Upgrade                                          | All Team Members | Make final UI improvements.                                                  | June 20  | Holding |
+| Task                                                | Assigned To      | Details                                                                      | Deadline |   Status   |  
+| --------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | -------- | ---------- |
+| Test Web Performance, Functionality, and Fix Issues | All Team Members | Test the website's performance and functionality. Fix any identified issues. | June 26  | in progress|
+| UI Upgrade                                          | All Team Members | Make final UI improvements.                                                  | June 26  | in progress|
 
 
 ## Project Management
