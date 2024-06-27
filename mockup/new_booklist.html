@@ -14,113 +14,111 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="css/menu.css">
-    
+
   </head>
   <body class="bg-gray-100">
     <!-- Header Section -->
-    <!-- Header Section -->
     <header>
-      <nav class="bg-white flex flex-row justify-between items-center mx-11 py-4">
-          <div class="flex items-center space-x-4 pr-8">
-              <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
-          </div>
-          <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
-              <a href="./index.html" class="text-gray-700 hover:text-green-600 no-underline"
-                  style="text-decoration: none;">Home</a>
-              <a href="./new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
-                  style="text-decoration: none;">Books</a>
-              <div class="relative">
-                  <button id="contactBtn"
-                      class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
-                      Categories
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                          fill="currentColor">
-                          <path fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd" />
-                      </svg>
-                  </button>
-                  <div id="dropdownMenu"
-                      class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50"
-                      style="width: 200px;">
-                      <!-- <h4 class="title">Hư cấu</h4> -->
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                          style="text-decoration: none;">Văn học hiện đại</a>
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                          style="text-decoration: none;">Văn học kinh điển</a>
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                          style="text-decoration: none;">Văn học thiếu nhi</a>
-                  </div>
+        <nav class="bg-white flex flex-row justify-between items-center py-4">
+            <div class="flex items-center space-x-4 pr-8">
+                <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
+            </div>
+            <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
+                <a href="/index.html" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">Home</a>
+                <a href="/new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
+                    style="text-decoration: none;">Books</a>
+                <div class="relative">
+                    <button id="contactBtn"
+                        class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
+                        Categories
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="dropdownMenu"
+                        class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50"
+                        style="width: 200px;">
+                        <!-- <h4 class="title">Hư cấu</h4> -->
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học hiện đại</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học kinh điển</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
+                            style="text-decoration: none;">Văn học thiếu nhi</a>
+                    </div>
 
                 </div>
-                <a href="./index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">Author</a>
-                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">About Us</a>
 
-          </div>
-          <div class="flex items-center space-x-4">
-              <div class="box-search">
-                  <form name="search">
-                      <input type="text" class="input-search" name="txt" onmouseout="this.value = ''; this.blur();">
-                  </form>
-                  <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
 
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="box-search">
+                    <form name="search">
+                        <input type="text" class="input-search" name="txt" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
 
-              <button class=" h-14 w-14 text-3xl">
-                  <a href="cart.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                  </a>
-              </button>
+                <button class=" h-14 w-14 text-3xl">
+                    <a href="cart.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </button>
 
-
-              <button class="text-gray-700 hover:text-green-600 h-14 w-14 text-3xl">
-                  <a href=""></a>
-                  <i class="fa-solid fa-circle-user"></i>
-              </button>
-              <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
-          </div>
-          <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-          </button>
-          </div>
-          <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Home</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">About Us</a>
-              <div class="relative w-full">
-                  <button id="mobileContactBtn"
-                      class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none px-4 flex items-center justify-center">
-                      Contact
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                          fill="currentColor">
-                          <path fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd" />
-                      </svg>
-                  </button>
-                  <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Instagram</a>
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Facebook</a>
-                      <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">YouTube</a>
-                  </div>
-              </div>
-              <div class="flex justify-center space-x-4 mt-4">
-                  <button class="text-gray-700 hover:text-green-600">Log In</button>
-              </div>
-          </div>
-      </nav>
-  </header>
+                <button class="text-gray-700 hover:text-green-600 h-14 w-14 text-3xl">
+                    <a href=""></a>
+                    <i class="fa-solid fa-circle-user"></i>
+                </button>
+                <button><a href="login.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">Log In</a></button>
+            </div>
+            <button id="hamburgerBtn" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Home</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">About Us</a>
+                <div class="relative w-full">
+                    <button id="mobileContactBtn"
+                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none px-4 flex items-center justify-center">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Instagram</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Facebook</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">YouTube</a>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="text-gray-700 hover:text-green-600">Log In</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Content -->
     <div class="container mx-auto px-4 py-4 pt-20 container-limited">
       <nav class="text-gray-600 text-sm">
-        <a href="./index.html" class="hover:underline">Home</a>
+        <a href="/index.html" class="hover:underline">Home</a>
         <span class="mx-2">></span>
-        <a href="./books.html" class="text-green-400 font-bold hover:underline"
+        <a href="/books.html" class="text-green-400 font-bold hover:underline"
           >Books</a
         >
       </nav>
@@ -249,11 +247,11 @@
             data-monthly-best-seller="false"
             data-yearly-best-seller="false"
           >
-            <a href="./detail.html" class="flex flex-col h-full">
+            <a href="/detail.html" class="flex flex-col h-full">
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-10.jpg"
+                  src="/resource/b-0.jpg"
                   alt="sách"
                 />
                 <div class="flex flex-col items-center py-5 space-y-2">
@@ -280,7 +278,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-9.jpg"
+                  src="/resource/BOOK-2.jpg"
                   alt="sách"
                 />
 
@@ -308,7 +306,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-15.jpg"
+                  src="/resource/BOOK-3.jpg"
                   alt="sách"
                 />
 
@@ -336,7 +334,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-10.jpg"
+                  src="/resource/BOOK-4.jpg"
                   alt="sách"
                 />
 
@@ -364,7 +362,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-6.jpg"
+                  src="/resource/BOOK-5.jpg"
                   alt="sách"
                 />
 
@@ -390,7 +388,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-16.jpg"
+                  src="/resource/BOOK-6.jpg"
                   alt="sách"
                 />
 
@@ -416,7 +414,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-17.jpg"
+                  src="/resource/BOOK-7.jpg"
                   alt="sách"
                 />
 
@@ -444,7 +442,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-8.jpg"
+                  src="/resource/BOOK-8.jpg"
                   alt="sách"
                 />
 
@@ -470,7 +468,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-9.jpg"
+                  src="/resource/BOOK-9.jpg"
                   alt="sách"
                 />
 
@@ -498,7 +496,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-10.jpg"
+                  src="/resource/BOOK-10.jpg"
                   alt="sách"
                 />
 
@@ -526,7 +524,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-11.jpg"
+                  src="/resource/BOOK-11.jpg"
                   alt="sách"
                 />
                 <div class="flex flex-col items-center py-5 space-y-2">
@@ -553,7 +551,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-12.jpg"
+                  src="/resource/BOOK-12.jpg"
                   alt="sách"
                 />
 
@@ -579,7 +577,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-13.jpg"
+                  src="/resource/BOOK-13.jpg"
                   alt="sách"
                 />
 
@@ -607,7 +605,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-14.jpg"
+                  src="/resource/BOOK-14.jpg"
                   alt="sách"
                 />
 
@@ -633,7 +631,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-15.jpg"
+                  src="/resource/BOOK-15.jpg"
                   alt="sách"
                 />
 
@@ -661,7 +659,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-16.jpg"
+                  src="/resource/BOOK-16.jpg"
                   alt="sách"
                 />
 
@@ -687,7 +685,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-17.jpg"
+                  src="/resource/BOOK-17.jpg"
                   alt="sách"
                 />
 
@@ -715,7 +713,7 @@
               <div class="relative overflow-hidden rounded-xl flex-1">
                 <img
                   class="w-full h-40 object-contain"
-                  src="./resource/BOOK-18.jpg"
+                  src="/resource/BOOK-18.jpg"
                   alt="sách"
                 />
 
@@ -737,13 +735,13 @@
             >Previous</a
           >
           <a
-            href="./new_booklist.html"
-            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white"
+            href=""
+            class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white"
             >1</a
           >
           <a
-            href="./newb2.html"
-            class="py-2 px-4 bg-green-300 hover:bg-green-300 text-black hover:text-white"
+            href="/newb2.html"
+            class="py-2 px-4 bg-gray-100 hover:bg-green-300 text-black hover:text-white"
             >2</a
           >
           <a

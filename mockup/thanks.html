@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ6W10FCD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-ZTQ6W10FCD');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@1.0.7/dist/iconify.min.js"></script>
+    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/menu.css">
     <style>
+
         .search-bar {
             border: 1px solid #CBD5E0;
             border-radius: 9999px;
@@ -34,51 +22,6 @@
             transition: width 0.3s ease;
         }
 
-        .order-container {
-            background-color: #fff;
-            padding: 16px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .order-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .order-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .order-item:last-child {
-            border-bottom: none;
-        }
-
-        .order-id {
-            font-weight: 500;
-            color: #1f2937;
-        }
-
-        .order-status {
-            font-weight: 600;
-        }
-
-        .order-status.delivered {
-            color: #16a34a;
-        }
-
-        .order-status.in-transit {
-            color: #d97706;
-        }
-
-        .order-status.pending {
-            color: #4b5563;
-        }
 
         .view-more-btn {
             margin-top: 16px;
@@ -113,6 +56,77 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        .hidden-on-scroll {
+            transition: transform 0.3s ease;
+            z-index: 999; /* Ensure the header is above other elements */
+        }
+
+        .hidden-on-scroll.hidden {
+            transform: translateY(-100%);
+        }
+
+        .menu ul li {
+            z-index: 1001; /* Ensure list items are above everything */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 40px; /* Adjust padding as needed */
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #00ff00; /* Change color on hover as needed */
+        }
+
+        .footer-logo {
+            height: 80px; /* Adjust logo height as needed */
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-social-icon {
+            width: 30px; /* Adjust social icon size as needed */
+            height: auto;
+            margin: 0 5px;
+        }
+
+        .footer-bottom {
+            padding: 10px 0;
+        }
     </style>
 </head>
 
@@ -125,9 +139,9 @@
                 <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
             </div>
             <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
-                <a href="./index.html" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/index.html" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">Home</a>
-                <a href="./new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">Books</a>
                 <div class="relative">
                     <button id="contactBtn"
@@ -153,9 +167,9 @@
                     </div>
 
                 </div>
-                <a href="./index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">Author</a>
-                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
+                <a href="/aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
                     style="text-decoration: none;">About Us</a>
 
 
@@ -215,66 +229,130 @@
     </header>
 
 
+    <!-- content -->
+    <!-- search -->
+    <main class="container mx-auto py-6 mt-24">
 
-    <!-- Main Content -->
-    <main class="pt-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <!-- Sidebar -->
-                <aside class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md mb-4">
-                    <div class="text-center">
-                        <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4">
-                        <h2 class="text-xl font-semibold mb-2">Username</h2>
-                        <p class="text-gray-600 mb-4">username.abc@example.com</p>
-                        <a href="#" class="hover:text-green-700 py-1 px-3 mb-2 font-bold rounded-full">
-                            <i class="fas fa-edit mr-2"></i>Edit Profile
-                        </a>
+    <!-- Main content -->
+    <div class="container mx-auto mt-8 p-4">
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-500" viewBox="0 0 30 30">
+                <image href="https://static.vecteezy.com/system/resources/previews/020/589/769/original/checkbox-icon-in-green-vector.jpg" x="0" y="0" width="30" height="30" />
+
+            </svg>
+    <div class="text-center p-10">
+      <h1 class="text-3xl text-black font-bold mb-2">Đơn hàng của bạn đã được đặt thành công!</h1>
+      <p class="text-xl mb-6  text-black ">Cảm ơn bạn vì đã tin tưởng chúng tôi</p>
+      <div class="mt-8 grid grid-cols-2 gap-4"></div>
+      <button class="bg-green-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-4">
+
+        Trang chủ
+      </button>
+      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+        Theo dõi đơn hàng
+      </button>
+
+
+
+    </div>
+
+        <div class="container mx-auto mt-8">
+        <h2 class="text-xl text-black font-semibold mb-4">Sản phẩm bạn đã từng mua</h2>
+    </div>
+    <div class="flex justify-center mt-4">
+        <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+        <!-- Thêm các chấm phân trang khác nếu cần -->
+    </div>
+
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Thay thế các phần tử này bằng dữ liệu thực tế -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://wall.vn/wp-content/uploads/2020/04/hinh-anh-da-nang-dep-scaled.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+            <p class="text-sm text-gray-600">Giá : bao nhiêu cho 1 trang thank ??</p>
+            </div>
+            <!-- ... các sản phẩm khác -->
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://vcdn1-dulich.vnecdn.net/2022/06/03/cauvang-1654247842-9403-1654247849.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=Swd6JjpStebEzT6WARcoOA" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                <p class="text-sm text-gray-600">Giá :1 jack </p>
+                </div>
+
+            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                  <!-- ... code bo anh saCH -->
+                <img src="https://image.donghohaitrieu.com/wp-content/uploads/2023/09/avt-40-canh-dep-da-nang-hap-dan-du-khach-ghe-tham.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                    <p class="text-sm text-gray-600">Giá: 500 củ</p>
                     </div>
-                    <nav class="mt-2 text-center">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Log Out</button>
-                    </nav>
-                </aside>                
 
-                <!-- Main Content -->
-                <section class="w-full md:w-3/4 lg:w-1/2 bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Account Overview</h2>
-                    <div class="grid grid-cols-1 gap-4 mb-4">
-                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-semibold mb-2">Personal Information</h3>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Name:</span> Username</p>
-                            <p class="text-gray-700 mb-2"><span class="font-semibold">Email:</span> username.abc@example.com</p>
-                            <p class="text-gray-700"><span class="font-semibold">Phone:</span> (123) 456-7890</p>
+                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                         <img src="https://www.vietfuntravel.com.vn/image/data/Da-Nang/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man/hinh-anh-cau-tinh-yeu-da-nang-ve-dem-dep-va-lang-man-h1.jpg" alt="Ảnh sản phẩm" class="h-48 w-full mb-2 object-cover">
+                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                        <p class="text-sm text-gray-600">Giá : như chúng ta có xiền</p>
                         </div>
-                        <div class="order-container bg-white p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-semibold mb-4">Đơn hàng gần đây</h3>
-                            <ul class="order-list">
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12345</span>
-                                    <span class="order-status delivered text-green-600 font-semibold">Đã giao</span>
-                                </li>
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12346</span>
-                                    <span class="order-status in-transit text-yellow-500 font-semibold">Đang vận chuyển</span>
-                                </li>
-                                <li class="order-item flex items-center justify-between mb-3 p-3 border-b border-gray-200">
-                                    <span class="order-id font-medium text-gray-900">Order #12347</span>
-                                    <span class="order-status pending text-gray-600 font-semibold">Đang chờ xử lý</span>
-                                </li>
-                            </ul>
-                            <button class="view-more-btn text-green-500 font-semibold mt-4 ">Xem thêm</button>
-                        </div>
-    
-                </section>
+
+                        <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                            <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                            <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                            <p class="text-sm text-gray-600">Giá</p>
+                            </div>
+
+                            <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                <p class="text-sm text-gray-600">Giá</p>
+                                </div>
+
+                                <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                    <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                    <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                    <p class="text-sm text-gray-600">Giá</p>
+                                    </div>
+
+                                    <div class="border border-gray-300 rounded-lg p-4 flex flex-col items-center">
+                                        <div class="bg-gray-200 h-48 w-full mb-2"></div>
+                                        <h3 class="text-md font-medium">Tên sản phẩm</h3>
+                                        <p class="text-sm text-gray-600">Giá</p>
+                                        </div>
+        </div>
+        <!-- Phân trang -->
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-gray-400 rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="h-2 w-2 bg-while rounded-full mr-1"></span>
+            <!-- Thêm các chấm phân trang khác nếu cần -->
+        </div>
+
+        </div>
+    </body>
+
+     <!-- Bestseller Section -->
+     <section class="flex items-center justify-center mt-6">
+        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-black">
+            <!-- Text Section -->
+            <div class="flex-wrap pr-8 absolute left-16">
+            </div>
+            <!-- Image Section -->
+            <div class="flex justify-end space-x-4">
+                <div class="relative mx-auto">
+                    <img src="/resource/sách 1.jpg" alt="Image 1" class="w-52 h-52 object-cover relative z-30 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="/resource/sách2-removebg-preview.png" alt="Image 2" class="absolute top-4 left-36 w-44 h-48 object-cover z-20 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                    <img src="/resource/sách3-removebg-preview.png" alt="Image 3" class="absolute top-6 left-60 w-30 h-44 object-cover z-10 shadow-lg rounded-lg transform hover:scale-105 transition duration-300">
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+</main>
 
-    <script>
-        function myMenuFunction() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
+
     <!-- Footer Section -->
     <section class="w-full py-4 bg-white" style="margin-top: 45px;">
         <!-- Footer Section -->
@@ -286,8 +364,8 @@
                         <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
                         <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                     </div>
-    
-    
+
+
                     <!-- Navigation Links -->
                     <div class="mt-8">
                         <h3 class="font-semibold text-lg mb-2">Navigation</h3>
@@ -302,8 +380,8 @@
                                     style="text-decoration: none; color: black;">Contact</a></li>
                         </ul>
                     </div>
-    
-    
+
+
                     <!-- Customer Service -->
                     <div class="mt-8">
                         <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
@@ -318,8 +396,8 @@
                                     style="text-decoration: none; color: black;">Shipping Information</a></li>
                         </ul>
                     </div>
-    
-    
+
+
                     <!-- Contact Information -->
                     <div class="mt-8">
                         <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
@@ -346,8 +424,8 @@
                         </div>
                     </div>
                 </div>
-    
-    
+
+
                 <!-- Copyright -->
                 <div class="border-t border-accent text-center mt-4 pt-4">
                     <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
@@ -356,5 +434,4 @@
         </footer>
     </section>
 </body>
-
 </html>
