@@ -1,28 +1,32 @@
 html {
     font-size: 90%;
     scroll-behavior: smooth;
-}
-  
+  }
 .dropdown-menu.show {
     display: block;
 }
 
+
 .navbar-link {
     padding: 0 15px;
 }
+
 
 .navbar-link:hover {
     color: #00dc64;
     text-decoration: none;
 }
 
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
+
 .dropdown-menu {
     display: none;
 }
+
 
 .dropdown-menu {
     display: none;
@@ -41,9 +45,11 @@ html {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
 }
 
+
 .box-search {
     position: relative;
 }
+
 
 .input-search {
     padding: 20px;
@@ -60,15 +66,18 @@ html {
     transition: .5s;
 }
 
+
 .input-search:hover {
     border-color: #00dc64;
 }
+
 
 .box-search:hover input {
     width: 350px;
     background: #fff;
     border-radius: 999px;
 }
+
 
 .box-search i {
     position: absolute;
@@ -80,7 +89,9 @@ html {
     transition: .2s;
 }
 
+
 .box-search:hover i {
     opacity: 0;
     z-index: -1;
 }
+

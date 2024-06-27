@@ -3,7 +3,6 @@
 
 
 <head>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ6W10FCD"></script>
     <script>
@@ -12,6 +11,9 @@
         gtag('js', new Date());
         gtag('config', 'G-ZTQ6W10FCD');
     </script>
+
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,146 +40,185 @@
             font-style: normal;
         }
     </style>
-    
+
+
 </head>
+
+
+
 
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.2/js/bootstrap.min.js"></script>
     <header>
-        <nav class="bg-white flex flex-row justify-between items-center px-11 py-3">
+        <nav class="bg-white flex flex-row justify-between items-center px-11 py-3 fixed top-0 left-0 right-0 z-50">
             <div class="flex items-center space-x-4 pr-8">
-                <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
+                <a href="./index.html" class="text-3xl font-bold">
+                    <img src="resource/logo2.jpg" alt="Logo" class="h-16 w-16">
+                </a>
             </div>
             <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
-                <a href="./index.html" class="text-gray-700 hover:text-green-400 no-underline"
-                    style="text-decoration: none;">Home</a>
-                <a href="./new_booklist.html" class="text-gray-700 hover:text-green-400 no-underline"
-                    style="text-decoration: none;">Books</a>
+                <a href="./index.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Home</a>
+                <a href="./new_booklist.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Books</a>
                 <div class="relative">
-                    <button id="contactBtn"
-                        class="text-gray-700 hover:text-green-400 flex items-center focus:outline-none">
+                    <button id="contactBtn" class="text-gray-700 hover:text-green-400 flex items-center focus:outline-none">
                         Categories
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div id="dropdownMenu"
-                        class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50"
-                        style="width: 200px;">
-                        <!-- <h4 class="title">Hư cấu</h4> -->
-                        <a href="new_booklist.html?categories=fiction" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline"
-                            style="text-decoration: none;">Fiction</a>
-                        <a href="new_booklist.html?categories=non-fiction" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline"
-                            style="text-decoration: none;">Non-fiction</a>
-                        <a href="new_booklist.html?categories=children" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline"
-                            style="text-decoration: none;">Children</a>
+                    <div id="dropdownMenu" class="absolute left-0 mt-4 w-full bg-white border-t border-gray-200 shadow-md hidden z-50">
+                        <div class="grid grid-cols-3 gap-4 p-4">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học thiếu nhi</a>
+                        </div>
                     </div>
-
                 </div>
-                <a href="#authors" id="scrollToAuthors" class="text-gray-700 hover:text-green-400 no-underline"
-                    style="text-decoration: none;">Author</a>
-                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-400 no-underline"
-                    style="text-decoration: none;">About Us</a>
-
-
+                <a href="#authors" id="scrollToAuthors" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Author</a>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">About Us</a>
             </div>
             <div class="flex items-center space-x-4">
-                <div class="box-search">
-                    <form name="search">
-                        <input type="text" class="input-search" name="txt" onmouseout="this.value = ''; this.blur();">
+                <div class="box-search relative">
+                    <form name="search" onsubmit="event.preventDefault(); performSearch();">
+                        <input type="text" class="input-search" name="txt" placeholder="Search..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" class="border rounded-full py-2 px-4">
+                        <button type="submit" class="absolute right-0 top-7 text-gray-500">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
-                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-
-                <button class=" h-14 w-14 text-3xl">
+                <button class="h-14 w-14 text-3xl">
                     <a href="cart.html" class="text-gray-700 hover:text-green-400" style="text-decoration: none;">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </button>
-
                 <button class="text-gray-700 hover:text-green-400 h-14 w-14 text-3xl">
-                    <a href=""></a>
+                    <a href="#"></a>
                     <i class="fa-solid fa-circle-user"></i>
                 </button>
             </div>
             <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            </div>
-            <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400">About Us</a>
-                <div class="relative w-full">
-                    <button id="mobileContactBtn"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-400 focus:outline-none flex items-center justify-center">
-                        Contact
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400">Instagram</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400">Facebook</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400">YouTube</a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <button class="text-gray-700 hover:text-green-400">Log In</button>
-                </div>
-            </div>
         </nav>
+        <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4 px-4" style="width: 100%;">
+            <a href="./index.html" class="block px-4 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Home</a>
+            <a href="./aboutUs.html" class="block px-4 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">About Us</a>
+            <div class="relative w-full">
+                <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-400 focus:outline-none flex items-center justify-between">
+                    Categories
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="mobileDropdownMenu" class="hidden mt-4 w-full z-50" style="border: transparent;">
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Modern literature</a>
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Classic literature</a>
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Children's literature</a>
+                </div>
+            </div>
+        </div>
     </header>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactBtn = document.getElementById('contactBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+   
+            contactBtn.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('hidden');
+            });
+   
+            document.addEventListener('click', function (event) {
+                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+   
+            mobileContactBtn.addEventListener('click', function () {
+                mobileDropdownMenu.classList.toggle('hidden');
+            });
+   
+            hamburgerBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+   
+        function performSearch() {
+            const searchText = document.search.txt.value;
+            alert('Searching for: ' + searchText);
+            // Thực hiện logic tìm kiếm ở đây
+        }
+    </script>
+   
+
+
+
 
     <div class="container-scroll">
-        <section class="s-one body-header ">
-            <header class="mx-auto pt-8 px-4 grid gap-8 md:grid-cols-2 items-center">
+        <section class="s-one body-header">
+            <header class="mx-auto px-4 pt-20 grid md:grid-cols-2 items-center">
                 <div class="header__image animated delay-1">
                     <img src="./img/header.png" alt="header" class="mx-auto rounded-lg" />
                 </div>
                 <div class="header__content text-left relative">
-                    <h2 class="relative inline-block mb-4 text-2xl md:text-3xl font-medium text-green-700 animated delay-2">Amplify Your Story, One Book at a Time</h2>
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-green-700 leading-none animated delay-3">ECHOLIBRARY<br />
+                    <h2
+                        class="relative inline-block mb-4 text-2xl md:text-3xl font-medium text-green-700 animated delay-2">
+                        Amplify Your Story, One Book at a Time</h2>
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-green-700 leading-none animated delay-3">
+                        ECHOLIBRARY<br />
                         <span class="text-3xl md:text-4xl lg:text-5xl text-[#38761d]">with </span>
-                        <span class="text-2xl md:text-3xl lg:text-4xl font-light mt-2">our Website</span>
+                        <span class="text-2xl md:text-3xl lg:text-4xl font-light mt-4">our Website</span>
                     </h1>
                     <p class="mb-8 text-black text-lg md:text-2xl leading-relaxed mr-0 md:mr-8 animated delay-4">
                         Let's Make Your Digital Bookshelf a Reality
-                        Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading and reputable platform, Echo Library ensures that all books available here are fully compliant with copyright laws, providing you with a secure and trustworthy shopping experience. Our dedication to upholding intellectual property rights means you can browse and purchase with complete confidence.
+                        Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading
+                        and reputable platform, Echo Library ensures that all books available here are fully compliant
+                        with copyright laws, providing you with a secure and trustworthy shopping experience. Our
+                        dedication to upholding intellectual property rights means you can browse and purchase with
+                        complete confidence.
                     </p>
                     <div class="header__btn mb-8 animated delay-5">
-                        <button class="py-3 px-6 md:py-4 md:px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-lg md:text-2xl hover:text-green-400 hover:opacity-80 focus:outline-none">
+                        <button
+                            class="py-3 px-6 md:py-4 md:px-8 text-white bg-green-600 rounded-full shadow-lg border transition-colors text-lg md:text-2xl hover:text-green-400 hover:opacity-80 focus:outline-none">
                             Learn More
                         </button>
                     </div>
                     <ul class="flex items-center justify-start gap-4 md:gap-8 pb-8 animated delay-6">
-                        <li><a href="#" class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i class="ri-facebook-circle-fill"></i></a></li>
-                        <li><a href="#" class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i class="ri-twitter-fill"></i></a></li>
-                        <li><a href="#" class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i class="ri-youtube-fill"></i></a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i
+                                    class="ri-facebook-circle-fill"></i></a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i
+                                    class="ri-twitter-fill"></i></a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl text-black hover:text-green-400 transition-colors"><i
+                                    class="ri-youtube-fill"></i></a></li>
                     </ul>
                 </div>
             </header>
         </section>
-    
-    
 
-        <section class="s-two pb-8 bg-gray-100">
-            <div class="container-content bg-green-50 shadow-md border rounded-xl mt-0.5">
+
+
+
+
+
+
+
+        <section class="s-two pt-40 bg-gray-100">
+            <div class="container-content bg-green-50 shadow-md border rounded-xl mt-4.5">
                 <!-- Title -->
                 <h1 class="text-center section-heading text-green-700 cute-font-regular">Summer Promotion </h1>
                 <!-- Carousel -->
-                <div id="carouselExampleIndicators" class="carousel relative" data-ride="carousel"
-                    data-interval="3000">
+                <div id="carouselExampleIndicators" class="carousel relative" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
                         <div class="carousel-item active h-full">
                             <img class="d-block w-full h-full object-cover" src="./img/promotion_1.jpg"
@@ -211,6 +252,9 @@
                 </div>
             </div>
         </section>
+
+
+
 
         <section class="s-three pb-8 flex flex-col items-center bg-gray-100">
             <div class="container-content mx-auto bg-white shadow-md border rounded-xl">
@@ -439,9 +483,12 @@
             </div>
         </section>
 
+
+
+
         <!-- collection books -->
-        <section class="s-four flex flex-col bg-gray-100 pb-56">
-            <div class="slider-list shadow-md border rounded-xl min-h-96">
+        <section class="s-four flex flex-col bg-gray-100 pb-8">
+            <div class="slider-list shadow-md border rounded-xl ">
                 <div class="header-title">
                     Collection Book
                 </div>
@@ -532,8 +579,11 @@
             </div>
         </section>
 
+
+
+
         <!-- authors list-->
-        <section id="authors" class="s-five flex flex-col items-center bg-gray-100 mb-12">
+        <section id="authors" class="s-five flex flex-col items-center bg-gray-100">
             <div class="container-content mx-auto bg-white shadow-md border rounded-xl" style="height: 40%;">
                 <h3 class="text-center section-heading py-4">Famous Author</h3>
                 <div class="flex justify-center items-center space-x-4 my-8">
@@ -543,47 +593,51 @@
                     <div id="authorList" class="flex justify-center items-center overflow-x-auto space-x-8 w-full px-4">
                         <!-- Author Item Start -->
                         <div class="author flex-shrink-0 text-center">
-                            <img src="./img/author/nguyenvinhtien.webp" alt="Nguyen Vinh Tien" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Nguyễn Vĩnh Tiến</p>
+                            <img src="./img/author/nguyenvinhtien.webp" alt="Nguyen Vinh Tien"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-4 text-lg font-medium">Nguyễn Vĩnh Tiến</p>
                         </div>
                         <!-- Author Item End -->
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/Anomyous.webp" alt="Caryl" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Lee Jin Song</p>
+                            <p class="mt-4 text-lg font-medium">Lee Jin Song</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/lightman.webp" alt="lightman" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Lightman</p>
+                            <p class="mt-4 text-lg font-medium">Lightman</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/Richard.webp" alt="Richard" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Richard</p>
+                            <p class="mt-4 text-lg font-medium">Richard</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/perec.webp" alt="Perec" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Perec</p>
+                            <p class="mt-4 text-lg font-medium">Perec</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
-                            <img src="./img/author/UrakamiTetsuya.webp" alt="Urakami Tetsuya" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Urakami Tetsuya</p>
+                            <img src="./img/author/UrakamiTetsuya.webp" alt="Urakami Tetsuya"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-4 text-lg font-medium">Urakami Tetsuya</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
-                            <img src="./img/author/Anomyous.webp" alt="Nhóm tư vấn Từ Mạn Mạn" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Nhóm tư vấn Từ Mạn Mạn</p>
+                            <img src="./img/author/Anomyous.webp" alt="Nhóm tư vấn Từ Mạn Mạn"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-4 text-lg font-medium">Nhóm tư vấn Từ Mạn Mạn</p>
                         </div>
                         <!-- Repeat the Author Item block for each author -->
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/Caryl.webp" alt="Caryl Férey" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Caryl Férey</p>
+                            <p class="mt-4 text-lg font-medium">Caryl Férey</p>
                         </div>
                         <!-- Add more authors as needed -->
                         <div class="author flex-shrink-0 text-center">
                             <img src="./img/author/Anomyous.webp" alt="Chí Tinh" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Chí Tinh</p>
+                            <p class="mt-4 text-lg font-medium">Chí Tinh</p>
                         </div>
                         <div class="author flex-shrink-0 text-center">
-                            <img src="./img/author/Anomyous.webp" alt="Marnie Old" class="rounded-full w-40 h-40 mx-auto">
-                            <p class="mt-2 text-lg font-medium">Marnie Old</p>
+                            <img src="./img/author/Anomyous.webp" alt="Marnie Old"
+                                class="rounded-full w-40 h-40 mx-auto">
+                            <p class="mt-4 text-lg font-medium">Marnie Old</p>
                         </div>
                     </div>
                     <button id="nextBtn" class="text-green-400 focus:outline-none px-4">
@@ -591,19 +645,22 @@
                     </button>
                 </div>
             </div>
-    
-            <footer class="bg-white text-text border-t border-accent mt-4">
-                <div class="w-full mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+
+
+            <footer class="bg-white text-text border-t border-accent">
+                <div class=" w-full mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-4">
                         <!-- Logo -->
                         <div class="flex flex-col items-center justify-center text-center md:items-center">
-                            <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo" class="h-16 mb-4">
+                            <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo"
+                                class="h-16 mb-2">
                             <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                         </div>
-    
+
+
                         <!-- Navigation Links -->
-                        <div class="mt-8 text-center">
-                            <h3 class="font-semibold text-lg mb-2">Navigation</h3>
+                        <div class="mt-2 text-center">
+                            <h3 class="font-semibold text-lg">Navigation</h3>
                             <ul>
                                 <li><a href="/homepage.html" class="hover:underline"
                                         style="text-decoration: none; color: black;">Home</a></li>
@@ -615,27 +672,31 @@
                                         style="text-decoration: none; color: black;">Contact</a></li>
                             </ul>
                         </div>
-    
-    
+
+
                         <!-- Customer Service -->
-                        <div class="mt-8 text-center">
-                            <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
+                        <div class="mt-2 text-center">
+                            <h3 class="font-semibold text-lg">Customer Service</h3>
                             <ul>
-                                <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Help
+                                <li><a href="#" class="hover:underline"
+                                        style="text-decoration: none; color: black;">Help
                                         Center</a></li>
                                 <li><a href="#" class="hover:underline"
                                         style="text-decoration: none; color: black;">Returns</a></li>
-                                <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Order
+                                <li><a href="#" class="hover:underline"
+                                        style="text-decoration: none; color: black;">Order
                                         Status</a></li>
                                 <li><a href="#" class="hover:underline"
                                         style="text-decoration: none; color: black;">Shipping Information</a></li>
                             </ul>
                         </div>
-    
-    
+
+
+
+
                         <!-- Contact Information -->
-                        <div class="mt-8 text-center">
-                            <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
+                        <div class="mt-2 text-center">
+                            <h3 class="font-semibold text-lg">Contact Us</h3>
                             <ul>
                                 <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline"
                                         style="text-decoration: none; color: black;">support@echolibrary.com</a></li>
@@ -659,21 +720,22 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!-- Copyright -->
-                    <div class="border-t border-accent text-center mt-4 pt-4">
+                    <div class="border-t border-accent text-center">
                         <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
-    
-    
-                
-            </div>
-           
 
 
 
-        
+
+
+
+    </div>
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -708,7 +770,19 @@
             const nextBtn2 = document.getElementById('nextBtn2');
 
 
+
+
+
+
+
+
             const scrollAmount = 300;
+
+
+
+
+
+
 
 
             prevBtn.addEventListener('click', () => {
@@ -716,14 +790,32 @@
             });
 
 
+
+
+
+
+
+
             nextBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
 
 
+
+
+
+
+
+
             prevBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
+
+
+
+
+
+
 
 
             nextBtn2.addEventListener('click', () => {
@@ -732,45 +824,12 @@
         });
 
 
-
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
         integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactBtn = document.getElementById('contactBtn');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const mobileContactBtn = document.getElementById('mobileContactBtn');
-            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-
-            contactBtn.addEventListener('click', function () {
-                dropdownMenu.classList.toggle('hidden');
-            });
-
-
-            document.addEventListener('click', function (event) {
-                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.classList.add('hidden');
-                }
-            });
-
-
-            mobileContactBtn.addEventListener('click', function () {
-                mobileDropdownMenu.classList.toggle('hidden');
-            });
-
-
-            hamburgerBtn.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
+   
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const carousel = document.querySelector('#carouselExampleIndicators');
@@ -779,24 +838,16 @@
             let currentIndex = 0;
             const intervalTime = carousel.getAttribute('data-interval');
             let isSliding = false;
-
-
             function showSlide(index) {
                 if (isSliding) return;
                 isSliding = true;
                 const currentItem = items[currentIndex];
                 const nextItem = items[index];
-
-
                 nextItem.classList.add(index > currentIndex ? 'carousel-item-next' : 'carousel-item-prev');
-
-
                 setTimeout(() => {
                     currentItem.classList.add(index > currentIndex ? 'carousel-item-left' : 'carousel-item-right');
                     nextItem.classList.add('active');
                     nextItem.classList.remove('carousel-item-next', 'carousel-item-prev');
-
-
                     setTimeout(() => {
                         currentItem.classList.remove('active', 'carousel-item-left', 'carousel-item-right');
                         currentIndex = index;
@@ -807,52 +858,37 @@
                     }, 500);
                 }, 20);
             }
-
-
             function nextSlide() {
                 let nextIndex = (currentIndex + 1) % items.length;
                 showSlide(nextIndex);
             }
-
-
             function prevSlide() {
                 let prevIndex = (currentIndex - 1 + items.length) % items.length;
                 showSlide(prevIndex);
             }
-
-
             document.querySelector('.carousel-control-next').addEventListener('click', function (e) {
                 e.preventDefault();
                 nextSlide();
             });
-
-
             document.querySelector('.carousel-control-prev').addEventListener('click', function (e) {
                 e.preventDefault();
                 prevSlide();
             });
-
-
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function () {
                     showSlide(index);
                 });
             });
-
-
             setInterval(nextSlide, intervalTime);
         });
-
-        
     </script>
     <script>
-        document.getElementById('scrollToAuthors').addEventListener('click', function(event) {
+        document.getElementById('scrollToAuthors').addEventListener('click', function (event) {
             event.preventDefault();
             document.getElementById('authors').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
-    
 </body>
 
 
-</html>
+
