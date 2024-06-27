@@ -58,61 +58,38 @@ Creating a website for selling books involves several key tasks that need to be 
 | Design UI by HTML - Tailwind | All Team Members | Main Header, Top menu, Book Page, Footer, bar menu | June 12, June 25 (2)  | Finished |
 
 
-### Sprint 4: Landing page, Book, Detail and Shopping Cart Pages (June 06 - June 18)
+### Sprint 4: Landing page, Book, Detail and Shopping Cart Pages (June 06 - June 25)
 
 
 | Task                            | Assigned To | Details                                  |       Deadline      | Status      |
 | ------------------------------- | ----------- | ---------------------------------------- | ------------------- | ----------- |
-| Homepage/landing page Bookstore | Quoc Huy    | Design the UI of the landing page.       | June 14/18(2)/25(3) | Finished    |
-| Books Page                      | Bao Nhi     | Design the UI of the Book Page.          | June 14/18(2)       | Finished    |
-| Detail page                     | Bao Nhi     | Design the UI of the Detail Page.        | June 16             | Finished    |
-| Shopping Cart Page              | Xuan Cuong  | Design the UI of the Shopping Cart Page. | June 18             | Finished    |
+| Homepage/landing page Bookstore | Quoc Huy    | Design the UI of the landing page.       |       June 25       |   Finished  |
 
 
-### Sprint 5: Checkout, Thanks and Address Pages (June 10 - June 18)
-
-
-| Task                | Assigned To      | Details                             | Deadline      | Status      |
-| ------------------- | ---------------- | ----------------------------------- | ------------- | ----------- |
-| Update Project Plan | All Team Members | Review and update the project plan. | June 14       | Finished    |
-| Thanks Page         | Tuyet Trinh      | Design the UI of the Thanks Page.   | June 18       | Finished    |
-| Checkout Page       | Tuyet Trinh      | Design the UI of the Checkout Page. | June 16/18(2) | Finished    |
-| Address Page        | Xuan Cuong       | Design the UI of the Address Page.  | June 15       | Finished    |
-
-
-### Sprint 6: Account and Log in/Log up Pages (June 6 - June 18)
-
-
-| Task          | Assigned To | Details                                   | Deadline | Status      |
-| ------------- | ----------- | ----------------------------------------- | -------- | ----------- |
-| Account Page  | Tuyet Trinh | Design the UI of the Account Page.        | June 18  | Finished    |
-| Log in/log up | Xuan Cuong  | Design the UI of the Log in/ Log up Page. | June 14  | Finished    |
-
-
-### Sprint 7: Backend Setup (June 16 - June 21)
+### Sprint 7: Backend Setup (June 16 - June 27)
 
 
 | Task           | Assigned To             | Details                    | Deadline | Status  |
 | -------------- | ----------------------- | -------------------------- | -------- | ------- |
-| Apply API      | Quoc Huy, Bao Nhi       | Implement API integration. | June 28  | Holding |
-| Apply Database | Quoc Huy, Xuan Cuong    | Set up the database.       | June 28  | Holding |
+| Apply API      | Quoc Huy, Bao Nhi       | Implement API integration. | June 27  |   Fail  |
+| Apply Database | Quoc Huy, Xuan Cuong    | Set up the database.       | June 27  |   Fail  |
 
 
-### Sprint 8: Stripe Integration (June 18 - June 26)
+### Sprint 8: Stripe Integration (June 18 - June 27)
 
 
 | Task         | Assigned To | Details                                  | Deadline | Status     |
 | ------------ | ----------- | ---------------------------------------- | -------- | ---------- |
-| Stripe Setup | Quoc Huy    | Integrate Stripe for payment processing. | June 26  |in progress |
+| Stripe Setup | Quoc Huy    | Integrate Stripe for payment processing. | June 27  |    Fail    |
 
 
-### Sprint 9: Testing and Final Touches (June 20 - June 26)
+### Sprint 9: Testing and Final Touches (June 20 - June 27)
 
 
 | Task                                                | Assigned To      | Details                                                                      | Deadline |   Status   |  
 | --------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | -------- | ---------- |
-| Test Web Performance, Functionality, and Fix Issues | All Team Members | Test the website's performance and functionality. Fix any identified issues. | June 26  | in progress|
-| UI Upgrade                                          | All Team Members | Make final UI improvements.                                                  | June 26  | in progress|
+| Test Web Performance, Functionality, and Fix Issues | All Team Members | Test the website's performance and functionality. Fix any identified issues. | June 27  |  Finished  |
+| UI Upgrade                                          | All Team Members | Make final UI improvements.                                                  | June 27  |  Finished  |
 
 
 ## Project Management
