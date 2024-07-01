@@ -6,9 +6,9 @@ Welcome to the **EchoLibrary** is an innovative project that aims to build an on
 # Technology Used
 - Frontend: Javascript, HTML, CSS Tailwind
 - Backend: Node.js
-- Database: XAMPP
+- Database: MySQL
 ## Our mockup: 
-[TrinhTrg/Teamwork](https://github.com/TrinhTrg/Teamwork)
+[https://github.com/TrinhTrg/Teamwork](https://github.com/TrinhTrg/Teamwork)
 
 ## Detail of the project
 - [Wireframe](/content/Wireframe/READMe.md)
