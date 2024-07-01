@@ -4,7 +4,13 @@
 
 
 
+
+
+
+
 <head>
+
+
 
 
     <!-- Google tag (gtag.js) -->
@@ -15,6 +21,8 @@
         gtag('js', new Date());
         gtag('config', 'G-ZTQ6W10FCD');
     </script>
+
+
 
 
     <meta charset="UTF-8">
@@ -43,7 +51,10 @@
         }
     </style>
 
+
 </head>
+
+
 
 
 <body>
@@ -96,7 +107,7 @@
                     <a href="userpage.html">
                         <i class="fa-solid fa-circle-user text-gray-700"></i>
                     </a>
-                    
+                   
                 </button>
             </div>
             <button id="hamburgerBtn" class="md:hidden focus:outline-none">
@@ -123,7 +134,7 @@
             </div>
         </div>
     </header>
-    
+   
     <!-- <script>
         document.addEventListener('DOMContentLoaded', function () {
             const contactBtn = document.getElementById('contactBtn');
@@ -132,33 +143,35 @@
             const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const mobileMenu = document.getElementById('mobileMenu');
-    
+   
             contactBtn.addEventListener('click', function () {
                 dropdownMenu.classList.toggle('hidden');
             });
-    
+   
             document.addEventListener('click', function (event) {
                 if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
                     dropdownMenu.classList.add('hidden');
                 }
             });
-    
+   
             mobileContactBtn.addEventListener('click', function () {
                 mobileDropdownMenu.classList.toggle('hidden');
             });
-    
+   
             hamburgerBtn.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
         });
-    
+   
         function performSearch() {
             const searchText = document.search.txt.value;
             alert('Searching for: ' + searchText);
             // Thực hiện logic tìm kiếm ở đây
         }
     </script> -->
-    
+   
+
+
 
 
     <div class="container-scroll">
@@ -208,6 +221,10 @@
 
 
 
+
+
+
+
         <section class="s-two pt-40 bg-gray-100">
             <div class="container-content bg-green-50 shadow-md border rounded-xl mt-4.5">
                 <!-- Title -->
@@ -248,6 +265,8 @@
                 </div>
             </div>
         </section>
+
+
 
 
         <section class="s-three pb-8 flex flex-col items-center bg-gray-100">
@@ -478,6 +497,8 @@
         </section>
 
 
+
+
         <!-- collection books -->
         <section class="s-four flex flex-col bg-gray-100 pb-8">
             <div class="slider-list shadow-md border rounded-xl ">
@@ -572,6 +593,8 @@
         </section>
 
 
+
+
         <!-- authors list-->
         <section id="authors" class="s-five flex flex-col items-center bg-gray-100">
             <div class="container-content mx-auto bg-white shadow-md border rounded-xl" style="height: 60%;">
@@ -636,6 +659,7 @@
                 </div>
             </div>
 
+
             <footer class="bg-white text-text border-t border-accent">
                 <div class=" w-full mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-4">
@@ -645,6 +669,7 @@
                                 class="h-16 mb-2">
                             <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                         </div>
+
 
                         <!-- Navigation Links -->
                         <div class="mt-2 text-center">
@@ -660,6 +685,7 @@
                                         style="text-decoration: none; color: black;">Contact</a></li>
                             </ul>
                         </div>
+
 
                         <!-- Customer Service -->
                         <div class="mt-2 text-center">
@@ -677,6 +703,8 @@
                                         style="text-decoration: none; color: black;">Shipping Information</a></li>
                             </ul>
                         </div>
+
+
 
 
                         <!-- Contact Information -->
@@ -706,21 +734,25 @@
                         </div>
                     </div>
 
+
                     <!-- Copyright -->
                     <div class="border-t border-accent text-center">
                         <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
-
+        </section>
 
 
     </div>
 
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/slider.2.js"></script>
+    <script type="module" src="./js/slider.2.js"></script>
+
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries, observer) => {
@@ -734,10 +766,12 @@
                 threshold: 0.1
             });
 
+
             document.querySelectorAll('.animated').forEach(element => {
                 observer.observe(element);
             });
         });
+
 
         document.addEventListener('DOMContentLoaded', function () {
             const authorList = document.getElementById('authorList');
@@ -750,7 +784,15 @@
 
 
 
+
+
+
+
             const scrollAmount = 300;
+
+
+
+
 
 
 
@@ -762,9 +804,17 @@
 
 
 
+
+
+
+
             nextBtn.addEventListener('click', () => {
                 authorList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
+
+
+
+
 
 
 
@@ -776,17 +826,22 @@
 
 
 
+
+
+
+
             nextBtn2.addEventListener('click', () => {
                 authorList2.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         });
+
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
         integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+   
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const carousel = document.querySelector('#carouselExampleIndicators');
@@ -846,3 +901,8 @@
         });
     </script>
 </body>
+
+</html>
+
+
+
