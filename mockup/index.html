@@ -22,7 +22,7 @@
     <title>Bookstore</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -35,8 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
     <style>
-        html { font-size: 70%;
-            scroll-behavior: smooth; }
         .cute-font-regular {
             font-family: "Cute Font", sans-serif;
             font-size: 80px;
@@ -44,7 +42,6 @@
             font-style: normal;
         }
     </style>
-
 
 </head>
 
@@ -96,8 +93,10 @@
                     </a>
                 </button>
                 <button class="text-gray-700 hover:text-green-400 h-14 w-14 text-3xl">
-                    <a href="#"></a>
-                    <i class="fa-solid fa-circle-user"></i>
+                    <a href="userpage.html">
+                        <i class="fa-solid fa-circle-user text-gray-700"></i>
+                    </a>
+                    
                 </button>
             </div>
             <button id="hamburgerBtn" class="md:hidden focus:outline-none">
@@ -178,7 +177,6 @@
                         <span class="text-2xl md:text-3xl lg:text-4xl font-light mt-4">our Website</span>
                     </h1>
                     <p class="mb-8 text-black text-lg md:text-2xl leading-relaxed mr-0 md:mr-8 animated delay-4">
-                    <p class="mb-8 text-black text-lg md:text-2xl leading-relaxed mr-0 md:mr-8 animated delay-4">
                         Let's Make Your Digital Bookshelf a Reality
                         Welcome to Echo Library, your premier online bookstore developed by VNUK - student. As a leading
                         and reputable platform, Echo Library ensures that all books available here are fully compliant
@@ -213,19 +211,20 @@
         <section class="s-two pt-40 bg-gray-100">
             <div class="container-content bg-green-50 shadow-md border rounded-xl mt-4.5">
                 <!-- Title -->
-                <h1 class="text-center section-heading text-green-700 cute-font-regular">Summer Promotion </h1>
+                <h1 class="text-center section-heading text-green-700 cute-font-regular">SUMMER PROMOTION </h1>
+                <span class="text-center flex flex-wrap pb-3 text-3xl">The Online Bookshop of Echolibrary is excited to announce a special summer promotion! For a limited time, we are offering a generous 20% discount on all publications. This is the perfect opportunity to stock up on your favorite books or explore new genres at a reduced price.</span>
                 <!-- Carousel -->
                 <div id="carouselExampleIndicators" class="carousel relative" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
                         <div class="carousel-item active h-full">
-                            <img class="d-block w-full h-full object-cover" src="/img/promotion_1.jpg"
+                            <img class="d-block w-full h-full object-cover" src="./img/promotion_1.jpg"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item h-full">
-                            <img class="d-block w-full h-full object-cover" src="/img/SALE.png" alt="Second slide">
+                            <img class="d-block w-full h-full object-cover" src="./img/SALE.png" alt="Second slide">
                         </div>
                         <div class="carousel-item h-full">
-                            <img class="d-block w-full h-full object-cover" src="/img/SALE_1.png" alt="Third slide">
+                            <img class="d-block w-full h-full object-cover" src="./img/SALE_1.png" alt="Third slide">
                         </div>
                         <ol class="carousel-indicators absolute bottom-0 left-0 right-0 flex justify-center">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0"
@@ -255,7 +254,7 @@
             <div class="container-content mx-auto bg-white shadow-md border rounded-xl">
                 <div id="trending-container">
                     <div class="text-center">
-                        <h1 class="text-center section-heading mb-4">Trending Books</h1>
+                        <h1 class="text-center section-heading mb-4 ">Trending Books</h1>
                         <div class="swiper trending-slider relative">
                             <button class="icon-left absolute left-0 top-1/2 transform -translate-y-1/2">
                                 <!-- <i class="fa-solid fa-arrow-left"></i> -->
@@ -293,7 +292,7 @@
                                 <!-- Slide-end -->
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
+                                        <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -319,7 +318,7 @@
                                 <!-- Additional slides can be added similarly -->
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="Book">
+                                        <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -345,7 +344,7 @@
                                 <!-- More slides here... -->
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/bongdembatxichmon01e1717383369.jpg" alt="Book">
+                                        <img src="./img/book/bongdembatxichmon01e1717383369.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -370,7 +369,7 @@
                                 </div>
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/chungtalanhungvitinhtu01e17176.jpg" alt="Book">
+                                        <img src="./img/book/chungtalanhungvitinhtu01e17176.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -395,7 +394,7 @@
                                 </div>
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/dinhluatmurphy01e1716776653238.jpg" alt="Book">
+                                        <img src="./img/book/dinhluatmurphy01e1716776653238.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -420,7 +419,7 @@
                                 </div>
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/conthonguyenrua011e17173832478.jpg" alt="Book">
+                                        <img src="./img/book/conthonguyenrua011e17173832478.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -445,7 +444,7 @@
                                 </div>
                                 <div class="swiper-slide trending-slide flex flex-col items-center">
                                     <div class="trending-slide-img mb-4">
-                                        <img src="/img/book/ketinhnghihoanmy01e17163433481.jpg" alt="Book">
+                                        <img src="./img/book/ketinhnghihoanmy01e17163433481.jpg" alt="Book">
                                     </div>
                                     <div class="trending-slide-content text-center">
                                         <div class="trending-slide-heading mb-2">
@@ -489,7 +488,7 @@
                     <div class="slider-content">
                         <div class="photo-item">
                             <div class="photo-content">
-                                <img src="/img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
+                                <img src="./img/book/bobaphepthuatumbalaanhsanghien.jpg" alt="">
                                 <div class="photo-description text-center ">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -497,7 +496,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content">
-                                <img src="/img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="">
+                                <img src="./img/book/bobaphepthuatgauhoggsdungcamco.jpg" alt="">
                                 <div class="photo-description text-center">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -505,7 +504,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content">
-                                <img src="/img/book/bobaphepthuatumbalabienranhasa.jpg" alt="">
+                                <img src="./img/book/bobaphepthuatumbalabienranhasa.jpg" alt="">
                                 <div class="photo-description text-center">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -513,7 +512,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/bongdembatxichmon01e1717383369.jpg" alt="">
+                                <img src="./img/book/bongdembatxichmon01e1717383369.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -521,7 +520,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/conthonguyenrua011e17173832478.jpg" alt="">
+                                <img src="./img/book/conthonguyenrua011e17173832478.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -529,7 +528,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/dinhluatmurphy01e1716776653238.jpg" alt="">
+                                <img src="./img/book/dinhluatmurphy01e1716776653238.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -537,7 +536,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/hondonvakhuvuon01e171766606841.jpg" alt="">
+                                <img src="./img/book/hondonvakhuvuon01e171766606841.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -545,7 +544,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/ketinhnghihoanmy01e17163433481.jpg" alt="">
+                                <img src="./img/book/ketinhnghihoanmy01e17163433481.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -553,7 +552,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/vaitientruongan01e171677668510.jpg" alt="">
+                                <img src="./img/book/vaitientruongan01e171677668510.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -561,7 +560,7 @@
                         </div>
                         <div class="photo-item">
                             <div class="photo-content text-center">
-                                <img src="/img/book/lichsutinhduc1khatkhaoduocbiet.jpg" alt="">
+                                <img src="./img/book/lichsutinhduc1khatkhaoduocbiet.jpg" alt="">
                                 <div class="photo-description">
                                     <div>Bộ ba phép thuật úm ba la ánh sáng hiện ra</div>
                                 </div>
@@ -637,17 +636,15 @@
                 </div>
             </div>
 
-
             <footer class="bg-white text-text border-t border-accent">
                 <div class=" w-full mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-4">
                         <!-- Logo -->
                         <div class="flex flex-col items-center justify-center text-center md:items-center">
-                            <img srcset="/resource/logo2-removebg-preview.png" loading="lazy" alt="Logo"
+                            <img srcset="./resource/logo2.jpg" loading="lazy" alt="Logo"
                                 class="h-16 mb-2">
                             <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                         </div>
-
 
                         <!-- Navigation Links -->
                         <div class="mt-2 text-center">
@@ -663,7 +660,6 @@
                                         style="text-decoration: none; color: black;">Contact</a></li>
                             </ul>
                         </div>
-
 
                         <!-- Customer Service -->
                         <div class="mt-2 text-center">
@@ -710,9 +706,8 @@
                         </div>
                     </div>
 
-
                     <!-- Copyright -->
-                    <div class="border-t border-accent text-center mt-4 pt-4">
+                    <div class="border-t border-accent text-center">
                         <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
                     </div>
                 </div>
@@ -725,7 +720,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="/js/slider.2.js"></script>
+    <script src="./js/slider.2.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries, observer) => {
@@ -852,4 +847,3 @@
     </script>
 </body>
 
-</html>
