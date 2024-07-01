@@ -1,0 +1,16 @@
+// vite.config.js
+import { defineConfig } from "file:///C:/web/Final%20project/Teamwork/webapp/node_modules/vite/dist/node/index.js";
+var vite_config_default = defineConfig({
+  build: {
+    manifest: true,
+    // Enable manifest generation
+    rollupOptions: {
+      input: "./vite-build-entry.html"
+      // Entry point for build only
+    }
+  }
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJDOlxcXFx3ZWJcXFxcRmluYWwgcHJvamVjdFxcXFxUZWFtd29ya1xcXFx3ZWJhcHBcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIkM6XFxcXHdlYlxcXFxGaW5hbCBwcm9qZWN0XFxcXFRlYW13b3JrXFxcXHdlYmFwcFxcXFx2aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vQzovd2ViL0ZpbmFsJTIwcHJvamVjdC9UZWFtd29yay93ZWJhcHAvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBkZWZpbmVDb25maWcgfSBmcm9tICd2aXRlJztcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XHJcbiAgICBidWlsZDoge1xyXG4gICAgICAgIG1hbmlmZXN0OiB0cnVlLCAvLyBFbmFibGUgbWFuaWZlc3QgZ2VuZXJhdGlvblxyXG4gICAgICAgIHJvbGx1cE9wdGlvbnM6IHtcclxuICAgICAgICAgICAgaW5wdXQ6ICcuL3ZpdGUtYnVpbGQtZW50cnkuaHRtbCcsIC8vIEVudHJ5IHBvaW50IGZvciBidWlsZCBvbmx5XHJcbiAgICAgICAgfSxcclxuICAgIH0sXHJcbn0pO1xyXG4iXSwKICAibWFwcGluZ3MiOiAiO0FBQTBTLFNBQVMsb0JBQW9CO0FBRXZVLElBQU8sc0JBQVEsYUFBYTtBQUFBLEVBQ3hCLE9BQU87QUFBQSxJQUNILFVBQVU7QUFBQTtBQUFBLElBQ1YsZUFBZTtBQUFBLE1BQ1gsT0FBTztBQUFBO0FBQUEsSUFDWDtBQUFBLEVBQ0o7QUFDSixDQUFDOyIsCiAgIm5hbWVzIjogW10KfQo=

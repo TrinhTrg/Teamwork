@@ -10,124 +10,146 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/menu.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ6W10FCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+
+        gtag('config', 'G-ZTQ6W10FCD');
+    </script>
 </head>
 
 
 <body class="bg-gray-100">
 
     <header>
-        <nav class="bg-white flex flex-row justify-between items-center px-11 py-4">
+        <nav class="bg-white flex flex-row justify-between items-center px-11 py-4 fixed top-0 left-0 right-0 z-50">
             <div class="flex items-center space-x-4 pr-8">
-                <a href="" class="text-3xl font-bold"><img src="resource/logo2.jpg" alt="" class="h-16 w-16"></a>
+                <a href="./index.html" class="text-3xl font-bold">
+                    <img src="resource/logo2.jpg" alt="Logo" class="h-16 w-16">
+                </a>
             </div>
             <div class="hidden text-2xl md:flex space-x-8 flex-grow items-center">
-                <a href="index.html" class="text-gray-700 hover:text-green-600 no-underline"
-                    style="text-decoration: none;">Home</a>
-                <a href="new_booklist.html" class="text-gray-700 hover:text-green-600 no-underline"
-                    style="text-decoration: none;">Books</a>
+                <a href="./index.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Home</a>
+                <a href="./new_booklist.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Books</a>
                 <div class="relative">
-                    <button id="contactBtn"
-                        class="text-gray-700 hover:text-green-600 flex items-center focus:outline-none">
+                    <button id="contactBtn" class="text-gray-700 hover:text-green-400 flex items-center focus:outline-none">
                         Categories
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div id="dropdownMenu"
-                        class="absolute right-0 mt-2 w-40 bg-white justify-center items-center border rounded shadow-md hidden z-50"
-                        style="width: 200px;">
-                        <!-- <h4 class="title">Hư cấu</h4> -->
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                            style="text-decoration: none;">Văn học hiện đại</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                            style="text-decoration: none;">Văn học kinh điển</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600 no-underline"
-                            style="text-decoration: none;">Văn học thiếu nhi</a>
+                    <div id="dropdownMenu" class="absolute left-0 mt-4 w-full bg-white border-t border-gray-200 shadow-md hidden z-50">
+                        <div class="grid grid-cols-3 gap-4 p-4">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học hiện đại</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học kinh điển</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Văn học thiếu nhi</a>
+                        </div>
                     </div>
-
                 </div>
-                <a href="index.html#authors" class="text-gray-700 hover:text-green-600 no-underline"
-                    style="text-decoration: none;">Author</a>
-                <a href="aboutUs.html" class="text-gray-700 hover:text-green-600 no-underline"
-                    style="text-decoration: none;">About Us</a>
-
-
+                <a href="#authors" id="scrollToAuthors" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">Author</a>
+                <a href="./aboutUs.html" class="text-gray-700 hover:text-green-400 no-underline" style="text-decoration: none;">About Us</a>
             </div>
             <div class="flex items-center space-x-4">
-                <div class="box-search">
-                    <form name="search">
-                        <input type="text" class="input-search" name="txt" onmouseout="this.value = ''; this.blur();">
+                <div class="box-search relative">
+                    <form name="search" onsubmit="event.preventDefault(); performSearch();">
+                        <input type="text" class="input-search" name="txt" placeholder="Search..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" class="border rounded-full py-2 px-4">
+                        <button type="submit" class="absolute right-0 top-7 text-gray-500">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
-                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-
-                <button class=" h-14 w-14 text-3xl">
-                    <a href="cart.html" class="text-gray-700 hover:text-green-600" style="text-decoration: none;">
+                <button class="h-14 w-14 text-3xl">
+                    <a href="cart.html" class="text-gray-700 hover:text-green-400" style="text-decoration: none;">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </button>
-
-                <button class="text-gray-700 hover:text-green-600 h-14 w-14 text-3xl">
-                    <a href=""></a>
+                <button class="text-gray-700 hover:text-green-400 h-14 w-14 text-3xl">
+                    <a href="#"></a>
                     <i class="fa-solid fa-circle-user"></i>
                 </button>
-                <!-- <button class="text-gray-700 hover:text-green-600">Log In</button> -->
             </div>
             <button id="hamburgerBtn" class="md:hidden focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            </div>
-            <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">About Us</a>
-                <div class="relative w-full">
-                    <button id="mobileContactBtn"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-600 focus:outline-none px-4 flex items-center justify-center">
-                        Contact
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="mobileDropdownMenu" class="hidden mt-2 w-full z-50">
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Instagram</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">Facebook</a>
-                        <a href="#" class="block px-4 py-2 text-gray-700 hover:text-green-600">YouTube</a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <button class="text-gray-700 hover:text-green-600">Log In</button>
-                </div>
-            </div>
         </nav>
+        <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 mt-4 px-4" style="width: 100%;">
+            <a href="./index.html" class="block px-4 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Home</a>
+            <a href="./aboutUs.html" class="block px-4 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">About Us</a>
+            <div class="relative w-full">
+                <button id="mobileContactBtn" class="w-full text-left px-4 py-2 text-gray-700 hover:text-green-400 focus:outline-none flex items-center justify-between">
+                    Categories
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="mobileDropdownMenu" class="hidden mt-4 w-full z-50" style="border: transparent;">
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Modern literature</a>
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Classic literature</a>
+                    <a href="#" class="block px-6 py-2 text-gray-700 hover:text-green-400" style="text-decoration: none;">Children's literature</a>
+                </div>
+            </div>
+        </div>
     </header>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactBtn = document.getElementById('contactBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+    
+            contactBtn.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('hidden');
+            });
+    
+            document.addEventListener('click', function (event) {
+                if (!contactBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+    
+            mobileContactBtn.addEventListener('click', function () {
+                mobileDropdownMenu.classList.toggle('hidden');
+            });
+    
+            hamburgerBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    
+        function performSearch() {
+            const searchText = document.search.txt.value;
+            alert('Searching for: ' + searchText);
+            // Thực hiện logic tìm kiếm ở đây
+        }
+    </script>
 
 
 
 
     <!-- Main Content -->
-    <main class="container mx-auto py-4 mt-6">
+    <main class="container mx-auto py-4 mt-6 pt-20">
 
         <!-- Cart Section -->
         <section class="grid lg:grid-cols-5 gap-8 py-8">
 
             <!-- Left Side: Cart Items -->
             <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md">
-                <a href="#"><img src="/undo.png" class="h-7 w-7 mr-4" /></a>
+                <a href="#"><img src="./resource/return.png" class="h-7 w-7 mr-4" /></a>
                 <h1 class="text-2xl font-bold mt-4">Shopping Cart</h1>
 
                 <!-- Product 1 -->
                 <div class="flex items-center border-b py-4" id="product1">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/chungtalanhungvitinhtu01e17176.jpg" alt="Product Image"
+                    <img src="./resource/b-0.jpg" alt="Product Image"
                         class="w-20 h-20 object-cover rounded-lg ml-4">
                     <div class="ml-4 flex-grow">
                         <div class="font-semibold">PRODUCT 1</div>
@@ -145,7 +167,7 @@
                 <!-- Product 2 -->
                 <div class="flex items-center border-b py-4" id="product2">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/conthonguyenrua011e17173832478.jpg" alt="Product Image"
+                    <img src="./resource/BOOK-11.jpg" alt="Product Image"
                         class="w-20 h-20 object-cover rounded-lg ml-4">
                     <div class="ml-4 flex-grow">
                         <div class="font-semibold">PRODUCT 2</div>
@@ -163,7 +185,7 @@
                 <!-- Product 3 -->
                 <div class="flex items-center border-b py-4" id="product3">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/bobaphepthuatumbalabienranhasa.jpg" alt="Product Image"
+                    <img src="./resource/BOOK-15.jpg" alt="Product Image"
                         class="w-20 h-20 object-cover rounded-lg ml-4">
                     <div class="ml-4 flex-grow">
                         <div class="font-semibold">PRODUCT 3</div>
@@ -181,7 +203,7 @@
                 <!-- Product 4 -->
                 <div class="flex items-center border-b py-4" id="product4">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/bongdembatxichmon01e1717383369.jpg" alt="Product Image"
+                    <img src="./resource/rec-2.jpg" alt="Product Image"
                         class="w-20 h-20 object-cover rounded-lg ml-4">
                     <div class="ml-4 flex-grow">
                         <div class="font-semibold">PRODUCT 4</div>
@@ -199,7 +221,7 @@
                 <!-- Product 5 -->
                 <div class="flex items-center border-b py-4" id="product5">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-green-500" onchange="updateTotal()">
-                    <img src="/img/dinhluatmurphy01e1716776653238.jpg" alt="Product Image"
+                    <img src="./resource/rel-3.jpg" alt="Product Image"
                         class="w-20 h-20 object-cover rounded-lg ml-4">
                     <div class="ml-4 flex-grow">
                         <div class="font-semibold">PRODUCT 5</div>
@@ -275,9 +297,8 @@
 
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <section class="w-full py-4 bg-white" style="margin-top: 45px;">
-        <!-- Footer Section -->
         <footer class="bg-background text-text border-t border-accent">
             <div class="container w-full mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -287,14 +308,13 @@
                         <p>Your gateway to a world of books. Discover, Read, and Grow with EchoLibrary.</p>
                     </div>
 
-
                     <!-- Navigation Links -->
-                    <div class="mt-8">
+                    <div class="mt-8 text-center">
                         <h3 class="font-semibold text-lg mb-2">Navigation</h3>
                         <ul>
-                            <li><a href="homepage.html" class="hover:underline"
+                            <li><a href="/homepage.html" class="hover:underline"
                                     style="text-decoration: none; color: black;">Home</a></li>
-                            <li><a href="aboutUs.html" class="hover:underline"
+                            <li><a href="/aboutUs.html" class="hover:underline"
                                     style="text-decoration: none; color: black;">About Us</a></li>
                             <li><a href="#" class="hover:underline"
                                     style="text-decoration: none; color: black;">Services</a></li>
@@ -303,9 +323,8 @@
                         </ul>
                     </div>
 
-
                     <!-- Customer Service -->
-                    <div class="mt-8">
+                    <div class="mt-8 text-center">
                         <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
                         <ul>
                             <li><a href="#" class="hover:underline" style="text-decoration: none; color: black;">Help
@@ -319,9 +338,8 @@
                         </ul>
                     </div>
 
-
                     <!-- Contact Information -->
-                    <div class="mt-8">
+                    <div class="mt-8 text-center">
                         <h3 class="font-semibold text-lg mb-2">Contact Us</h3>
                         <ul>
                             <li><span>Email: </span><a href="mailto:support@echolibrary.com" class="hover:underline"
@@ -330,7 +348,7 @@
                                     style="text-decoration: none; color: black;">(123) 456-7890 </a></li>
                             <li><span>Address: </span>123 Book Street, Library City, BK 12345</li>
                         </ul>
-                        <div class="flex space-x-6 mt-4">
+                        <div class="flex space-x-6 mt-4 justify-center">
                             <a href="https://www.facebook.com/echolibrary43/" class="hover:text-secondary">
                                 <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
                             </a>
@@ -346,8 +364,7 @@
                         </div>
                     </div>
                 </div>
-
-
+                
                 <!-- Copyright -->
                 <div class="border-t border-accent text-center mt-4 pt-4">
                     <p>&copy; 2024 EchoLibrary. All rights reserved.</p>
