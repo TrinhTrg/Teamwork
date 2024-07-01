@@ -3,4 +3,4 @@ EchoLibrary is an innovative project that aims to build an online platform for b
 # Technology Used
 - Frontend: Javascript, HTML, CSS Tailwind
 - Backend: Node.js
-- Database: XAMPP
+- Database: MySQL
