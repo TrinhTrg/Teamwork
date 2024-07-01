@@ -8,7 +8,7 @@ Welcome to the **EchoLibrary** is an innovative project that aims to build an on
 - Backend: Node.js
 - Database: MySQL
 ## Our mockup: 
-[https://trinhtrg.github.io/Teamwork]((https://trinhtrg.github.io/Teamwork))
+[https://trinhtrg.github.io/Teamwork](https://trinhtrg.github.io/Teamwork)
 
 ## Detail of the project
 - [Wireframe](/content/Wireframe/READMe.md)
