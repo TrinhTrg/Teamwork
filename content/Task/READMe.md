@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-Creating a website for selling books involves several key tasks that need to be assigned to ensure efficient and effective development. Here's a breakdown of tasks for the 4 team members:
-
 ### Collaboration and Integration
 - **Regular Team Meetings**
   - Conduct daily/weekly stand-ups to track progress and address any blockers
