@@ -8,7 +8,7 @@ Welcome to the **EchoLibrary** is an innovative project that aims to build an on
 - Backend: Node.js
 - Database: XAMPP
 ## Our mockup: 
-[TrinhTrg/Teamwork](https://github.com/TrinhTrg/Teamwork)
+[TrinhTrg/Teamwork](https://trinhtrg.github.io/Teamwork)
 
 ## Detail of the project
 - [Wireframe](/content/Wireframe/READMe.md)
